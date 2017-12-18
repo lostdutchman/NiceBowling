@@ -9,13 +9,49 @@ public class DragLaunch : MonoBehaviour {
 	private float startTime, endTime;
 	private const float ballReleseHight = 0;
 	private const float minLaunchSpeed = 40;
+    [Tooltip("How fast the aim should move the ball.")]
+    public float aimAdjust = 3;
+    private bool rightAim = false;
+    private bool leftAim = false;
 	
 	void Start () {
 		ball = GetComponent<Ball>();
 	}
-	
-	//Figures out where you started dragging to launch the ball
-	public void DragStart(){
+
+    //Allow user to hold to continuasly adjust aim
+    private void Update()
+    {
+        if (rightAim || leftAim)
+        {
+            if (!ball.inPlay)
+            {
+                float aimAdjustDirection = aimAdjust;
+                if (leftAim)
+                {
+                    aimAdjustDirection = aimAdjust * -1;
+                }
+                float xPos = Mathf.Clamp(ball.transform.position.x + aimAdjustDirection, -50f, 50f);
+                float yPos = ball.transform.position.y;
+                float zPos = ball.transform.position.z;
+                ball.transform.position = new Vector3(xPos, yPos, zPos);
+            }
+        }
+    }
+
+    public void onPointerDownAdjust(string direction)
+    {
+        if (direction.ToLower() == "right") { rightAim = true; }
+        else if (direction.ToLower() == "left") { leftAim = true; }
+    }
+
+    public void OnPointerUpAdjust()
+    {
+        rightAim = false;
+        leftAim = false;
+    }
+
+    //Figures out where you started dragging to launch the ball
+    public void DragStart(){
 	startPos = Input.mousePosition;
 	startTime = Time.time;
 	}
@@ -40,16 +76,6 @@ public class DragLaunch : MonoBehaviour {
 			} else {
 			ball.Launch (new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ));
 			}
-		}
-	}
-	
-	//This is called by the UI interface to move the ball left or right
-	public void MoveStart(float xNudge){
-		if(!ball.inPlay){
-			float xPos = Mathf.Clamp (ball.transform.position.x + xNudge, -50f, 50f);
-			float yPos = ball.transform.position.y;
-			float zPos = ball.transform.position.z;
-			ball.transform.position = new Vector3 (xPos, yPos, zPos);
 		}
 	}
 }
