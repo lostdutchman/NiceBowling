@@ -8,6 +8,8 @@ public class PinCounter : MonoBehaviour {
 	private float lastChange;
 	private int lastSettledCount = 10;
 	private GameManager gameManager;
+    [Tooltip("how long the pins have to settle before score is counted")]
+    public float settleTime = 3f;
 	
 	// Use this for initialization
 	void Start () {
@@ -31,24 +33,25 @@ public class PinCounter : MonoBehaviour {
 		}	
 		return standing;
 	}
-	
-	//Checks if a pin is standing then updates the standing count until pins dont change for 3 seconds
-	void CheckStanding ()
-	{
-		int currentStanding = CountStanding ();
-		
-		if(currentStanding != lastStandingCount){
-			lastChange = Time.time;
-			lastStandingCount = currentStanding;
-			return;
-		}
-		float settleTime = 3f; if (BallOutOfPlay.ballout == false) {settleTime = .5f;} //in case of low gravity speed up pin count.
-		if((Time.time - lastChange) > settleTime){//If last change > 3 seconds
-			PinsHaveSettled();
-		}
-	}
 
-	void PinsHaveSettled ()
+    //Checks if a pin is standing then updates the standing count until pins dont change for 3 seconds
+    void CheckStanding()
+    {
+        int currentStanding = CountStanding();
+
+        if (currentStanding != lastStandingCount)
+        {
+            lastChange = Time.time;
+            lastStandingCount = currentStanding;
+            return;
+        }
+        if ((Time.time - lastChange) > settleTime)
+        {
+            PinsHaveSettled();
+        }
+    }
+
+    void PinsHaveSettled ()
 	{
 		int standing = CountStanding ();
 		int pinFall = lastSettledCount - standing;
