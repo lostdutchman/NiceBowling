@@ -1024,11 +1024,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8224728, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: MaxDistance
-      value: 174.453125
+      value: 174.45312
       objectReference: {fileID: 0}
     - target: {fileID: 8224728, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: m_Volume
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: audioSource
@@ -1048,8 +1048,40 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8224728, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
-      value: .922999978
+      value: 0.923
       objectReference: {fileID: 0}
+    - target: {fileID: 8224728, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224728, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17234c79e6ac13b4b97240f509b0a531, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0506373f98c512043a7bce8ac76eb25f, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a961d3cf248c3347a26ed797b93ea60, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1440ea763d729cb48b470dbe7043914d, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 252873327b9e152438cb0a58e9de6c64, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: b02e07b9a919ffe4c90dd3c68900ec0d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
   m_IsPrefabParent: 0
@@ -1087,7 +1119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42, y: -166}
+  m_AnchoredPosition: {x: 31, y: -166}
   m_SizeDelta: {x: 167, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297361321
@@ -3521,7 +3553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -105}
+  m_AnchoredPosition: {x: -14, y: -105}
   m_SizeDelta: {x: 247, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764504802
@@ -3891,7 +3923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -78, y: -159}
+  m_AnchoredPosition: {x: -89, y: -159}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037993452
