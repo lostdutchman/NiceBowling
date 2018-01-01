@@ -15,6 +15,7 @@ public class PinSetter : MonoBehaviour {
 
 	private AudioSource audioSource;
 	private NiceBowling niceBowling;
+    private NiceBowlingReset niceBowlingReset;
 	private Animator animator;
 	private PinCounter pinCounter;
 	
@@ -25,6 +26,7 @@ public class PinSetter : MonoBehaviour {
 		pinCounter = GameObject.FindObjectOfType<PinCounter> ();
 		audioSource = GetComponent <AudioSource> ();
 		niceBowling = GameObject.FindObjectOfType<NiceBowling> ();
+        niceBowlingReset = GameObject.FindObjectOfType<NiceBowlingReset>();
 
 		Swipper.SetActive (false);
 		exitButton.SetActive(false);
@@ -54,10 +56,10 @@ public class PinSetter : MonoBehaviour {
 	
 	//Called by animator to add a new set of pins
 	public void RenewPins(){
-		Instantiate(pinSet, new Vector3(0, 1, 1829), Quaternion.identity);
+        niceBowlingReset.Reset();
+        Instantiate(pinSet, new Vector3(0, 1, 1829), Quaternion.identity);
 		Swipper.SetActive (false);
 		niceBowling.Effect ();
-			
 	}
 
 	public void performAction(ActionMaster.Action action){

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pin
   - Floor
+  - NBTemp
   layers:
   - Default
   - TransparentFX

@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 11469040}
   m_Layer: 0
   m_Name: sardineskinWithScript
-  m_TagString: Untagged
+  m_TagString: NBTemp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

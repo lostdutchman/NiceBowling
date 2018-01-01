@@ -3010,7 +3010,7 @@ MonoBehaviour:
   Bounce: {fileID: 13400000, guid: 4a741f23677475b489f872a846e4d4c3, type: 2}
   none: {fileID: 13400000, guid: 094c83582a81a1f4bb9f47d471dcdb4d, type: 2}
   dumbPinSet: {fileID: 160138, guid: d2d07d4adbebd324e959fa694ba15ffa, type: 2}
-  mc: {fileID: 1957938797}
+  MainCamera: {fileID: 1957938797}
 --- !u!82 &1253881827
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3105,6 +3105,9 @@ MonoBehaviour:
   Bumper: {fileID: 1026739378}
   Bumper2: {fileID: 2019126913}
   BowlingBall: {fileID: 13400000, guid: 094c83582a81a1f4bb9f47d471dcdb4d, type: 2}
+  Ball: {fileID: 2100000, guid: 0f8e11245072200479768b60a1e42d9d, type: 2}
+  Skybox: {fileID: 2100000, guid: 33f4e169bc0ff5b4480679580c6499c3, type: 2}
+  MainCamera: {fileID: 1957938797}
 --- !u!1 &1282125382
 GameObject:
   m_ObjectHideFlags: 0

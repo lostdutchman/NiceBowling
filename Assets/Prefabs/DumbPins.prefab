@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 450178}
   m_Layer: 0
   m_Name: DumbPins
-  m_TagString: Untagged
+  m_TagString: NBTemp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
