@@ -8,10 +8,10 @@ public class NiceBowling : MonoBehaviour {
 	public GameObject Cylinder, Sardine, Ramp;
 	private float gravityX, gravityY, gravityZ;
 	private GameObject light;
-	public Material ball1, ball2, ball3, SkySpace, SkyUnity, SkyHorror;
+	public Material ball1, ball2, ball3, SkySpace, SkyUnity, SkyHorror; //Absolutly get gid of cosmetic changes that are not tied to gameplay changes and kill the horrer concept.
 	public PhysicMaterial Bounce, none;
 	public GameObject dumbPinSet;
-	public Camera mc;
+	public Camera MainCamera;
 	private float volume;
 	
 
@@ -330,7 +330,7 @@ public class NiceBowling : MonoBehaviour {
 	}
 	//Case35
 	public void SkyboxUnity(){
-		Skybox sky = mc.GetComponent<Skybox>();
+		Skybox sky = MainCamera.GetComponent<Skybox>();
 		sky.material = SkyUnity;
 		light.SetActive(true);
 		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
@@ -339,7 +339,7 @@ public class NiceBowling : MonoBehaviour {
 	}
 	//Case36 
 	public void Horror(){
-		Skybox sky = mc.GetComponent<Skybox>();
+		Skybox sky = MainCamera.GetComponent<Skybox>();
 		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
 		musicManager.ChangeVolume (0f);
 		sky.material = SkyHorror;
@@ -350,7 +350,7 @@ public class NiceBowling : MonoBehaviour {
 	}
 	//Case37 
 	public void SkyboxSpace(){
-		Skybox sky = mc.GetComponent<Skybox>();
+		Skybox sky = MainCamera.GetComponent<Skybox>();
 		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
 		musicManager.ChangeVolume (volume);
 		sky.material = SkySpace;	
