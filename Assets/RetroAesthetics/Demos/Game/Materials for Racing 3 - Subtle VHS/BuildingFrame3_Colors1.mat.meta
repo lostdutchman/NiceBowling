@@ -1,7 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 7c1205df3cadedc42acb2f1f22b55928
 timeCreated: 1515340658
 licenseType: Free
+=======
+guid: f1e7b2fd310364f938a5d945577f77a3
+labels:
+- 80s
+- Aesthetics
+- Retro
+- Vaporware
+timeCreated: 1475826807
+licenseType: Store
+>>>>>>> b0a3fa51e742747aac6e8855349765713b02e9fb
 NativeFormatImporter:
   mainObjectFileID: -1
   userData: 

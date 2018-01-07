@@ -6,9 +6,11 @@ public class MusicManager : MonoBehaviour {
 
 	public AudioClip[] myMusic;
 	public AudioSource audioSource;
+    public float MenuTimeDelay;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 		if (instance != null){
 			Destroy(gameObject);
 		} else {
@@ -19,16 +21,18 @@ public class MusicManager : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("master_volume"))
 			PlayerPrefsManager.SetMasterVolume (.5f);
 		ChangeVolume(PlayerPrefsManager.GetMasterVolume ());
-		playRandomMusic();
 	}
 	public void ChangeVolume (float value)
 	{
 		audioSource.volume = value;
 	}
 
-	void Update() { 
-		if(!audioSource.isPlaying) 
-			playRandomMusic(); 
+	void Update() {
+        if (Time.timeSinceLevelLoad >= MenuTimeDelay)
+        {
+            if (!audioSource.isPlaying)
+                playRandomMusic();
+        }
 	}
 	
 	public void playRandomMusic() { 
