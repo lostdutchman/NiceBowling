@@ -5,7 +5,7 @@ public class NiceBowlingReset : MonoBehaviour
 {
     private GameObject Bumper, Bumper2;
     private PhysicMaterial BowlingBall;
-    private Material Ball, Skybox;
+    private Material Ball, SkyBoxMat;
     private Camera MainCamera;
     private Vector3 Gravity, PinSize, BallSize;
     private float PinDrag, PinAngularDrag, BallMass, BallPosY, BallPosZ;
@@ -18,7 +18,7 @@ public class NiceBowlingReset : MonoBehaviour
         MainCamera = Camera.main;
         BowlingBall = GameObject.FindObjectOfType<Ball>().GetComponent<SphereCollider>().material;
         Ball = GameObject.FindObjectOfType<Ball>().GetComponent<Renderer>().material;
-        Skybox = MainCamera.GetComponent<Skybox>().material;
+        SkyBoxMat = MainCamera.GetComponent<Skybox>().material;
         Gravity = Physics.gravity;
         PinSize = GameObject.FindGameObjectWithTag("Pin").transform.localScale;
         PinDrag = GameObject.FindGameObjectWithTag("Pin").GetComponent<Rigidbody>().drag;
@@ -36,8 +36,7 @@ public class NiceBowlingReset : MonoBehaviour
         float BallPosX = GameObject.FindObjectOfType<Ball>().transform.localPosition.x;
 
         //Reset Lane
-        Skybox sky = MainCamera.GetComponent<Skybox>();
-        sky.material = Skybox;
+        MainCamera.GetComponent<Skybox>().material = SkyBoxMat;
 
         Physics.gravity = Gravity;
 

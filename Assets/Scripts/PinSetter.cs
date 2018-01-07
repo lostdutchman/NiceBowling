@@ -27,12 +27,10 @@ public class PinSetter : MonoBehaviour {
 		audioSource = GetComponent <AudioSource> ();
 		niceBowling = GameObject.FindObjectOfType<NiceBowling> ();
         niceBowlingReset = GameObject.FindObjectOfType<NiceBowlingReset>();
-
-		Swipper.SetActive (false);
+        Swipper.SetActive (false);
 		exitButton.SetActive(false);
-		Tut.SetActive (true);
-
-	}
+        Tut.SetActive(true);
+        }
 
 	//Called by animator to rais pins
 	public void RaisePins(){
