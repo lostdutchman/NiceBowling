@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05319433, g: 0.1074459, b: 0.13485688, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1394,6 +1394,10 @@ Prefab:
       propertyPath: myMusic.Array.data[5]
       value: 
       objectReference: {fileID: 8300000, guid: b02e07b9a919ffe4c90dd3c68900ec0d, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: MenuTimeDelay
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
   m_IsPrefabParent: 0
@@ -2470,15 +2474,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435382, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 435382, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1600
+      value: 1952
       objectReference: {fileID: 0}
     - target: {fileID: 435382, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.043619405
+      value: -0.03925978
       objectReference: {fileID: 0}
     - target: {fileID: 435382, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_LocalRotation.y
@@ -2490,7 +2494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435382, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9990483
+      value: 0.9992291
       objectReference: {fileID: 0}
     - target: {fileID: 435382, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_RootOrder
@@ -2503,10 +2507,10 @@ Prefab:
     - target: {fileID: 4525260, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_CustomSkybox
       value: 
-      objectReference: {fileID: 2100000, guid: cb1cf4be9996d40088d6e8f1dab03704, type: 2}
+      objectReference: {fileID: 2100000, guid: 3085884124318784ba1272fe65d900cb, type: 2}
     - target: {fileID: 435382, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 11408266, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
       propertyPath: m_Enabled
@@ -4508,6 +4512,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -0.882, y: 117.80801, z: 13.979001}
+--- !u!21 &1439436081
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 0
+    - _DisplacementAmplitude: 0.00080000004
+    - _DisplacementFrequency: 60
+    - _DisplacementSpeed: 0.8
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0
+    - _OffsetNoiseY: 0
+    - _OffsetPosY: 0
+    - _StaticIntensity: 1
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0
+    m_Colors: []
 --- !u!1 &1450188258 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 191472, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
@@ -4548,7 +4594,7 @@ MonoBehaviour:
   useScanlines: 1
   scanlineSize: 512
   scanlineIntensity: 0.5
-  _material: {fileID: 1815903881}
+  _material: {fileID: 1439436081}
 --- !u!114 &1450188260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4734,6 +4780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Splash: {fileID: 1224577837}
+  FadeTime: 0.5
 --- !u!82 &1524372877
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5431,49 +5478,6 @@ Transform:
   m_Father: {fileID: 482064228}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1815903881
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: BOTTOM_STRETCH_ON CHROMATIC_ON DISPLACEMENT_ON NOISE_BOTTOM_ON
-    NOISE_ON RADIAL_DISTORTION_ON SCANLINES_ON VIGNETTE_ON
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 4
-    - _DisplacementAmplitude: 0.00080000004
-    - _DisplacementFrequency: 60
-    - _DisplacementSpeed: 0.8
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0.85320354
-    - _OffsetNoiseY: -0.12234895
-    - _OffsetPosY: 0
-    - _StaticIntensity: 1
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0.116
-    m_Colors: []
 --- !u!114 &1876387023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5488,7 +5492,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 23930330}
   launchSpeed: 400
-  MenuTimeDelay: 2
   niceBowling:
   - {fileID: 8300000, guid: a46983b5f84159040be86cc4c8e3ed73, type: 3}
   - {fileID: 8300000, guid: 29a18425e65b3ef45aa19ce4510fc6ee, type: 3}
@@ -5510,7 +5513,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 927e2c245d0914eac950196cc0852790, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1667
+      value: 2053
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 927e2c245d0914eac950196cc0852790, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5547,7 +5550,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 927e2c245d0914eac950196cc0852790, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3d0412edb2d414884ad4e826b7a8db79, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b774f09098d16948beae2a7fbf1d828, type: 2}
     - target: {fileID: 100000, guid: 927e2c245d0914eac950196cc0852790, type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -11,7 +11,7 @@ public class NiceBowling : MonoBehaviour {
 	public Material ball1, ball2, ball3, SkySpace, SkyUnity, SkyHorror; //Absolutly get gid of cosmetic changes that are not tied to gameplay changes and kill the horrer concept.
 	public PhysicMaterial Bounce, none;
 	public GameObject dumbPinSet;
-	public Camera MainCamera;
+	private Camera MainCamera;
 	private float volume;
 	
 
@@ -25,7 +25,8 @@ public class NiceBowling : MonoBehaviour {
 		gravityZ = 0;
 		light = GameObject.Find ("Directional Light");
 		volume = PlayerPrefsManager.GetMasterVolume();
-	}
+        MainCamera = Camera.main;
+    }
 
 	//use for initilization if level is loaded more then onece in a session
 	void OnLevelWasLoaded(){
@@ -49,44 +50,44 @@ public class NiceBowling : MonoBehaviour {
 			case 5:GravityDiff(); break;
 			case 6:GravityYLight(); break;
 			case 7:IncreasePinDrag(); break; 
-			case 8:IncreasePinSizeAllDiff(); break;
-			case 9:IncreasePinSizeAllUnif(); break;
-			case 10:DecreasePinSizeAllUnif(); break;
-			case 11:DecreasePinSizeAllDiff(); break;
-			case 12:BouncyBall(); break;
-			case 13:OneSmallPin (); break;
-			case 14:OneHugePin (); break;
-			case 15:SomePinsMove(); break;
-			case 16:GiantBall (); break;
+			case 8: Effect(); break;
+            case 9:IncreasePinSize(); break;
+			case 10:DecreasePinSize(); break;
+			case 11: Effect(); break;
+            case 12:BouncyBall(); break;
+			case 13: Effect(); break;
+            case 14: Effect(); break;
+            case 15: Effect(); break;
+            case 16:GiantBall (); break;
 			case 17:SmallBall (); break;
 			case 18:Cheater(); break;
-			case 19:AllPinsMove(); break;
-			case 20:TinyBall(); break;
+			case 19: Effect(); break;
+            case 20:TinyBall(); break;
 			case 21:LargeBall(); break;
 			case 22:LightBall (); break;
 			case 23:HeavyBall (); break;
-			case 24:ResetBall (); break;
-			case 25:ResetBall (); break;
-			case 26:ResetBall (); break;
-			case 27:CarnyPin(); break;
-			case 28:BumpersOff(); break;
-			case 29:Bumpers (); break;
-			case 30:BumpersOff(); break;
-			case 31:SardineRain (); break;
+			case 24: Effect(); break;
+            case 25: Effect(); break;
+            case 26: Effect(); break;
+            case 27:CarnyPin(); break;
+			case 28: Effect(); break;
+            case 29:Bumpers (); break;
+			case 30: Effect(); break;
+            case 31:SardineRain (); break;
 			case 32:Obstical (); break;
 			case 33:Obsticals(); break;
 			case 34:RampAdd(); break;
-			case 35:SkyboxUnity(); break;
-			case 36:Horror(); break;
-			case 37:SkyboxSpace(); break;
-			case 38:ResetBall(); GravityReset(); SkyboxSpace(); BumpersOff(); break;
-			case 39:AddPinsx1(); AddPinsx2(); AddPinsx3(); AddPinsx4(); break;
+			case 35: Effect(); break;
+            case 36: Effect(); break;
+            case 37: Effect(); break;
+            case 38: Effect(); break;
+            case 39:AddPinsx1(); AddPinsx4(); break;
 			case 40:AddPinsx1(); break;
-			case 41:AddPinsx2(); break;
-			case 42:AddPinsx3(); break;
-			case 43:AddPinsx4(); break;
-			case 44:GravityReset (); break;
-			case 45:GravityReset (); break;
+			case 41: Effect(); break;
+            case 42: Effect(); break;
+            case 43:AddPinsx4(); break;
+			case 44: Effect();  break;
+            case 45: Effect(); Effect(); break;
 			case 46:Effect(); Effect(); break;
 			case 47:Effect(); Effect(); break;
 			case 48:Effect(); Effect(); Effect(); break;
@@ -114,20 +115,20 @@ public class NiceBowling : MonoBehaviour {
 			body.isKinematic = true;
 		}
 	}
-	
-	//Case3 gravity flux (x) + or - whole lane
-	public void GravityX(){
+
+    //Case3 gravity flux (x) + or - whole lane (Wind on x axis)
+    public void GravityX(){
 		gravityX = Random.Range (-10, 10);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
 	}
 
-	//Case4 gravity flux (y) Heavy side only
+	//Case4 gravity flux (y) Heavy side only 
 	public void GravityYHeavy(){
 		gravityY = Random.Range (-600, -200);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
 	}
 
-	//Case5 gravity flux (z) + or - whole lane
+	//Case5 gravity flux (z) + or - whole lane (Wind on Z axis)
 	public void GravityDiff(){
 		gravityY = Random.Range (-400, 3);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
@@ -158,34 +159,23 @@ public class NiceBowling : MonoBehaviour {
 	}
 	
 	//Case8 
-	public void IncreasePinSizeAllDiff(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			float size = Random.Range (1.2f, 2.5f);
-			pin.transform.localScale = new Vector3(size, size, size);
-		}
-	}
 
 	//Case9
-	public void IncreasePinSizeAllUnif(){
+	public void IncreasePinSize(){
 		float size = Random.Range (1.2f, 2.5f);
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			pin.transform.localScale = new Vector3(size, size, size);
 		}
 	}
 	//Case10
-	public void DecreasePinSizeAllUnif(){
+	public void DecreasePinSize(){
 		float size = Random.Range (0.6f, 0.95f);
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			pin.transform.localScale = new Vector3(size, size, size);
 		}
 	}
 	//Case11
-	public void DecreasePinSizeAllDiff(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			float size = Random.Range (0.5f, 0.95f);
-			pin.transform.localScale = new Vector3(size, size, size);
-		}
-	}
+
 	//Case12
 	public void BouncyBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
@@ -195,31 +185,11 @@ public class NiceBowling : MonoBehaviour {
 	}
 	
 	//Case13
-	public void OneSmallPin(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			int number = Random.Range (1, 8);
-			if(number == 4){pin.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);}
-		}
-	}
+
 	//Case14
-	public void OneHugePin(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			int number = Random.Range (1, 8);
-			if(number == 4){pin.transform.localScale = new Vector3(4f, 4f, 4f);}
-		}
-	}
+
 	//Case15
-	public void SomePinsMove(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			int number = Random.Range (1, 6);
-			if(number == 4){
-				float x = Random.Range (-30, 30);
-				float y = 1;
-				float z = Random.Range (-50, 50);
-				pin.transform.localPosition += new Vector3(x, y, z);
-			}
-		}
-	}
+
 	//Case16 
 	public void GiantBall(){
 	Ball ball = GameObject.FindObjectOfType<Ball>();
@@ -234,17 +204,10 @@ public class NiceBowling : MonoBehaviour {
 	//Case18
 	public void Cheater(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
-		ball.transform.localPosition += new Vector3(0, 0, 500f);
+		ball.transform.localPosition += new Vector3(0, 0, 1000f);
 	}
 	//Case19
-	public void AllPinsMove(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			float x = Random.Range (-25, 25);
-			float y = 1;
-			float z = Random.Range (-40, 40);
-			pin.transform.localPosition += new Vector3(x, y, z);
-		}
-	}
+
 	//Case20 
 	public void TinyBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
@@ -271,18 +234,8 @@ public class NiceBowling : MonoBehaviour {
 		rend.material = ball3;
 		body.mass = 70;
 	}
-	//Case24 - 26 Used multiple times since the pins already auto reset
-	public void ResetBall(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-		Rigidbody body = ball.GetComponent<Rigidbody>();
-		Renderer rend = ball.GetComponent<Renderer> ();
-		SphereCollider col = ball.GetComponent<SphereCollider>();
-		rend.material = ball1;
-		body.mass = 8;
-		ball.transform.localScale = new Vector3 (21f, 21f, 21f);
-		col.sharedMaterial = none;
-		
-	}
+	//Case24
+
 	//Case27
 	public void CarnyPin(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
@@ -294,7 +247,7 @@ public class NiceBowling : MonoBehaviour {
 		}
 	}
 	
-	//Case28 Bumpers off again
+	//Case28
 	
 	//Case29 
 	public void Bumpers(){
@@ -302,10 +255,7 @@ public class NiceBowling : MonoBehaviour {
 		Bumper2.SetActive(true);
 	}
 	//Case30 
-	public void BumpersOff(){
-		Bumper.SetActive(false);
-		Bumper2.SetActive(false);
-	}
+
 	//Case31 
 	public void SardineRain(){
 		int rand = Random.Range (10, 200);
@@ -329,33 +279,10 @@ public class NiceBowling : MonoBehaviour {
 		Instantiate(Ramp, new Vector3(0, -3, Random.Range (300f, 1600f)), Quaternion.Euler (-10, 0, 0));
 	}
 	//Case35
-	public void SkyboxUnity(){
-		Skybox sky = MainCamera.GetComponent<Skybox>();
-		sky.material = SkyUnity;
-		light.SetActive(true);
-		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
-		musicManager.ChangeVolume (volume);
-		
-	}
+
 	//Case36 
-	public void Horror(){
-		Skybox sky = MainCamera.GetComponent<Skybox>();
-		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
-		musicManager.ChangeVolume (0f);
-		sky.material = SkyHorror;
-		light.SetActive(false);
-		AudioSource JumpScare = this.GetComponent<AudioSource>();
-		JumpScare.Play ();
-		
-	}
+
 	//Case37 
-	public void SkyboxSpace(){
-		Skybox sky = MainCamera.GetComponent<Skybox>();
-		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
-		musicManager.ChangeVolume (volume);
-		sky.material = SkySpace;	
-		light.SetActive(true);
-	}
 	
 	//Case38 Global Reset
 	
@@ -365,18 +292,11 @@ public class NiceBowling : MonoBehaviour {
 	public void AddPinsx1(){
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
 	}
-	//Case41 add dummy pins X2
-	public void AddPinsx2(){
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-	}
-	//Case42 add dummy pins x3
-	public void AddPinsx3(){
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-	}
-	//Case43 add dummy pins X4
+	//Case41
+
+	//Case42
+
+	//Case43
 	public void AddPinsx4(){
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
@@ -384,12 +304,7 @@ public class NiceBowling : MonoBehaviour {
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
 	}
 	//Case44 - 45
-	public void GravityReset(){
-		gravityX = 0;
-		gravityY = -150;
-		gravityZ = 0;
-		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-	}
+
 	//Cases 46-50 call effect multiple times
 	
 }

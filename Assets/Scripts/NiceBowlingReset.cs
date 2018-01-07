@@ -3,26 +3,43 @@ using System.Collections;
 
 public class NiceBowlingReset : MonoBehaviour
 {
-    public GameObject Bumper, Bumper2;
-    public PhysicMaterial BowlingBall;
-    public Material Ball, Skybox;
-    public Camera MainCamera;
+    private GameObject Bumper, Bumper2;
+    private PhysicMaterial BowlingBall;
+    private Material Ball, Skybox;
+    private Camera MainCamera;
+    private Vector3 Gravity, PinSize, BallSize;
+    private float PinDrag, PinAngularDrag, BallMass, BallPosY, BallPosZ;
 
     // Use this for initialization
     void Start()
     {
-        //Find values? get rid of magic numbers below where possible
-        //Try to get the materials ect at the begening of the game so they dont have to be put in 2 places
+        Bumper = GameObject.FindObjectOfType<NiceBowling>().Bumper;
+        Bumper2 = GameObject.FindObjectOfType<NiceBowling>().Bumper2;
+        MainCamera = Camera.main;
+        BowlingBall = GameObject.FindObjectOfType<Ball>().GetComponent<SphereCollider>().material;
+        Ball = GameObject.FindObjectOfType<Ball>().GetComponent<Renderer>().material;
+        Skybox = MainCamera.GetComponent<Skybox>().material;
+        Gravity = Physics.gravity;
+        PinSize = GameObject.FindGameObjectWithTag("Pin").transform.localScale;
+        PinDrag = GameObject.FindGameObjectWithTag("Pin").GetComponent<Rigidbody>().drag;
+        PinAngularDrag = GameObject.FindGameObjectWithTag("Pin").GetComponent<Rigidbody>().angularDrag;
+        BallSize = GameObject.FindObjectOfType<Ball>().transform.localScale;
+        BallPosY = GameObject.FindObjectOfType<Ball>().transform.localPosition.y;
+        BallPosZ = GameObject.FindObjectOfType<Ball>().transform.localPosition.z;
+        BallMass = GameObject.FindObjectOfType<Ball>().GetComponent<Rigidbody>().mass;
     }
 
     //use for initilization if level is loaded more then onece in a session
     public void Reset()
     {
+        //This allows the possition the player set to remain between frames. 
+        float BallPosX = GameObject.FindObjectOfType<Ball>().transform.localPosition.x;
+
         //Reset Lane
         Skybox sky = MainCamera.GetComponent<Skybox>();
         sky.material = Skybox;
 
-        Physics.gravity = new Vector3(0f, -150f, 0f);
+        Physics.gravity = Gravity;
 
         Bumper.SetActive(false);
         Bumper2.SetActive(false);
@@ -31,9 +48,9 @@ public class NiceBowlingReset : MonoBehaviour
         foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
         {
             Rigidbody pinBody = pin.GetComponent<Rigidbody>();
-            pinBody.angularDrag = 0.05f;
-            pinBody.drag = 0f;
-            pin.transform.localScale = new Vector3(1f, 1f, 1f);
+            pinBody.angularDrag = PinAngularDrag;
+            pinBody.drag = PinDrag;
+            pin.transform.localScale = PinSize;
         }
 
         //Reset Ball
@@ -43,10 +60,10 @@ public class NiceBowlingReset : MonoBehaviour
         Renderer ballRend = ball.GetComponent<Renderer>();
 
         ballCol.sharedMaterial = BowlingBall;
-        ball.transform.localScale = new Vector3(21.7f, 21.7f, 21.7f);
-        ball.transform.localPosition = new Vector3(0f, 18f, 30f); //This line should be modified to remember players last dragged location.
+        ball.transform.localScale = BallSize;
+        ball.transform.localPosition = new Vector3(BallPosX, BallPosY, BallPosZ); 
         ballRend.material = Ball;
-        ballBody.mass = 8f;
+        ballBody.mass = BallMass;
 
         //Clear Obsticals tagged NBTemp
         foreach(GameObject Obstacle in GameObject.FindGameObjectsWithTag("NBTemp"))
