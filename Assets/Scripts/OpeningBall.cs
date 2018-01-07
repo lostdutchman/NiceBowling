@@ -7,7 +7,7 @@ public class OpeningBall : MonoBehaviour {
 	public AudioSource canvas;
 	public float launchSpeed;
 	private GameObject menu;
-	public float MenuTimeDelay;
+	private float MenuTimeDelay;
 	public AudioClip[] niceBowling;
 
 	// Use this for initialization
@@ -24,8 +24,8 @@ public class OpeningBall : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("high_score"))
 			PlayerPrefsManager.SetHighScore(0);
 		if(Application.loadedLevel == 0)
-			canvas.clip = niceBowling[Random.Range(0, niceBowling.Length)]; 
-		
+			canvas.clip = niceBowling[Random.Range(0, niceBowling.Length)];
+        MenuTimeDelay = GameObject.FindObjectOfType<MusicManager>().Delay;
 	}
 	
 	// Update is called once per frame
