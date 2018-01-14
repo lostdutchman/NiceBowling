@@ -34,10 +34,10 @@ Material:
     - _EmissionGain: 0
     - _LineWidth: 0.082
     - _ParcelSize: 1
-    - _Specular: 189
+    - _Specular: 611
     - _UseSpecular: 0
     m_Colors:
-    - _EmissionColor: {r: 0.953, g: 0.241, b: 0.766, a: 1}
-    - _LineColor: {r: 0.928, g: 0.272, b: 1, a: 1}
-    - _MainColor: {r: 0.13290484, g: 0.06812285, b: 0.14705884, a: 1}
+    - _EmissionColor: {r: 0.17560555, g: 0.584, b: 0.85294116, a: 1}
+    - _LineColor: {r: 0.259, g: 0.266, b: 1, a: 1}
+    - _MainColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowColor: {r: 0.69014925, g: 0.81096154, b: 0.8161765, a: 1}
