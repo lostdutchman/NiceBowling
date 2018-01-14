@@ -9,6 +9,7 @@ public class OpeningBall : MonoBehaviour {
 	private GameObject menu;
 	private float MenuTimeDelay;
 	public AudioClip[] niceBowling;
+    private GameObject Splash;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,8 @@ public class OpeningBall : MonoBehaviour {
 			PlayerPrefsManager.SetHighScore(0);
 		if(Application.loadedLevel == 0)
 			canvas.clip = niceBowling[Random.Range(0, niceBowling.Length)];
-        MenuTimeDelay = GameObject.FindObjectOfType<MusicManager>().MenuTimeDelay + .5f;
+        MenuTimeDelay = GameObject.FindObjectOfType<MusicManager>().MenuTimeDelay + .5f; //.5f for the splash screen fade time
+        Splash = GameObject.FindObjectOfType<PanelFade>().gameObject;
 
     }
 
@@ -33,6 +35,7 @@ public class OpeningBall : MonoBehaviour {
     void Update () {
 		if(Time.timeSinceLevelLoad >= MenuTimeDelay){
 			menu.SetActive(true);
+            Splash.SetActive(false);
 		}
 	}
 	
