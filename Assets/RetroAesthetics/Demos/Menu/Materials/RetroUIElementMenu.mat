@@ -76,7 +76,7 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
-    - _StripesDistance: 0.067
+    - _StripesDistance: 0.031
     - _StripesExponent: 5
     - _StripesExponent1: 1
     - _StripesExponent2: 1
@@ -88,8 +88,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
-    - _Color1: {r: 1, g: 0.9764706, b: 0, a: 1}
-    - _Color2: {r: 1, g: 0.514, b: 0.747, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 0.338, g: 1, b: 0.33793116, a: 1}
     - _ColorSun1: {r: 0.97, g: 0.67, b: 0.51, a: 1}
     - _ColorSun2: {r: 0.97, g: 0.17, b: 0.21, a: 1}
     - _Direction: {r: 0, g: 1, b: 0, a: 0}

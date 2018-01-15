@@ -33,4 +33,9 @@ public class LevelManager : MonoBehaviour {
 		PlayerPrefsManager.SetMasterVolume(volumeSlider.value);
 		Application.LoadLevel("Game");
 	}
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
