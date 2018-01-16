@@ -8,14 +8,15 @@ public class GameManager : MonoBehaviour {
 	private PinSetter pinSetter;
 	private Ball ball;
 	private ScoreDisplay scoreDisplay;
+    public GameObject Menu;
 
 	// Use this for initialization
 	void Start () {
 		pinSetter = GameObject.FindObjectOfType<PinSetter> ();
 		ball = GameObject.FindObjectOfType<Ball> ();
 		scoreDisplay = GameObject.FindObjectOfType<ScoreDisplay>();
-
-	}
+        Time.timeScale = 1;
+    }
 	
 	public void Bowl (int pinFall){
 		bowls.Add (pinFall);
@@ -26,7 +27,6 @@ public class GameManager : MonoBehaviour {
 		scoreDisplay.FillFrames (ScoreMaster.ScoreCumulative(bowls));
 		if (pinSetter.GameOver == true)
 			SetHighScores ();
-
 	}
 
 	public void SetHighScores(){
@@ -36,5 +36,34 @@ public class GameManager : MonoBehaviour {
 			if(ScoreMaster.endScore > PlayerPrefsManager.GetHighScore()){PlayerPrefsManager.SetHighScore(ScoreMaster.endScore);}
 		}
 	}
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            try
+            {
+                ToggleMenu();
+            }
+            catch
+            {
+                //Do nothing, this it to keep from getting an error on scenes that done have a menu
+            }
+        }
+    }
+
+    public void ToggleMenu()
+    {
+        if (Menu.activeSelf)
+        {
+            Menu.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            Menu.SetActive(true);
+        }
+    }
 			
 }

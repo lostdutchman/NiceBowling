@@ -27,12 +27,6 @@ public class LevelManager : MonoBehaviour {
 		PlayerPrefsManager.SetMasterVolume(volumeSlider.value);
 		Application.LoadLevel("Game");
 	}
-	
-	public void LoadNorm(){
-		PlayerPrefsManager.NiceBowlingSet(0);
-		PlayerPrefsManager.SetMasterVolume(volumeSlider.value);
-		Application.LoadLevel("Game");
-	}
 
     public void ExitGame()
     {

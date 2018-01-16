@@ -8,14 +8,13 @@ public class Ball : MonoBehaviour {
 	private Vector3 ballStartPos;
 	private AudioSource audioSource;
 	
-	
 	void Start () {
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBody.useGravity = false;
 		audioSource = GetComponent<AudioSource> ();
-	}
-	
-	public void Launch (Vector3 velocity)
+    }
+
+    public void Launch (Vector3 velocity)
 	{
 		ballStartPos = this.transform.position;
 		rigidBody.useGravity = true;
@@ -33,10 +32,16 @@ public class Ball : MonoBehaviour {
 		rigidBody.angularVelocity = Vector3.zero;
 		inPlay = false;
 	}
-	
-	void Update () {
-		if((inPlay == true) && (rigidBody.velocity.z < 30f)){
-			rigidBody.velocity = new Vector3(10f, 0f, 30f);
-		}
-	}
+
+    void FixedUpdate()
+    {
+        //Make it so that if ball stops moving the frame resets
+        if (inPlay)
+        {
+            if (rigidBody.velocity.z <= 0)
+            {
+                BallOutOfPlay.ballout = true;
+            }
+        }
+    }
 }

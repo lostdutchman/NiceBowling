@@ -11,7 +11,7 @@ public class PinSetter : MonoBehaviour {
 	public AudioClip[] gutterAudio;
 	public AudioClip silence;
 	public GameObject exitButton, Swipper, TouchInput, Tut;
-	public bool GameOver;
+	public bool GameOver, StartGame;
 
 	private AudioSource audioSource;
 	private NiceBowling niceBowling;
@@ -22,6 +22,7 @@ public class PinSetter : MonoBehaviour {
 	
 	void Start () {
 		GameOver = false;
+        StartGame = true;
 		animator = GetComponent<Animator>();
 		pinCounter = GameObject.FindObjectOfType<PinCounter> ();
 		audioSource = GetComponent <AudioSource> ();
@@ -32,8 +33,18 @@ public class PinSetter : MonoBehaviour {
         Tut.SetActive(true);
         }
 
-	//Called by animator to rais pins
-	public void RaisePins(){
+    public void Update()
+    {
+        if (StartGame)
+        {
+            niceBowlingReset.Reset();
+            StartGame = false;
+            niceBowling.Effect();
+        }
+    }
+
+    //Called by animator to rais pins
+    public void RaisePins(){
 		if (PlayerPrefsManager.NiceBowlingGet () == 1) {
 			foreach (Pins pin in GameObject.FindObjectsOfType<Pins>()) {
 				pin.DefaultPins ();//If nice bowling is active then fix pin settings before instantiating new ones.
