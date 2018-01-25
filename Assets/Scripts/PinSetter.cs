@@ -39,7 +39,7 @@ public class PinSetter : MonoBehaviour {
         {
             niceBowlingReset.Reset();
             StartGame = false;
-            niceBowling.Effect();
+            niceBowling.NiceManager();
         }
     }
 
@@ -68,7 +68,7 @@ public class PinSetter : MonoBehaviour {
         niceBowlingReset.Reset();
         Instantiate(pinSet, new Vector3(0, 1, 1829), Quaternion.identity);
 		Swipper.SetActive (false);
-		niceBowling.Effect ();
+		niceBowling.NiceManager();
 	}
 
 	public void performAction(ActionMaster.Action action){

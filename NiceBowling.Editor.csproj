@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\RetroAesthetics\Shaders\Editor\RetroSkyboxEditor.cs" />
+    <Compile Include="Assets\UITween\Editor\EditorUITween.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\Sardine\readme.txt" />
