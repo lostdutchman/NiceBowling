@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Linq;
+using System.Collections.Generic;
+using System;
 
 public class NiceBowling : MonoBehaviour {
 	
@@ -32,113 +35,186 @@ public class NiceBowling : MonoBehaviour {
 
     public void NiceManager()
     {
+        //Get NB Effects
+        int[] WeightedRandom = new int[] { 1, 2, 2, 2, 2, 3, 3, 3, 4, 5 };
+        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        List<string> Effects = Effect(NiceRandom);
+        Debug.Log("------------------New round----------------" );
+        //Animation
         NBEffect.SetActive(true);
-        StartCoroutine(Effect());
+        foreach (var Effect in Effects)
+        {
+            NBtext.text = Effect;
+            //Animate the text somehow
+            Debug.Log("NB:" + Effect);
+        }
         NBEffect.SetActive(false);
     }
 
-    public void NiceUI(string Text)
-    {
-        NBtext.text = Text;
+    public List<string> Effect(int niceRandom) {
+        //Determin primary effects
+        List<int> UsedNum = new List<int>();
+        List<string> Effects = new List<string>();
+
+        for (int i = 0; i < niceRandom; i++)
+        {
+            int TempNum = UnityEngine.Random.Range(1, 11); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+
+            if (!UsedNum.Contains(TempNum))
+            {
+                UsedNum.Add(TempNum);
+                switch (TempNum)
+                {
+                    case 1: Effects.Add(Gravity()); break;
+                    case 2: Effects.Add(PinMove()); break;
+                    case 3: Effects.Add(PinSize()); break;
+                    case 4: Effects.Add(BouncyBall()); break;
+                    case 5: Effects.Add(BallSize()); break;
+                    case 6: Effects.Add(Cheater()); break;
+                    case 7: Effects.Add(BallMass()); break;
+                    case 8: Effects.Add(Bumpers()); break;
+                    case 9: Effects.Add(SardineRain()); break;
+                    case 10: Effects.Add(Obstical()); break;
+                    case 11: Effects.Add(Obsticals()); break;
+                    case 12: Effects.Add(RampAdd()); break;
+                    case 13: Effects.Add(AddPins()); break;
+
+                    default: print("NiceBowling.Effect switch case default triggered somehow"); break;
+                }
+            }
+            else
+            {
+                i--; //To not count that loop.
+            }
+        }
+        return Effects;
     }
 
-    public IEnumerator Effect() {
-        int niceRandom = Random.Range(1, 50);
-		switch(niceRandom){
-		    case 1:NoGravityAllPins(); yield return new WaitForSeconds(NBDelay); break;
-		    case 2:CarnyPins(); yield return new WaitForSeconds(NBDelay); break;
-            case 3:GravityX(); yield return new WaitForSeconds(NBDelay); break;
-            case 4:GravityYHeavy(); yield return new WaitForSeconds(NBDelay); break;
-            case 5:GravityDiff(); yield return new WaitForSeconds(NBDelay); break;
-            case 6:GravityYLight(); yield return new WaitForSeconds(NBDelay); break;
-            case 7:IncreasePinDrag(); yield return new WaitForSeconds(NBDelay); break;
-            case 8:IncreasePinSize(); yield return new WaitForSeconds(NBDelay); break;
-            case 9:DecreasePinSize(); yield return new WaitForSeconds(NBDelay); break;
-            case 10:BouncyBall(); yield return new WaitForSeconds(NBDelay); break;
-            case 11:GiantBall(); yield return new WaitForSeconds(NBDelay); break;
-            case 12:SmallBall(); yield return new WaitForSeconds(NBDelay); break;
-            case 13:Cheater(); yield return new WaitForSeconds(NBDelay); break;
-            case 14:TinyBall(); yield return new WaitForSeconds(NBDelay); break;
-            case 15:LargeBall(); yield return new WaitForSeconds(NBDelay); break;
-            case 16:LightBall(); yield return new WaitForSeconds(NBDelay); break;
-            case 17:HeavyBall(); yield return new WaitForSeconds(NBDelay); break;
-            case 18:CarnyPin(); yield return new WaitForSeconds(NBDelay); break;
-            case 19:Bumpers(); yield return new WaitForSeconds(NBDelay); break;
-            case 20:SardineRain(); yield return new WaitForSeconds(NBDelay); break;
-            case 21:Obstical(); yield return new WaitForSeconds(NBDelay); break;
-            case 22:Obsticals(); yield return new WaitForSeconds(NBDelay); break;
-            case 23:RampAdd(); yield return new WaitForSeconds(NBDelay); break;
-            case 24:AddPinsx1(); yield return new WaitForSeconds(NBDelay); break;
-            case 25:AddPinsx4(); yield return new WaitForSeconds(NBDelay); break;
-            case 26:Effect(); break;
-            case 27:Effect(); break;
-            case 28:Effect(); break;
-            case 29:Effect(); break;
-            case 30:Effect(); break;
-            case 31:Effect(); break;
-            case 32:Effect(); break;
-            case 33:Effect(); break;
-            case 34:Effect(); break;
-            case 35:Effect(); break;
-            case 36:Effect(); break;
-            case 37:Effect(); break;
-            case 38:Effect(); break;
-            case 39:Effect(); break;
-            case 40:Effect(); break;
-            case 41:Effect(); break;
-            case 42:Effect(); break;
-            case 43:Effect(); break;
-            case 44:Effect(); break;
-            case 45:EffectX3(); yield return new WaitForSeconds(NBDelay); break; 
-            case 46:EffectX3(); yield return new WaitForSeconds(NBDelay); break;
-            case 47:EffectX3(); yield return new WaitForSeconds(NBDelay); break;
-            case 48:EffectX4(); yield return new WaitForSeconds(NBDelay); break;
-            case 49:EffectX4(); yield return new WaitForSeconds(NBDelay); break;
-            case 50:EffectX5(); yield return new WaitForSeconds(NBDelay); break;
+    //Choice Effects
+    private string AddPins()
+    {
+        switch (UnityEngine.Random.Range(1, 14))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        {
+            case 1: return AddPinsx1(); 
+            case 2: return AddPinsx2(); 
+            case 3: return AddPinsx3(); 
+            case 4: return AddPinsx4(); 
+            case 5: return AddPinsx5();
+            case 6: return AddPinsx6(); 
+            case 7: return AddPinsx7(); 
+            case 8: return AddPinsx8(); 
+            case 9: return AddPinsx9(); 
+            case 10: return AddPinsx10();
+            case 11: return AddPinsx11();
+            case 12: return AddPinsExplode();
+            case 13: return AddPinsExplodeBig();
 
-            default:print ("NiceBowling.Effect switch case default triggered somehow"); yield return new WaitForSeconds(NBDelay); break;
+            default: print("NiceBowling.AddPins switch case default triggered somehow"); break;
         }
-	}
-	//Each switch case will call a function below
-	
-	//Case1
-	public void NoGravityAllPins(){
+        return "Extra Pins Error!";
+    }
+
+    private string BallMass()
+    {
+        switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        {
+            case 1: return LightBall();
+            case 2: return HeavyBall();
+
+            default: print("NiceBowling.BallMass switch case default triggered somehow"); break;
+        }
+        return "Ball Mass Error!";
+    }
+
+    private string BallSize()
+    {
+        switch (UnityEngine.Random.Range(1, 5))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        {
+            case 1: return GiantBall();
+            case 2: return SmallBall();
+            case 3: return TinyBall();
+            case 4: return LargeBall();
+
+            default: print("NiceBowling.BallSize switch case default triggered somehow"); break;
+        }
+        return "Ball Size Error!";
+    }
+
+    private string PinSize()
+    {
+        switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        {
+            case 1: return IncreasePinSize();
+            case 2: return DecreasePinSize();
+
+            default: print("NiceBowling.PinSize switch case default triggered somehow"); break;
+        }
+        return "Pin Size Error!";
+    }
+
+    private string PinMove()
+    {
+        switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        {
+            case 1: return CarnyPins();
+            case 2: return CarnyPin();
+            case 3: return IncreasePinDrag();
+
+            default: print("NiceBowling.PinMove switch case default triggered somehow"); break;
+        }
+        return "Pin movement Error!";
+    }
+
+    private string Gravity()
+    {
+        switch (UnityEngine.Random.Range(1, 6))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        {
+            case 1: return NoGravityAllPins();
+            case 2: return GravityX();
+            case 3: return GravityYHeavy();
+            case 4: return GravityDiff(); 
+            case 5: return GravityYLight();
+
+            default: print("NiceBowling.Gravity switch case default triggered somehow"); break;
+        }
+        return "Gravity Error!";
+    }
+
+
+	//Primary Effects
+	public string NoGravityAllPins(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
 			body.useGravity = false;
 		}
-        NiceUI("Zero G!");
+        return("Zero G!");
 	}
 	
-	//Case2
-	public void CarnyPins(){
+	public string CarnyPins(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
 			body.isKinematic = true;
 		}
-        NiceUI("Carny Pins!");
+        return("Carny Pins!");
     }
 
-    //Case3 gravity flux (x) + or - whole lane (Wind on x axis)
-    public void GravityX(){
-		gravityX = Random.Range (-10, 10);
+    public string GravityX(){
+		gravityX = UnityEngine.Random.Range (-10, 10);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        NiceUI("Gravity Flux");
+        return("Gravity Flux");
     }
 
-	//Case4 gravity flux (y) Heavy side only 
-	public void GravityYHeavy(){
-		gravityY = Random.Range (-600, -200);
+	public string GravityYHeavy(){
+		gravityY = UnityEngine.Random.Range (-600, -200);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        NiceUI("J-J-J-Jupiter!");
+        return("J-J-J-Jupiter!");
     }
 
-	//Case5 gravity flux (z) + or - whole lane (Wind on Z axis)
-	public void GravityDiff(){
-		gravityY = Random.Range (-400, 3);
+	public string GravityDiff(){
+		gravityY = UnityEngine.Random.Range (-400, 3);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			int number = Random.Range (1, 4);
+			int number = UnityEngine.Random.Range (1, 4);
 			if(number == 2){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
 			body.useGravity = false;
@@ -146,207 +222,305 @@ public class NiceBowling : MonoBehaviour {
         }
 		
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        NiceUI("Wind");
+        return("Wind");
     }
 
-	//Case6 gravity flux (y) light side only
-	public void GravityYLight(){
-		gravityY = Random.Range (-150, 3);
+	public string GravityYLight(){
+		gravityY = UnityEngine.Random.Range (-150, 3);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        NiceUI("Wind");
+        return("Wind");
     }
 
-	//Case7 
-	public void IncreasePinDrag(){
+	public string IncreasePinDrag(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
-			body.angularDrag = Random.Range (0.05f, 50f);
-			body.drag = Random.Range (0, 20);
+			body.angularDrag = UnityEngine.Random.Range (0.05f, 50f);
+			body.drag = UnityEngine.Random.Range (0, 20);
 		}
-        NiceUI("Molassus!!!");
+        return("Molassus!!!");
     }
-	
-	//Case8 
 
-	public void IncreasePinSize(){
-		float size = Random.Range (1.2f, 2.5f);
+	public string IncreasePinSize(){
+		float size = UnityEngine.Random.Range (1.2f, 2.5f);
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			pin.transform.localScale = new Vector3(size, size, size);
 		}
-        NiceUI("Big ol Pins!");
+        return("Big ol Pins!");
     }
-	//Case9
-	public void DecreasePinSize(){
-		float size = Random.Range (0.6f, 0.95f);
+
+	public string DecreasePinSize(){
+		float size = UnityEngine.Random.Range (0.6f, 0.95f);
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			pin.transform.localScale = new Vector3(size, size, size);
 		}
-        NiceUI("Baby Pins!");
+        return("Baby Pins!");
     }
 
-	//Case10
-	public void BouncyBall(){
+	public string BouncyBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
 		SphereCollider col = ball.GetComponent<SphereCollider>();
 		col.sharedMaterial = Bounce;
-        NiceUI("Springy");
+        return("Springy");
     }
 	
-	//Case11
-	public void GiantBall(){
+	public string GiantBall(){
 	    Ball ball = GameObject.FindObjectOfType<Ball>();
 	    ball.transform.localScale = new Vector3 (40f, 40f, 40f);
-        NiceUI("Giant Ball");
+        return("Giant Ball");
     }
 	
-	//Case12
-	public void SmallBall(){
+	public string SmallBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
 		ball.transform.localScale = new Vector3 (10f, 10f, 10f);
-        NiceUI("Small Ball");
-    }
-	//Case13
-	public void Cheater(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-		ball.transform.localPosition += new Vector3(0, 0, 1000f);
-        NiceUI("Cheater!");
+        return("Small Ball");
     }
 
-	//Case14
-	public void TinyBall(){
+	public string Cheater(){
+		Ball ball = GameObject.FindObjectOfType<Ball>();
+		ball.transform.localPosition += new Vector3(0, 0, 1000f);
+        return("Cheater!");
+    }
+
+	public string TinyBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
 		ball.transform.localScale = new Vector3 (5f, 5f, 5f);
-        NiceUI("Tiny Ball");
+        return("Tiny Ball");
     }
-	//Case15
-	public void LargeBall(){
+
+	public string LargeBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
 		ball.transform.localScale = new Vector3 (30f, 30f, 30f);
-        NiceUI("Big Ball");
+        return("Big Ball");
     }
-	//Case16
-	public void LightBall(){
+
+	public string LightBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
 		Rigidbody body = ball.GetComponent<Rigidbody>();
 		Renderer rend = ball.GetComponent<Renderer> ();
 		rend.material = ball2;
 		body.mass = .5f;
-        NiceUI("Bouncy Ball");
+        return("Bouncy Ball");
     }
-	//Case17
-	public void HeavyBall(){
+
+	public string HeavyBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
 		Rigidbody body = ball.GetComponent<Rigidbody>();
 		Renderer rend = ball.GetComponent<Renderer> ();
 		rend.material = ball3;
 		body.mass = 70;
-        NiceUI("Concrete!");
+        return("Concrete!");
     }
 
-	//Case18
-	public void CarnyPin(){
+	public string CarnyPin(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			int number = Random.Range (1, 9);
+			int number = UnityEngine.Random.Range (1, 9);
 			if(number == 8){
 				Rigidbody body = pin.GetComponent<Rigidbody>();
 				body.isKinematic = true;
 				}
 		}
-        NiceUI("Carny Pin");
+        return("Carny Pin");
     }
 	
-	//Case19
-	public void Bumpers(){
+	public string Bumpers(){
 		Bumper.SetActive(true);
 		Bumper2.SetActive(true);
-        NiceUI("Kid Bowling");
+        return("Kid Bowling");
     }
-	//Case20
-	public void SardineRain(){
-		int rand = Random.Range (10, 200);
+
+	public string SardineRain(){
+		int rand = UnityEngine.Random.Range (10, 200);
 		for(int i = 0; i < rand; i++){
-			Instantiate(Sardine, new Vector3(Random.Range (55f, -55f), Random.Range (50f, 200f), Random.Range (150f, 2000f)), Quaternion.Euler (Random.Range (0f, 360f), Random.Range (0f, 360f), Random.Range (0f, 360f)));
+			Instantiate(Sardine, new Vector3(UnityEngine.Random.Range (55f, -55f), UnityEngine.Random.Range (50f, 200f), UnityEngine.Random.Range (150f, 2000f)), Quaternion.Euler (UnityEngine.Random.Range (0f, 360f), UnityEngine.Random.Range (0f, 360f), UnityEngine.Random.Range (0f, 360f)));
 			}
-        NiceUI("Fish?");
+        return("Fish?");
     }
-	//Case21
-	public void Obstical(){
-		Instantiate(Cylinder, new Vector3(Random.Range (55f, -55f), Random.Range (40f, -30f), Random.Range (300f, 1600f)), Quaternion.identity);
-        NiceUI("Obstical");
+
+	public string Obstical(){
+		Instantiate(Cylinder, new Vector3(UnityEngine.Random.Range (55f, -55f), UnityEngine.Random.Range (40f, -30f), UnityEngine.Random.Range (300f, 1600f)), Quaternion.identity);
+        return("Obstical");
     }
-	//Case22
-	public void Obsticals(){
-		float z = Random.Range (400f, 1600f);
-		float y = Random.Range (30f, -10f);
+
+	public string Obsticals(){
+		float z = UnityEngine.Random.Range (400f, 1600f);
+		float y = UnityEngine.Random.Range (30f, -10f);
 		Instantiate(Cylinder, new Vector3(40f, y, z), Quaternion.identity);
 		Instantiate(Cylinder, new Vector3(-40f, y, z), Quaternion.identity);
-        NiceUI("Obsticals");
+        return("Obsticals");
     }
-	//Case23
-	public void RampAdd(){
-		Instantiate(Ramp, new Vector3(0, -3, Random.Range (300f, 1600f)), Quaternion.Euler (-10, 0, 0));
-        NiceUI("Ramp");
+
+    public string RampAdd(){
+		Instantiate(Ramp, new Vector3(0, -3, UnityEngine.Random.Range (300f, 1600f)), Quaternion.Euler (-10, 0, 0));
+        return("Ramp");
     }
 	
-	//Case24 add dummy pins X1
-	public void AddPinsx1(){
+	public string AddPinsx1(){
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        NiceUI("Dumb Pins");
+        return("Dumb Pins");
     }
 
-	//Case25
-	public void AddPinsx4(){
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
-		Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
-        NiceUI("To Many Pins!");
+    public string AddPinsx2()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        return ("Dumb Pins");
     }
 
-    //Case26
-    //Case27
-    //Case29
-    //Case30
-    //Case31
-    //Case32
-    //Case33
-    //Case34
-    //Case35
-    //Case36
-    //Case37
-    //Case38
-    //Case39
-    //Case40
-    //Case41
-    //Case42
-    //Case43
-    //Case44
-    //Cases 45 - 47
-    public void EffectX3()
+    public string AddPinsx3()
     {
-        NiceUI("X3!");
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        return ("Many Pins!");
     }
-    //Cases 46 - 49
-    public void EffectX4()
+
+    public string AddPinsx4()
     {
-        NiceUI("X4");
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        return ("Many Pins!");
     }
-    //Cases 50
-    public void EffectX5()
+
+    public string AddPinsx5()
     {
-        NiceUI("X5");
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
-        StartCoroutine(Effect());
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        return ("To Many Pins!");
+    }
+
+    public string AddPinsx6()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        return ("To Many Pins!");
+    }
+
+    public string AddPinsx7()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+
+        return ("Way to many pins!");
+    }
+
+    public string AddPinsx8()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
+
+        return ("Way to many pins!");
+    }
+
+    public string AddPinsx9()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
+
+        return ("PINS! PINS! PINS!");
+    }
+
+    public string AddPinsx10()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
+        return ("PINS! PINS! PINS!");
+    }
+
+    public string AddPinsx11()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
+        return ("Unfair number of pins!");
+    }
+
+    public string AddPinsExplode()
+    {
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
+        return ("Pin Explosion!");
+    }
+
+    public string AddPinsExplodeBig(){
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
+        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
+        return ("Game Breaking number of pins!");
     }
 
 }
