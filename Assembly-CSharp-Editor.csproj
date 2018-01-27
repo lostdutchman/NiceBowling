@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\RetroAesthetics\Shaders\Editor\RetroSkyboxEditor.cs" />
+     <Compile Include="Assets\UITween\Editor\EditorUITween.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\RetroAesthetics\Shaders\RetroSkybox.shader" />
      <None Include="Assets\RetroAesthetics\Shaders\RetroEmissiveTextured.shader" />
