@@ -112,13 +112,6 @@
     <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreMaster.cs" />
-    <Compile Include="Assets\UITween\Prefabs\Click Effect Pref\ClickedWaveAnimation.cs" />
-    <Compile Include="Assets\UITween\ScenesExamplesScripts\ActivateOnEnable.cs" />
-    <Compile Include="Assets\UITween\ScenesExamplesScripts\CreateAnimImage.cs" />
-    <Compile Include="Assets\UITween\ScenesExamplesScripts\FollowClick.cs" />
-    <Compile Include="Assets\UITween\Scripts\EasyTween.cs" />
-    <Compile Include="Assets\UITween\Scripts\ReferencedFrom.cs" />
-    <Compile Include="Assets\UITween\Scripts\UITween.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\Sardine\readme.txt" />

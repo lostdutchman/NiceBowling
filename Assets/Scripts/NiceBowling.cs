@@ -10,11 +10,12 @@ public class NiceBowling : MonoBehaviour {
 	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, NBEffect, NBUI;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
-	public Material ball1, ball2, ball3; //Absolutly get gid of cosmetic changes that are not tied to gameplay changes and kill the horrer concept.
+	public Material ball1, ball2, ball3; 
 	public PhysicMaterial Bounce, none;
 	private Camera MainCamera;
 	private float volume;
     private Text NBtext;
+    private Animator animator;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +24,8 @@ public class NiceBowling : MonoBehaviour {
         MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
         musicManager.ChangeVolume(volume);
         NBtext = NBUI.GetComponent<Text>();
+        animator = GetComponent<Animator>();
+
     }
 
     //use for initilization if level is loaded more then onece in a session
@@ -45,7 +48,7 @@ public class NiceBowling : MonoBehaviour {
         foreach (var Effect in Effects)
         {
             NBtext.text = Effect;
-            //Animate the text somehow
+            animator.SetTrigger("NiceBowling");
             Debug.Log("NB:" + Effect);
         }
         NBEffect.SetActive(false);
