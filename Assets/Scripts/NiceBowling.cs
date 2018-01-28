@@ -1,21 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-using System.Linq;
 using System.Collections.Generic;
-using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, NBEffect, NBUI;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
 	public Material ball1, ball2, ball3; 
 	public PhysicMaterial Bounce, none;
 	private Camera MainCamera;
 	private float volume;
-    private Text NBtext;
-    private Animator animator;
+    private UIAnimation NBUI;
 
     // Use this for initialization
     void Start () {
@@ -23,9 +18,7 @@ public class NiceBowling : MonoBehaviour {
         volume = PlayerPrefsManager.GetMasterVolume();
         MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
         musicManager.ChangeVolume(volume);
-        NBtext = NBUI.GetComponent<Text>();
-        animator = GetComponent<Animator>();
-
+        NBUI = GameObject.FindObjectOfType<UIAnimation>();
     }
 
     //use for initilization if level is loaded more then onece in a session
@@ -34,6 +27,7 @@ public class NiceBowling : MonoBehaviour {
         volume = PlayerPrefsManager.GetMasterVolume();
         MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
         musicManager.ChangeVolume(volume);
+        NBUI = GameObject.FindObjectOfType<UIAnimation>();
     }
 
     public void NiceManager()
@@ -41,17 +35,7 @@ public class NiceBowling : MonoBehaviour {
         //Get NB Effects
         int[] WeightedRandom = new int[] { 1, 2, 2, 2, 2, 3, 3, 3, 4, 5 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        List<string> Effects = Effect(NiceRandom);
-        Debug.Log("------------------New round----------------" );
-        //Animation
-        NBEffect.SetActive(true);
-        foreach (var Effect in Effects)
-        {
-            NBtext.text = Effect;
-            animator.SetTrigger("NiceBowling");
-            Debug.Log("NB:" + Effect);
-        }
-        NBEffect.SetActive(false);
+        NBUI.NiceBowlingEffects(Effect(NiceRandom));
     }
 
     public List<string> Effect(int niceRandom) {

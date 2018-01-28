@@ -4594,6 +4594,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46cf1b6c85bfb4260b5dc67c1618351b, type: 3}
   m_IsPrefabParent: 0
+--- !u!21 &973287285
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 0
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0
+    - _OffsetNoiseY: 0
+    - _OffsetPosY: 0
+    - _StaticIntensity: 1
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0
+    m_Colors: []
 --- !u!1 &982474492
 GameObject:
   m_ObjectHideFlags: 0
@@ -6761,8 +6803,6 @@ MonoBehaviour:
   Cylinder: {fileID: 177854, guid: 54fe979fa823138448e25947d39d8537, type: 2}
   Sardine: {fileID: 168864, guid: 0f7de0bb3961d524f917634b04b153c6, type: 2}
   Ramp: {fileID: 114138, guid: 7b5e1e2fa873c154bbfc0735cbe471f4, type: 2}
-  NBEffect: {fileID: 1383152379}
-  NBUI: {fileID: 1446984231}
   NBDelay: 2
   ball1: {fileID: 2100000, guid: 0f8e11245072200479768b60a1e42d9d, type: 2}
   ball2: {fileID: 2100000, guid: 254c599ed130a5c4da96deb056c1d4d5, type: 2}
@@ -7529,14 +7569,13 @@ GameObject:
   - component: {fileID: 1383152380}
   - component: {fileID: 1383152382}
   - component: {fileID: 1383152381}
-  - component: {fileID: 1383152383}
   m_Layer: 5
   m_Name: Nice Bowling Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1383152380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7589,23 +7628,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1383152379}
---- !u!95 &1383152383
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1383152379}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b85bff13b932a7c4a9df3b18807ca042, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1408378352 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400008, guid: c7cde7b93013e41c6af56d0a5ff42129, type: 3}
@@ -7766,9 +7788,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1446984231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb35234601da8f4b9670f9ea18ae5b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a3a09095c4109642b53708bb45b783b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NBEffect: {fileID: 1383152379}
+  AnimationComplete: 0
 --- !u!95 &1446984237
 Animator:
   serializedVersion: 3
@@ -8442,48 +8466,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 037318de497624362a61b6dad60ff958, type: 3}
   m_IsPrefabParent: 0
---- !u!21 &1681314693
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 0
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0
-    - _OffsetNoiseY: 0
-    - _OffsetPosY: 0
-    - _StaticIntensity: 1
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0
-    m_Colors: []
 --- !u!4 &1696566561 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 46cf1b6c85bfb4260b5dc67c1618351b, type: 3}
@@ -8654,7 +8636,7 @@ MonoBehaviour:
   useScanlines: 1
   scanlineSize: 250
   scanlineIntensity: 0.437
-  _material: {fileID: 1681314693}
+  _material: {fileID: 973287285}
 --- !u!1 &1748263267
 GameObject:
   m_ObjectHideFlags: 0
