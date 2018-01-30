@@ -24,9 +24,9 @@ public class PinSetter : MonoBehaviour {
 		GameOver = false;
         StartGame = true;
 		animator = GetComponent<Animator>();
-		pinCounter = GameObject.FindObjectOfType<PinCounter> ();
-		audioSource = GetComponent <AudioSource> ();
-		niceBowling = GameObject.FindObjectOfType<NiceBowling> ();
+		pinCounter = GameObject.FindObjectOfType<PinCounter>();
+		audioSource = GetComponent <AudioSource>();
+		niceBowling = GameObject.FindObjectOfType<NiceBowling>();
         niceBowlingReset = GameObject.FindObjectOfType<NiceBowlingReset>();
         Swipper.SetActive (false);
 		exitButton.SetActive(false);
@@ -68,7 +68,7 @@ public class PinSetter : MonoBehaviour {
         niceBowlingReset.Reset();
         Instantiate(pinSet, new Vector3(0, 1, 1829), Quaternion.identity);
 		Swipper.SetActive (false);
-		niceBowling.NiceManager();
+        niceBowling.NiceManager();
 	}
 
 	public void performAction(ActionMaster.Action action){

@@ -5,25 +5,23 @@ using UnityEngine.UI;
 
 public class UIAnimation : MonoBehaviour {
 
-    private Animator animator;
-    private Text NBtext;
+    public Animator animator;
+    public Text NBtext;
     public GameObject NBEffect;
-    public bool AnimationComplete;
 
-    // Use this for initialization
-    void Start () {
-        NBtext = GetComponent<Text>();
-        animator = GetComponent<Animator>();
-    }
-	
-    public void NiceBowlingEffects(List<string> Effects)
+    public IEnumerator NiceBowlingEffects(List<string> Effects, bool FirstFrame)
     {
         NBEffect.SetActive(true);
+        if (FirstFrame)
+        {
+            yield return new WaitForSeconds(.5f); //Give frame chance to fully load
+        }
         foreach (var Effect in Effects)
         {
             NBtext.text = Effect;
-            animator.Play("TextEnter");
-            do { } while (!AnimationComplete);
+            print(Effect);
+            animator.SetTrigger("SlideText");
+            yield return new WaitForSeconds(.75f); //animation is .7 seconds
         }
         NBEffect.SetActive(false);
     }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class NiceBowling : MonoBehaviour {
 	
@@ -10,7 +11,8 @@ public class NiceBowling : MonoBehaviour {
 	public PhysicMaterial Bounce, none;
 	private Camera MainCamera;
 	private float volume;
-    private UIAnimation NBUI;
+    public UIAnimation NBUI;
+    private bool FirstFrame;
 
     // Use this for initialization
     void Start () {
@@ -18,7 +20,10 @@ public class NiceBowling : MonoBehaviour {
         volume = PlayerPrefsManager.GetMasterVolume();
         MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
         musicManager.ChangeVolume(volume);
-        NBUI = GameObject.FindObjectOfType<UIAnimation>();
+        gravityX = Physics.gravity.x;
+        gravityY = Physics.gravity.y;
+        gravityZ = Physics.gravity.z;
+        FirstFrame = true;
     }
 
     //use for initilization if level is loaded more then onece in a session
@@ -27,7 +32,10 @@ public class NiceBowling : MonoBehaviour {
         volume = PlayerPrefsManager.GetMasterVolume();
         MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
         musicManager.ChangeVolume(volume);
-        NBUI = GameObject.FindObjectOfType<UIAnimation>();
+        gravityX = Physics.gravity.x;
+        gravityY = Physics.gravity.y;
+        gravityZ = Physics.gravity.z;
+        FirstFrame = true;
     }
 
     public void NiceManager()
@@ -35,7 +43,9 @@ public class NiceBowling : MonoBehaviour {
         //Get NB Effects
         int[] WeightedRandom = new int[] { 1, 2, 2, 2, 2, 3, 3, 3, 4, 5 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        NBUI.NiceBowlingEffects(Effect(NiceRandom));
+        List<string> Effects = Effect(NiceRandom);
+        StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
+        FirstFrame = false;
     }
 
     public List<string> Effect(int niceRandom) {
