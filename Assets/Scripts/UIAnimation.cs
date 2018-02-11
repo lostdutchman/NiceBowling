@@ -21,7 +21,7 @@ public class UIAnimation : MonoBehaviour {
             NBtext.text = Effect;
             print(Effect);
             animator.SetTrigger("SlideText");
-            yield return new WaitForSeconds(.75f); //animation is .7 seconds
+            yield return new WaitForSeconds(.8f); //animation is .7 seconds
         }
         NBEffect.SetActive(false);
     }
