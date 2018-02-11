@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7300782, g: 0.70886546, b: 0.81577593, a: 1}
+  m_IndirectSpecularColor: {r: 0.7308497, g: 0.7086479, b: 0.81521076, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3217,6 +3217,10 @@ Prefab:
       propertyPath: m_CustomSkybox
       value: 
       objectReference: {fileID: 2100000, guid: 847fc3d3aedc04a2a9e78ee9713acafd, type: 2}
+    - target: {fileID: 2003788, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
+      propertyPath: field of view
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8135634, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
@@ -6909,48 +6913,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1300165735
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 2
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0.8978931
-    - _OffsetNoiseY: 0.050040282
-    - _OffsetPosY: 0
-    - _StaticIntensity: 0.87
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0.1
-    m_Colors: []
 --- !u!1 &1301473872
 GameObject:
   m_ObjectHideFlags: 0
@@ -8549,7 +8511,7 @@ MonoBehaviour:
   useScanlines: 1
   scanlineSize: 250
   scanlineIntensity: 0.437
-  _material: {fileID: 1300165735}
+  _material: {fileID: 2117115192}
 --- !u!1 &1748263267
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,3 +10001,45 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aecc133b2406045ea91a6ae0a0ae8c56, type: 3}
   m_IsPrefabParent: 0
+--- !u!21 &2117115192
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 2
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0.6064624
+    - _OffsetNoiseY: -0.2816389
+    - _OffsetPosY: 0
+    - _StaticIntensity: 0.87
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0.1
+    m_Colors: []

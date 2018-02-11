@@ -7,9 +7,8 @@ public class Pins : MonoBehaviour {
 	public float standingThreshold = 5f; //how many degrees it can be tilted
 	public float distanceToRaise = 45f;
     public float moveThreshold = 5f;
-    public AudioClip[] PinHitPin;
-    public AudioClip[] PinHitBall;
-    public AudioClip[] PinHitLane;
+    public AudioClip PinHitPin;
+    public AudioClip PinHitBall;
     private Rigidbody rigidBody;
 	private AudioSource audioSource;
     private float startingPosX;
@@ -85,17 +84,13 @@ public class Pins : MonoBehaviour {
     void OnCollisionEnter(Collision col){
         if(col.gameObject.tag == "pin")
         {
-            audioSource.clip = PinHitPin[UnityEngine.Random.Range(0, PinHitPin.Length)];
+            audioSource.clip = PinHitPin;
         }
         else if (col.gameObject.tag == "Ball")
         {
-            audioSource.clip = PinHitBall[UnityEngine.Random.Range(0, PinHitBall.Length)];
+            audioSource.clip = PinHitBall;
         }
-        else
-        {
-            audioSource.clip = PinHitLane[UnityEngine.Random.Range(0, PinHitLane.Length)];
-        }
-            audioSource.Play ();
+        audioSource.Play ();
 	}
 
 	//fix issues cause by nice bowling mode
