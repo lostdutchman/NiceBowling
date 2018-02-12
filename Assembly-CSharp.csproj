@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Art\Sardine\Scripts\iwasiRigid.cs" />
+     <Compile Include="Assets\DumbPins.cs" />
      <Compile Include="Assets\RetroAesthetics\Demos\Game\Scripts\SpeedTilt.cs" />
      <Compile Include="Assets\RetroAesthetics\Demos\Menu\Scripts\MenuScripts.cs" />
      <Compile Include="Assets\RetroAesthetics\Scripts\CombineMeshes.cs" />

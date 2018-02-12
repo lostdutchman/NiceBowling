@@ -59,15 +59,15 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DirectionPitch: 56.9
-    - _DirectionYaw: 0
+    - _DirectionPitch: 63
+    - _DirectionYaw: 8
     - _DstBlend: 0
-    - _Exponent: 1.45
+    - _Exponent: 1.97
     - _Gain: 2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Intensity: 1
+    - _Intensity: 0.59
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -78,14 +78,14 @@ Material:
     - _StripesDistance: 0.01068
     - _StripesExponent1: 2.27
     - _StripesExponent2: 3.5
-    - _StripesHeight: 0.542
+    - _StripesHeight: 0.5
     - _StripesSpeed: 0.25
-    - _StripesWidth: 0.00668
+    - _StripesWidth: 0.0073
     - _SunEnabled: 1
-    - _SunExponent: 3.71
-    - _SunPitch: 100
-    - _SunSize: 0.012
-    - _SunYaw: 140
+    - _SunExponent: 4.1
+    - _SunPitch: 104
+    - _SunSize: 0.005
+    - _SunYaw: 180
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -97,9 +97,9 @@ Material:
     - _ColorGround2: {r: 0, g: 0.6, b: 0.74, a: 0}
     - _ColorStripe: {r: 0, g: 0.7, b: 0.74, a: 0}
     - _ColorSun: {r: 0.97, g: 0.67, b: 0.51, a: 0}
-    - _ColorSun1: {r: 0.14300193, g: 0, b: 0.44117647, a: 0}
-    - _ColorSun2: {r: 1, g: 0.375, b: 0.375, a: 0}
-    - _Direction: {r: 0, g: 0.5461019, b: 0.8377187, a: 0}
+    - _ColorSun1: {r: 0.753, g: 0, b: 0.44117647, a: 0}
+    - _ColorSun2: {r: 1, g: 0.606, b: 0.375, a: 0}
+    - _Direction: {r: 0.12400415, g: 0.45399052, b: 0.8823353, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SunDirection: {r: 0.63302225, g: -0.1736482, b: -0.7544065, a: 0}
-    - _SunDirectionP: {r: -0.11161893, g: -0.9848077, b: 0.13302225, a: 0}
+    - _SunDirection: {r: -0.00000008482595, g: -0.24192187, b: -0.9702957, a: 0}
+    - _SunDirectionP: {r: 0.000000021149475, g: -0.9702957, b: 0.2419218, a: 0}
