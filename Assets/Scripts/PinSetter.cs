@@ -47,7 +47,7 @@ public class PinSetter : MonoBehaviour {
     public void RaisePins(){
 		if (PlayerPrefsManager.NiceBowlingGet () == 1) {
 			foreach (Pins pin in GameObject.FindObjectsOfType<Pins>()) {
-				pin.DefaultPins ();//If nice bowling is active then fix pin settings before instantiating new ones.
+				pin.DefaultPins ();//Fix specific effects that prevent the lane from clearing
 			}
 		}
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
@@ -59,9 +59,13 @@ public class PinSetter : MonoBehaviour {
 	public void LowerPins(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			pin.Lower();
-			Swipper.SetActive (false);
-		}
-	}
+        }
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            pin.NicePins();//reinstate the effects on the pins
+        }
+        Swipper.SetActive(false);
+    }
 	
 	//Called by animator to add a new set of pins
 	public void RenewPins(){

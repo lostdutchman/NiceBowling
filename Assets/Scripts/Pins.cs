@@ -13,7 +13,7 @@ public class Pins : MonoBehaviour {
 	private AudioSource audioSource;
     private float startingPosX;
     private float startingPosZ;
-
+    private string PinStatus = "None";
 
     void Start () {
 		rigidBody = GetComponent<Rigidbody>();
@@ -95,8 +95,26 @@ public class Pins : MonoBehaviour {
 
 	//fix issues cause by nice bowling mode
 	public void DefaultPins(){
-		if (rigidBody.isKinematic) {rigidBody.isKinematic = false;} 
-		if (rigidBody.drag != 0) {rigidBody.drag = 0;} 
-		if (rigidBody.angularDrag != 0.05f) {rigidBody.angularDrag = 0.05f;} 
+		if (rigidBody.isKinematic) {
+            rigidBody.isKinematic = false;
+            PinStatus = "BoardwalkPins";
+        } 
+		if (rigidBody.drag != 0) {
+            rigidBody.drag = 0;
+            rigidBody.angularDrag = 0.05f;
+            PinStatus = "IncreasePinDrag";
+        } 
 	}
+
+    //fix issues cause by nice bowling mode
+    public void NicePins()
+    {
+        if (PinStatus == "BoardwalkPins") {
+            rigidBody.isKinematic = true;
+        }
+        if (PinStatus == "IncreasePinDrag") {
+            rigidBody.drag = 15f;
+            rigidBody.angularDrag = 30f;
+        }
+    }
 }

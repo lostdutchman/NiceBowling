@@ -147,11 +147,17 @@ public class NiceBowling : MonoBehaviour {
 
     private string PinMove()
     {
-        switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 10))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
-            case 1: return CarnyPins();
-            case 2: return CarnyPin();
+            case 1: return BoardwalkPins();
+            case 2: return IncreasePinDrag();
             case 3: return IncreasePinDrag();
+            case 4: return IncreasePinDrag();
+            case 5: return IncreasePinDrag();
+            case 6: return IncreasePinDrag();
+            case 7: return IncreasePinDrag();
+            case 8: return IncreasePinDrag();
+            case 9: return IncreasePinDrag();
 
             default: print("NiceBowling.PinMove switch case default triggered somehow"); break;
         }
@@ -183,12 +189,12 @@ public class NiceBowling : MonoBehaviour {
         return("Zero G!");
 	}
 	
-	public string CarnyPins(){
+	public string BoardwalkPins(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
 			body.isKinematic = true;
 		}
-        return("Carny Pins!");
+        return("Boardwalk Pins!");
     }
 
     public string GravityX(){
@@ -227,8 +233,8 @@ public class NiceBowling : MonoBehaviour {
 	public string IncreasePinDrag(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
-			body.angularDrag = UnityEngine.Random.Range (0.05f, 50f);
-			body.drag = UnityEngine.Random.Range (0, 20);
+			body.angularDrag = 30f;
+			body.drag = 15f;
 		}
         return("Molassus!!!");
     }
@@ -302,17 +308,6 @@ public class NiceBowling : MonoBehaviour {
 		rend.material = ball3;
 		body.mass = 70;
         return("Concrete!");
-    }
-
-	public string CarnyPin(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			int number = UnityEngine.Random.Range (1, 9);
-			if(number == 8){
-				Rigidbody body = pin.GetComponent<Rigidbody>();
-				body.isKinematic = true;
-				}
-		}
-        return("Carny Pin");
     }
 	
 	public string Bumpers(){
