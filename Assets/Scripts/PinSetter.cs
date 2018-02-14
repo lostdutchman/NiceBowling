@@ -86,14 +86,15 @@ public class PinSetter : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider collider){
-		GameObject gameObject = collider.gameObject;
-		
-		if(gameObject.GetComponent<Ball>())
-			BallOutOfPlay.ballout = true;
-	}
+    void OnTriggerExit(Collider collider)
+    {
+        GameObject thingLeft = collider.gameObject;
 
-	public void PlayAudio(int type){
+        if (thingLeft.GetComponent<Ball>())
+            BallOutOfPlay.ballout = true;
+    }
+
+    public void PlayAudio(int type){
 		switch (type){
 		case 1: audioSource.clip = strikeAudio[Random.Range(0, strikeAudio.Length)]; break;
 		case 2: audioSource.clip = spareAudio[Random.Range(0, spareAudio.Length)]; break;
