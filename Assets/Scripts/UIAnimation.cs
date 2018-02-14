@@ -7,9 +7,9 @@ public class UIAnimation : MonoBehaviour {
 
     private Animation Anim;
     public Text NBtext;
-    public GameObject NBEffect;
+    public GameObject NBEffect, Tut;
 
-    public IEnumerator NiceBowlingEffects(List<string> Effects)
+    public IEnumerator NiceBowlingEffects(List<string> Effects, bool FirstFrame)
     {
         Anim = GetComponent<Animation>();
         NBEffect.SetActive(true);
@@ -20,5 +20,9 @@ public class UIAnimation : MonoBehaviour {
             yield return new WaitForSeconds(Anim.clip.length);
         }
         NBEffect.SetActive(false);
+        if (FirstFrame)
+        {
+            Tut.SetActive(true);
+        }
     }
 }

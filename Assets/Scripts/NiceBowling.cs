@@ -12,6 +12,7 @@ public class NiceBowling : MonoBehaviour {
 	private Camera MainCamera;
 	private float volume;
     public UIAnimation NBUI;
+    private bool FirstFrame;
 
     // Use this for initialization
     void Start () {
@@ -22,6 +23,7 @@ public class NiceBowling : MonoBehaviour {
         gravityX = Physics.gravity.x;
         gravityY = Physics.gravity.y;
         gravityZ = Physics.gravity.z;
+        FirstFrame = true;
     }
 
     //use for initilization if level is loaded more then onece in a session
@@ -41,7 +43,8 @@ public class NiceBowling : MonoBehaviour {
         int[] WeightedRandom = new int[] { 1, 2, 2, 2, 2, 3, 3, 3, 4, 5 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         List<string> Effects = Effect(NiceRandom);
-        StartCoroutine(NBUI.NiceBowlingEffects(Effects));
+        StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
+        FirstFrame = false;
     }
 
     public List<string> Effect(int niceRandom) {

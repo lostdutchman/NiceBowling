@@ -7,8 +7,8 @@ public class NiceBowlingReset : MonoBehaviour
     private PhysicMaterial BowlingBall;
     private Material Ball, SkyBoxMat;
     private Camera MainCamera;
-    private Vector3 Gravity, PinSize, BallSize;
-    private float PinDrag, PinAngularDrag, BallMass, BallPosY, BallPosZ;
+    private Vector3 Gravity, BallSize;
+    private float BallMass, BallPosY, BallPosZ;
 
     // Use this for initialization
     void Start()
@@ -20,9 +20,6 @@ public class NiceBowlingReset : MonoBehaviour
         Ball = GameObject.FindObjectOfType<Ball>().GetComponent<Renderer>().material;
         SkyBoxMat = MainCamera.GetComponent<Skybox>().material;
         Gravity = Physics.gravity;
-        PinSize = GameObject.FindGameObjectWithTag("Pin").transform.localScale;
-        PinDrag = GameObject.FindGameObjectWithTag("Pin").GetComponent<Rigidbody>().drag;
-        PinAngularDrag = GameObject.FindGameObjectWithTag("Pin").GetComponent<Rigidbody>().angularDrag;
         BallSize = GameObject.FindObjectOfType<Ball>().transform.localScale;
         BallPosY = GameObject.FindObjectOfType<Ball>().transform.localPosition.y;
         BallPosZ = GameObject.FindObjectOfType<Ball>().transform.localPosition.z;
@@ -46,10 +43,7 @@ public class NiceBowlingReset : MonoBehaviour
         //Reset Pins
         foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
         {
-            Rigidbody pinBody = pin.GetComponent<Rigidbody>();
-            pinBody.angularDrag = PinAngularDrag;
-            pinBody.drag = PinDrag;
-            pin.transform.localScale = PinSize;
+            pin.DefaultPins();
         }
 
         //Reset Ball

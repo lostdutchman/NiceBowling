@@ -7,8 +7,9 @@ public class Ball : MonoBehaviour {
 	public bool inPlay = false;
 	private Vector3 ballStartPos;
 	private AudioSource audioSource;
-	
-	void Start () {
+    public GameObject Tut, LeftArrow, RightArrow;
+
+    void Start () {
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBody.useGravity = false;
 		audioSource = GetComponent<AudioSource> ();
@@ -20,8 +21,11 @@ public class Ball : MonoBehaviour {
 		rigidBody.useGravity = true;
 		rigidBody.velocity = velocity;
 		inPlay = true;
-		audioSource.Play();
-	}
+        Tut.SetActive(false);
+        LeftArrow.SetActive(false);
+        RightArrow.SetActive(false);
+        audioSource.Play();
+    }
 	
 	public void Reset ()
 	{
@@ -30,7 +34,9 @@ public class Ball : MonoBehaviour {
 		rigidBody.useGravity = false;
 		rigidBody.velocity = Vector3.zero;
 		rigidBody.angularVelocity = Vector3.zero;
-		inPlay = false;
+        LeftArrow.SetActive(true);
+        RightArrow.SetActive(true);
+        inPlay = false;
 	}
 
     void FixedUpdate()

@@ -10,7 +10,7 @@ public class PinSetter : MonoBehaviour {
 	public AudioClip[] turkeyAudio;
 	public AudioClip[] gutterAudio;
 	public AudioClip silence;
-	public GameObject exitButton, Swipper, TouchInput, Tut;
+	public GameObject exitButton, Swipper, TouchInput;
 	public bool GameOver, StartGame;
 
 	private AudioSource audioSource;
@@ -30,7 +30,6 @@ public class PinSetter : MonoBehaviour {
         niceBowlingReset = GameObject.FindObjectOfType<NiceBowlingReset>();
         Swipper.SetActive (false);
 		exitButton.SetActive(false);
-        Tut.SetActive(true);
         }
 
     public void Update()
@@ -69,7 +68,6 @@ public class PinSetter : MonoBehaviour {
 	
 	//Called by animator to add a new set of pins
 	public void RenewPins(){
-        niceBowlingReset.Reset();
         Instantiate(pinSet, new Vector3(0, 1, 1829), Quaternion.identity);
 		Swipper.SetActive (false);
         niceBowling.NiceManager();
@@ -78,9 +76,9 @@ public class PinSetter : MonoBehaviour {
 	public void performAction(ActionMaster.Action action){
 		//Pass pins that have fallen to Action Master to initiate animations
 		switch(action){
-		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); Tut.SetActive (false);break;
-		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); Tut.SetActive (false); break;
-		case ActionMaster.Action.EndTurn:	animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); break;
+		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); break;
+		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); break;
+		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); break;
 		case ActionMaster.Action.EndGame:	GameEndButton (); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
