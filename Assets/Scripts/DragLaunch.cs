@@ -9,12 +9,16 @@ public class DragLaunch : MonoBehaviour {
 	private float startTime, endTime;
 	private const float ballReleseHight = 0;
 	private const float minLaunchSpeed = 40;
-    [Tooltip("How fast the aim should move the ball.")]
+    [Tooltip("How fast the aim arrows should move the ball.")]
     public float aimAdjust = 3;
     private bool rightAim = false;
     private bool leftAim = false;
-	
-	void Start () {
+    [Tooltip("1 = no handicap 1.6 = old handicap")]
+    public float MakeAimEasier = 1.2f;
+    [Tooltip("1 = no handicap Higher numbers slow bowl speeds")]
+    public float SlowDown = 1;
+
+    void Start () {
 		ball = GetComponent<Ball>();
 	}
 
@@ -68,11 +72,12 @@ public class DragLaunch : MonoBehaviour {
 		if(!ball.inPlay){
 			float dragDuration = endTime - startTime;
 			//Speed = distance (end - start) devided by time
-			float launchSpeedX = (endPos.x - startPos.x) / 1.6f; //I devided it by 1.8 to keep it easier to bowl straight.
-			float launchSpeedZ = (endPos.y - startPos.y) / dragDuration;
+			float launchSpeedX = (endPos.x - startPos.x) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
+			float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
 
-			if(launchSpeedZ < minLaunchSpeed){
-				ball.Launch (new Vector3(launchSpeedX + (minLaunchSpeed/2), ballReleseHight, minLaunchSpeed));
+            //Drops ball to the gutter if the bowl is way to slow, or the user double clicks without moving. 
+            if (launchSpeedZ < minLaunchSpeed){
+				ball.Launch (new Vector3(launchSpeedX + (minLaunchSpeed/2), ballReleseHight, minLaunchSpeed)); 
 			} else {
 			ball.Launch (new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ));
 			}
