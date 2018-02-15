@@ -105,8 +105,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 948
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
   controlID: 9
 --- !u!114 &6
@@ -129,8 +129,8 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 948
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 10
 --- !u!114 &7
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 0
     width: 336
     height: 948
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -389,23 +389,23 @@ MonoBehaviour:
     height: 585
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9489ffff
-    m_LastClickedID: -30316
-    m_ExpandedIDs: 8e8affff00000000d84e0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 3889ffff648affff00000000e24e00004e510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Bowling Ball
-      m_OriginalName: Bowling Ball
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -30316
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -472,9 +472,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 18, z: 30}
+    m_Target: {x: -137.413, y: 239.33597, z: 801.3226}
     speed: 2
-    m_Value: {x: 0, y: 18, z: 30}
+    m_Value: {x: -137.413, y: 239.33597, z: 801.3226}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -497,13 +497,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.118634924, y: -0.42932007, z: 0.057001915, w: 0.8935104}
+    m_Target: {x: -0.0030015504, y: 0.009915686, z: -0.00002915624, w: -0.99994636}
     speed: 2
-    m_Value: {x: -0.118634924, y: 0.42932004, z: -0.057001915, w: -0.89351034}
+    m_Value: {x: -0.0030015504, y: 0.009915686, z: -0.00002915624, w: -0.99994636}
   m_Size:
-    m_Target: 84.39531
+    m_Target: 1514.3241
     speed: 2
-    m_Value: 84.39531
+    m_Value: 1514.3241
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -579,19 +579,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Standard Assets/Effects/TonemappingColorGrading/Helpers
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Standard Assets/Effects/TonemappingColorGrading/Helpers
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Bowling\NiceBowling
+  m_LastProjectPath: C:\Users\Jeremy\Documents\GitHub\NiceBowling
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1040}
-    m_SelectedIDs: 9e4e0000
-    m_LastClickedID: 20126
-    m_ExpandedIDs: 00000000fa490000684a0000f84a0000064b0000704b0000364c00009e4c0000be4c0000fa4c00000a4d0000564d00006a4d0000744d0000904d00009e4d0000004e0000104e0000744e0000804e00008e4e0000944e0000de52000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 8e4e0000
+    m_LastClickedID: 20110
+    m_ExpandedIDs: 00000000004a0000704a0000004b00000e4b0000784b00003e4c0000a64c0000c64c00005e4d0000724d00007c4d0000984d00000a4e00001a4e00007e4e0000984e00009e4e0000fa52000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa490000684a0000704b0000364c00009e4c0000be4c00000a4d0000564d00006a4d0000744d0000904d00009e4d0000004e0000744e0000944e0000de520000
+    m_ExpandedIDs: 00000000004a0000704a0000004b00000e4b0000784b00003e4c0000a64c0000c64c0000024d0000124d00005e4d0000724d00007c4d0000984d0000a64d00000a4e00001a4e00007e4e00008a4e0000984e00009e4e0000fa520000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -726,7 +726,7 @@ MonoBehaviour:
     y: 91
     width: 334
     height: 927
-  m_ScrollPosition: {x: 0, y: 30.955078}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 186

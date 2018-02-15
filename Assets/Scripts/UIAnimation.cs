@@ -7,12 +7,13 @@ public class UIAnimation : MonoBehaviour {
 
     private Animation Anim;
     public Text NBtext;
-    public GameObject NBEffect, Tut;
+    public GameObject NBEffect, Tut, TouchInput;
 
     public IEnumerator NiceBowlingEffects(List<string> Effects, bool FirstFrame)
     {
         Anim = GetComponent<Animation>();
         NBEffect.SetActive(true);
+        yield return new WaitForSeconds(.2f); //give frame ect a chance to load.
         foreach (var Effect in Effects)
         {
             NBtext.text = Effect;
@@ -24,5 +25,6 @@ public class UIAnimation : MonoBehaviour {
         {
             Tut.SetActive(true);
         }
+        TouchInput.SetActive(true);
     }
 }

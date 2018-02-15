@@ -18,6 +18,7 @@ public class PinSetter : MonoBehaviour {
     private NiceBowlingReset niceBowlingReset;
 	private Animator animator;
 	private PinCounter pinCounter;
+    private bool EndTurn = false;
 	
 	
 	void Start () {
@@ -76,9 +77,9 @@ public class PinSetter : MonoBehaviour {
 	public void performAction(ActionMaster.Action action){
 		//Pass pins that have fallen to Action Master to initiate animations
 		switch(action){
-		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); break;
-		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); break;
-		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); break;
+		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
+		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
+		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = true; break;
 		case ActionMaster.Action.EndGame:	GameEndButton (); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
@@ -114,7 +115,10 @@ public class PinSetter : MonoBehaviour {
 	}
 	
 	public void EnableTouch(){
-		TouchInput.SetActive (true);
+        if (!EndTurn)
+        {
+            TouchInput.SetActive(true);
+        }
 	}
 
 }
