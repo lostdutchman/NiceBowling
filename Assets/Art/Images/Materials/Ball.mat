@@ -7,9 +7,9 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Ball
-  m_Shader: {fileID: 4800000, guid: ec8ba4708b4b24ea3874139453950356, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,11 +18,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BackTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fc5e0d5d838427f4cbb0ca5c161ff728, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 24845c5046b71b24d81786256d54476e, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Control:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
@@ -41,16 +45,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DownTex:
+    - _DetailTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DownTex:
+        m_Texture: {fileID: 2800000, guid: fc5e0d5d838427f4cbb0ca5c161ff728, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 24845c5046b71b24d81786256d54476e, type: 3}
+        m_Texture: {fileID: 2800000, guid: fc5e0d5d838427f4cbb0ca5c161ff728, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FrontTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 24845c5046b71b24d81786256d54476e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GridTex:
@@ -58,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeftTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 24845c5046b71b24d81786256d54476e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -69,24 +77,58 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 4b8d081e9d114c7f1100f5ab44295342, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RightTex:
+        m_Texture: {fileID: 2800000, guid: fc5e0d5d838427f4cbb0ca5c161ff728, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat3:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 24845c5046b71b24d81786256d54476e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BumpAmt: 128
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -101,17 +143,21 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.0464
     - _Rotation: 0
+    - _Shininess: 0.078125
     - _SmoothnessTextureChannel: 0
     - _Specular: 680
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _UVSec: 0
+    - _UVSec: 1
     - _UseSpecular: 0
+    - _WindQuality: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.728, b: 0.503, a: 1}
-    - _EmissionColor: {r: 0.46396598, g: 0.21885815, b: 0.64705884, a: 0}
+    - _Color: {r: 1, g: 0.728, b: 0.966, a: 1}
+    - _EmisColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
+    - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _LineColor: {r: 0.1, g: 1, b: 0.1, a: 1}
     - _MainColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
     - _ReflectColor: {r: 0.8296146, g: 0.8235294, b: 1, a: 0.5}

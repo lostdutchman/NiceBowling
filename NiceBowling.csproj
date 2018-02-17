@@ -85,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Art\Sardine\Scripts\iwasiRigid.cs" />
-    <Compile Include="Assets\DumbPins.cs" />
     <Compile Include="Assets\RetroAesthetics\Demos\Game\Scripts\SpeedTilt.cs" />
     <Compile Include="Assets\RetroAesthetics\Demos\Menu\Scripts\MenuScripts.cs" />
     <Compile Include="Assets\RetroAesthetics\Scripts\CombineMeshes.cs" />
@@ -100,6 +99,7 @@
     <Compile Include="Assets\Scripts\ButtonCredits.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\DragLaunch.cs" />
+    <Compile Include="Assets\Scripts\DumbPins.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
