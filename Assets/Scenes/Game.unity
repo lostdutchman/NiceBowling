@@ -5362,7 +5362,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c84c5c5aaa9a8414eb909d66ef5f7305, type: 3}
   m_IsPrefabParent: 0
---- !u!21 &1089480966
+--- !u!21 &1094394121
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -6337,9 +6337,9 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1234458994}
-  m_LocalRotation: {x: 0.00093101535, y: -0.005913313, z: 0.71492827, w: 0.69917226}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0.95}
+  m_LocalRotation: {x: 0.0009310154, y: -0.005913313, z: 0.71492827, w: 0.69917226}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1.5000014, y: 1.5000019, z: 0.95}
   m_Children:
   - {fileID: 1971682489}
   m_Father: {fileID: 23930326}
@@ -6347,7 +6347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.559, y: -0.39800003, z: 91.275}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.4, y: -186}
+  m_AnchoredPosition: {x: 65.3999, y: -186.00005}
   m_SizeDelta: {x: 51, y: 35.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234458996
@@ -6395,12 +6395,6 @@ MonoBehaviour:
             m_StringArgument: right
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates:
@@ -8543,7 +8537,7 @@ MonoBehaviour:
   useScanlines: 1
   scanlineSize: 250
   scanlineIntensity: 0.437
-  _material: {fileID: 1089480966}
+  _material: {fileID: 1094394121}
 --- !u!1 &1748263267
 GameObject:
   m_ObjectHideFlags: 0
