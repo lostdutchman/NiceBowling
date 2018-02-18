@@ -40,7 +40,7 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         //Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 2, 2, 2, 2, 3, 3, 3, 4, 5 };
+        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         List<string> Effects = Effect(NiceRandom);
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
@@ -267,14 +267,16 @@ public class NiceBowling : MonoBehaviour {
 	
 	public string GiantBall(){
 	    Ball ball = GameObject.FindObjectOfType<Ball>();
-	    ball.transform.localScale = new Vector3 (40f, 40f, 40f);
+        Vector3 size = ball.transform.localScale;
+	    ball.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
         return("Giant Ball");
     }
 	
 	public string SmallBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
-		ball.transform.localScale = new Vector3 (10f, 10f, 10f);
-        return("Small Ball");
+        Vector3 size = ball.transform.localScale;
+        ball.transform.localScale = new Vector3(size.x / 1.5f, size.y / 1.5f, size.z / 1.5f);
+        return ("Small Ball");
     }
 
 	public string Cheater(){
@@ -285,14 +287,16 @@ public class NiceBowling : MonoBehaviour {
 
 	public string TinyBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
-		ball.transform.localScale = new Vector3 (5f, 5f, 5f);
-        return("Tiny Ball");
+        Vector3 size = ball.transform.localScale;
+        ball.transform.localScale = new Vector3(size.x / 2.5f, size.y / 2.5f, size.z / 2.5f);
+        return ("Tiny Ball");
     }
 
 	public string LargeBall(){
 		Ball ball = GameObject.FindObjectOfType<Ball>();
-		ball.transform.localScale = new Vector3 (30f, 30f, 30f);
-        return("Big Ball");
+        Vector3 size = ball.transform.localScale;
+        ball.transform.localScale = new Vector3(size.x * 1.5f, size.y * 1.5f, size.z * 1.5f);
+        return ("Big Ball");
     }
 
 	public string LightBall(){

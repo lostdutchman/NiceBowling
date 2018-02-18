@@ -119,6 +119,6 @@ public class PinSetter : MonoBehaviour {
         {
             TouchInput.SetActive(true);
         }
-	}
+    }
 
 }
