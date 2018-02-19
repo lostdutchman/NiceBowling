@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 998
-  m_MinSize: {x: 950, y: 371}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 321}
   m_MaxSize: {x: 12006, y: 8021}
   vertical: 1
-  controlID: 9
+  controlID: 54
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 321}
   m_MaxSize: {x: 12006, y: 8021}
   vertical: 0
-  controlID: 10
+  controlID: 55
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 321}
   m_MaxSize: {x: 8006, y: 8021}
   vertical: 1
-  controlID: 11
+  controlID: 56
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 57
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,8 +224,8 @@ MonoBehaviour:
     y: 0
     width: 1336
     height: 606
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 15}
@@ -389,23 +389,23 @@ MonoBehaviour:
     height: 585
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 1004feffde87ffff00000000824f0000de510000
+    m_SelectedIDs: 96510000
+    m_LastClickedID: 20886
+    m_ExpandedIDs: e287ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: RightD
-      m_OriginalName: RightD
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -130032
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -579,19 +579,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Art/Sardine/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Art/Sardine/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Bowling\NiceBowling
+  m_LastProjectPath: C:\Users\Jeremy\Documents\GitHub\NiceBowling
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7e4a0000
-    m_LastClickedID: 19070
-    m_ExpandedIDs: 000000007e4a0000f04a0000824b0000924b0000fc4b0000ca4c0000344d0000524d00008e4d00009e4d0000ec4d0000004e00000a4e0000264e0000a64e0000b64e0000104f00001c4f0000284f0000364f00003c4f00008853000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 48}
+    m_SelectedIDs: 124b0000
+    m_LastClickedID: 19218
+    m_ExpandedIDs: 00000000804a0000ae4a0000f24a0000844b0000fe4b0000cc4c0000364d0000544d0000904d0000a04d0000ee4d0000024e00000c4e0000284e0000a64e0000b64e00001c4f0000364f00003c4f00008a53000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007e4a0000f04a0000824b0000924b0000fc4b0000ca4c0000344d0000524d00008e4d00009e4d0000ec4d0000004e00000a4e0000264e0000a64e0000b64e0000104f00001c4f0000364f00003c4f000088530000
+    m_ExpandedIDs: 00000000804a0000f24a0000844b0000944b0000fe4b0000cc4c0000364d0000544d0000904d0000a04d0000ee4d0000024e00000c4e0000284e0000a64e0000b64e0000104f00001c4f0000284f0000364f00003c4f00008a530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -644,8 +644,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 84070000
+    m_LastClickedInstanceID: 1924
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 66250000562b0000422e0000d2280000fa3100007e3600002c300000d4280000ba2c00001c2a0000fc260000482a0000fe2d0000fe270000cc2c0000b6270000982e0000a02800008e290000382a0000282c0000b22f0000f62d00001828000022290000982d0000a62a00001c280000fa2900007e27000004290000462e00008e2f00005c2e00008641000034070000d2310000e031000010390000363200002a07000094450000862c0000a04a00000c3b0000065300000a530000304f000000000000
     m_RenameOverlay:

@@ -8,7 +8,7 @@ public class iwasiRigid : MonoBehaviour {
 		float probability = Time.deltaTime * .05f;
 		if(Random.value < probability){
 			Rigidbody rigid = GetComponent<Rigidbody> ();
-			rigid.AddForce (Random.Range (-50f, 30f),Random.Range (50f, 200f),Random.Range (-35f, 45f), ForceMode.Impulse);
+			rigid.AddForce (Random.Range (-5f, 3f),Random.Range (5f, 20f),Random.Range (-3.5f, 4.5f), ForceMode.Impulse);
 			GetComponent<AudioSource> ().Play ();
 		}
 	}
