@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour {
 
@@ -49,5 +50,10 @@ public class Ball : MonoBehaviour {
                 BallOutOfPlay.ballout = true;
             }
         }
+    }
+
+    public void TryAgain()
+    {
+        Tut.SetActive(true);
     }
 }

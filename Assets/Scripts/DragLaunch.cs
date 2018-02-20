@@ -75,9 +75,9 @@ public class DragLaunch : MonoBehaviour {
 			float launchSpeedX = (endPos.x - startPos.x) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
 			float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
 
-            //Drops ball to the gutter if the bowl is way to slow, or the user double clicks without moving. 
+            //Makes sure player bowled properly
             if (launchSpeedZ < minLaunchSpeed){
-				ball.Launch (new Vector3(launchSpeedX + (minLaunchSpeed/2), ballReleseHight, minLaunchSpeed)); 
+                ball.TryAgain();
 			} else {
 			ball.Launch (new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ));
 			}
