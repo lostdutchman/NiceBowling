@@ -105,10 +105,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 948
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 1
-  controlID: 56
+  controlID: 57
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,10 +129,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 948
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 57
+  controlID: 58
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,10 +153,10 @@ MonoBehaviour:
     y: 0
     width: 1622
     height: 948
-  m_MinSize: {x: 404, y: 342}
-  m_MaxSize: {x: 8004, y: 8042}
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 58
+  controlID: 59
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,10 +177,10 @@ MonoBehaviour:
     y: 0
     width: 1622
     height: 606
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 59
+  controlID: 60
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -199,8 +199,8 @@ MonoBehaviour:
     y: 0
     width: 286
     height: 606
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 0
     width: 298
     height: 948
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -388,10 +388,10 @@ MonoBehaviour:
     width: 284
     height: 585
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e885ffff
-    m_LastClickedID: -31256
-    m_ExpandedIDs: 8687ffff00000000
+    scrollPos: {x: 0, y: 40}
+    m_SelectedIDs: 80faffff4afaffffcafbffffbefbffffc4fbffffe0fbffffb8fbffffe8faffff98faffffcefaffff8cfafffff4faffffbcfaffff32faffffe2faffff62faffff86faffff92faffffc2faffff
+    m_LastClickedID: -1342
+    m_ExpandedIDs: e2fbffff000000000e340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -501,9 +501,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.13190053, y: -0.13307504, z: 0.017872643, w: -0.98212713}
   m_Size:
-    m_Target: 41.32548
+    m_Target: 191.00066
     speed: 2
-    m_Value: 41.32548
+    m_Value: 191.00066
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 1
+  m_ViewIsLockedToObject: 0
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -591,7 +591,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 424f0000
     m_LastClickedID: 20290
-    m_ExpandedIDs: 000000009c4a0000064b0000984b0000124c0000e24c00004c4d00006a4d0000b64d0000044e0000184e0000224e00002e4e00003c4e00009c4e0000ba4e0000ca4e0000324f00004c4f0000524f00009e530000
+    m_ExpandedIDs: 0000000022260000002700001228000022290000cc2a0000a82b0000f82b00008c2c0000402d0000722d0000822d0000a62d0000c62d0000ac2e0000de2e0000fa2e0000ce2f0000243000002c3000005c380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009c4a0000064b0000984b0000124c0000e24c00004c4d00006a4d0000b64d0000044e0000184e0000224e00002e4e00003c4e00009c4e0000ba4e0000ca4e0000324f00004c4f0000524f00009e530000
+    m_ExpandedIDs: 0000000022260000002700001228000022290000cc2a0000a82b0000f82b00008c2c0000402d0000722d0000822d0000a62d0000c62d0000ac2e0000de2e0000fa2e0000ce2f0000243000002c3000005c380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -726,7 +726,7 @@ MonoBehaviour:
     y: 91
     width: 296
     height: 927
-  m_ScrollPosition: {x: 0, y: 418.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 186
