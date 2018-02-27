@@ -4,15 +4,22 @@ using System.Collections;
 [RequireComponent(typeof(Ball))]
 public class DragLaunch : MonoBehaviour {
 
+    //Drag Launch Variables
 	private Ball ball;
-	private Vector3 startPos, endPos;
+    private Vector3 startPos, endPos;
 	private float startTime, endTime;
 	private const float ballReleseHight = 0;
 	private const float minLaunchSpeed = 40;
+
+    //Arrow Variables
     [Tooltip("How fast the aim arrows should move the ball.")]
     public float aimAdjust = 3;
     private bool rightAim = false;
     private bool leftAim = false;
+    public AudioClip ArrowSound;
+    private AudioSource Audio;
+
+    //Handicap Variables
     [Tooltip("1 = no handicap 1.6 = old handicap")]
     public float MakeAimEasier = 1.2f;
     [Tooltip("1 = no handicap Higher numbers slow bowl speeds")]
@@ -20,13 +27,14 @@ public class DragLaunch : MonoBehaviour {
 
     void Start () {
 		ball = GetComponent<Ball>();
+        Audio = ball.GetComponent<AudioSource>();
 	}
 
     //Allow user to hold to continuasly adjust aim
     private void Update()
     {
         if (rightAim || leftAim)
-        {
+        {            
             if (!ball.inPlay)
             {
                 float aimAdjustDirection = aimAdjust;
@@ -39,11 +47,16 @@ public class DragLaunch : MonoBehaviour {
                 float zPos = ball.transform.position.z;
                 ball.transform.position = new Vector3(xPos, yPos, zPos);
             }
+
         }
     }
 
+
+
     public void onPointerDownAdjust(string direction)
     {
+        Audio.clip = ArrowSound;
+        Audio.Play();
         if (direction.ToLower() == "right") { rightAim = true; }
         else if (direction.ToLower() == "left") { leftAim = true; }
     }

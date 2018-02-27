@@ -7,7 +7,8 @@ public class Ball : MonoBehaviour {
 	private Rigidbody rigidBody;
 	public bool inPlay = false;
 	private Vector3 ballStartPos;
-	private AudioSource audioSource;
+    public AudioClip BallRolling;
+    private AudioSource audioSource;
     public GameObject Tut, LeftArrow, RightArrow;
 
     void Start () {
@@ -25,6 +26,7 @@ public class Ball : MonoBehaviour {
         Tut.SetActive(false);
         LeftArrow.SetActive(false);
         RightArrow.SetActive(false);
+        audioSource.clip = BallRolling;
         audioSource.Play();
     }
 	
