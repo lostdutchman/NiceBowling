@@ -28,13 +28,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121222}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.49907738, y: -0.8663649, z: -0.0077432264, w: 0.016541608}
   m_LocalPosition: {x: 0, y: 18, z: 30}
   m_LocalScale: {x: 21.7, y: 21.7, z: 21.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.715, y: -178.8, z: 59.871}
 --- !u!23 &2330528
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -181,6 +181,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inPlay: 0
+  BallRolling: {fileID: 0}
+  Tut: {fileID: 0}
+  LeftArrow: {fileID: 0}
+  RightArrow: {fileID: 0}
 --- !u!114 &11425192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimAdjust: 3
+  ArrowSound: {fileID: 0}
+  MakeAimEasier: 1.2
+  SlowDown: 1
 --- !u!135 &13554176
 SphereCollider:
   m_ObjectHideFlags: 1
