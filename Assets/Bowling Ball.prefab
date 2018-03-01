@@ -81,7 +81,7 @@ Rigidbody:
   m_GameObject: {fileID: 1845293604629696}
   serializedVersion: 2
   m_Mass: 8
-  m_Drag: 0
+  m_Drag: 0.15
   m_AngularDrag: 0.0005
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -97,7 +97,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 60027c09ebb6d394eae6f718e5974ff1, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimAdjust: 0.75
-  ArrowSound: {fileID: 0}
-  MakeAimEasier: 1
-  SlowDown: 1.5
+  ArrowSound: {fileID: 8300000, guid: 32ee82198819e43c88be85fe971620fb, type: 3}
+  MakeAimEasier: 1.2
+  SlowDown: 2
 --- !u!114 &114256135602165232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inPlay: 0
-  BallRolling: {fileID: 0}
+  BallRolling: {fileID: 8300000, guid: 60027c09ebb6d394eae6f718e5974ff1, type: 3}
   Tut: {fileID: 0}
   LeftArrow: {fileID: 0}
   RightArrow: {fileID: 0}
@@ -223,15 +223,15 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845293604629696}
-  m_LocalRotation: {x: -0.49906975, y: -0.8663693, z: -0.0077433726, w: 0.01654154}
-  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalRotation: {x: -0.49912626, y: -0.8663459, z: -0.008129953, w: 0.015864879}
+  m_LocalPosition: {x: 0, y: 0, z: 29.976257}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.715, y: -178.8, z: 59.87}
+  m_LocalEulerAnglesHint: {x: -1.715, y: -178.889, z: 59.878002}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 18}
+  m_AnchoredPosition: {x: 0.04670456, y: 17.97889}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
