@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
     Over Under\"\nKevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons:
     By Attribution 3.0\r\nhttp://creativecommons.org/licenses/by/3.0/\n\t\"glaci\xE6re
     - Tundra\"\n\t\"Paternoster Poetry - Elevator Zen Again\"\n\tStevia Sphere (http://steviasphere.bandcamp.com/)\nLicensed
-    under Creative Commons 3.0\n\t"
+    under Creative Commons 3.0\n\t\nVoiceover\n\tXXXX\n\n"
 --- !u!222 &34852230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -693,15 +693,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 441196, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 559.241089
+      value: 559.2411
       objectReference: {fileID: 0}
     - target: {fileID: 441196, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 274.022644
+      value: 274.02264
       objectReference: {fileID: 0}
     - target: {fileID: 441196, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -36.7480469
+      value: -36.748047
       objectReference: {fileID: 0}
     - target: {fileID: 441196, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: m_LocalRotation.x
@@ -722,6 +722,14 @@ Prefab:
     - target: {fileID: 441196, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224728, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224728, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
