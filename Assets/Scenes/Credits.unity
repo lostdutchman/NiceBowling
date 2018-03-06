@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -242,17 +242,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34852227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 984982399}
-  m_RootOrder: 2
+  m_Father: {fileID: 322994988}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22, y: 3}
-  m_SizeDelta: {x: 844, y: 81}
+  m_AnchoredPosition: {x: 26, y: -507}
+  m_SizeDelta: {x: 819, y: 1101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &34852229
 MonoBehaviour:
@@ -287,9 +287,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Developed by Lost Dutchman Software\nwww.lostdutchmansoftware.com\n\nRetro
-    Aesthetic Pack by dustyroom\n\nTracklist:\n\t\"Chill Wave\"\r\n\t\"Danger Storm\"\n\t\"Spellbound\"\n\t\"Voice
-    Over Under\"\nKevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons:
-    By Attribution 3.0\r\nhttp://creativecommons.org/licenses/by/3.0/\n\t\"glaci\xE6re
+    Aesthetic Pack by dustyroom\n\nTracklist:\n\n\t\"Chill Wave\"\r\n\t\"Danger Storm\"\n\t\"Spellbound\"\n\t\"Voice
+    Over Under\"\n\nKevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons:
+    By Attribution 3.0\r\nhttp://creativecommons.org/licenses/by/3.0/\n\n\t\"glaci\xE6re
     - Tundra\"\n\t\"Paternoster Poetry - Elevator Zen Again\"\n\tStevia Sphere (http://steviasphere.bandcamp.com/)\nLicensed
     under Creative Commons 3.0\n\t\nVoiceover\n\tXXXX\n\n"
 --- !u!222 &34852230
@@ -298,6 +298,59 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34852227}
+--- !u!1 &322994987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 322994988}
+  - component: {fileID: 322994989}
+  m_Layer: 5
+  m_Name: Credits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &322994988
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322994987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1743567025}
+  - {fileID: 34852228}
+  m_Father: {fileID: 984982399}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -470}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &322994989
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322994987}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51b493d683ef2174883c5287a4508074, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &445877962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,8 +1079,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1586630647}
-  - {fileID: 1743567025}
-  - {fileID: 34852228}
+  - {fileID: 322994988}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1956,16 +2008,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1743567024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -214.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 984982399}
-  m_RootOrder: 1
+  m_Father: {fileID: 322994988}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -217.1, y: 144.9}
+  m_AnchoredPosition: {x: -217, y: 100}
   m_SizeDelta: {x: 333.4, y: 73.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743567026
