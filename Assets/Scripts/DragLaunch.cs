@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 [RequireComponent(typeof(Ball))]
 public class DragLaunch : MonoBehaviour {
@@ -69,23 +71,24 @@ public class DragLaunch : MonoBehaviour {
 
     //Figures out where you started dragging to launch the ball
     public void DragStart(){
-	startPos = Input.mousePosition;
-	startTime = Time.time;
+	    startPos = Input.mousePosition;
+	    startTime = Time.time;
 	}
 	
 	//Figures out where you stopped dragging to launch the ball
 	public void DragEnd(){
-	endPos = Input.mousePosition;
-	endTime = Time.time;
-	CalculateDrag ();
+	    endPos = Input.mousePosition;
+	    endTime = Time.time;
+	    CalculateDrag ();
 	}
 	
 	//Calculates the direction and speed of the ball launch using info from the previous 2 methods.
 	public void CalculateDrag(){
 		if(!ball.inPlay){
-			float dragDuration = endTime - startTime;
+
+            float dragDuration = endTime - startTime;
 			//Speed = distance (end - start) devided by time
-			float launchSpeedX = (endPos.x - startPos.x) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
+			float launchSpeedX = ((endPos.x - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
 			float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
 
             //Makes sure player bowled properly
