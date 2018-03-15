@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ac9d1500783679d46af9ebd2659c1191
-timeCreated: 1521067680
+timeCreated: 1521070690
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -23,7 +23,6 @@ TextureImporter:
     21300032: circlesprite_16
     21300034: circlesprite_17
     21300036: circlesprite_18
-    21300038: circlesprite_19
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -93,11 +92,11 @@ TextureImporter:
       name: circlesprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1762
-        width: 341
-        height: 286
-      alignment: 9
+        x: 69
+        y: 1818
+        width: 203
+        height: 203
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -106,11 +105,11 @@ TextureImporter:
       name: circlesprite_1
       rect:
         serializedVersion: 2
-        x: 341
-        y: 1762
-        width: 341
-        height: 286
-      alignment: 9
+        x: 414
+        y: 1817
+        width: 203
+        height: 203
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -119,11 +118,11 @@ TextureImporter:
       name: circlesprite_2
       rect:
         serializedVersion: 2
-        x: 682
-        y: 1762
-        width: 341
-        height: 286
-      alignment: 9
+        x: 752
+        y: 1810
+        width: 203
+        height: 203
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -132,11 +131,11 @@ TextureImporter:
       name: circlesprite_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1476
-        width: 341
-        height: 286
-      alignment: 9
+        x: 48
+        y: 1506
+        width: 228
+        height: 228
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -145,11 +144,11 @@ TextureImporter:
       name: circlesprite_4
       rect:
         serializedVersion: 2
-        x: 341
-        y: 1476
-        width: 341
-        height: 286
-      alignment: 9
+        x: 392
+        y: 1514
+        width: 228
+        height: 228
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -158,11 +157,11 @@ TextureImporter:
       name: circlesprite_5
       rect:
         serializedVersion: 2
-        x: 682
-        y: 1476
-        width: 341
-        height: 286
-      alignment: 9
+        x: 736
+        y: 1502
+        width: 228
+        height: 228
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -171,11 +170,11 @@ TextureImporter:
       name: circlesprite_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1190
-        width: 341
-        height: 286
-      alignment: 9
+        x: 36
+        y: 1196
+        width: 268
+        height: 268
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -184,11 +183,11 @@ TextureImporter:
       name: circlesprite_7
       rect:
         serializedVersion: 2
-        x: 341
-        y: 1190
-        width: 341
-        height: 286
-      alignment: 9
+        x: 376
+        y: 1196
+        width: 268
+        height: 268
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -197,11 +196,11 @@ TextureImporter:
       name: circlesprite_8
       rect:
         serializedVersion: 2
-        x: 682
-        y: 1190
-        width: 341
-        height: 286
-      alignment: 9
+        x: 718
+        y: 1196
+        width: 268
+        height: 268
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -210,11 +209,11 @@ TextureImporter:
       name: circlesprite_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 904
-        width: 341
-        height: 286
-      alignment: 9
+        x: 75
+        y: 944
+        width: 203
+        height: 203
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -223,11 +222,11 @@ TextureImporter:
       name: circlesprite_10
       rect:
         serializedVersion: 2
-        x: 341
-        y: 904
-        width: 341
-        height: 286
-      alignment: 9
+        x: 420
+        y: 943
+        width: 203
+        height: 203
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -236,11 +235,11 @@ TextureImporter:
       name: circlesprite_11
       rect:
         serializedVersion: 2
-        x: 682
-        y: 904
-        width: 341
-        height: 286
-      alignment: 9
+        x: 758
+        y: 936
+        width: 203
+        height: 203
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -249,11 +248,11 @@ TextureImporter:
       name: circlesprite_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 618
-        width: 341
-        height: 286
-      alignment: 9
+        x: 50
+        y: 636
+        width: 228
+        height: 228
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -262,11 +261,11 @@ TextureImporter:
       name: circlesprite_13
       rect:
         serializedVersion: 2
-        x: 341
-        y: 618
-        width: 341
-        height: 286
-      alignment: 9
+        x: 404
+        y: 636
+        width: 228
+        height: 228
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -275,11 +274,11 @@ TextureImporter:
       name: circlesprite_14
       rect:
         serializedVersion: 2
-        x: 682
-        y: 618
-        width: 341
-        height: 286
-      alignment: 9
+        x: 740
+        y: 640
+        width: 228
+        height: 228
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -288,11 +287,11 @@ TextureImporter:
       name: circlesprite_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 332
-        width: 341
-        height: 286
-      alignment: 9
+        x: 28
+        y: 334
+        width: 268
+        height: 268
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -301,11 +300,11 @@ TextureImporter:
       name: circlesprite_16
       rect:
         serializedVersion: 2
-        x: 341
+        x: 376
         y: 332
-        width: 341
-        height: 286
-      alignment: 9
+        width: 272
+        height: 272
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -314,11 +313,11 @@ TextureImporter:
       name: circlesprite_17
       rect:
         serializedVersion: 2
-        x: 682
-        y: 332
-        width: 341
-        height: 286
-      alignment: 9
+        x: 720
+        y: 328
+        width: 272
+        height: 272
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -327,24 +326,11 @@ TextureImporter:
       name: circlesprite_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 46
-        width: 341
-        height: 286
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: circlesprite_19
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 46
-        width: 341
-        height: 286
-      alignment: 9
+        x: 62
+        y: 86
+        width: 203
+        height: 203
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
