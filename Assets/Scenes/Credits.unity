@@ -286,12 +286,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Developed by Lost Dutchman Software\nwww.lostdutchmansoftware.com\n\nRetro
-    Aesthetic Pack by dustyroom\n\nTracklist:\n\n\t\"Chill Wave\"\r\n\t\"Danger Storm\"\n\t\"Spellbound\"\n\t\"Voice
-    Over Under\"\n\nKevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons:
-    By Attribution 3.0\r\nhttp://creativecommons.org/licenses/by/3.0/\n\n\t\"glaci\xE6re
+  m_Text: "Developed by Lost Dutchman Software\nlostdutchmansoftware.com\n\nRetro
+    Aesthetic Pack by dustyroom\nBall Pack 1.0 by YounGen Tech\n\nTracklist:\n\n\t\"Chill
+    Wave\"\r\n\t\"Danger Storm\"\n\t\"Spellbound\"\n\t\"Voice Over Under\"\n\nKevin
+    MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By Attribution 3.0\r\nhttp://creativecommons.org/licenses/by/3.0/\n\n\t\"glaci\xE6re
     - Tundra\"\n\t\"Paternoster Poetry - Elevator Zen Again\"\n\tStevia Sphere (http://steviasphere.bandcamp.com/)\nLicensed
-    under Creative Commons 3.0\n\t\nVoiceover\n\tXXXX\n\n"
+    under Creative Commons 3.0\n\t\n\t\"~aether theories~ \"\n\tVidian (c) 2018 Licensed
+    under a Creative Commons Attribution (3.0) license.  http://dig.ccmixter.org/files/Vidian/57398
+    Ft: Gurdonark, White-throated Sparrow\n\n"
 --- !u!222 &34852230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1004,6 +1006,7 @@ GameObject:
   - component: {fileID: 984982398}
   - component: {fileID: 984982397}
   - component: {fileID: 984982396}
+  - component: {fileID: 984982400}
   m_Layer: 5
   m_Name: Canvas1
   m_TagString: Untagged
@@ -1088,6 +1091,86 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &984982400
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984982395}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e8ba59cb818be9e4fb4c261cfa77bfbb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1039708634
 GameObject:
   m_ObjectHideFlags: 0
