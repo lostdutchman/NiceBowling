@@ -89,6 +89,9 @@ public class Pins : MonoBehaviour {
         else if (col.gameObject.tag == "Ball")
         {
             audioSource.clip = PinHitBall;
+            Vector3 HitLocation = col.contacts[0].point - transform.position;
+            Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass;
+            rigidBody.AddForceAtPosition(HitForce, HitLocation, ForceMode.Impulse);
         }
         audioSource.Play ();
 	}

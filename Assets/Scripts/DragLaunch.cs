@@ -12,6 +12,8 @@ public class DragLaunch : MonoBehaviour {
 	private float startTime, endTime;
 	private const float ballReleseHight = 0;
 	private const float minLaunchSpeed = 40;
+    private bool Dragging = false;
+    private List<float> DragPointsX = new List<float>();
 
     //Arrow Variables
     [Tooltip("How fast the aim arrows should move the ball.")]
@@ -51,6 +53,10 @@ public class DragLaunch : MonoBehaviour {
             }
 
         }
+        if (Dragging)
+        {
+            DragPointsX.Add(Input.mousePosition.x);
+        }
     }
 
 
@@ -73,19 +79,21 @@ public class DragLaunch : MonoBehaviour {
     public void DragStart(){
 	    startPos = Input.mousePosition;
 	    startTime = Time.time;
+        Dragging = true;
 	}
 	
 	//Figures out where you stopped dragging to launch the ball
 	public void DragEnd(){
 	    endPos = Input.mousePosition;
 	    endTime = Time.time;
+        Dragging = false;
 	    CalculateDrag ();
 	}
 	
 	//Calculates the direction and speed of the ball launch using info from the previous 2 methods.
 	public void CalculateDrag(){
 		if(!ball.inPlay){
-
+            float AverageX = DragPointsX.Average();
             float dragDuration = endTime - startTime;
 			//Speed = distance (end - start) devided by time
 			float launchSpeedX = ((endPos.x - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.

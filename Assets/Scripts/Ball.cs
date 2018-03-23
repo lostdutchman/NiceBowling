@@ -9,12 +9,14 @@ public class Ball : MonoBehaviour {
 	private Vector3 ballStartPos;
     public AudioClip BallRolling;
     private AudioSource audioSource;
-    public GameObject Tut, LeftArrow, RightArrow;
+    public GameObject Tut, LeftArrow, RightArrow, TouchInput;
+    private MeshRenderer Mesh;
 
     void Start () {
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBody.useGravity = false;
-		audioSource = GetComponent<AudioSource> ();
+		audioSource = GetComponent<AudioSource>();
+        Mesh = GetComponent<MeshRenderer>();
     }
 
     public void Launch (Vector3 velocity)
@@ -32,13 +34,12 @@ public class Ball : MonoBehaviour {
 	
 	public void Reset ()
 	{
-		this.transform.position = ballStartPos;
+        Mesh.enabled = false;
+        this.transform.position = ballStartPos;
 		this.transform.rotation = Quaternion.identity;
 		rigidBody.useGravity = false;
 		rigidBody.velocity = Vector3.zero;
 		rigidBody.angularVelocity = Vector3.zero;
-        LeftArrow.SetActive(true);
-        RightArrow.SetActive(true);
         inPlay = false;
 	}
 
@@ -50,6 +51,15 @@ public class Ball : MonoBehaviour {
             if (rigidBody.velocity.z <= 0)
             {
                 BallOutOfPlay.ballout = true;
+            }
+        }
+        else
+        {
+            if (TouchInput.activeInHierarchy == true)
+            {
+                LeftArrow.SetActive(true);
+                RightArrow.SetActive(true);
+                Mesh.enabled = true;
             }
         }
     }
