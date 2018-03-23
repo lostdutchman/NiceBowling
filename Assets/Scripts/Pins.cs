@@ -20,7 +20,6 @@ public class Pins : MonoBehaviour {
 		audioSource = GetComponent<AudioSource> ();
         startingPosX = rigidBody.position.x;
         startingPosZ = rigidBody.position.z;
-
     }
 
     void Awake()
@@ -90,7 +89,7 @@ public class Pins : MonoBehaviour {
         {
             audioSource.clip = PinHitBall;
             Vector3 HitLocation = col.contacts[0].point - transform.position;
-            Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass;
+            Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass * 1.5f;
             rigidBody.AddForceAtPosition(HitForce, HitLocation, ForceMode.Impulse);
         }
         audioSource.Play ();
