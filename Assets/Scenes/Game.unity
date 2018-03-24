@@ -344,7 +344,6 @@ RectTransform:
   - {fileID: 1234458995}
   - {fileID: 1447977174}
   - {fileID: 2040445873}
-  - {fileID: 1477168973}
   - {fileID: 984040647}
   - {fileID: 1383152380}
   m_Father: {fileID: 0}
@@ -4301,48 +4300,6 @@ RectTransform:
   m_AnchoredPosition: {x: 214, y: -13}
   m_SizeDelta: {x: 68, y: 97}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!21 &923524450
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 0
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0
-    - _OffsetNoiseY: 0
-    - _OffsetPosY: 0
-    - _StaticIntensity: 1
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0
-    m_Colors: []
 --- !u!1 &928628403
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,7 +4727,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 23930326}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5160,6 +5117,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1044403471}
+--- !u!21 &1048891636
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 0
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0
+    - _OffsetNoiseY: 0
+    - _OffsetPosY: 0
+    - _StaticIntensity: 1
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0
+    m_Colors: []
 --- !u!1 &1050323164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5592,6 +5591,14 @@ Prefab:
     - target: {fileID: 1757785227990822, guid: 94ab028b20f6f6d4aa5860adad3df362, type: 2}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203304931633668, guid: 94ab028b20f6f6d4aa5860adad3df362, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203304931633668, guid: 94ab028b20f6f6d4aa5860adad3df362, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94ab028b20f6f6d4aa5860adad3df362, type: 2}
@@ -7549,7 +7556,7 @@ RectTransform:
   m_Children:
   - {fileID: 1446984232}
   m_Father: {fileID: 23930326}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -8008,15 +8015,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477168972}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -486.5, y: -252.68, z: 30}
-  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1, z: 48.5}
+  m_LocalScale: {x: 10, y: 10, z: 0}
   m_Children:
   - {fileID: 2111696493}
   - {fileID: 1877200326}
-  m_Father: {fileID: 23930326}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1714661949}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1485440576 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 181950, guid: b9fac6247725a2f42a2cf1cd66de556e, type: 2}
@@ -8559,6 +8566,10 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: aecc133b2406045ea91a6ae0a0ae8c56, type: 3}
   m_PrefabInternal: {fileID: 465801565}
+--- !u!4 &1714661949 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 426440, guid: 61457e697fef5bf4dba12716e972b2fb, type: 2}
+  m_PrefabInternal: {fileID: 951822536}
 --- !u!1 &1722620606
 GameObject:
   m_ObjectHideFlags: 0
@@ -8673,7 +8684,7 @@ MonoBehaviour:
   useScanlines: 1
   scanlineSize: 250
   scanlineIntensity: 0.437
-  _material: {fileID: 923524450}
+  _material: {fileID: 1048891636}
 --- !u!1 &1748263267
 GameObject:
   m_ObjectHideFlags: 0
@@ -9796,12 +9807,12 @@ Prefab:
     - target: {fileID: 114817792800110974, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
       propertyPath: MakeAimEasier
-      value: 2.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114817792800110974, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
       propertyPath: SlowDown
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 82406527041656802, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}

@@ -96,8 +96,11 @@ public class DragLaunch : MonoBehaviour {
             float AverageX = DragPointsX.Average();
             float dragDuration = endTime - startTime;
 			//Speed = distance (end - start) devided by time
-			float launchSpeedX = ((endPos.x - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
+			float launchSpeedX = ((endPos.x - startPos.x) + (AverageX - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
 			float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
+
+            print("Avg:" + AverageX + " Start:" + startPos.x + " End:" + endPos.x);
+            DragPointsX.Clear();
 
             //Makes sure player bowled properly
             if (launchSpeedZ < minLaunchSpeed){
