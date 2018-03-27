@@ -93,6 +93,23 @@ public class PinSetter : MonoBehaviour {
             BallOutOfPlay.ballout = true;
     }
 
+    void OnTriggerEnter(Collider collider)
+    {
+        GameObject thingEntered = collider.gameObject;
+
+        if (thingEntered.GetComponent<Ball>())
+        {
+            Time.timeScale = .35f;
+            StartCoroutine(RestoreTime());
+        }
+    }
+
+    private IEnumerator RestoreTime()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        Time.timeScale = 1f;
+    }
+
     public void PlayAudio(int type){
 		switch (type){
 		case 1: audioSource.clip = strikeAudio[Random.Range(0, strikeAudio.Length)]; break;

@@ -570,6 +570,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 55353104}
+--- !u!21 &64439975
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 0
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0
+    - _OffsetNoiseY: 0
+    - _OffsetPosY: 0
+    - _StaticIntensity: 1
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0
+    m_Colors: []
 --- !u!1001 &83503978
 Prefab:
   m_ObjectHideFlags: 0
@@ -5117,48 +5159,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1044403471}
---- !u!21 &1048891636
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 0
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0
-    - _OffsetNoiseY: 0
-    - _OffsetPosY: 0
-    - _StaticIntensity: 1
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0
-    m_Colors: []
 --- !u!1 &1050323164
 GameObject:
   m_ObjectHideFlags: 0
@@ -8684,7 +8684,7 @@ MonoBehaviour:
   useScanlines: 1
   scanlineSize: 250
   scanlineIntensity: 0.437
-  _material: {fileID: 1048891636}
+  _material: {fileID: 64439975}
 --- !u!1 &1748263267
 GameObject:
   m_ObjectHideFlags: 0
@@ -9713,22 +9713,22 @@ Prefab:
     - target: {fileID: 224296199188077670, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.2629158
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224296199188077670, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.95947635
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224296199188077670, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.038398683
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224296199188077670, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.09384028
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224296199188077670, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
@@ -9800,45 +9800,15 @@ Prefab:
       propertyPath: RightArrow
       value: 
       objectReference: {fileID: 1234458994}
-    - target: {fileID: 1054083200115082, guid: db72a6365b42cdf4792ddd8445d70701, type: 2}
-      propertyPath: m_Name
-      value: Bowling Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817792800110974, guid: db72a6365b42cdf4792ddd8445d70701,
-        type: 2}
-      propertyPath: MakeAimEasier
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817792800110974, guid: db72a6365b42cdf4792ddd8445d70701,
-        type: 2}
-      propertyPath: SlowDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 82406527041656802, guid: db72a6365b42cdf4792ddd8445d70701,
-        type: 2}
-      propertyPath: BypassListenerEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114817792800110974, guid: db72a6365b42cdf4792ddd8445d70701,
-        type: 2}
-      propertyPath: SpinSpeedMultiplier
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 54749443496777246, guid: db72a6365b42cdf4792ddd8445d70701,
-        type: 2}
-      propertyPath: m_Drag
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 54749443496777246, guid: db72a6365b42cdf4792ddd8445d70701,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114362883205736422, guid: db72a6365b42cdf4792ddd8445d70701,
         type: 2}
       propertyPath: TouchInput
       value: 
       objectReference: {fileID: 1343879489}
+    - target: {fileID: 1054083200115082, guid: db72a6365b42cdf4792ddd8445d70701, type: 2}
+      propertyPath: m_Name
+      value: Bowling Ball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db72a6365b42cdf4792ddd8445d70701, type: 2}
   m_IsPrefabParent: 0
