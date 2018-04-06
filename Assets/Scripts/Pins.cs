@@ -95,9 +95,9 @@ public class Pins : MonoBehaviour {
                 ThingTracker.firstPin = false;
                 pinsetter.SlowTime();
             }
-            Vector3 HitLocation = col.contacts[0].point - transform.position;
-            Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass * 1.5f;
-            rigidBody.AddForceAtPosition(HitForce, HitLocation, ForceMode.Impulse);
+            //Add force when pin is hit to make physics apply more realisticly.
+            Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass * 2.5f;
+            rigidBody.AddForce(HitForce, ForceMode.Impulse);
         }
         audioSource.Play ();
 	}
