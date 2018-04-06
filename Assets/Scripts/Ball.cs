@@ -50,7 +50,7 @@ public class Ball : MonoBehaviour {
         {
             if (rigidBody.velocity.z <= 0)
             {
-                BallOutOfPlay.ballout = true;
+                ThingTracker.ballout = true;
             }
         }
         else

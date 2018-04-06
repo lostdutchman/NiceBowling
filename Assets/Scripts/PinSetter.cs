@@ -10,6 +10,7 @@ public class PinSetter : MonoBehaviour {
 	public AudioClip[] turkeyAudio;
 	public AudioClip[] gutterAudio;
 	public AudioClip silence;
+    public AudioClip TimeSlowing;
 	public GameObject exitButton, Swipper, TouchInput;
 	public bool GameOver, StartGame;
 
@@ -65,6 +66,7 @@ public class PinSetter : MonoBehaviour {
             pin.NicePins();//reinstate the effects on the pins
         }
         Swipper.SetActive(false);
+        ThingTracker.firstPin = true;
     }
 	
 	//Called by animator to add a new set of pins
@@ -90,18 +92,15 @@ public class PinSetter : MonoBehaviour {
         GameObject thingLeft = collider.gameObject;
 
         if (thingLeft.GetComponent<Ball>())
-            BallOutOfPlay.ballout = true;
+            ThingTracker.ballout = true;
     }
 
-    void OnTriggerEnter(Collider collider)
+    public void SlowTime()
     {
-        GameObject thingEntered = collider.gameObject;
-
-        if (thingEntered.GetComponent<Ball>())
-        {
-            Time.timeScale = .35f;
-            StartCoroutine(RestoreTime());
-        }
+        //audioSource.clip = TimeSlowing;
+        Time.timeScale = .2f;
+        audioSource.Play();
+        StartCoroutine(RestoreTime());
     }
 
     private IEnumerator RestoreTime()

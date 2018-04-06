@@ -9,7 +9,7 @@ public class BallCatcher : MonoBehaviour {
 		GameObject thingLeft = collider.gameObject;
 		
 		if(thingLeft.GetComponent<Ball>())
-			 BallOutOfPlay.ballout = true;
+			 ThingTracker.ballout = true;
 		else
 			Destroy(thingLeft);
 	}

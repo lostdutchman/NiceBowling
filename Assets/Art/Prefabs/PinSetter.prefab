@@ -79,7 +79,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 22659b005e9d54e7280eb71782c74b54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,7 +206,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -230,7 +230,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &9527178
 Animator:
   serializedVersion: 3
@@ -261,33 +261,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinSet: {fileID: 118536, guid: 7679a3202b5821446980e191a2bb28c2, type: 2}
   strikeAudio:
-  - {fileID: 8300000, guid: 25dcb59557c194a408ed68a25a042a96, type: 3}
-  - {fileID: 8300000, guid: 5db176c9f73b1924bae4ac85601ae80d, type: 3}
-  - {fileID: 8300000, guid: a119a5e7750d6664e9c735d9345b697e, type: 3}
+  - {fileID: 8300000, guid: 95182e6f785eded41980dc2246ea1ac7, type: 3}
+  - {fileID: 8300000, guid: 2a88d46fc9f1ae24eb15dbbb6ca2819f, type: 3}
+  - {fileID: 8300000, guid: 45c4c04465332084197e9206f05bed20, type: 3}
   spareAudio:
-  - {fileID: 8300000, guid: 9319ea5a54c460544a848b5cd73d0943, type: 3}
-  - {fileID: 8300000, guid: f63b06e6e188f3845b1373ec00bae2e8, type: 3}
-  - {fileID: 8300000, guid: 77af58ddba833494380cf3be905f747c, type: 3}
+  - {fileID: 8300000, guid: bfb74f4d1e82d244692a29e4f138acb3, type: 3}
+  - {fileID: 8300000, guid: e45aead7e2c4ad5488ea8039c9f83e9c, type: 3}
+  - {fileID: 8300000, guid: 1aa0b52e47a294e4a96465a08bd84356, type: 3}
   turkeyAudio:
-  - {fileID: 8300000, guid: 6b35174acf936434b81dbf02e2d669ad, type: 3}
-  - {fileID: 8300000, guid: 5741c435ab25f654fa4046c71d1f8691, type: 3}
-  - {fileID: 8300000, guid: 43efa224d2fab0b44bac6cc74c2672a6, type: 3}
+  - {fileID: 8300000, guid: 80acc43bb58bc994d82670d4a80d3d9b, type: 3}
+  - {fileID: 8300000, guid: 5a87d01ba473a8749b456d86058e32c0, type: 3}
+  - {fileID: 8300000, guid: 87b30edad9f03284eb2db2fd5811b767, type: 3}
   gutterAudio:
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
-  - {fileID: 8300000, guid: a46983b5f84159040be86cc4c8e3ed73, type: 3}
+  - {fileID: 8300000, guid: b9d6b9495e12c4e4185c838029b15bdd, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
-  - {fileID: 8300000, guid: 29a18425e65b3ef45aa19ce4510fc6ee, type: 3}
+  - {fileID: 8300000, guid: 1cffbe8fe3b027147b4365bf30c71722, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   silence: {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
+  TimeSlowing: {fileID: 8300000, guid: 62937aff9d5de429994d315e993aeaeb, type: 3}
   exitButton: {fileID: 0}
-  Swipper: {fileID: 2323690}
+  Swipper: {fileID: 181950}
   TouchInput: {fileID: 0}
-  Tut: {fileID: 0}
   GameOver: 0
+  StartGame: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

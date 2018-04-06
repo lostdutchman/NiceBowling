@@ -17,7 +17,7 @@ public class PinCounter : MonoBehaviour {
 	}
 	
 	void Update () {
-		if(BallOutOfPlay.ballout){
+		if(ThingTracker.ballout){
 			CheckStanding();
 		}
 	}
@@ -59,12 +59,12 @@ public class PinCounter : MonoBehaviour {
 		gameManager.Bowl (pinFall);
 
 		lastStandingCount = -1;
-		BallOutOfPlay.ballout = false;
+		ThingTracker.ballout = false;
 	}
 
 	public void Reset(){
 		lastStandingCount = -1;
-		BallOutOfPlay.ballout = false;
+		ThingTracker.ballout = false;
 		lastSettledCount = 10;
 	}
 }
