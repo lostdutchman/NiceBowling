@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: AO
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 40faf2d344ca04845813a1199f94ec9e, type: 3}
+  m_ShaderKeywords: _SUNENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
@@ -41,9 +41,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b260bd98515989f4badb1a33805d6e73, type: 3}
+    - _GridTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 98ad208f658e04f4b93d84949155edde, type: 3}
+        m_Scale: {x: 5, y: 4}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -94,28 +98,66 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - PixelSnap: 0
     - _AO: 2.4
+    - _Alpha: 1
     - _BaseLight: 0.35
     - _BumpScale: 1
+    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DirectionPitch: 0
+    - _DirectionYaw: 0
     - _DstBlend: 0
+    - _EmissionGain: 0.5
+    - _Exponent: 1
+    - _Gain: 2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Intensity: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Scale: 1
     - _SmoothnessTextureChannel: 0
+    - _Specular: 100
     - _SpecularHighlights: 1
     - _SquashAmount: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _StripesDistance: 0.01
+    - _StripesExponent: 1
+    - _StripesExponent1: 4
+    - _StripesHeight: 0.45
+    - _StripesWidth: 0.01
+    - _SunEnabled: 1
+    - _SunExponent: 5
+    - _SunPitch: 0
+    - _SunSize: 0.01
+    - _SunYaw: 0
     - _UVSec: 0
+    - _UseSpecular: 0
+    - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.566, g: 0.509, b: 0.953, a: 1}
+    - _Color1: {r: 0, g: 0.7, b: 0.74, a: 0}
+    - _Color2: {r: 0.97, g: 0.67, b: 0.51, a: 0}
+    - _ColorSun1: {r: 0.97, g: 0.67, b: 0.51, a: 0}
+    - _ColorSun2: {r: 0.97, g: 0.17, b: 0.21, a: 0}
+    - _Direction: {r: 0, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LineColor: {r: 0.1, g: 1, b: 0.1, a: 1}
+    - _MainColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.6985294, g: 0.6864858, b: 0.52389705, a: 1}
+    - _SunDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _SunDirectionP: {r: 0, g: 0, b: 0, a: 0}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
