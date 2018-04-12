@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - NBTemp
   - Ball
+  - ChildBall
   layers:
   - Default
   - TransparentFX

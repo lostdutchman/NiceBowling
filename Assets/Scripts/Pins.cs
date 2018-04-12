@@ -87,7 +87,7 @@ public class Pins : MonoBehaviour {
         {
             audioSource.clip = PinHitPin;
         }
-        else if (col.gameObject.tag == "Ball")
+        else if (col.gameObject.tag == "ChildBall")
         {
             audioSource.clip = PinHitBall;
             if (ThingTracker.firstPin)

@@ -37,6 +37,7 @@ public class DragLaunch : MonoBehaviour {
     //Allow user to hold to continuasly adjust aim
     private void Update()
     {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         if (rightAim || leftAim)
         {            
             if (!ball.inPlay)
@@ -46,10 +47,10 @@ public class DragLaunch : MonoBehaviour {
                 {
                     aimAdjustDirection = aimAdjust * -1;
                 }
-                float xPos = Mathf.Clamp(ball.transform.position.x + aimAdjustDirection, -50f, 50f);
-                float yPos = ball.transform.position.y;
-                float zPos = ball.transform.position.z;
-                ball.transform.position = new Vector3(xPos, yPos, zPos);
+                float xPos = Mathf.Clamp(childBall.transform.position.x + aimAdjustDirection, -50f, 50f);
+                float yPos = childBall.transform.position.y;
+                float zPos = childBall.transform.position.z;
+                childBall.transform.position = new Vector3(xPos, yPos, zPos);
             }
 
         }

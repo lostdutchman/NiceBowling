@@ -91,15 +91,15 @@ public class PinSetter : MonoBehaviour {
     {
         GameObject thingLeft = collider.gameObject;
 
-        if (thingLeft.GetComponent<Ball>())
+        if (thingLeft.tag == "ChildBall")
             ThingTracker.ballout = true;
     }
 
     public void SlowTime()
     {
-        //audioSource.clip = TimeSlowing;
-        Time.timeScale = .2f;
+        audioSource.clip = TimeSlowing;
         audioSource.Play();
+        Time.timeScale = .2f;
         StartCoroutine(RestoreTime());
     }
 

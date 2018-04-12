@@ -8,9 +8,9 @@ public class BallCatcher : MonoBehaviour {
 	void OnTriggerExit(Collider collider){
 		GameObject thingLeft = collider.gameObject;
 		
-		if(thingLeft.GetComponent<Ball>())
-			 ThingTracker.ballout = true;
+		if(!thingLeft.GetComponent<Ball>() || thingLeft.tag != "ChildBall")
+            Destroy(thingLeft);
 		else
-			Destroy(thingLeft);
-	}
+            ThingTracker.ballout = true;
+    }
 }

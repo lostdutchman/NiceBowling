@@ -4,26 +4,24 @@ using UnityEngine.UI;
 
 public class Ball : MonoBehaviour {
 
-	private Rigidbody rigidBody;
 	public bool inPlay = false;
 	private Vector3 ballStartPos;
     public AudioClip BallRolling;
     private AudioSource audioSource;
     public GameObject Tut, LeftArrow, RightArrow, TouchInput;
-    private MeshRenderer Mesh;
 
     void Start () {
-		rigidBody = GetComponent<Rigidbody>();
-		rigidBody.useGravity = false;
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        childBall.GetComponent<Rigidbody>().useGravity = false;
 		audioSource = GetComponent<AudioSource>();
-        Mesh = GetComponent<MeshRenderer>();
     }
 
     public void Launch (Vector3 velocity)
 	{
-		ballStartPos = this.transform.position;
-		rigidBody.useGravity = true;
-		rigidBody.velocity = velocity;
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        ballStartPos = this.transform.position;
+        childBall.GetComponent<Rigidbody>().useGravity = true;
+        childBall.GetComponent<Rigidbody>().velocity = velocity;
 		inPlay = true;
         Tut.SetActive(false);
         LeftArrow.SetActive(false);
@@ -34,10 +32,12 @@ public class Ball : MonoBehaviour {
 	
 	public void Reset ()
 	{
-        Mesh.enabled = false;
-        this.transform.position = ballStartPos;
-		this.transform.rotation = Quaternion.identity;
-		rigidBody.useGravity = false;
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Rigidbody rigidBody = childBall.GetComponent<Rigidbody>();
+        GameObject.FindGameObjectWithTag("ChildBall").GetComponent<MeshRenderer>().enabled = false;
+        childBall.transform.position = ballStartPos;
+		childBall.transform.rotation = Quaternion.identity;
+        rigidBody.useGravity = false;
 		rigidBody.velocity = Vector3.zero;
 		rigidBody.angularVelocity = Vector3.zero;
         inPlay = false;
@@ -45,10 +45,11 @@ public class Ball : MonoBehaviour {
 
     void FixedUpdate()
     {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         //Make it so that if ball stops moving the frame resets
         if (inPlay)
         {
-            if (rigidBody.velocity.z <= 0)
+            if (childBall.GetComponent<Rigidbody>().velocity.z <= 0)
             {
                 ThingTracker.ballout = true;
             }
@@ -59,7 +60,7 @@ public class Ball : MonoBehaviour {
             {
                 LeftArrow.SetActive(true);
                 RightArrow.SetActive(true);
-                Mesh.enabled = true;
+                childBall.GetComponent<MeshRenderer>().enabled = true;
             }
         }
     }

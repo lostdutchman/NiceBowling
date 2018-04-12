@@ -3,6 +3,7 @@ using System.Collections;
 
 public class NiceBowlingReset : MonoBehaviour
 {
+    public GameObject StandardBall;
     private GameObject Bumper, Bumper2;
     private PhysicMaterial BowlingBall;
     private Material Ball, SkyBoxMat;
@@ -16,14 +17,10 @@ public class NiceBowlingReset : MonoBehaviour
         Bumper = GameObject.FindObjectOfType<NiceBowling>().Bumper;
         Bumper2 = GameObject.FindObjectOfType<NiceBowling>().Bumper2;
         MainCamera = Camera.main;
-        BowlingBall = GameObject.FindObjectOfType<Ball>().GetComponent<SphereCollider>().material;
-        Ball = GameObject.FindObjectOfType<Ball>().GetComponent<Renderer>().material;
         SkyBoxMat = MainCamera.GetComponent<Skybox>().material;
         Gravity = Physics.gravity;
-        BallSize = GameObject.FindObjectOfType<Ball>().transform.localScale;
         BallPosY = GameObject.FindObjectOfType<Ball>().transform.localPosition.y;
         BallPosZ = GameObject.FindObjectOfType<Ball>().transform.localPosition.z;
-        BallMass = GameObject.FindObjectOfType<Ball>().GetComponent<Rigidbody>().mass;
     }
 
     //use for initilization if level is loaded more then onece in a session
@@ -47,16 +44,9 @@ public class NiceBowlingReset : MonoBehaviour
         }
 
         //Reset Ball
-        Ball ball = GameObject.FindObjectOfType<Ball>();
-        SphereCollider ballCol = ball.GetComponent<SphereCollider>();
-        Rigidbody ballBody = ball.GetComponent<Rigidbody>();
-        Renderer ballRend = ball.GetComponent<Renderer>();
-
-        ballCol.sharedMaterial = BowlingBall;
-        ball.transform.localScale = BallSize;
-        ball.transform.localPosition = new Vector3(BallPosX, BallPosY, BallPosZ); 
-        ballRend.material = Ball;
-        ballBody.mass = BallMass;
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Destroy(childBall);
+        Instantiate(StandardBall, new Vector3(BallPosX, BallPosY, BallPosZ), Quaternion.identity);
 
         //Clear Obsticals tagged NBTemp
         foreach(GameObject Obstacle in GameObject.FindGameObjectsWithTag("NBTemp"))

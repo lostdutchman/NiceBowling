@@ -15,8 +15,9 @@ public class CameraControl : MonoBehaviour {
 	
 	//Follows the ball
 	void Update () {
-		if ((ball.transform.position.z <= stopCameraZ) && (ball.transform.position.x < stopCameraX) && (ball.transform.position.x > (0 - stopCameraX))){
-			transform.position = ball.transform.position + offset;
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+		if ((childBall.transform.position.z <= stopCameraZ) && (childBall.transform.position.x < stopCameraX) && (childBall.transform.position.x > (0 - stopCameraX))){
+			transform.position = childBall.transform.position + offset;
 		} 
 	}
 }
