@@ -4,11 +4,9 @@ using System.Collections;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
-	public Material ball1, ball2, ball3; 
-	public PhysicMaterial Bounce, none;
 	private Camera MainCamera;
 	private float volume;
     public UIAnimation NBUI;
@@ -39,12 +37,11 @@ public class NiceBowling : MonoBehaviour {
 
     public void NiceManager()
     {
-        ////Get NB Effects
-        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
-        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        //List<string> Effects = Effect(NiceRandom);
-        //StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
-        StartCoroutine(NBUI.NiceBowlingEffects(new List<string> { "Effects Off" }, FirstFrame));
+        //Get NB Effects
+        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
+        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        List<string> Effects = Effect(NiceRandom);
+        StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
 
@@ -55,7 +52,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(1, 14); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(1, 13); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -65,16 +62,15 @@ public class NiceBowling : MonoBehaviour {
                     case 1: Effects.Add(Gravity()); break;
                     case 2: Effects.Add(PinMove()); break;
                     case 3: Effects.Add(PinSize()); break;
-                    case 4: Effects.Add(BouncyBall()); break;
-                    case 5: Effects.Add(BallSize()); break;
-                    case 6: Effects.Add(Cheater()); break;
-                    case 7: Effects.Add(BallMass()); break;
-                    case 8: Effects.Add(Bumpers()); break;
-                    case 9: Effects.Add(SardineRain()); break;
-                    case 10: Effects.Add(Obstical()); break;
-                    case 11: Effects.Add(Obsticals()); break;
-                    case 12: Effects.Add(RampAdd()); break;
-                    case 13: Effects.Add(AddPins()); break;
+                    case 4: Effects.Add(BallSize()); break;
+                    case 5: Effects.Add(Cheater()); break;
+                    case 6: Effects.Add(DifferentBall()); break;
+                    case 7: Effects.Add(Bumpers()); break;
+                    case 8: Effects.Add(SardineRain()); break;
+                    case 9: Effects.Add(Obstical()); break;
+                    case 10: Effects.Add(Obsticals()); break;
+                    case 11: Effects.Add(RampAdd()); break;
+                    case 12: Effects.Add(AddPins()); break;
 
                     default: print("NiceBowling.Effect switch case default triggered somehow"); break;
                 }
@@ -111,12 +107,16 @@ public class NiceBowling : MonoBehaviour {
         return "Extra Pins Error!";
     }
 
-    private string BallMass()
+    private string DifferentBall()
     {
-        switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 7))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
-            case 1: return LightBall();
-            case 2: return HeavyBall();
+            case 1: return BeachBall();
+            case 2: return CannonBall();
+            case 3: return BouncyBall();
+            case 4: return BuckyBall();
+            case 5: return SpikeBall();
+            case 6: return CactusBall();
 
             default: print("NiceBowling.BallMass switch case default triggered somehow"); break;
         }
@@ -170,13 +170,11 @@ public class NiceBowling : MonoBehaviour {
 
     private string Gravity()
     {
-        switch (UnityEngine.Random.Range(1, 6))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 4))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return NoGravityAllPins();
-            case 2: return GravityX();
-            case 3: return GravityYHeavy();
-            case 4: return GravityDiff(); 
-            case 5: return GravityYLight();
+            case 2: return GravityYHeavy();
+            case 3: return GravityYLight();
 
             default: print("NiceBowling.Gravity switch case default triggered somehow"); break;
         }
@@ -192,19 +190,15 @@ public class NiceBowling : MonoBehaviour {
 		}
         return("Zero G!");
 	}
-	
-	public string BoardwalkPins(){
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			Rigidbody body = pin.GetComponent<Rigidbody>();
-			body.isKinematic = true;
-		}
-        return("Boardwalk Pins!");
-    }
 
-    public string GravityX(){
-		gravityX = UnityEngine.Random.Range (-10, 10);
-		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        return("Gravity Flux");
+    public string BoardwalkPins()
+    {
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            Rigidbody body = pin.GetComponent<Rigidbody>();
+            body.isKinematic = true;
+        }
+        return ("Boardwalk Pins!");
     }
 
 	public string GravityYHeavy(){
@@ -213,25 +207,10 @@ public class NiceBowling : MonoBehaviour {
         return("J-J-J-Jupiter!");
     }
 
-	public string GravityDiff(){
-		gravityY = UnityEngine.Random.Range (-400, 3);
-		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			int number = UnityEngine.Random.Range (1, 4);
-			if(number == 2){
-			Rigidbody body = pin.GetComponent<Rigidbody>();
-			body.useGravity = false;
-			}
-        }
-		
-		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        return("Wind");
-    }
-
 	public string GravityYLight(){
 		gravityY = UnityEngine.Random.Range (-150, 3);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        return("Wind");
+        return("Low Gravity");
     }
 
 	public string IncreasePinDrag(){
@@ -258,67 +237,94 @@ public class NiceBowling : MonoBehaviour {
 		}
         return("Baby Pins!");
     }
-
-	public string BouncyBall(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-		SphereCollider col = ball.GetComponent<SphereCollider>();
-		col.sharedMaterial = Bounce;
-        return("Springy");
-    }
 	
 	public string GiantBall(){
-	    Ball ball = GameObject.FindObjectOfType<Ball>();
-        Vector3 size = ball.transform.localScale;
-	    ball.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 size = childBall.transform.localScale;
+        childBall.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
         return("Giant Ball");
     }
 	
 	public string SmallBall(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-        Vector3 size = ball.transform.localScale;
-        ball.transform.localScale = new Vector3(size.x / 1.5f, size.y / 1.5f, size.z / 1.5f);
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 size = childBall.transform.localScale;
+        childBall.transform.localScale = new Vector3(size.x / 1.5f, size.y / 1.5f, size.z / 1.5f);
         return ("Small Ball");
     }
 
 	public string Cheater(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-		ball.transform.localPosition += new Vector3(0, 0, 1000f);
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        childBall.transform.localPosition += new Vector3(0, 0, 1000f);
         return("Cheater!");
     }
 
 	public string TinyBall(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-        Vector3 size = ball.transform.localScale;
-        ball.transform.localScale = new Vector3(size.x / 2.5f, size.y / 2.5f, size.z / 2.5f);
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 size = childBall.transform.localScale;
+        childBall.transform.localScale = new Vector3(size.x / 2.5f, size.y / 2.5f, size.z / 2.5f);
         return ("Tiny Ball");
     }
 
 	public string LargeBall(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-        Vector3 size = ball.transform.localScale;
-        ball.transform.localScale = new Vector3(size.x * 1.5f, size.y * 1.5f, size.z * 1.5f);
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 size = childBall.transform.localScale;
+        childBall.transform.localScale = new Vector3(size.x * 1.5f, size.y * 1.5f, size.z * 1.5f);
         return ("Big Ball");
     }
 
-	public string LightBall(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-		Rigidbody body = ball.GetComponent<Rigidbody>();
-		Renderer rend = ball.GetComponent<Renderer> ();
-		rend.material = ball2;
-		body.mass = .5f;
-        return("Bouncy Ball");
+	public string BeachBall(){
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallBeach, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Beach Ball");
     }
 
-	public string HeavyBall(){
-		Ball ball = GameObject.FindObjectOfType<Ball>();
-		Rigidbody body = ball.GetComponent<Rigidbody>();
-		Renderer rend = ball.GetComponent<Renderer> ();
-		rend.material = ball3;
-		body.mass = 70;
-        return("Concrete!");
+	public string CannonBall(){
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallCannon, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Cannon Ball!");
     }
-	
-	public string Bumpers(){
+
+    public string BouncyBall()
+    {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallBounce, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Bouncy Ball!");
+    }
+
+    public string BuckyBall()
+    {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallBucky, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Bucky Ball!");
+    }
+
+    public string CactusBall()
+    {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallCactus, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Jackfruit!");
+    }
+
+    public string SpikeBall()
+    {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallSpiked, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Spike Ball!");
+    }
+
+    public string Bumpers(){
 		Bumper.SetActive(true);
 		Bumper2.SetActive(true);
         return("Kid Bowling");

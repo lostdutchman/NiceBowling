@@ -46,10 +46,10 @@ public class NiceBowlingReset : MonoBehaviour
         //Reset Ball
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Destroy(childBall);
-        Instantiate(StandardBall, new Vector3(BallPosX, BallPosY, BallPosZ), Quaternion.identity);
+        Instantiate(StandardBall, new Vector3(BallPosX, BallPosY, BallPosZ), Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
 
         //Clear Obsticals tagged NBTemp
-        foreach(GameObject Obstacle in GameObject.FindGameObjectsWithTag("NBTemp"))
+        foreach (GameObject Obstacle in GameObject.FindGameObjectsWithTag("NBTemp"))
         {
             Destroy(Obstacle);
         }

@@ -60,11 +60,14 @@ public class PinCounter : MonoBehaviour {
 
 		lastStandingCount = -1;
 		ThingTracker.ballout = false;
-	}
+        ThingTracker.firstPin = true;
 
-	public void Reset(){
+    }
+
+    public void Reset(){
 		lastStandingCount = -1;
 		ThingTracker.ballout = false;
-		lastSettledCount = 10;
+        ThingTracker.firstPin = true;
+        lastSettledCount = 10;
 	}
 }

@@ -12,7 +12,6 @@ public class Ball : MonoBehaviour {
 
     void Start () {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        childBall.GetComponent<Rigidbody>().useGravity = false;
 		audioSource = GetComponent<AudioSource>();
     }
 

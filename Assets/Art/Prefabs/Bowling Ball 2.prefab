@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimAdjust: 0.75
   ArrowSound: {fileID: 8300000, guid: 32ee82198819e43c88be85fe971620fb, type: 3}
-  MakeAimEasier: 2.2
+  MakeAimEasier: 2.1
   SlowDown: 1.5
 --- !u!114 &114301792499771932
 MonoBehaviour:

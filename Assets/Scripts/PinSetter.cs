@@ -66,7 +66,6 @@ public class PinSetter : MonoBehaviour {
             pin.NicePins();//reinstate the effects on the pins
         }
         Swipper.SetActive(false);
-        ThingTracker.firstPin = true;
     }
 	
 	//Called by animator to add a new set of pins
