@@ -93,7 +93,7 @@ public class DragLaunch : MonoBehaviour {
 	
 	//Calculates the direction and speed of the ball launch using info from the previous 2 methods.
 	public void CalculateDrag(){
-		if(!ball.inPlay){
+        if (!ball.inPlay){
             float AverageX = DragPointsX.Average();
             float dragDuration = endTime - startTime;
 			//Speed = distance (end - start) devided by time

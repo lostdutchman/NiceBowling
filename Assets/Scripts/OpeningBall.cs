@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class OpeningBall : MonoBehaviour {
 
@@ -20,12 +20,7 @@ public class OpeningBall : MonoBehaviour {
 		float zPos = rigidBody.transform.position.z;
 		rigidBody.transform.position = new Vector3 (Random.Range(-10, 10), yPos, zPos);
 		ThrowBall ();
-		if (!PlayerPrefs.HasKey ("nice_score"))
-			PlayerPrefsManager.SetNiceScore(0);
-		if (!PlayerPrefs.HasKey ("high_score"))
-			PlayerPrefsManager.SetHighScore(0);
-		if(Application.loadedLevel == 0)
-			canvas.clip = niceBowling[Random.Range(0, niceBowling.Length)];
+	    canvas.clip = niceBowling[Random.Range(0, niceBowling.Length)];
         MenuTimeDelay = GameObject.FindObjectOfType<MusicManager>().MenuTimeDelay + .5f; //.5f for the splash screen fade time
         Splash = GameObject.FindObjectOfType<PanelFade>().gameObject;
 

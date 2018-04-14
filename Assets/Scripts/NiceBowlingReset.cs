@@ -4,6 +4,7 @@ using System.Collections;
 public class NiceBowlingReset : MonoBehaviour
 {
     public GameObject StandardBall;
+    public float BallPosX;
     private GameObject Bumper, Bumper2;
     private PhysicMaterial BowlingBall;
     private Material Ball, SkyBoxMat;
@@ -21,14 +22,12 @@ public class NiceBowlingReset : MonoBehaviour
         Gravity = Physics.gravity;
         BallPosY = GameObject.FindObjectOfType<Ball>().transform.localPosition.y;
         BallPosZ = GameObject.FindObjectOfType<Ball>().transform.localPosition.z;
+        BallPosX = GameObject.FindObjectOfType<Ball>().transform.localPosition.x;
     }
 
     //use for initilization if level is loaded more then onece in a session
     public void Reset()
     {
-        //This allows the possition the player set to remain between frames. 
-        float BallPosX = GameObject.FindObjectOfType<Ball>().transform.localPosition.x;
-
         //Reset Lane
         MainCamera.GetComponent<Skybox>().material = SkyBoxMat;
 

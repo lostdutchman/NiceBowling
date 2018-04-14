@@ -24,23 +24,13 @@ public class NiceBowling : MonoBehaviour {
         FirstFrame = true;
     }
 
-    //use for initilization if level is loaded more then onece in a session
-    void OnLevelWasLoaded()
-    {
-        volume = PlayerPrefsManager.GetMasterVolume();
-        MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
-        musicManager.ChangeVolume(volume);
-        gravityX = Physics.gravity.x;
-        gravityY = Physics.gravity.y;
-        gravityZ = Physics.gravity.z;
-    }
-
     public void NiceManager()
     {
         //Get NB Effects
         int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         List<string> Effects = Effect(NiceRandom);
+        //List<string> Effects = Effect(1);
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -61,7 +51,7 @@ public class NiceBowling : MonoBehaviour {
                 {
                     case 1: Effects.Add(Gravity()); break;
                     case 2: Effects.Add(PinMove()); break;
-                    case 3: Effects.Add(PinSize()); break;
+                    case 3: Effects.Add(PinSize()); break; //breaks the game
                     case 4: Effects.Add(BallSize()); break;
                     case 5: Effects.Add(Cheater()); break;
                     case 6: Effects.Add(DifferentBall()); break;
@@ -225,7 +215,7 @@ public class NiceBowling : MonoBehaviour {
 	public string IncreasePinSize(){
 		float size = UnityEngine.Random.Range (1.2f, 2.5f);
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			pin.transform.localScale = new Vector3(size, size, size);
+			pin.ChangeSize(size);
 		}
         return("Big ol Pins!");
     }
@@ -233,8 +223,8 @@ public class NiceBowling : MonoBehaviour {
 	public string DecreasePinSize(){
 		float size = UnityEngine.Random.Range (0.6f, 0.95f);
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			pin.transform.localScale = new Vector3(size, size, size);
-		}
+            pin.ChangeSize(size);
+        }
         return("Baby Pins!");
     }
 	
@@ -333,8 +323,8 @@ public class NiceBowling : MonoBehaviour {
 	public string SardineRain(){
 		int rand = UnityEngine.Random.Range (10, 200);
 		for(int i = 0; i < rand; i++){
-			Instantiate(Sardine, new Vector3(UnityEngine.Random.Range (55f, -55f), UnityEngine.Random.Range (50f, 200f), UnityEngine.Random.Range (150f, 2000f)), Quaternion.Euler (UnityEngine.Random.Range (0f, 360f), UnityEngine.Random.Range (0f, 360f), UnityEngine.Random.Range (0f, 360f)));
-			}
+            Instantiate(Sardine, new Vector3(UnityEngine.Random.Range(55f, -55f), UnityEngine.Random.Range(50f, 200f), UnityEngine.Random.Range(150f, 2000f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
+        }
         return("Fish?");
     }
 

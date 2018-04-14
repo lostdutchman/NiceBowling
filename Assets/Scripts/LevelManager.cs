@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
@@ -19,13 +19,13 @@ public class LevelManager : MonoBehaviour {
 	}
 	
 	public void LoadLevel(string name){
-		Application.LoadLevel(name);
+		SceneManager.LoadScene(name);
 	}	
 	
 	public void LoadNice(){
 		PlayerPrefsManager.NiceBowlingSet(1);
 		PlayerPrefsManager.SetMasterVolume(volumeSlider.value);
-		Application.LoadLevel("Game");
+		SceneManager.LoadScene("Game");
 	}
 
     public void ExitGame()

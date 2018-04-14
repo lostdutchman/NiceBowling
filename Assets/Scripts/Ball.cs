@@ -9,24 +9,28 @@ public class Ball : MonoBehaviour {
     public AudioClip BallRolling;
     private AudioSource audioSource;
     public GameObject Tut, LeftArrow, RightArrow, TouchInput;
+    private NiceBowlingReset NBReset;
+
 
     void Start () {
-        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
 		audioSource = GetComponent<AudioSource>();
+        NBReset = FindObjectOfType<NiceBowlingReset>();
+
     }
 
     public void Launch (Vector3 velocity)
 	{
+        audioSource.clip = BallRolling;
+        audioSource.Play();
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        ballStartPos = this.transform.position;
+        ballStartPos = childBall.transform.position;
+        NBReset.BallPosX = childBall.transform.position.x;
         childBall.GetComponent<Rigidbody>().useGravity = true;
         childBall.GetComponent<Rigidbody>().velocity = velocity;
 		inPlay = true;
         Tut.SetActive(false);
         LeftArrow.SetActive(false);
         RightArrow.SetActive(false);
-        audioSource.clip = BallRolling;
-        audioSource.Play();
     }
 	
 	public void Reset ()

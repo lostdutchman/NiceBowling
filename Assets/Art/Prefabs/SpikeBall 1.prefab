@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23060383404386152}
   - component: {fileID: 54775202426389868}
   - component: {fileID: 222418027349842130}
-  - component: {fileID: 64787836482225184}
+  - component: {fileID: 135746872714135226}
   m_Layer: 0
   m_Name: SpikeBall 1
   m_TagString: ChildBall
@@ -98,8 +98,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!64 &64787836482225184
-MeshCollider:
+--- !u!135 &135746872714135226
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -108,10 +108,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: c455996f6e6b49d418895f41b5216202, type: 3}
+  m_Radius: 1.0022682
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &222418027349842130
 CanvasRenderer:
   m_ObjectHideFlags: 1
