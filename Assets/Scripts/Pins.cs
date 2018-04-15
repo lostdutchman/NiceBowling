@@ -126,10 +126,4 @@ public class Pins : MonoBehaviour {
             rigidBody.angularDrag = 30f;
         }
     }
-
-    //Change size of pins without crashing unity
-    public void ChangeSize(float size)
-    {
-        //transform.localScale = new Vector3(size, size, size);
-    }
 }

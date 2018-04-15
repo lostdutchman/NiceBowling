@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallPool;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
 	private Camera MainCamera;
@@ -49,9 +50,9 @@ public class NiceBowling : MonoBehaviour {
                 UsedNum.Add(TempNum);
                 switch (TempNum)
                 {
-                    case 1: Effects.Add(Gravity()); break;
+                    case 1: Effects.Add(Billiards()); break;
                     case 2: Effects.Add(PinMove()); break;
-                    case 3: Effects.Add(PinSize()); break; //breaks the game
+                    case 3: Effects.Add(DifferentPins()); break;
                     case 4: Effects.Add(BallSize()); break;
                     case 5: Effects.Add(Cheater()); break;
                     case 6: Effects.Add(DifferentBall()); break;
@@ -73,7 +74,7 @@ public class NiceBowling : MonoBehaviour {
         return Effects;
     }
 
-    //Choice Effects
+#region Effect Switch Case's
     private string AddPins()
     {
         switch (UnityEngine.Random.Range(1, 14))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
@@ -127,53 +128,39 @@ public class NiceBowling : MonoBehaviour {
         return "Ball Size Error!";
     }
 
-    private string PinSize()
+    private string DifferentPins()
     {
         switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return IncreasePinSize();
             case 2: return DecreasePinSize();
 
-            default: print("NiceBowling.PinSize switch case default triggered somehow"); break;
+            default: print("NiceBowling.DifferentPins switch case default triggered somehow"); break;
         }
-        return "Pin Size Error!";
+        return "Pin Change Error!";
     }
 
     private string PinMove()
     {
-        switch (UnityEngine.Random.Range(1, 10))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 8))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return BoardwalkPins();
-            case 2: return IncreasePinDrag();
-            case 3: return IncreasePinDrag();
-            case 4: return IncreasePinDrag();
+            case 2: return NoGravityAllPins();
+            case 3: return NoGravityAllPins();
+            case 4: return NoGravityAllPins();
             case 5: return IncreasePinDrag();
             case 6: return IncreasePinDrag();
             case 7: return IncreasePinDrag();
-            case 8: return IncreasePinDrag();
-            case 9: return IncreasePinDrag();
 
             default: print("NiceBowling.PinMove switch case default triggered somehow"); break;
         }
         return "Pin movement Error!";
     }
 
-    private string Gravity()
-    {
-        switch (UnityEngine.Random.Range(1, 4))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
-        {
-            case 1: return NoGravityAllPins();
-            case 2: return GravityYHeavy();
-            case 3: return GravityYLight();
+    #endregion
 
-            default: print("NiceBowling.Gravity switch case default triggered somehow"); break;
-        }
-        return "Gravity Error!";
-    }
-
-
-	//Primary Effects
-	public string NoGravityAllPins(){
+#region Effects
+    public string NoGravityAllPins(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
 			body.useGravity = false;
@@ -213,19 +200,20 @@ public class NiceBowling : MonoBehaviour {
     }
 
 	public string IncreasePinSize(){
-		float size = UnityEngine.Random.Range (1.2f, 2.5f);
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-			pin.ChangeSize(size);
-		}
+		//float size = UnityEngine.Random.Range (1.2f, 2.5f);
+		//foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
+		//	pin.ChangeSize(size);
+		//}
         return("Big ol Pins!");
     }
 
 	public string DecreasePinSize(){
-		float size = UnityEngine.Random.Range (0.6f, 0.95f);
-		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-            pin.ChangeSize(size);
-        }
-        return("Baby Pins!");
+        //float size = UnityEngine.Random.Range(0.6f, 0.95f);
+        //foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        //{
+        //    pin.ChangeSize(size);
+        //}
+        return ("Baby Pins!");
     }
 	
 	public string GiantBall(){
@@ -336,8 +324,8 @@ public class NiceBowling : MonoBehaviour {
 	public string Obsticals(){
 		float z = UnityEngine.Random.Range (400f, 1600f);
 		float y = UnityEngine.Random.Range (30f, -10f);
-		Instantiate(Cylinder, new Vector3(40f, y, z), Quaternion.identity);
-		Instantiate(Cylinder, new Vector3(-40f, y, z), Quaternion.identity);
+		Instantiate(Cylinder, new Vector3(30f, y, z), Quaternion.identity);
+		Instantiate(Cylinder, new Vector3(-30f, y, z), Quaternion.identity);
         return("Obsticals");
     }
 
@@ -345,8 +333,14 @@ public class NiceBowling : MonoBehaviour {
 		Instantiate(Ramp, new Vector3(0, -3, UnityEngine.Random.Range (300f, 1600f)), Quaternion.Euler (-10, 0, 0));
         return("Ramp");
     }
-	
-	public string AddPinsx1(){
+
+    private string Billiards()
+    {
+        Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, UnityEngine.Random.Range(100f, 600f)), Quaternion.identity);
+        return ("Trick Shot");
+    }
+#region Pin Add
+    public string AddPinsx1(){
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
         return("Dumb Pins");
     }
@@ -514,6 +508,10 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
         return ("Game Breaking number of pins!");
     }
+    #endregion
+
+#endregion
+
 
 }
 
