@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallPool;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallPool, PinBig, PinToy;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
 	private Camera MainCamera;
@@ -28,10 +28,10 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         //Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
-        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        List<string> Effects = Effect(NiceRandom);
-        //List<string> Effects = Effect(1);
+        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
+        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        //List<string> Effects = Effect(NiceRandom);
+        List<string> Effects = Effect(1);
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -43,7 +43,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(1, 13); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(3, 4); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -200,19 +200,22 @@ public class NiceBowling : MonoBehaviour {
     }
 
 	public string IncreasePinSize(){
-		//float size = UnityEngine.Random.Range (1.2f, 2.5f);
-		//foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
-		//	pin.ChangeSize(size);
-		//}
-        return("Big ol Pins!");
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            Vector3 Location = pin.transform.position;
+            Destroy(pin.gameObject);
+            Instantiate(PinBig, Location, Quaternion.Euler(-90, 0, 0));
+        }
+        return ("Big ol Pins!");
     }
 
 	public string DecreasePinSize(){
-        //float size = UnityEngine.Random.Range(0.6f, 0.95f);
-        //foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
-        //{
-        //    pin.ChangeSize(size);
-        //}
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            Vector3 Location = pin.transform.position;
+            Destroy(pin.gameObject);
+            Instantiate(PinToy, Location, Quaternion.Euler(-90, 0, 0));
+        }
         return ("Baby Pins!");
     }
 	
