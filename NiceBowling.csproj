@@ -86,6 +86,15 @@
   <ItemGroup>
     <Compile Include="Assets\Art\Sardine\Scripts\iwasiRigid.cs" />
     <Compile Include="Assets\BounceBall.cs" />
+    <Compile Include="Assets\DefKit\Common\Scripts\ExtendedFlycam.cs" />
+    <Compile Include="Assets\DefKit\Common\Scripts\PingPongMove.cs" />
+    <Compile Include="Assets\DefKit\Common\Scripts\RaycastDragger.cs" />
+    <Compile Include="Assets\DefKit\Scripts\Link.cs" />
+    <Compile Include="Assets\DefKit\Scripts\PhysXMassSpringModel.cs" />
+    <Compile Include="Assets\DefKit\Scripts\PhysXMeshUpdater.cs" />
+    <Compile Include="Assets\DefKit\Scripts\TetMesh.cs" />
+    <Compile Include="Assets\DefKit\Scripts\Tetrahedron.cs" />
+    <Compile Include="Assets\DefKit\Scripts\Triangle.cs" />
     <Compile Include="Assets\RetroAesthetics\Demos\Game\Scripts\SpeedTilt.cs" />
     <Compile Include="Assets\RetroAesthetics\Demos\Menu\Scripts\MenuScripts.cs" />
     <Compile Include="Assets\RetroAesthetics\Scripts\CombineMeshes.cs" />
@@ -118,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\Sardine\readme.txt" />
+    <None Include="Assets\DefKit\ReadMe.txt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\Monsterrat4\Monsterrat4.fnt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\Monsterrat_white\Monsterrat_white.fnt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\MrDafoe1\MrDafoe1.fnt" />

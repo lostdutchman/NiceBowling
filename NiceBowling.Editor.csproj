@@ -128,10 +128,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DefKit\Editor\DefKitWindow.cs" />
     <Compile Include="Assets\RetroAesthetics\Shaders\Editor\RetroSkyboxEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\Sardine\readme.txt" />
+    <None Include="Assets\DefKit\ReadMe.txt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\Monsterrat4\Monsterrat4.fnt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\Monsterrat_white\Monsterrat_white.fnt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\MrDafoe1\MrDafoe1.fnt" />
