@@ -336,7 +336,15 @@ public class NiceBowling : MonoBehaviour {
 
     private string Billiards()
     {
-        Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, UnityEngine.Random.Range(100f, 600f)), Quaternion.identity);
+        if (UnityEngine.Random.Range(0, 20) > 18)
+        {
+            Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
+            if (UnityEngine.Random.Range(0, 20) == 19)
+            {
+                Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
+            }
+        }
+        Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
         return ("Trick Shot");
     }
 #region Pin Add

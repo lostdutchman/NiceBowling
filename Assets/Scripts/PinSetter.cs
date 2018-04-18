@@ -93,29 +93,7 @@ public class PinSetter : MonoBehaviour {
         if (thingLeft.tag == "ChildBall")
             ThingTracker.ballout = true;
     }
-#region Slow Time
-    public void SlowTime()
-    {
-        audioSource.clip = TimeSlowing;
-        audioSource.Play();
-        Time.timeScale = .2f;
-        StartCoroutine(ScaleTime());
-    }
 
-    private IEnumerator ScaleTime()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        Time.timeScale = .3f;
-        StartCoroutine(RestoreTime());
-
-    }
-
-    private IEnumerator RestoreTime()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        Time.timeScale = 1f;
-    }
-#endregion
     public void PlayAudio(int type){
 		switch (type){
 		case 1: audioSource.clip = strikeAudio[Random.Range(0, strikeAudio.Length)]; break;

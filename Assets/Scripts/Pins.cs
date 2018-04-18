@@ -14,14 +14,12 @@ public class Pins : MonoBehaviour {
     private float startingPosX;
     private float startingPosZ;
     private string PinStatus = "None";
-    PinSetter pinsetter;
 
     void Start () {
 		rigidBody = GetComponent<Rigidbody>();
 		audioSource = GetComponent<AudioSource> ();
         startingPosX = rigidBody.position.x;
         startingPosZ = rigidBody.position.z;
-        pinsetter = FindObjectOfType<PinSetter>();
     }
 
     void Awake()
@@ -90,11 +88,6 @@ public class Pins : MonoBehaviour {
         else if (col.gameObject.tag == "ChildBall")
         {
             audioSource.clip = PinHitBall;
-            if (ThingTracker.firstPin)
-            {
-                ThingTracker.firstPin = false;
-                pinsetter.SlowTime();
-            }
             //Add force when pin is hit to make physics apply more realisticly.
             Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass * 2.5f;
             rigidBody.AddForce(HitForce, ForceMode.Impulse);
