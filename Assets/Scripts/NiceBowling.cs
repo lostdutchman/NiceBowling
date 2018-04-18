@@ -148,7 +148,7 @@ public class NiceBowling : MonoBehaviour {
             case 2: return NoGravityAllPins();
             case 3: return NoGravityAllPins();
             case 4: return NoGravityAllPins();
-            case 5: return IncreasePinDrag();
+            case 5: return NoGravityAllPins();
             case 6: return IncreasePinDrag();
             case 7: return IncreasePinDrag();
 
@@ -336,7 +336,7 @@ public class NiceBowling : MonoBehaviour {
 
     private string Billiards()
     {
-        if (UnityEngine.Random.Range(0, 20) > 18)
+        if (UnityEngine.Random.Range(0, 20) > 17)
         {
             Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
             if (UnityEngine.Random.Range(0, 20) == 19)
