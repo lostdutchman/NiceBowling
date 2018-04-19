@@ -11,11 +11,9 @@ public class Ball : MonoBehaviour {
     public GameObject Tut, LeftArrow, RightArrow, TouchInput;
     private NiceBowlingReset NBReset;
 
-
     void Start () {
 		audioSource = GetComponent<AudioSource>();
         NBReset = FindObjectOfType<NiceBowlingReset>();
-
     }
 
     public void Launch (Vector3 velocity)

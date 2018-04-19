@@ -84,7 +84,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!136 &136377810763496046
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -94,10 +94,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.25455752
-  m_Height: 0.78444797
+  m_Radius: 0.32382432
+  m_Height: 0.8808084
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.013118865, y: -0.05614793, z: -0.006424523}
 --- !u!222 &222173648686527886
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -110,15 +110,15 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221181083999170}
-  m_LocalRotation: {x: -0.5967634, y: -0.20492108, z: -0.42415306, w: -0.64959615}
-  m_LocalPosition: {x: 0, y: 0, z: 131.55334}
+  m_LocalRotation: {x: 0.6768753, y: 0.32137015, z: 0.26695055, w: -0.6060516}
+  m_LocalPosition: {x: 0, y: 0, z: 130.27}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 36.976, y: 75.22301, z: -984.825}
+  m_LocalEulerAnglesHint: {x: -97.242, y: 372.90298, z: -782.173}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.3127103, y: 17.105476}
+  m_AnchoredPosition: {x: -2.39, y: 15.92}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

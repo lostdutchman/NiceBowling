@@ -85,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Art\Sardine\Scripts\iwasiRigid.cs" />
-    <Compile Include="Assets\BounceBall.cs" />
     <Compile Include="Assets\DefKit\Common\Scripts\ExtendedFlycam.cs" />
     <Compile Include="Assets\DefKit\Common\Scripts\PingPongMove.cs" />
     <Compile Include="Assets\DefKit\Common\Scripts\RaycastDragger.cs" />
@@ -105,6 +104,8 @@
     <Compile Include="Assets\Scripts\ActionMaster.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\BallCatcher.cs" />
+    <Compile Include="Assets\Scripts\BilliardBall.cs" />
+    <Compile Include="Assets\Scripts\BounceBall.cs" />
     <Compile Include="Assets\Scripts\ButtonCredits.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\DragLaunch.cs" />
