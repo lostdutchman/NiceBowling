@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\DragLaunch.cs" />
     <Compile Include="Assets\Scripts\DumbPins.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\JellyBall.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\NiceBowling.cs" />

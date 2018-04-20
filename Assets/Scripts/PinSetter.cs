@@ -10,7 +10,6 @@ public class PinSetter : MonoBehaviour {
 	public AudioClip[] turkeyAudio;
 	public AudioClip[] gutterAudio;
 	public AudioClip silence;
-    public AudioClip TimeSlowing;
 	public GameObject exitButton, Swipper, TouchInput;
 	public bool GameOver, StartGame;
 

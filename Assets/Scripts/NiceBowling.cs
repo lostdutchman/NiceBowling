@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallPool, PinBig, PinToy, JellySphere;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallPool, BallJelly, PinBig, PinToy;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
 	private Camera MainCamera;
@@ -28,10 +28,10 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         //Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
-        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        List<string> Effects = Effect(NiceRandom);
-        //List<string> Effects = Effect(1);
+        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
+        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        //List<string> Effects = Effect(NiceRandom);
+        List<string> Effects = Effect(1);
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -43,7 +43,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(1, 14); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(6, 7); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -62,7 +62,6 @@ public class NiceBowling : MonoBehaviour {
                     case 10: Effects.Add(Obsticals()); break;
                     case 11: Effects.Add(RampAdd()); break;
                     case 12: Effects.Add(AddPins()); break;
-                    case 13: Effects.Add(JellyBlob()); break;
 
                     default: print("NiceBowling.Effect switch case default triggered somehow"); break;
                 }
@@ -101,7 +100,7 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentBall()
     {
-        switch (UnityEngine.Random.Range(1, 7))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(7, 8))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return BeachBall();
             case 2: return CannonBall();
@@ -109,6 +108,7 @@ public class NiceBowling : MonoBehaviour {
             case 4: return BuckyBall();
             case 5: return SpikeBall();
             case 6: return CactusBall();
+            case 7: return JellyBall();
 
             default: print("NiceBowling.BallMass switch case default triggered somehow"); break;
         }
@@ -306,13 +306,12 @@ public class NiceBowling : MonoBehaviour {
         return ("Spike Ball!");
     }
 
-    public string JellyBlob()
+    public string JellyBall()
     {
-        int rand = UnityEngine.Random.Range(1, 4);
-        for (int i = 0; i < rand; i++)
-        {
-            Instantiate(JellySphere, new Vector3(UnityEngine.Random.Range(45f, -45f), UnityEngine.Random.Range(50f, 200f), UnityEngine.Random.Range(150f, 1700f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
-        }
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallJelly, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
         return ("Jelly!");
     }
 

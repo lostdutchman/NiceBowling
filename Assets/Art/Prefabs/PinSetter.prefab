@@ -283,7 +283,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   silence: {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
-  TimeSlowing: {fileID: 8300000, guid: 62937aff9d5de429994d315e993aeaeb, type: 3}
   exitButton: {fileID: 0}
   Swipper: {fileID: 181950}
   TouchInput: {fileID: 0}

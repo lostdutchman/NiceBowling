@@ -67,7 +67,14 @@ namespace DefKit
         {
             for (int i = 0; i < m_mesh.vertexCount; i++)
             {
-                m_vertices[i] = transform.InverseTransformPoint(m_msm.m_rigidBodies[mappings[i]].position);
+                try
+                {
+                    m_vertices[i] = transform.InverseTransformPoint(m_msm.m_rigidBodies[mappings[i]].position);
+                }
+                catch
+                {
+                    ThingTracker.ballout = true;
+                }
                 //  m_vertices[i] = transform.InverseTransformPoint(m_msm.positions[mappings[i]]);
                 //  m_normals[i] = transform.InverseTransformDirection(m_msm.normals[mappings[i]]);
 

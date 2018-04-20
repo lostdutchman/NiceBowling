@@ -23,8 +23,15 @@ public class Ball : MonoBehaviour {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         ballStartPos = childBall.transform.position;
         NBReset.BallPosX = childBall.transform.position.x;
-        childBall.GetComponent<Rigidbody>().useGravity = true;
-        childBall.GetComponent<Rigidbody>().velocity = velocity;
+        if(childBall.name == "JellyBall(Clone)")
+        {
+            GameObject.FindObjectOfType<JellyBall>().Launch(velocity);
+        }
+        else
+        {
+            childBall.GetComponent<Rigidbody>().useGravity = true;
+            childBall.GetComponent<Rigidbody>().velocity = velocity;
+        }
 		inPlay = true;
         Tut.SetActive(false);
         LeftArrow.SetActive(false);
@@ -50,6 +57,7 @@ public class Ball : MonoBehaviour {
         //Make it so that if ball stops moving the frame resets
         if (inPlay)
         {
+            print(childBall.GetComponent<Rigidbody>().velocity.z);
             if (childBall.GetComponent<Rigidbody>().velocity.z <= 0)
             {
                 ThingTracker.ballout = true;
