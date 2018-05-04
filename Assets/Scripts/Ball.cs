@@ -57,7 +57,7 @@ public class Ball : MonoBehaviour {
         //Make it so that if ball stops moving the frame resets
         if (inPlay)
         {
-            if (childBall.GetComponent<Rigidbody>().velocity.z <= 0)
+            if (childBall.GetComponent<Rigidbody>().velocity.z <= 25)
             {
                 ThingTracker.ballout = true;
             }

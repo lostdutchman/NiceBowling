@@ -6,7 +6,6 @@ public class Pins : MonoBehaviour {
 	
 	public float standingThreshold = 5f; //how many degrees it can be tilted
 	public float distanceToRaise = 45f;
-    public float moveThreshold = 5f;
     public AudioClip PinHitPin;
     public AudioClip PinHitBall;
     private Rigidbody rigidBody;
@@ -46,7 +45,7 @@ public class Pins : MonoBehaviour {
 
 	public bool IsStanding(){
 
-		if(!HasTilted() && !HasMoved())
+		if(!HasTilted())
         { 
             return true;
         }
@@ -54,15 +53,6 @@ public class Pins : MonoBehaviour {
 			return false;
 		}
 	}
-
-    private bool HasMoved()
-    {
-        float pinX = transform.position.x;
-        float pinZ = transform.position.z;
-
-        if ((Math.Abs(startingPosX - pinX) < moveThreshold) && (Math.Abs(startingPosZ - pinZ) < moveThreshold)) { return false; }
-        else { return true; }
-    }
 
     //We get the current rotation then check to see if it is past the threshold.
     private bool HasTilted()

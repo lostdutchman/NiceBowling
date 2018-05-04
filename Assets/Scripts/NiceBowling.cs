@@ -28,10 +28,10 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         //Get NB Effects
-        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
-        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        //List<string> Effects = Effect(NiceRandom);
-        List<string> Effects = Effect(1);
+        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
+        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        List<string> Effects = Effect(NiceRandom);
+        //List<string> Effects = Effect(1);
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -43,7 +43,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(6, 7); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(1, 13); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -54,7 +54,7 @@ public class NiceBowling : MonoBehaviour {
                     case 2: Effects.Add(PinMove()); break;
                     case 3: Effects.Add(DifferentPins()); break;
                     case 4: Effects.Add(BallSize()); break;
-                    case 5: Effects.Add(Cheater()); break;
+                    case 5: break;
                     case 6: Effects.Add(DifferentBall()); break;
                     case 7: Effects.Add(Bumpers()); break;
                     case 8: Effects.Add(SardineRain()); break;
@@ -100,7 +100,7 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentBall()
     {
-        switch (UnityEngine.Random.Range(7, 8))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 8))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return BeachBall();
             case 2: return CannonBall();
@@ -232,12 +232,6 @@ public class NiceBowling : MonoBehaviour {
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3(size.x / 1.5f, size.y / 1.5f, size.z / 1.5f);
         return ("Small Ball");
-    }
-
-	public string Cheater(){
-        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        childBall.transform.localPosition += new Vector3(0, 0, 1000f);
-        return("Cheater!");
     }
 
 	public string TinyBall(){

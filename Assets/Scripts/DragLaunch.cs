@@ -99,7 +99,8 @@ public class DragLaunch : MonoBehaviour {
 			//Speed = distance (end - start) devided by time
 			float launchSpeedX = ((endPos.x - startPos.x) + (AverageX - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
 			float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
-            if(launchSpeedZ > 5500) { launchSpeedZ = 5500; }
+            if(launchSpeedZ > 4200) { launchSpeedZ = 4000; }
+            if (launchSpeedZ < 200) { launchSpeedZ = 220; }
 
             DragPointsX.Clear();
 
