@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace DefKit
 {
@@ -23,7 +24,7 @@ namespace DefKit
 
         private float m_maxSearchDistance = 0.00001f;
 
-
+        private bool Broke = false;
 
         void Start()
         {
@@ -65,24 +66,27 @@ namespace DefKit
         }
         void Update()
         {
-            for (int i = 0; i < m_mesh.vertexCount; i++)
-            {
-                try
+                for (int i = 0; i < m_mesh.vertexCount; i++)
                 {
-                    m_vertices[i] = transform.InverseTransformPoint(m_msm.m_rigidBodies[mappings[i]].position);
-                }
-                catch
-                {
-                    ThingTracker.ballout = true;
-                }
-                //  m_vertices[i] = transform.InverseTransformPoint(m_msm.positions[mappings[i]]);
-                //  m_normals[i] = transform.InverseTransformDirection(m_msm.normals[mappings[i]]);
+                    try
+                    {
+                        m_vertices[i] = transform.InverseTransformPoint(m_msm.m_rigidBodies[mappings[i]].position);
+                    }
+                    catch
+                    {
+                        if (!Broke)
+                        {
+                        Broke = true;
+                        GameObject.FindObjectOfType<Ball>().ResetTheJellyBall();
+                        }
+                    }
+                    //  m_vertices[i] = transform.InverseTransformPoint(m_msm.positions[mappings[i]]);
+                    //  m_normals[i] = transform.InverseTransformDirection(m_msm.normals[mappings[i]]);
 
-                //m_vertices[i] = m_rigidBodies[mappings[i]].position;
-                //m_normals[i] = m_body.normals[mappings[i]];
-            }
-            
-
+                    //m_vertices[i] = m_rigidBodies[mappings[i]].position;
+                    //m_normals[i] = m_body.normals[mappings[i]];
+                }
+            Broke = false;
             m_mesh.vertices = m_vertices;
 
 

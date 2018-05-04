@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Ball : MonoBehaviour {
 
 	public bool inPlay = false;
-	private Vector3 ballStartPos;
+    public GameObject jellyBall;
     public AudioClip BallRolling;
     private AudioSource audioSource;
     public GameObject Tut, LeftArrow, RightArrow, TouchInput;
@@ -21,7 +21,7 @@ public class Ball : MonoBehaviour {
         audioSource.clip = BallRolling;
         audioSource.Play();
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        ballStartPos = childBall.transform.position;
+        ThingTracker.LastStartPos = childBall.transform.position;
         NBReset.BallPosX = childBall.transform.position.x;
         if(childBall.name == "JellyBall(Clone)")
         {
@@ -43,7 +43,7 @@ public class Ball : MonoBehaviour {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Rigidbody rigidBody = childBall.GetComponent<Rigidbody>();
         GameObject.FindGameObjectWithTag("ChildBall").GetComponent<MeshRenderer>().enabled = false;
-        childBall.transform.position = ballStartPos;
+        childBall.transform.position = ThingTracker.LastStartPos;
 		childBall.transform.rotation = Quaternion.identity;
         rigidBody.useGravity = false;
 		rigidBody.velocity = Vector3.zero;
@@ -57,7 +57,6 @@ public class Ball : MonoBehaviour {
         //Make it so that if ball stops moving the frame resets
         if (inPlay)
         {
-            print(childBall.GetComponent<Rigidbody>().velocity.z);
             if (childBall.GetComponent<Rigidbody>().velocity.z <= 0)
             {
                 ThingTracker.ballout = true;
@@ -77,5 +76,12 @@ public class Ball : MonoBehaviour {
     public void TryAgain()
     {
         Tut.SetActive(true);
+    }
+
+    public void ResetTheJellyBall()
+    {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Destroy(childBall);
+        Instantiate(jellyBall, ThingTracker.LastStartPos, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
     }
 }

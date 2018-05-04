@@ -5,5 +5,6 @@ public static class ThingTracker{
 
     public static bool ballout = false;
     public static bool firstPin = true;
+    public static Vector3 LastStartPos;
 
 }

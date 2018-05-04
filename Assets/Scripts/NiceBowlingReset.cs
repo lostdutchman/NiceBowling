@@ -20,12 +20,9 @@ public class NiceBowlingReset : MonoBehaviour
         MainCamera = Camera.main;
         SkyBoxMat = MainCamera.GetComponent<Skybox>().material;
         Gravity = Physics.gravity;
-        BallPosY = GameObject.FindObjectOfType<Ball>().transform.localPosition.y;
-        BallPosZ = GameObject.FindObjectOfType<Ball>().transform.localPosition.z;
-        BallPosX = GameObject.FindObjectOfType<Ball>().transform.localPosition.x;
+        ThingTracker.LastStartPos = GameObject.FindGameObjectWithTag("Ball").transform.position;
     }
 
-    //use for initilization if level is loaded more then onece in a session
     public void Reset()
     {
         //Reset Lane
@@ -45,7 +42,7 @@ public class NiceBowlingReset : MonoBehaviour
         //Reset Ball
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Destroy(childBall);
-        Instantiate(StandardBall, new Vector3(BallPosX, BallPosY, BallPosZ), Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        Instantiate(StandardBall, ThingTracker.LastStartPos, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
 
         //Clear Obsticals tagged NBTemp
         foreach (GameObject Obstacle in GameObject.FindGameObjectsWithTag("NBTemp"))

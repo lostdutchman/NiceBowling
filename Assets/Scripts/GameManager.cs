@@ -25,16 +25,6 @@ public class GameManager : MonoBehaviour {
 	
 		scoreDisplay.FillBowls(bowls);
 		scoreDisplay.FillFrames (ScoreMaster.ScoreCumulative(bowls));
-		if (pinSetter.GameOver == true)
-			SetHighScores ();
-	}
-
-	public void SetHighScores(){
-		if (PlayerPrefsManager.NiceBowlingGet () == 1) {
-			if(ScoreMaster.endScore > PlayerPrefsManager.GetNiceScore()){PlayerPrefsManager.SetNiceScore(ScoreMaster.endScore);}
-		} else {
-			if(ScoreMaster.endScore > PlayerPrefsManager.GetHighScore()){PlayerPrefsManager.SetHighScore(ScoreMaster.endScore);}
-		}
 	}
 
     void Update()

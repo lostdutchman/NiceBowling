@@ -85,14 +85,6 @@ public class PinSetter : MonoBehaviour {
 		}
 	}
 
-    void OnTriggerExit(Collider collider)
-    {
-        GameObject thingLeft = collider.gameObject;
-
-        if (thingLeft.tag == "ChildBall")
-            ThingTracker.ballout = true;
-    }
-
     public void PlayAudio(int type){
 		switch (type){
 		case 1: audioSource.clip = strikeAudio[Random.Range(0, strikeAudio.Length)]; break;
