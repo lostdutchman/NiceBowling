@@ -81,6 +81,7 @@ public class Pins : MonoBehaviour {
             //Add force when pin is hit to make physics apply more realisticly.
             Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass * 2.5f;
             rigidBody.AddForce(HitForce, ForceMode.Impulse);
+            rigidBody.AddTorque(new Vector3(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(-30, 30), UnityEngine.Random.Range(-30, 30)), ForceMode.Impulse);
         }
         audioSource.Play ();
 	}
