@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23798960654091622}
   - component: {fileID: 64671778923382440}
   - component: {fileID: 54291686610202380}
+  - component: {fileID: 75010999363990450}
   m_Layer: 0
   m_Name: BuckyBallLines
   m_TagString: ChildBall
@@ -111,3 +112,14 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300004, guid: a97bdcf094fff104d9f67b004b505dd0, type: 3}
+--- !u!75 &75010999363990450
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739767682216548}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}

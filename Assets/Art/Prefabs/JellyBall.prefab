@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 64792617689992326}
   - component: {fileID: 114179796593290788}
   - component: {fileID: 54749559234489762}
+  - component: {fileID: 75591239585777090}
   m_Layer: 11
   m_Name: JellyBall
   m_TagString: ChildBall
@@ -2026,6 +2027,17 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 38972d9a807375f4fbdbf2e076aa183f, type: 3}
+--- !u!75 &75591239585777090
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065387018635438}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &114179796593290788
 MonoBehaviour:
   m_ObjectHideFlags: 1

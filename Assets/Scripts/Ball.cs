@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour {
     public AudioClip BallRolling;
     private AudioSource audioSource;
     public GameObject Tut, LeftArrow, RightArrow, TouchInput;
+    public float SpinMultiplier, TorqueMultiplier;
     private NiceBowlingReset NBReset;
 
     void Start () {
@@ -16,7 +17,7 @@ public class Ball : MonoBehaviour {
         NBReset = FindObjectOfType<NiceBowlingReset>();
     }
 
-    public void Launch (Vector3 velocity)
+    public void Launch (Vector3 velocity, float spin)
 	{
         audioSource.clip = BallRolling;
         audioSource.Play();
@@ -29,8 +30,12 @@ public class Ball : MonoBehaviour {
         }
         else
         {
-            childBall.GetComponent<Rigidbody>().useGravity = true;
-            childBall.GetComponent<Rigidbody>().velocity = velocity;
+            Rigidbody Body = childBall.GetComponent<Rigidbody>();
+            Body.useGravity = true;
+            Body.velocity = velocity;
+            Body.GetComponent<ConstantForce>().torque = new Vector3(0, spin * TorqueMultiplier, (spin * TorqueMultiplier) / 2);
+            Body.GetComponent<ConstantForce>().force = new Vector3(spin * SpinMultiplier, 0, 0);
+            print("Spin: " + spin * SpinMultiplier + " Velocity: " + velocity + "Torque:" + spin * TorqueMultiplier);
         }
 		inPlay = true;
         Tut.SetActive(false);
@@ -43,6 +48,8 @@ public class Ball : MonoBehaviour {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Rigidbody rigidBody = childBall.GetComponent<Rigidbody>();
         GameObject.FindGameObjectWithTag("ChildBall").GetComponent<MeshRenderer>().enabled = false;
+        rigidBody.GetComponent<ConstantForce>().torque = new Vector3(0, 0, 0);
+        rigidBody.GetComponent<ConstantForce>().force = new Vector3(0, 0, 0);
         childBall.transform.position = ThingTracker.LastStartPos;
 		childBall.transform.rotation = Quaternion.identity;
         rigidBody.useGravity = false;

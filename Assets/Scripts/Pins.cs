@@ -10,15 +10,11 @@ public class Pins : MonoBehaviour {
     public AudioClip PinHitBall;
     private Rigidbody rigidBody;
 	private AudioSource audioSource;
-    private float startingPosX;
-    private float startingPosZ;
     private string PinStatus = "None";
 
     void Start () {
 		rigidBody = GetComponent<Rigidbody>();
 		audioSource = GetComponent<AudioSource> ();
-        startingPosX = rigidBody.position.x;
-        startingPosZ = rigidBody.position.z;
     }
 
     void Awake()

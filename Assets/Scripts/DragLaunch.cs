@@ -90,11 +90,30 @@ public class DragLaunch : MonoBehaviour {
         Dragging = false;
 	    CalculateDrag ();
 	}
+
+    public float CalculateCurve()
+    {
+        float MinX = DragPointsX.Min() - endPos.x; //Gets difference between end and the furthast left the player moved
+        float MaxX = endPos.x - DragPointsX.Max();//Gets difference bettween end and the furthers right the player moved
+        if(MinX > MaxX)
+        {
+            return MinX;
+        }
+        else if(MaxX > MinX)
+        {
+            return MaxX *-1;//for some reason even though the positive direction is right the ball has to be pushed in negitive to go right...
+        }
+        else
+        {
+            return 0; //in this case they would equal eachother.
+        }
+    }
 	
 	//Calculates the direction and speed of the ball launch using info from the previous 2 methods.
 	public void CalculateDrag(){
         if (!ball.inPlay){
             float AverageX = DragPointsX.Average();
+            float Curve = CalculateCurve();
             float dragDuration = endTime - startTime;
 			//Speed = distance (end - start) devided by time
 			float launchSpeedX = ((endPos.x - startPos.x) + (AverageX - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
@@ -108,7 +127,7 @@ public class DragLaunch : MonoBehaviour {
             if (launchSpeedZ < minLaunchSpeed){
                 ball.TryAgain();
 			} else {
-			ball.Launch (new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ));
+			ball.Launch (new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ), Curve);
 			}
 		}
 	}

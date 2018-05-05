@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 135347952811867678}
   - component: {fileID: 23354149143982972}
   - component: {fileID: 54749443496777246}
+  - component: {fileID: 75464759440717058}
   m_Layer: 0
   m_Name: Standard Ball
   m_TagString: ChildBall
@@ -102,6 +103,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!75 &75464759440717058
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054083200115082}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!82 &82658843430566106
 AudioSource:
   m_ObjectHideFlags: 1
@@ -209,11 +221,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inPlay: 0
+  jellyBall: {fileID: 0}
   BallRolling: {fileID: 8300000, guid: 60027c09ebb6d394eae6f718e5974ff1, type: 3}
   Tut: {fileID: 0}
   LeftArrow: {fileID: 0}
   RightArrow: {fileID: 0}
   TouchInput: {fileID: 0}
+  SpinMultiplier: 0
+  TorqueMultiplier: 0
 --- !u!135 &135347952811867678
 SphereCollider:
   m_ObjectHideFlags: 1

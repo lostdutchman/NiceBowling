@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23246576688267454}
   - component: {fileID: 54717032266127342}
   - component: {fileID: 222264838663111344}
+  - component: {fileID: 75597157318610856}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: ChildBall
@@ -98,6 +99,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!75 &75597157318610856
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481239987444264}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!135 &135394188949340832
 SphereCollider:
   m_ObjectHideFlags: 1

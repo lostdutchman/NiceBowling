@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54829486396205034}
   - component: {fileID: 222185987137727784}
   - component: {fileID: 114275598919604170}
+  - component: {fileID: 75172828641950090}
   m_Layer: 0
   m_Name: BouncyBall
   m_TagString: ChildBall
@@ -99,6 +100,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!75 &75172828641950090
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1007254637695760}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &114275598919604170
 MonoBehaviour:
   m_ObjectHideFlags: 1
