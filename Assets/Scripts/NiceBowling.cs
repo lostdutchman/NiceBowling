@@ -176,13 +176,13 @@ public class NiceBowling : MonoBehaviour {
             Rigidbody body = pin.GetComponent<Rigidbody>();
             body.isKinematic = true;
         }
-        return ("Boardwalk Pins!");
+        return ("Sleazy Pins!");
     }
 
 	public string GravityYHeavy(){
 		gravityY = UnityEngine.Random.Range (-600, -200);
 		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        return("J-J-J-Jupiter!");
+        return("4x Gravity!");
     }
 
 	public string GravityYLight(){
@@ -197,7 +197,7 @@ public class NiceBowling : MonoBehaviour {
 			body.angularDrag = 30f;
 			body.drag = 15f;
 		}
-        return("Molassus!!!");
+        return("Bullet-Time!");
     }
 
 	public string IncreasePinSize(){
@@ -207,7 +207,7 @@ public class NiceBowling : MonoBehaviour {
             Destroy(pin.gameObject);
             Instantiate(PinBig, Location, Quaternion.Euler(-90, 0, 0));
         }
-        return ("Big ol Pins!");
+        return ("Big ol' Pins!");
     }
 
 	public string DecreasePinSize(){
@@ -217,21 +217,21 @@ public class NiceBowling : MonoBehaviour {
             Destroy(pin.gameObject);
             Instantiate(PinToy, Location, Quaternion.Euler(-90, 0, 0));
         }
-        return ("Baby Pins!");
+        return ("Tiny Pins!");
     }
 	
 	public string GiantBall(){
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
-        return("Giant Ball");
+        return("Big ol' Ball");
     }
 	
 	public string SmallBall(){
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3(size.x / 1.5f, size.y / 1.5f, size.z / 1.5f);
-        return ("Small Ball");
+        return ("Little Ball");
     }
 
 	public string TinyBall(){
@@ -279,7 +279,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallBucky, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Bucky Ball!");
+        return ("Polyhedral Ball!");
     }
 
     public string CactusBall()
@@ -306,13 +306,13 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallJelly, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Jelly!");
+        return ("Wiggly Ball!");
     }
 
     public string Bumpers(){
 		Bumper.SetActive(true);
 		Bumper2.SetActive(true);
-        return("Kid Bowling");
+        return("Kiddie Bowling!");
     }
 
 	public string SardineRain(){
@@ -325,7 +325,7 @@ public class NiceBowling : MonoBehaviour {
 
 	public string Obstical(){
 		Instantiate(Cylinder, new Vector3(UnityEngine.Random.Range (55f, -55f), UnityEngine.Random.Range (40f, -30f), UnityEngine.Random.Range (300f, 1600f)), Quaternion.identity);
-        return("Obstical");
+        return("Obstacle!");
     }
 
 	public string Obsticals(){
@@ -333,12 +333,12 @@ public class NiceBowling : MonoBehaviour {
 		float y = UnityEngine.Random.Range (30f, -10f);
 		Instantiate(Cylinder, new Vector3(30f, y, z), Quaternion.identity);
 		Instantiate(Cylinder, new Vector3(-30f, y, z), Quaternion.identity);
-        return("Obsticals");
+        return("Obstacles!");
     }
 
     public string RampAdd(){
 		Instantiate(Ramp, new Vector3(0, -3, UnityEngine.Random.Range (300f, 1600f)), Quaternion.Euler (-10, 0, 0));
-        return("Ramp");
+        return("Ramp!");
     }
 
     private string Billiards()
@@ -352,7 +352,7 @@ public class NiceBowling : MonoBehaviour {
             }
         }
         Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
-        return ("Trick Shot");
+        return ("Trick Shot!");
     }
 #region Pin Add
     public string AddPinsx1(){
