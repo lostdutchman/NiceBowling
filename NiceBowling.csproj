@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreMaster.cs" />
+    <Compile Include="Assets\Scripts\SpikeBall.cs" />
     <Compile Include="Assets\Scripts\ThingTracker.cs" />
     <Compile Include="Assets\Scripts\UIAnimation.cs" />
   </ItemGroup>

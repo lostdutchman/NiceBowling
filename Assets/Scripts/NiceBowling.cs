@@ -43,7 +43,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(1, 7); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(6, 13); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -100,7 +100,7 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentBall()
     {
-        switch (UnityEngine.Random.Range(1, 8))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(5, 6))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return BeachBall();
             case 2: return CannonBall();
