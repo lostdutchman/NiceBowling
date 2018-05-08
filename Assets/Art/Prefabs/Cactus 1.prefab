@@ -79,8 +79,8 @@ Rigidbody:
   m_GameObject: {fileID: 1221181083999170}
   serializedVersion: 2
   m_Mass: 8
-  m_Drag: 0.001
-  m_AngularDrag: 0.0005
+  m_Drag: 0.02
+  m_AngularDrag: 0.01
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -103,13 +103,13 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221181083999170}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 094c83582a81a1f4bb9f47d471dcdb4d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.32382432
-  m_Height: 0.8808084
+  m_Radius: 0.30570716
+  m_Height: 0.7780235
   m_Direction: 2
-  m_Center: {x: 0.013118865, y: -0.05614793, z: -0.006424523}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &222173648686527886
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -123,7 +123,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221181083999170}
   m_LocalRotation: {x: 0.6768753, y: 0.32137015, z: 0.26695055, w: -0.6060516}
-  m_LocalPosition: {x: 0, y: 0, z: 130.27}
+  m_LocalPosition: {x: 0, y: 0, z: 120.81653}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,6 +131,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -97.242, y: 372.90298, z: -782.173}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.39, y: 15.92}
+  m_AnchoredPosition: {x: 0.99654007, y: 7.948292}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

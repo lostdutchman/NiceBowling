@@ -91,10 +91,10 @@ public class DragLaunch : MonoBehaviour {
 	    CalculateDrag ();
 	}
 
-    public float CalculateCurve()
+    public float CalculateCurve(float BallDirection)
     {
-        float MinX = DragPointsX.Min() - endPos.x; //Gets difference between end and the furthast left the player moved
-        float MaxX = endPos.x - DragPointsX.Max();//Gets difference bettween end and the furthers right the player moved
+        float MinX = (DragPointsX.Min() - startPos.x) - BallDirection; //Gets difference between end and the furthast left the player moved
+        float MaxX = BallDirection - (DragPointsX.Max() - startPos.x);//Gets difference bettween end and the furthers right the player moved
         if(MinX > MaxX)
         {
             return MinX;
@@ -113,12 +113,12 @@ public class DragLaunch : MonoBehaviour {
 	public void CalculateDrag(){
         if (!ball.inPlay){
             float AverageX = DragPointsX.Average();
-            float Curve = CalculateCurve();
             float dragDuration = endTime - startTime;
 			//Speed = distance (end - start) devided by time
 			float launchSpeedX = ((endPos.x - startPos.x) + (AverageX - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
-			float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
-            if(launchSpeedZ > 4200) { launchSpeedZ = 4000; }
+            float Curve = CalculateCurve(launchSpeedX);
+            float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
+            if(launchSpeedZ > 3000) { launchSpeedZ = 2800; }
             if (launchSpeedZ < 200) { launchSpeedZ = 220; }
 
             DragPointsX.Clear();

@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour {
     public AudioClip BallRolling;
     private AudioSource audioSource;
     public GameObject Tut, LeftArrow, RightArrow, TouchInput;
+    [Tooltip("For adding English to the ball")]
     public float SpinMultiplier, TorqueMultiplier;
     private NiceBowlingReset NBReset;
 
@@ -33,7 +34,7 @@ public class Ball : MonoBehaviour {
             Rigidbody Body = childBall.GetComponent<Rigidbody>();
             Body.useGravity = true;
             Body.velocity = velocity;
-            Body.GetComponent<ConstantForce>().torque = new Vector3(0, spin * TorqueMultiplier, (spin * TorqueMultiplier) / 2);
+            Body.GetComponent<ConstantForce>().torque = new Vector3(0, spin * TorqueMultiplier, (spin * TorqueMultiplier) / -2);
             Body.GetComponent<ConstantForce>().force = new Vector3(spin * SpinMultiplier, 0, 0);
             print("Spin: " + spin * SpinMultiplier + " Velocity: " + velocity + "Torque:" + spin * TorqueMultiplier);
         }

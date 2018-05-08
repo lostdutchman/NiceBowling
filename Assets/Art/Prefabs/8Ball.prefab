@@ -92,8 +92,8 @@ Rigidbody:
   m_GameObject: {fileID: 1249456870569016}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 1
-  m_AngularDrag: 0.05
+  m_Drag: 0.02
+  m_AngularDrag: 0.02
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -111,13 +111,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ForceToAdd: 10
+  MainCamera: {fileID: 0}
 --- !u!135 &135743425909109616
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249456870569016}
-  m_Material: {fileID: 13400000, guid: 094c83582a81a1f4bb9f47d471dcdb4d, type: 2}
+  m_Material: {fileID: 13400000, guid: 4a741f23677475b489f872a846e4d4c3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
