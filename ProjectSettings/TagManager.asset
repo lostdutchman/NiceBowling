@@ -9,6 +9,7 @@ TagManager:
   - NBTemp
   - Ball
   - ChildBall
+  - WasStuck
   layers:
   - Default
   - TransparentFX

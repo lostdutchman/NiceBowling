@@ -15,14 +15,15 @@ public class DumbPins : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "pin")
+        if (col.gameObject.tag == "Pin")
         {
-            audioSource.clip = PinHitPin;
+            //audioSource.clip = PinHitPin;
+            //audioSource.Play();
         }
-        else if (col.gameObject.tag == "Ball")
+        else if (col.gameObject.tag == "ChildBall")
         {
             audioSource.clip = PinHitBall;
+            audioSource.Play();
         }
-        audioSource.Play();
     }
 }

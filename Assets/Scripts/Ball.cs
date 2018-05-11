@@ -46,6 +46,10 @@ public class Ball : MonoBehaviour {
 	
 	public void Reset ()
 	{
+        foreach (GameObject stuck in GameObject.FindGameObjectsWithTag("WasStuck"))
+        {
+            Destroy(stuck);
+        }
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Rigidbody rigidBody = childBall.GetComponent<Rigidbody>();
         GameObject.FindGameObjectWithTag("ChildBall").GetComponent<MeshRenderer>().enabled = false;

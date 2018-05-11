@@ -67,9 +67,10 @@ public class Pins : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision col){
-        if(col.gameObject.tag == "pin")
+        if(col.gameObject.tag == "Pin")
         {
-            audioSource.clip = PinHitPin;
+            //audioSource.clip = PinHitPin;
+            //audioSource.Play();
         }
         else if (col.gameObject.tag == "ChildBall")
         {
@@ -78,22 +79,28 @@ public class Pins : MonoBehaviour {
             Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * col.rigidbody.mass * 2.5f;
             rigidBody.AddForce(HitForce, ForceMode.Impulse);
             rigidBody.AddTorque(new Vector3(UnityEngine.Random.Range(-10, 10), UnityEngine.Random.Range(-30, 30), UnityEngine.Random.Range(-30, 30)), ForceMode.Impulse);
+            audioSource.Play();
         }
-        audioSource.Play ();
 	}
 
-	//fix issues cause by nice bowling mode
-	public void DefaultPins(){
-		if (rigidBody.isKinematic) {
-            rigidBody.isKinematic = false;
-            PinStatus = "BoardwalkPins";
-        } 
-		if (rigidBody.drag != 0) {
-            rigidBody.drag = 0;
-            rigidBody.angularDrag = 0.05f;
-            PinStatus = "IncreasePinDrag";
-        } 
-	}
+    //fix issues cause by nice bowling mode
+    public void DefaultPins()
+    {
+        if (this.tag != "WasStuck")
+        {
+            if (rigidBody.isKinematic)
+            {
+                rigidBody.isKinematic = false;
+                PinStatus = "BoardwalkPins";
+            }
+            if (rigidBody.drag != 0)
+            {
+                rigidBody.drag = 0;
+                rigidBody.angularDrag = 0.05f;
+                PinStatus = "IncreasePinDrag";
+            }
+        }
+    }
 
     //fix issues cause by nice bowling mode
     public void NicePins()

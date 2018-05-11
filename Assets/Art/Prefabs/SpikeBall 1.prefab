@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 222418027349842130}
   - component: {fileID: 135746872714135226}
   - component: {fileID: 75230076339729630}
+  - component: {fileID: 114607224624518108}
   m_Layer: 0
   m_Name: SpikeBall 1
   m_TagString: ChildBall
@@ -110,6 +111,18 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!114 &114607224624518108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199248386371550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0439f709dde1dd04cb6ff53683000275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrowthRate: 0.05
 --- !u!135 &135746872714135226
 SphereCollider:
   m_ObjectHideFlags: 1
