@@ -127,7 +127,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -310,6 +310,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  moveThreshold: 5
   PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
