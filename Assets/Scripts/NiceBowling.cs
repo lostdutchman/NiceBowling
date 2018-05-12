@@ -5,7 +5,8 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallPool, BallJelly, PinBig, PinToy;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy;
+    public GameObject[] BilliardBalls;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
 	private Camera MainCamera;
@@ -43,7 +44,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(1, 2); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(6, 7); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -100,7 +101,7 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentBall()
     {
-        switch (UnityEngine.Random.Range(1, 8))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(8, 9))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return BeachBall();
             case 2: return CannonBall();
@@ -109,6 +110,7 @@ public class NiceBowling : MonoBehaviour {
             case 5: return SpikeBall();
             case 6: return CactusBall();
             case 7: return JellyBall();
+            case 8: return BombBall();
 
             default: print("NiceBowling.BallMass switch case default triggered somehow"); break;
         }
@@ -309,6 +311,15 @@ public class NiceBowling : MonoBehaviour {
         return ("Wiggly Ball!");
     }
 
+    public string BombBall()
+    {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(BallBomb, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Bomb Ball!");
+    }
+
     public string Bumpers(){
 		Bumper.SetActive(true);
 		Bumper2.SetActive(true);
@@ -343,15 +354,15 @@ public class NiceBowling : MonoBehaviour {
 
     private string Billiards()
     {
-        if (UnityEngine.Random.Range(0, 20) > 17)
+        if (UnityEngine.Random.Range(0, 20) > 12)
         {
-            Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
-            if (UnityEngine.Random.Range(0, 20) == 19)
+            Instantiate(BilliardBalls[UnityEngine.Random.Range(0, BilliardBalls.Length)], new Vector3(UnityEngine.Random.Range(40f, -40f), 15, UnityEngine.Random.Range(1500f, 1700f)), Quaternion.identity);
+            if (UnityEngine.Random.Range(0, 20) > 15)
             {
-                Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
+                Instantiate(BilliardBalls[UnityEngine.Random.Range(0, BilliardBalls.Length)], new Vector3(UnityEngine.Random.Range(40f, -40f), 15, UnityEngine.Random.Range(600f, 1700f)), Quaternion.identity);
             }
         }
-        Instantiate(BallPool, new Vector3(UnityEngine.Random.Range(40f, -40f), 15, 1700f), Quaternion.identity);
+        Instantiate(BilliardBalls[UnityEngine.Random.Range(0, BilliardBalls.Length)], new Vector3(UnityEngine.Random.Range(40f, -40f), 15, UnityEngine.Random.Range(1000f, 1700f)), Quaternion.identity);
         return ("Trick Shot!");
     }
 #region Pin Add
@@ -524,8 +535,7 @@ public class NiceBowling : MonoBehaviour {
         return ("Game Breaking number of pins!");
     }
     #endregion
-
-#endregion
+    #endregion
 
 
 }

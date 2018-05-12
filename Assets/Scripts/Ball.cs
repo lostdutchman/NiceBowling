@@ -36,7 +36,6 @@ public class Ball : MonoBehaviour {
             Body.velocity = velocity;
             Body.GetComponent<ConstantForce>().torque = new Vector3(0, spin * TorqueMultiplier, (spin * TorqueMultiplier) / -2);
             Body.GetComponent<ConstantForce>().force = new Vector3(spin * SpinMultiplier, 0, 0);
-            print("Spin: " + spin * SpinMultiplier + " Velocity: " + velocity + "Torque:" + spin * TorqueMultiplier);
         }
 		inPlay = true;
         Tut.SetActive(false);

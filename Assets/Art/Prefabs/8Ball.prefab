@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 222632836993213094}
   - component: {fileID: 114307951814472816}
   - component: {fileID: 82994698558339516}
+  - component: {fileID: 114746895306115990}
   m_Layer: 0
   m_Name: 8Ball
   m_TagString: NBTemp
@@ -92,9 +93,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249456870569016}
   serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0.02
-  m_AngularDrag: 0.02
+  m_Mass: 5
+  m_Drag: 0.01
+  m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -191,7 +192,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900b710c9990d3248a6d46fc2fcb3740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceToAdd: 10
+  ForceToAdd: 4
+  TimeToFollow: 1.2
+  MainCamera: {fileID: 0}
+--- !u!114 &114746895306115990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1249456870569016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900b710c9990d3248a6d46fc2fcb3740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceToAdd: 4
   TimeToFollow: 1.2
   MainCamera: {fileID: 0}
 --- !u!135 &135743425909109616

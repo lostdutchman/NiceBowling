@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\BallCatcher.cs" />
     <Compile Include="Assets\Scripts\BilliardBall.cs" />
+    <Compile Include="Assets\Scripts\BombBall.cs" />
     <Compile Include="Assets\Scripts\BounceBall.cs" />
     <Compile Include="Assets\Scripts\ButtonCredits.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
