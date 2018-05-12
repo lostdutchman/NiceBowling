@@ -10,11 +10,13 @@ public class BilliardBall : MonoBehaviour {
     [Tooltip("How long in seconds the camera follows the billiard ball.")]
     public float TimeToFollow = 1.2f;
     public Camera MainCamera;
+    private AudioSource ClackNoise;
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         MainCamera = Camera.main;
+        ClackNoise = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision col)
@@ -26,6 +28,7 @@ public class BilliardBall : MonoBehaviour {
             MainCamera.GetComponent<CameraControl>().BilliardHit(this.gameObject);
             StartCoroutine(CameraReset());
         }
+        ClackNoise.Play();
     }
     private IEnumerator CameraReset()
     {
