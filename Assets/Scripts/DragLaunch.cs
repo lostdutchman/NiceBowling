@@ -101,7 +101,7 @@ public class DragLaunch : MonoBehaviour {
         }
         else if(MaxX > MinX)
         {
-            return MaxX *-1;//for some reason even though the positive direction is right the ball has to be pushed in negitive to go right...
+            return MaxX *-1;//Apply negitive force to push ball left
         }
         else
         {

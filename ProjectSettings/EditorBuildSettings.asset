@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 411e7dc984bdc5448807a3085a71326a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Opening.unity
     guid: efb0c0bafd0b4d24fab0d6da30df0a0c
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 4e05b30ea0c05a347a0648f00fa2b7de
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: bb69902ed2271bf4e9add48d1f1374b3

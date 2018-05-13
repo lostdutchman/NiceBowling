@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class PinSetter : MonoBehaviour {
 	
@@ -87,10 +88,10 @@ public class PinSetter : MonoBehaviour {
 
     public void PlayAudio(int type){
 		switch (type){
-		case 1: audioSource.clip = strikeAudio[Random.Range(0, strikeAudio.Length)]; break;
-		case 2: audioSource.clip = spareAudio[Random.Range(0, spareAudio.Length)]; break;
-		case 3: audioSource.clip = turkeyAudio[Random.Range(0, turkeyAudio.Length)]; break;
-		case 4: audioSource.clip = gutterAudio[Random.Range(0, gutterAudio.Length)]; break;
+		case 1: audioSource.clip = strikeAudio[UnityEngine.Random.Range(0, strikeAudio.Length)]; break;
+		case 2: audioSource.clip = spareAudio[UnityEngine.Random.Range(0, spareAudio.Length)]; break;
+		case 3: audioSource.clip = turkeyAudio[UnityEngine.Random.Range(0, turkeyAudio.Length)]; break;
+		case 4: audioSource.clip = gutterAudio[UnityEngine.Random.Range(0, gutterAudio.Length)]; break;
 		case 5: audioSource.clip = silence; break;
 			default: break;
 		}
@@ -113,4 +114,13 @@ public class PinSetter : MonoBehaviour {
         }
     }
 
+    public void OnTriggerEnter(Collider collider)
+    {
+        //Fix issue if jelly ball stops in pin collider
+        JellyBall Jelly = FindObjectOfType<JellyBall>();
+        if(collider.name == "DefKitSoftbodyNode_4")
+        {
+            Jelly.kill();
+        }
+    }
 }

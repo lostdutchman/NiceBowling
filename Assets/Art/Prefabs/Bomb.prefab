@@ -205,9 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba51aeebc0cc671499368609b62ed6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionRadius: 100
+  ExplosionRadius: 150
   ExplosionForce: 300
-  RestoreTime: 1
+  RestoreTime: 1.2
 --- !u!135 &135013939933541852
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -227,7 +227,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1259764182906130}
   serializedVersion: 5
-  lengthInSec: 0.75
+  lengthInSec: 1
   simulationSpeed: 1
   looping: 1
   prewarm: 0
@@ -281,7 +281,7 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       minMaxState: 0
-      scalar: 0.75
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -809,7 +809,7 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       minMaxState: 0
-      scalar: 500
+      scalar: 800
       maxCurve:
         serializedVersion: 2
         m_Curve:
