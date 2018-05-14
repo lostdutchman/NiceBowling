@@ -5,8 +5,8 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy;
-    public GameObject[] BilliardBalls;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, Pendulum;
+    public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
 	private Camera MainCamera;
@@ -44,7 +44,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(7, 13); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(13, 14); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -55,7 +55,7 @@ public class NiceBowling : MonoBehaviour {
                     case 2: Effects.Add(PinMove()); break;
                     case 3: Effects.Add(DifferentPins()); break;
                     case 4: Effects.Add(BallSize()); break;
-                    case 5: break;
+                    case 5: Effects.Add(MarbleRain());  break;
                     case 6: Effects.Add(DifferentBall()); break;
                     case 7: Effects.Add(Bumpers()); break;
                     case 8: Effects.Add(SardineRain()); break;
@@ -63,6 +63,7 @@ public class NiceBowling : MonoBehaviour {
                     case 10: Effects.Add(Obsticals()); break;
                     case 11: Effects.Add(RampAdd()); break;
                     case 12: Effects.Add(AddPins()); break;
+                    case 13: Effects.Add(Pendulums()); break;
 
                     default: print("NiceBowling.Effect switch case default triggered somehow"); break;
                 }
@@ -75,7 +76,7 @@ public class NiceBowling : MonoBehaviour {
         return Effects;
     }
 
-#region Effect Switch Case's
+    #region Effect Switch Case's
     private string AddPins()
     {
         switch (UnityEngine.Random.Range(1, 14))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
@@ -239,8 +240,8 @@ public class NiceBowling : MonoBehaviour {
 	public string TinyBall(){
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
-        childBall.transform.localScale = new Vector3(size.x / 2.5f, size.y / 2.5f, size.z / 2.5f);
-        return ("Tiny Ball");
+        childBall.transform.localScale = new Vector3(size.x / 4, size.y / 4f, size.z / 4f);
+        return ("Marble");
     }
 
 	public string LargeBall(){
@@ -334,7 +335,17 @@ public class NiceBowling : MonoBehaviour {
         return("Fish?");
     }
 
-	public string Obstical(){
+    private string MarbleRain()
+    {
+        int rand = UnityEngine.Random.Range(1, 900);
+        for (int i = 0; i < rand; i++)
+        {
+            Instantiate(Marbles[UnityEngine.Random.Range(0, Marbles.Length)], new Vector3(UnityEngine.Random.Range(45f, -45f), 3f, UnityEngine.Random.Range(150f, 1700f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
+        }
+        return ("Marble Floors");
+    }
+
+    public string Obstical(){
 		Instantiate(Cylinder, new Vector3(UnityEngine.Random.Range (55f, -55f), UnityEngine.Random.Range (40f, -30f), UnityEngine.Random.Range (300f, 1600f)), Quaternion.identity);
         return("Obstacle!");
     }
@@ -364,6 +375,23 @@ public class NiceBowling : MonoBehaviour {
         }
         Instantiate(BilliardBalls[UnityEngine.Random.Range(0, BilliardBalls.Length)], new Vector3(UnityEngine.Random.Range(40f, -40f), 15, UnityEngine.Random.Range(1000f, 1700f)), Quaternion.identity);
         return ("Trick Shot!");
+    }
+
+    private string Pendulums()
+    {
+        int rand = UnityEngine.Random.Range(2, 20);
+        for (int i = 0; i < rand; i++)
+        {
+            if(UnityEngine.Random.Range(0,2) == 0) //Coin todss to determine if right of left side pendulum
+            {
+                Instantiate(Pendulum, new Vector3(0f, 28f, UnityEngine.Random.Range(70f, 1600f)), Quaternion.Euler(0, 0, 90));
+            }
+            else 
+            {
+                Instantiate(Pendulum, new Vector3(0f, 28f, UnityEngine.Random.Range(90f, 1600f)), Quaternion.Euler(0, 180, 90));
+            }
+        }
+        return ("Pendulums");
     }
 #region Pin Add
     public string AddPinsx1(){

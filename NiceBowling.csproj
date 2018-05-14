@@ -115,11 +115,13 @@
     <Compile Include="Assets\Scripts\GravityBall.cs" />
     <Compile Include="Assets\Scripts\JellyBall.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Marble.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\NiceBowling.cs" />
     <Compile Include="Assets\Scripts\NiceBowlingReset.cs" />
     <Compile Include="Assets\Scripts\OpeningBall.cs" />
     <Compile Include="Assets\Scripts\PanelFade.cs" />
+    <Compile Include="Assets\Scripts\PendHit.cs" />
     <Compile Include="Assets\Scripts\PinCounter.cs" />
     <Compile Include="Assets\Scripts\PinSetter.cs" />
     <Compile Include="Assets\Scripts\Pins.cs" />
