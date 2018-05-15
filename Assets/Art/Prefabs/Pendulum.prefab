@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 59758048936054486}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: NBTemp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 59867043436110370}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: NBTemp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 82708419231653494}
   m_Layer: 0
   m_Name: barrel
-  m_TagString: NBTemp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 59906410210348134}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: NBTemp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 59710995853445722}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: NBTemp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 1997345664493074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
   m_Children:
   - {fileID: 4201565340921622}
   - {fileID: 4374044058416666}

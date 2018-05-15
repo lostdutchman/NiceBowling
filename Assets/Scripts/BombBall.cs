@@ -10,15 +10,17 @@ public class BombBall : MonoBehaviour {
     private Rigidbody Body;
     private SphereCollider Collider;
     public float RestoreTime = 1f;
-    private ParticleSystem ExplosionEffect;
+    private ParticleSystem Fuse;
+    private GameObject ExplosionEffect;
 
 	// Use this for initialization
 	void Start () {
         Mesh = GetComponent<MeshRenderer>();
-        Body = GetComponent<Rigidbody>();
         Collider = GetComponent<SphereCollider>();
         Explosion = GetComponent<AudioSource>();
-        ExplosionEffect = GetComponent<ParticleSystem>();
+        Fuse = GetComponentInChildren<ParticleSystem>();
+        ExplosionEffect = GameObject.Find("Explosion");
+        transform.rotation = Quaternion.Euler(new Vector3(265f, 45f, 0f));
     }
 
     private void OnCollisionEnter(Collision col)
@@ -27,14 +29,17 @@ public class BombBall : MonoBehaviour {
         if (col.gameObject.tag == "Pin")
         {
             Collider[] Colliders = Physics.OverlapSphere(HitLocation, ExplosionRadius);
-
             Explosion.Play();
+
             //make object invisible and stop its movement
+            Fuse.Stop();
             Mesh.enabled = false;
             Collider.enabled = false;
-            Body.velocity = (new Vector3(0, 0, 0));
-            Body.isKinematic = true;
-            ExplosionEffect.Play();
+
+            //Play Explosion Effects
+            ExplosionEffect.transform.position = HitLocation;
+            ExplosionEffect.GetComponent<ParticleSystem>().Play();
+            
 
             // For all balls within the sphere, apply a force.
             foreach (var HitObject in Colliders)
@@ -51,13 +56,27 @@ public class BombBall : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+        if((transform.position.z > 1900) || (transform.position.y < -10))
+        {
+            Fuse.Stop();
+            StartCoroutine(RestoreBallAfterMiss());
+        }
+    }
+
     private IEnumerator RestoreBall()
     {
         yield return new WaitForSecondsRealtime(RestoreTime);
-        Body.isKinematic = false;
-        ExplosionEffect.Stop();
+        Fuse.Play();
         Mesh.enabled = true;
         Collider.enabled = true;
-        
     }
+
+    private IEnumerator RestoreBallAfterMiss()
+    {
+        yield return new WaitForSecondsRealtime(8f);
+        Fuse.Play();
+    }
+
 }
