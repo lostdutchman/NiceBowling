@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, Pendulum;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
@@ -32,7 +32,7 @@ public class NiceBowling : MonoBehaviour {
         //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
         //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         //List<string> Effects = Effect(NiceRandom);
-        List<string> Effects = Effect(1);
+        List<string> Effects = Effect(2);
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -44,7 +44,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(6, 7); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(1, 14); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -134,10 +134,11 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentPins()
     {
-        switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 4))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return IncreasePinSize();
             case 2: return DecreasePinSize();
+            case 3: return MetalPins();
 
             default: print("NiceBowling.DifferentPins switch case default triggered somehow"); break;
         }
@@ -222,8 +223,19 @@ public class NiceBowling : MonoBehaviour {
         }
         return ("Tiny Pins!");
     }
-	
-	public string GiantBall(){
+
+    public string MetalPins()
+    {
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            Vector3 Location = pin.transform.position;
+            Destroy(pin.gameObject);
+            Instantiate(PinMetal, Location, Quaternion.Euler(-90, 0, 0));
+        }
+        return ("Heavy Pins!");
+    }
+
+    public string GiantBall(){
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
@@ -340,7 +352,7 @@ public class NiceBowling : MonoBehaviour {
         int rand = UnityEngine.Random.Range(1, 900);
         for (int i = 0; i < rand; i++)
         {
-            Instantiate(Marbles[UnityEngine.Random.Range(0, Marbles.Length)], new Vector3(UnityEngine.Random.Range(45f, -45f), 3f, UnityEngine.Random.Range(150f, 1700f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
+            Instantiate(Marbles[UnityEngine.Random.Range(0, Marbles.Length)], new Vector3(UnityEngine.Random.Range(45f, -45f), UnityEngine.Random.Range(2.5f, 30f), UnityEngine.Random.Range(150f, 1700f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
         }
         return ("Marble Floors");
     }
