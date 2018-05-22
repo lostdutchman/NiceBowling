@@ -126,6 +126,7 @@
     <Compile Include="Assets\Scripts\PinSetter.cs" />
     <Compile Include="Assets\Scripts\Pins.cs" />
     <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
+    <Compile Include="Assets\Scripts\RoombaMove.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreMaster.cs" />
     <Compile Include="Assets\Scripts\SpikeBall.cs" />
