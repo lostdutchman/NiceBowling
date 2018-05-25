@@ -70,7 +70,7 @@ public class Ball : MonoBehaviour {
         {
             if (childBall.GetComponent<Rigidbody>().velocity.z <= 25)
             {
-                ThingTracker.ballout = true;
+                //ThingTracker.ballout = true;
             }
         }
         else

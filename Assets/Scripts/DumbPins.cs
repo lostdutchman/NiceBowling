@@ -17,8 +17,8 @@ public class DumbPins : MonoBehaviour {
     {
         if (col.gameObject.tag == "Pin")
         {
-            //audioSource.clip = PinHitPin;
-            //audioSource.Play();
+            audioSource.clip = PinHitPin;
+            audioSource.Play();
         }
         else if (col.gameObject.tag == "ChildBall")
         {

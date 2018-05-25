@@ -69,8 +69,8 @@ public class Pins : MonoBehaviour {
     void OnCollisionEnter(Collision col){
         if(col.gameObject.tag == "Pin")
         {
-            //audioSource.clip = PinHitPin;
-            //audioSource.Play();
+            audioSource.clip = PinHitPin;
+            audioSource.Play();
         }
         else if (col.gameObject.tag == "ChildBall")
         {

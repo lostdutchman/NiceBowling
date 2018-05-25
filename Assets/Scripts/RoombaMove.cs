@@ -6,6 +6,8 @@ public class RoombaMove : MonoBehaviour {
     public float speed = 10f;
     public float forwardSpeed = 2f;
     Rigidbody body;
+    private bool rotate = false;
+    private bool ignore = false;
 
     void Start()
     {
@@ -14,15 +16,28 @@ public class RoombaMove : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKey(KeyCode.Space))
+        if ((transform.position.x > 40 || transform.position.x < -40) && !ignore)
         {
-            //body.AddForce(transform.forward * forwardSpeed);
-            transform.position += transform.forward * Time.deltaTime * forwardSpeed;
+            StartCoroutine(TurnAround());
         }
-        else
+        if(rotate)
         {
             transform.Rotate(Vector3.up, speed * Time.deltaTime);
         }
+        else
+        {
+            transform.position += transform.forward * Time.deltaTime * forwardSpeed;
+        }
 	
 	}
+
+    IEnumerator TurnAround()
+    {
+        ignore = true;
+        rotate = true;
+        yield return new WaitForSecondsRealtime(Random.Range(.3f, 2f));
+        rotate = false;
+        yield return new WaitForSecondsRealtime(Random.Range(.5f, 1f));
+        ignore = false;
+    }
 }
