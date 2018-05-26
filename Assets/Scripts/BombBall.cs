@@ -26,34 +26,37 @@ public class BombBall : MonoBehaviour {
     private void OnCollisionEnter(Collision col)
     {
         Vector3 HitLocation = transform.position;
-        if (col.gameObject.tag == "Pin")
-        {
-            Collider[] Colliders = Physics.OverlapSphere(HitLocation, ExplosionRadius);
-            Explosion.Play();
-
-            //make object invisible and stop its movement
-            Fuse.Stop();
-            Mesh.enabled = false;
-            Collider.enabled = false;
-
-            //Play Explosion Effects
-            ExplosionEffect.transform.position = HitLocation;
-            ExplosionEffect.GetComponent<ParticleSystem>().Play();
-            
-
-            // For all balls within the sphere, apply a force.
-            foreach (var HitObject in Colliders)
+        if (col.gameObject.tag == "Pin" || col.gameObject.tag == "NBTemp")
+            if(col.gameObject.name != "Ramp" && col.gameObject.name != "sardineskinWithScript" && col.gameObject.name != "Marble1" && col.gameObject.name != "Marble2" && col.gameObject.name != "Marble3" && col.gameObject.name != "Marble4" && col.gameObject.name != "Marble5")
             {
-                if (!HitObject)
-                    continue;
+                {
+                    Collider[] Colliders = Physics.OverlapSphere(HitLocation, ExplosionRadius);
+                    Explosion.Play();
 
-                if (HitObject.transform.tag == "Pin" || HitObject.transform.tag == "NBTemp")
-                {    // This automatically scales the force depending on distnance from hit pt!
-                    HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                    //make object invisible and stop its movement
+                    Fuse.Stop();
+                    Mesh.enabled = false;
+                    Collider.enabled = false;
+
+                    //Play Explosion Effects
+                    ExplosionEffect.transform.position = HitLocation;
+                    ExplosionEffect.GetComponent<ParticleSystem>().Play();
+
+
+                    // For all balls within the sphere, apply a force.
+                    foreach (var HitObject in Colliders)
+                    {
+                        if (!HitObject)
+                            continue;
+
+                        if (HitObject.transform.tag == "Pin" || HitObject.transform.tag == "NBTemp")
+                        {    // This automatically scales the force depending on distnance from hit pt!
+                            HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                        }
+                    }
+                    StartCoroutine(RestoreBall());
                 }
             }
-            StartCoroutine(RestoreBall());
-        }
     }
 
     private void Update()

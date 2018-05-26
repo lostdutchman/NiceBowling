@@ -10,7 +10,7 @@ public class JellyBall : MonoBehaviour
     {
         foreach (Rigidbody rigidBody in this.GetComponentsInChildren<Rigidbody>())
         {
-            rigidBody.useGravity = true;
+            rigidBody.isKinematic = false;
             rigidBody.velocity = velocity;
         }
     }

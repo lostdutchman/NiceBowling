@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba, Wall;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
@@ -29,10 +29,10 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         //Get NB Effects
-        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
-        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        //List<string> Effects = Effect(NiceRandom);
-        List<string> Effects = Effect(1);
+        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
+        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        List<string> Effects = Effect(NiceRandom);
+        //List<string> Effects = Effect(1);
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -44,7 +44,7 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(2, 3); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(1, 17); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -54,7 +54,7 @@ public class NiceBowling : MonoBehaviour {
                     case 1: Effects.Add(Billiards()); break;
                     case 2: Effects.Add(PinMove()); break;
                     case 3: Effects.Add(DifferentPins()); break;
-                    case 4: Effects.Add(BallSize()); break;
+                    case 4: break;
                     case 5: Effects.Add(MarbleRain());  break;
                     case 6: Effects.Add(DifferentBall()); break;
                     case 7: Effects.Add(Bumpers()); break;
@@ -66,6 +66,7 @@ public class NiceBowling : MonoBehaviour {
                     case 13: Effects.Add(Pendulums()); break;
                     case 14: Effects.Add(MinigolfWindmill()); break;
                     case 15: Effects.Add(RoombaSummon()); break;
+                    case 16: Effects.Add(CubeWall()); break;
 
                     default: print("NiceBowling.Effect switch case default triggered somehow"); break;
                 }
@@ -104,7 +105,7 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentBall()
     {
-        switch (UnityEngine.Random.Range(8, 9))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 11))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return BeachBall();
             case 2: return CannonBall();
@@ -114,24 +115,12 @@ public class NiceBowling : MonoBehaviour {
             case 6: return CactusBall();
             case 7: return JellyBall();
             case 8: return BombBall();
+            case 9: return GiantBall();
+            case 10: return TinyBall();
 
             default: print("NiceBowling.BallMass switch case default triggered somehow"); break;
         }
         return "Ball Mass Error!";
-    }
-
-    private string BallSize()
-    {
-        switch (UnityEngine.Random.Range(1, 5))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
-        {
-            case 1: return GiantBall();
-            case 2: return SmallBall();
-            case 3: return TinyBall();
-            case 4: return LargeBall();
-
-            default: print("NiceBowling.BallSize switch case default triggered somehow"); break;
-        }
-        return "Ball Size Error!";
     }
 
     private string DifferentPins()
@@ -382,6 +371,12 @@ public class NiceBowling : MonoBehaviour {
 		Instantiate(Cylinder, new Vector3(30f, y, z), Quaternion.identity);
 		Instantiate(Cylinder, new Vector3(-30f, y, z), Quaternion.identity);
         return("Obstacles!");
+    }
+
+    public string CubeWall()
+    {
+        Instantiate(Wall, new Vector3(0, 1, UnityEngine.Random.Range(500f, 1500f)), Quaternion.identity);
+        return ("Obstacle!");
     }
 
     public string RampAdd(){

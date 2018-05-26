@@ -32,7 +32,7 @@ public class Ball : MonoBehaviour {
         else
         {
             Rigidbody Body = childBall.GetComponent<Rigidbody>();
-            Body.useGravity = true;
+            Body.isKinematic = false;
             Body.velocity = velocity;
             Body.GetComponent<ConstantForce>().torque = new Vector3(0, spin * TorqueMultiplier, (spin * TorqueMultiplier) / -2);
             Body.GetComponent<ConstantForce>().force = new Vector3(spin * SpinMultiplier, 0, 0);
@@ -56,7 +56,7 @@ public class Ball : MonoBehaviour {
         rigidBody.GetComponent<ConstantForce>().force = new Vector3(0, 0, 0);
         childBall.transform.position = ThingTracker.LastStartPos;
 		childBall.transform.rotation = Quaternion.identity;
-        rigidBody.useGravity = false;
+        rigidBody.isKinematic = true;
 		rigidBody.velocity = Vector3.zero;
 		rigidBody.angularVelocity = Vector3.zero;
         inPlay = false;
@@ -70,7 +70,7 @@ public class Ball : MonoBehaviour {
         {
             if (childBall.GetComponent<Rigidbody>().velocity.z <= 25)
             {
-                //ThingTracker.ballout = true;
+                ThingTracker.ballout = true;
             }
         }
         else
