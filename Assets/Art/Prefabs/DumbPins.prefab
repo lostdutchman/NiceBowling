@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 6411fe8c2c72dbc4d9d53e8fa3ed387d, type: 3}
 --- !u!114 &114185101733307192
 MonoBehaviour:
   m_ObjectHideFlags: 1
