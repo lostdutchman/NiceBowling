@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba, Wall;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
@@ -54,7 +54,7 @@ public class NiceBowling : MonoBehaviour {
                     case 1: Effects.Add(Billiards()); break;
                     case 2: Effects.Add(PinMove()); break;
                     case 3: Effects.Add(DifferentPins()); break;
-                    case 4: break;
+                    case 4: Effects.Add(SpeedBoost());  break;
                     case 5: Effects.Add(MarbleRain());  break;
                     case 6: Effects.Add(DifferentBall()); break;
                     case 7: Effects.Add(Bumpers()); break;
@@ -414,7 +414,18 @@ public class NiceBowling : MonoBehaviour {
         }
         return ("Pendulums");
     }
-#region Pin Add
+
+    private string SpeedBoost()
+    {
+        int rand = UnityEngine.Random.Range(1, 3);
+        for (int i = 0; i < rand; i++)
+        {
+            Instantiate(SpeedUp, new Vector3(UnityEngine.Random.Range(-30f, 30f), 1, UnityEngine.Random.Range(100f, 1400f)), Quaternion.Euler(90, 180, 0));
+        }
+        return ("Faster!");
+    }
+
+    #region Pin Add
     public string AddPinsx1(){
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
         return("Dumb Pins");
