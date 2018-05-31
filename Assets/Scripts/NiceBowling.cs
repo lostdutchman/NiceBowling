@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private float gravityX, gravityY, gravityZ;
@@ -29,7 +29,7 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         //Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 4 };
+        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         List<string> Effects = Effect(NiceRandom);
         //List<string> Effects = Effect(1);
@@ -44,11 +44,12 @@ public class NiceBowling : MonoBehaviour {
 
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(1, 17); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(1, 19); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
-                UsedNum.Add(TempNum);
+                if (TempNum == 6 || TempNum == 17) { UsedNum.Add(6); UsedNum.Add(17); }
+                else { UsedNum.Add(TempNum); }
                 switch (TempNum)
                 {
                     case 1: Effects.Add(Billiards()); break;
@@ -67,6 +68,8 @@ public class NiceBowling : MonoBehaviour {
                     case 14: Effects.Add(MinigolfWindmill()); break;
                     case 15: Effects.Add(RoombaSummon()); break;
                     case 16: Effects.Add(CubeWall()); break;
+                    case 17: Effects.Add(DifferentBall()); break;
+                    case 18: Effects.Add(LandMine()); break;
 
                     default: print("NiceBowling.Effect switch case default triggered somehow"); break;
                 }
@@ -421,6 +424,16 @@ public class NiceBowling : MonoBehaviour {
         for (int i = 0; i < rand; i++)
         {
             Instantiate(SpeedUp, new Vector3(UnityEngine.Random.Range(-30f, 30f), 1, UnityEngine.Random.Range(100f, 1400f)), Quaternion.Euler(90, 180, 0));
+        }
+        return ("Faster!");
+    }
+
+    private string LandMine()
+    {
+        int rand = UnityEngine.Random.Range(1, 4);
+        for (int i = 0; i < rand; i++)
+        {
+            Instantiate(Mine, new Vector3(UnityEngine.Random.Range(-45f, 45f), .52f, UnityEngine.Random.Range(50f, 1750f)), Quaternion.Euler(0, 0, 0));
         }
         return ("Faster!");
     }

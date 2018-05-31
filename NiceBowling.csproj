@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\JellyBall.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Marble.cs" />
+    <Compile Include="Assets\Scripts\Mine.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\NiceBowling.cs" />
     <Compile Include="Assets\Scripts\NiceBowlingReset.cs" />
