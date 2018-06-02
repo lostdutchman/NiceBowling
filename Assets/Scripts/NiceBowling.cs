@@ -13,6 +13,7 @@ public class NiceBowling : MonoBehaviour {
 	private float volume;
     public UIAnimation NBUI;
     private bool FirstFrame;
+    int i = 1; //for promotional only
 
     // Use this for initialization
     void Start () {
@@ -29,10 +30,29 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         //Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
-        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        List<string> Effects = Effect(NiceRandom);
-        //List<string> Effects = Effect(1);
+        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
+        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        //List<string> Effects = Effect(NiceRandom);
+        //List<string> Effects = Effect(1); //For testing an effect
+        //For video and promotional work
+        List<string> Effects = new List<string>();
+        switch (i)
+        {
+            case 1: Effects.Add(IncreasePinDrag()); Effects.Add(SpeedBoost()); break;
+            case 2:Effects.Add(BombBall()); Effects.Add(CubeWall()); break;
+            case 3:Effects.Add(SpikeBall()); Effects.Add(SardineRain()); Effects.Add(Pendulums()); break;
+            case 4:Effects.Add(SpikeBall()); Effects.Add(AddPinsx11()); Effects.Add(MinigolfWindmill()); break;
+            case 5:Effects.Add(GiantBall()); Effects.Add(Billiards()); break;
+            case 6:Effects.Add(BuckyBall()); Effects.Add(RampAdd()); break;
+            case 7:Effects.Add(BeachBall()); Effects.Add(Obsticals()); break;
+            case 8:Effects.Add(JellyBall()); Effects.Add(IncreasePinSize()); break;
+            case 9:Effects.Add(Bumpers()); Effects.Add(RoombaSummon()); Effects.Add(RoombaSummon()); break;
+            case 10: Effects.Add(RoombaSummon()); Effects.Add(SardineRain()); Effects.Add(LandMine()); break;
+            case 11: Effects.Add(BouncyBall()); Effects.Add(MarbleRain()); break;
+
+            default: print("NiceBowling.Effect switch case default triggered somehow"); break;
+        }
+        i++;
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -177,18 +197,6 @@ public class NiceBowling : MonoBehaviour {
         return ("Sleazy Pins!");
     }
 
-	public string GravityYHeavy(){
-		gravityY = UnityEngine.Random.Range (-600, -200);
-		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        return("4x Gravity!");
-    }
-
-	public string GravityYLight(){
-		gravityY = UnityEngine.Random.Range (-150, 3);
-		Physics.gravity= new Vector3(gravityX, gravityY, gravityZ);
-        return("Low Gravity");
-    }
-
 	public string IncreasePinDrag(){
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			Rigidbody body = pin.GetComponent<Rigidbody>();
@@ -235,26 +243,12 @@ public class NiceBowling : MonoBehaviour {
         childBall.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
         return("Big ol' Ball");
     }
-	
-	public string SmallBall(){
-        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        Vector3 size = childBall.transform.localScale;
-        childBall.transform.localScale = new Vector3(size.x / 1.5f, size.y / 1.5f, size.z / 1.5f);
-        return ("Little Ball");
-    }
 
 	public string TinyBall(){
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3(size.x / 4, size.y / 4f, size.z / 4f);
         return ("Marble");
-    }
-
-	public string LargeBall(){
-        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        Vector3 size = childBall.transform.localScale;
-        childBall.transform.localScale = new Vector3(size.x * 1.5f, size.y * 1.5f, size.z * 1.5f);
-        return ("Big Ball");
     }
 
 	public string BeachBall(){

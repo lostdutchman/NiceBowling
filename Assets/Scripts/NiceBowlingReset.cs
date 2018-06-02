@@ -49,6 +49,11 @@ public class NiceBowlingReset : MonoBehaviour
         {
             Destroy(Obstacle);
         }
+        //Clears objects stuck to spike ball.
+        foreach (GameObject stuck in GameObject.FindGameObjectsWithTag("WasStuck"))
+        {
+            Destroy(stuck);
+        }
     }
 }
 

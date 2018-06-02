@@ -21,6 +21,7 @@ public class BombBall : MonoBehaviour {
         Fuse = GetComponentInChildren<ParticleSystem>();
         ExplosionEffect = GameObject.Find("Explosion");
         transform.rotation = Quaternion.Euler(new Vector3(265f, 45f, 0f));
+        Body = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision col)
@@ -37,6 +38,7 @@ public class BombBall : MonoBehaviour {
                     Fuse.Stop();
                     Mesh.enabled = false;
                     Collider.enabled = false;
+                    Body.isKinematic = true;
 
                     //Play Explosion Effects
                     ExplosionEffect.transform.position = HitLocation;
@@ -72,7 +74,6 @@ public class BombBall : MonoBehaviour {
     {
         yield return new WaitForSecondsRealtime(RestoreTime);
         Fuse.Play();
-        Mesh.enabled = true;
         Collider.enabled = true;
     }
 

@@ -15,28 +15,32 @@ public class PendHit : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "ChildBall" || col.gameObject.tag =="NBTemp")
+        if (col.gameObject.name != "SpikeBall 1(Clone)")
         {
-            Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * ForceToAdd;
-            try
+
+            if (col.gameObject.tag == "ChildBall" || col.gameObject.tag == "NBTemp")
             {
-                col.gameObject.GetComponent<Rigidbody>().AddForce(HitForce, ForceMode.Impulse);
-            }
-            catch
-            {
+                Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * ForceToAdd;
                 try
                 {
-                    foreach(Rigidbody Body in col.gameObject.GetComponentsInChildren<Rigidbody>())
-                    {
-                        Body.AddForce(HitForce, ForceMode.Impulse);
-                    }
+                    col.gameObject.GetComponent<Rigidbody>().AddForce(HitForce, ForceMode.Impulse);
                 }
                 catch
                 {
-                    //No ridged body, do nothing.
+                    try
+                    {
+                        foreach (Rigidbody Body in col.gameObject.GetComponentsInChildren<Rigidbody>())
+                        {
+                            Body.AddForce(HitForce, ForceMode.Impulse);
+                        }
+                    }
+                    catch
+                    {
+                        //No ridged body, do nothing.
+                    }
                 }
+                HitNoise.Play();
             }
-            HitNoise.Play();
         }
     }
 }

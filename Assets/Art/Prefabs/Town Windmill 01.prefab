@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4247300601726430}
   m_Layer: 0
   m_Name: group
-  m_TagString: Untagged
+  m_TagString: NBTemp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 64392414059311670}
   m_Layer: 0
   m_Name: pCube75
-  m_TagString: Untagged
+  m_TagString: NBTemp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 95509460335131590}
   m_Layer: 0
   m_Name: Royal_Town_Windmill_Anim
-  m_TagString: Untagged
+  m_TagString: NBTemp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
