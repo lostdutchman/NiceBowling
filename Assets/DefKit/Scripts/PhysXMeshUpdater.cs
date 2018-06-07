@@ -74,18 +74,18 @@ namespace DefKit
                     }
                     catch
                     {
-                        if (!Broke)
-                        {
+                    if (!Broke)
+                    {
                         Broke = true;
                         GameObject.FindObjectOfType<Ball>().ResetTheJellyBall();
-                        }
                     }
-                    //  m_vertices[i] = transform.InverseTransformPoint(m_msm.positions[mappings[i]]);
-                    //  m_normals[i] = transform.InverseTransformDirection(m_msm.normals[mappings[i]]);
-
-                    //m_vertices[i] = m_rigidBodies[mappings[i]].position;
-                    //m_normals[i] = m_body.normals[mappings[i]];
                 }
+                //  m_vertices[i] = transform.InverseTransformPoint(m_msm.positions[mappings[i]]);
+                //  m_normals[i] = transform.InverseTransformDirection(m_msm.normals[mappings[i]]);
+
+                //m_vertices[i] = m_rigidBodies[mappings[i]].position;
+                //m_normals[i] = m_body.normals[mappings[i]];
+            }
             Broke = false;
             m_mesh.vertices = m_vertices;
 

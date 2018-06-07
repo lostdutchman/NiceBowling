@@ -72,6 +72,8 @@ GameObject:
   - component: {fileID: 114179796593290788}
   - component: {fileID: 54749559234489762}
   - component: {fileID: 75591239585777090}
+  - component: {fileID: 138740074074066562}
+  - component: {fileID: 138040415520774520}
   m_Layer: 11
   m_Name: JellyBall
   m_TagString: ChildBall
@@ -1894,12 +1896,12 @@ Rigidbody:
   m_GameObject: {fileID: 1065387018635438}
   serializedVersion: 2
   m_Mass: 0.001
-  m_Drag: 0.016
+  m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54752616898792302
 Rigidbody:
@@ -2087,6 +2089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114003428038748234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2098,6 +2101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114009794789455190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2109,6 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114015117930247290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2120,6 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114028588062909196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2131,6 +2137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114068490605785916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2142,6 +2149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114094391397700270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2153,6 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114098211827764946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2164,6 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114147694089738266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2175,6 +2185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114150753389059046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2186,6 +2197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114167559416195874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2197,6 +2209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114179796593290788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2437,6 +2450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114254020573802266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2448,6 +2462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114282079932837188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2459,6 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114303041900130442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2470,6 +2486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114334814045271484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2481,6 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114381751416995390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2492,6 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114410657358316062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2503,6 +2522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114420330219099482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2526,6 +2546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114440916145563966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2537,6 +2558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114470794849937172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2548,6 +2570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114484798938529428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2559,6 +2582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114497607453299442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2570,6 +2594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114516845987269202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2581,6 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114573335227343250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2592,6 +2618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114627789052848090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2603,6 +2630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114680349610724910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2614,6 +2642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114692750476827270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2625,6 +2654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114734022871556030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2636,6 +2666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114785950080641674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2647,6 +2678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114801944165622334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2658,6 +2690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114807132067982654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2669,6 +2702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114821322584822070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2680,6 +2714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114835143338949894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2691,6 +2726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114843933984771680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2702,6 +2738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114844672102078216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2713,6 +2750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114880093460971146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4257,6 +4295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!114 &114987552895114398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4268,6 +4307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab7bce5f77076d4295abbec43078128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraDelay: 2.5
 --- !u!135 &135033672825381686
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -4724,6 +4764,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!138 &138040415520774520
+FixedJoint:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065387018635438}
+  m_ConnectedBody: {fileID: 54752616898792302}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+--- !u!138 &138740074074066562
+FixedJoint:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065387018635438}
+  m_ConnectedBody: {fileID: 54417437910851000}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
 --- !u!145 &145002976711623500
 SpringJoint:
   m_ObjectHideFlags: 1

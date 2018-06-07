@@ -5,14 +5,8 @@ public class RoombaMove : MonoBehaviour {
 
     public float speed = 10f;
     public float forwardSpeed = 2f;
-    Rigidbody body;
     private bool rotate = false;
     private bool ignore = false;
-
-    void Start()
-    {
-        body = GetComponentInChildren<Rigidbody>();
-    }
 
     // Update is called once per frame
     void Update () {

@@ -23,25 +23,20 @@ public class JellyBall : MonoBehaviour
     private IEnumerator WaitAndKill()
     {
         yield return new WaitForSecondsRealtime(1f);
-        print("Starting Kill");
-        foreach (Rigidbody rigidBody in this.GetComponentsInChildren<Rigidbody>())
+        try
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000));
+            //Gotta kill the jelly ball
+            foreach (Rigidbody rigidBody in this.GetComponentsInChildren<Rigidbody>())
+            {
+                GetComponent<Rigidbody>().velocity = new Vector3(UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000));
+            }
+            kill();
         }
-        yield return new WaitForSecondsRealtime(.5f);
-        foreach (Rigidbody rigidBody in this.GetComponentsInChildren<Rigidbody>())
+        catch
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000));
+            //Jelly ball is dead
+            yield break;
         }
-        yield return new WaitForSecondsRealtime(.5f);
-        foreach (Rigidbody rigidBody in this.GetComponentsInChildren<Rigidbody>())
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000));
-        }
-        yield return new WaitForSecondsRealtime(.5f);
-        foreach (Rigidbody rigidBody in this.GetComponentsInChildren<Rigidbody>())
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000), UnityEngine.Random.Range(-2000, 2000));
-        }
+
     }
 }

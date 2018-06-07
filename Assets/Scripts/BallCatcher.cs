@@ -10,6 +10,10 @@ public class BallCatcher : MonoBehaviour {
 
         if (thingLeft.tag == "ChildBall")
         {
+            if(thingLeft.name == "JellyBall(Clone)")
+            {
+                FindObjectOfType<Ball>().ResetTheJellyBall();
+            }
             ThingTracker.ballout = true;
         }
         else

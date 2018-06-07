@@ -8,12 +8,11 @@ public class NiceBowling : MonoBehaviour {
 	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
-	private float gravityX, gravityY, gravityZ;
 	private Camera MainCamera;
 	private float volume;
     public UIAnimation NBUI;
     private bool FirstFrame;
-    int i = 1; //for promotional only
+    int i = 1; //for promotional and testing
 
     // Use this for initialization
     void Start () {
@@ -21,9 +20,6 @@ public class NiceBowling : MonoBehaviour {
         volume = PlayerPrefsManager.GetMasterVolume();
         MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
         musicManager.ChangeVolume(volume);
-        gravityX = Physics.gravity.x;
-        gravityY = Physics.gravity.y;
-        gravityZ = Physics.gravity.z;
         FirstFrame = true;
     }
 
@@ -33,22 +29,21 @@ public class NiceBowling : MonoBehaviour {
         //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
         //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         //List<string> Effects = Effect(NiceRandom);
-        //List<string> Effects = Effect(1); //For testing an effect
-        //For video and promotional work
+        //For video and promotional work and testing effects
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: Effects.Add(IncreasePinDrag()); Effects.Add(SpeedBoost()); break;
-            case 2:Effects.Add(BombBall()); Effects.Add(CubeWall()); break;
-            case 3:Effects.Add(SpikeBall()); Effects.Add(SardineRain()); Effects.Add(Pendulums()); break;
-            case 4:Effects.Add(SpikeBall()); Effects.Add(AddPinsx11()); Effects.Add(MinigolfWindmill()); break;
-            case 5:Effects.Add(GiantBall()); Effects.Add(Billiards()); break;
-            case 6:Effects.Add(BuckyBall()); Effects.Add(RampAdd()); break;
-            case 7:Effects.Add(BeachBall()); Effects.Add(Obsticals()); break;
+            case 1: Effects.Add(JellyBall()); Effects.Add(SpeedBoost()); break;
+            case 2:Effects.Add(JellyBall()); Effects.Add(CubeWall()); break;
+            case 3:Effects.Add(JellyBall()); Effects.Add(SardineRain()); Effects.Add(Pendulums()); break;
+            case 4:Effects.Add(JellyBall()); Effects.Add(AddPinsx11()); Effects.Add(MinigolfWindmill()); break;
+            case 5:Effects.Add(JellyBall()); Effects.Add(Billiards()); break;
+            case 6:Effects.Add(JellyBall()); Effects.Add(RampAdd()); break;
+            case 7:Effects.Add(JellyBall()); Effects.Add(Obsticals()); break;
             case 8:Effects.Add(JellyBall()); Effects.Add(IncreasePinSize()); break;
-            case 9:Effects.Add(Bumpers()); Effects.Add(RoombaSummon()); Effects.Add(RoombaSummon()); break;
-            case 10: Effects.Add(RoombaSummon()); Effects.Add(SardineRain()); Effects.Add(LandMine()); break;
-            case 11: Effects.Add(BouncyBall()); Effects.Add(MarbleRain()); break;
+            case 9:Effects.Add(Bumpers()); Effects.Add(JellyBall()); Effects.Add(RoombaSummon()); break;
+            case 10: Effects.Add(JellyBall()); Effects.Add(SardineRain()); Effects.Add(LandMine()); break;
+            case 11: Effects.Add(JellyBall()); Effects.Add(MarbleRain()); break;
 
             default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         }

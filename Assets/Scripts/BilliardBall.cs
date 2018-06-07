@@ -25,14 +25,8 @@ public class BilliardBall : MonoBehaviour {
         {
             Vector3 HitForce = (transform.position - col.contacts[0].point).normalized * ForceToAdd;
             rigidBody.AddForce(HitForce, ForceMode.Impulse);
-            MainCamera.GetComponent<CameraControl>().BilliardHit(this.gameObject);
-            StartCoroutine(CameraReset());
+            MainCamera.GetComponent<CameraControl>().BilliardHit(this.gameObject, TimeToFollow);
         }
         ClackNoise.Play();
-    }
-    private IEnumerator CameraReset()
-    {
-        yield return new WaitForSecondsRealtime(TimeToFollow);
-        MainCamera.GetComponent<CameraControl>().ResetCamera();
     }
 }
