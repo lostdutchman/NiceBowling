@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinToy, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private Camera MainCamera;
@@ -33,17 +33,17 @@ public class NiceBowling : MonoBehaviour {
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: Effects.Add(JellyBall()); Effects.Add(SpeedBoost()); break;
-            case 2:Effects.Add(JellyBall()); Effects.Add(CubeWall()); break;
-            case 3:Effects.Add(JellyBall()); Effects.Add(SardineRain()); Effects.Add(Pendulums()); break;
-            case 4:Effects.Add(JellyBall()); Effects.Add(AddPinsx11()); Effects.Add(MinigolfWindmill()); break;
-            case 5:Effects.Add(JellyBall()); Effects.Add(Billiards()); break;
-            case 6:Effects.Add(JellyBall()); Effects.Add(RampAdd()); break;
-            case 7:Effects.Add(JellyBall()); Effects.Add(Obsticals()); break;
-            case 8:Effects.Add(JellyBall()); Effects.Add(IncreasePinSize()); break;
-            case 9:Effects.Add(Bumpers()); Effects.Add(JellyBall()); Effects.Add(RoombaSummon()); break;
-            case 10: Effects.Add(JellyBall()); Effects.Add(SardineRain()); Effects.Add(LandMine()); break;
-            case 11: Effects.Add(JellyBall()); Effects.Add(MarbleRain()); break;
+            case 1:Effects.Add(IncreasePinSize()); Effects.Add(TinyBall()); break;
+            case 2:Effects.Add(MetalPins()); break;
+            case 3:Effects.Add(MetalPins()); break;
+            case 4:Effects.Add(MetalPins()); break;
+            case 5:Effects.Add(IncreasePinSize()); Effects.Add(Billiards()); break;
+            case 6:Effects.Add(IncreasePinSize()); Effects.Add(RampAdd()); break;
+            case 7:Effects.Add(IncreasePinSize()); Effects.Add(Obsticals()); break;
+            case 8:Effects.Add(IncreasePinSize()); break;
+            case 9:Effects.Add(IncreasePinSize()); Effects.Add(RoombaSummon()); break;
+            case 10:Effects.Add(IncreasePinSize()); Effects.Add(LandMine()); break;
+            case 11:Effects.Add(IncreasePinSize()); break;
 
             default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         }
@@ -143,11 +143,10 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentPins()
     {
-        switch (UnityEngine.Random.Range(1, 4))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 3))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return IncreasePinSize();
-            case 2: return DecreasePinSize();
-            case 3: return MetalPins();
+            case 2: return MetalPins();
 
             default: print("NiceBowling.DifferentPins switch case default triggered somehow"); break;
         }
@@ -209,16 +208,6 @@ public class NiceBowling : MonoBehaviour {
             Instantiate(PinBig, Location, Quaternion.Euler(-90, 0, 0));
         }
         return ("Big ol' Pins!");
-    }
-
-	public string DecreasePinSize(){
-        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
-        {
-            Vector3 Location = pin.transform.position;
-            Destroy(pin.gameObject);
-            Instantiate(PinToy, Location, Quaternion.Euler(-90, 0, 0));
-        }
-        return ("Tiny Pins!");
     }
 
     public string MetalPins()

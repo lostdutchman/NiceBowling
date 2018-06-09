@@ -4,7 +4,7 @@ using System;
 
 public class Pins : MonoBehaviour {
 	
-	public float standingThreshold = 5f; //how many degrees it can be tilted
+	public float standingThreshold = 7f; //how many degrees it can be tilted
 	public float distanceToRaise = 45f;
     public AudioClip PinHitPin;
     public AudioClip PinHitBall;
@@ -42,11 +42,11 @@ public class Pins : MonoBehaviour {
 	public bool IsStanding(){
 
 		if(!HasTilted())
-        { 
+        {
             return true;
         }
         else{
-			return false;
+            return false;
 		}
 	}
 

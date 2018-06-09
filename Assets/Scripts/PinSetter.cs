@@ -70,6 +70,13 @@ public class PinSetter : MonoBehaviour {
 	
 	//Called by animator to add a new set of pins
 	public void RenewPins(){
+
+        //Clears pins that didnt get pushed off the lane
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            Destroy(pin.gameObject);
+        }
+
         Instantiate(pinSet, new Vector3(0, 1, 1829), Quaternion.identity);
 		Swipper.SetActive (false);
         niceBowling.NiceManager();

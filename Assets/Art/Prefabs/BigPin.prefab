@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8dd835dd9f28f47bd9b6dbfae66619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standingThreshold: 3
+  standingThreshold: 5
   distanceToRaise: 40
   PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
