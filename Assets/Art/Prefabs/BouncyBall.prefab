@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce119749f4876d947b34f6bc2568e935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bouciness: 300
+  Bouciness: 100
 --- !u!135 &135893612452087200
 SphereCollider:
   m_ObjectHideFlags: 1
