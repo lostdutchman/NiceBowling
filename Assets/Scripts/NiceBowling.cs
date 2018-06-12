@@ -5,14 +5,14 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallCactus, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallDurian, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private Camera MainCamera;
 	private float volume;
     public UIAnimation NBUI;
     private bool FirstFrame;
-    /*int i = 1;*/ //for promotional and testing
+    int i = 1; //for promotional and testing
 
     // Use this for initialization
     void Start () {
@@ -25,29 +25,29 @@ public class NiceBowling : MonoBehaviour {
 
     public void NiceManager()
     {
-        //Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
-        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        List<string> Effects = Effect(NiceRandom);
+        ////Get NB Effects
+        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
+        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        //List<string> Effects = Effect(NiceRandom);
         //For video and promotional work and testing effects
-        //List<string> Effects = new List<string>();
-        //switch (i)
-        //{
-        //    case 1:Effects.Add(IncreasePinSize()); Effects.Add(TinyBall()); break;
-        //    case 2:Effects.Add(MetalPins()); break;
-        //    case 3:Effects.Add(MetalPins()); break;
-        //    case 4:Effects.Add(MetalPins()); break;
-        //    case 5:Effects.Add(IncreasePinSize()); Effects.Add(Billiards()); break;
-        //    case 6:Effects.Add(IncreasePinSize()); Effects.Add(RampAdd()); break;
-        //    case 7:Effects.Add(IncreasePinSize()); Effects.Add(Obsticals()); break;
-        //    case 8:Effects.Add(IncreasePinSize()); break;
-        //    case 9:Effects.Add(IncreasePinSize()); Effects.Add(RoombaSummon()); break;
-        //    case 10:Effects.Add(IncreasePinSize()); Effects.Add(LandMine()); break;
-        //    case 11:Effects.Add(IncreasePinSize()); break;
+        List<string> Effects = new List<string>();
+        switch (i)
+        {
+            case 1: Effects.Add(DurianBall()); break;
+            case 2: Effects.Add(DurianBall()); break;
+            case 3: Effects.Add(DurianBall()); break;
+            case 4: Effects.Add(DurianBall()); break;
+            case 5: Effects.Add(IncreasePinSize()); Effects.Add(Billiards()); break;
+            case 6: Effects.Add(IncreasePinSize()); Effects.Add(RampAdd()); break;
+            case 7: Effects.Add(IncreasePinSize()); Effects.Add(Obsticals()); break;
+            case 8: Effects.Add(IncreasePinSize()); break;
+            case 9: Effects.Add(IncreasePinSize()); Effects.Add(RoombaSummon()); break;
+            case 10: Effects.Add(IncreasePinSize()); Effects.Add(LandMine()); break;
+            case 11: Effects.Add(IncreasePinSize()); break;
 
-        //    default: print("NiceBowling.Effect switch case default triggered somehow"); break;
-        //}
-        //i++;
+            default: print("NiceBowling.Effect switch case default triggered somehow"); break;
+        }
+        i++;
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }
@@ -130,7 +130,7 @@ public class NiceBowling : MonoBehaviour {
             case 3: return BouncyBall();
             case 4: return BuckyBall();
             case 5: return SpikeBall();
-            case 6: return CactusBall();
+            case 6: return DurianBall();
             case 7: return JellyBall();
             case 8: return BombBall();
             case 9: return GiantBall();
@@ -269,13 +269,13 @@ public class NiceBowling : MonoBehaviour {
         return ("Polyhedral Ball!");
     }
 
-    public string CactusBall()
+    public string DurianBall()
     {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
-        Instantiate(BallCactus, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Jackfruit!");
+        Instantiate(BallDurian, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        return ("Durian!");
     }
 
     public string SpikeBall()
