@@ -8,10 +8,11 @@ public class Ball : MonoBehaviour {
     public GameObject jellyBall;
     public AudioClip BallRolling;
     private AudioSource audioSource;
-    public GameObject Tut, LeftArrow, RightArrow, TouchInput;
+    public GameObject Tut, Tut2, LeftArrow, RightArrow, TouchInput;
     [Tooltip("For adding English to the ball")]
     public float SpinMultiplier, TorqueMultiplier;
     private NiceBowlingReset NBReset;
+    private int Mistakes = 0;
 
     void Start () {
 		audioSource = GetComponent<AudioSource>();
@@ -39,6 +40,7 @@ public class Ball : MonoBehaviour {
         }
 		inPlay = true;
         Tut.SetActive(false);
+        Tut2.SetActive(false);
         LeftArrow.SetActive(false);
         RightArrow.SetActive(false);
     }
@@ -83,6 +85,11 @@ public class Ball : MonoBehaviour {
     public void TryAgain()
     {
         Tut.SetActive(true);
+        Mistakes++;
+        if(Mistakes > 2)
+        {
+            Tut2.SetActive(true);
+        }
     }
 
     public void ResetTheJellyBall()
