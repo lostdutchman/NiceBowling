@@ -11,7 +11,7 @@ public class PinSetter : MonoBehaviour {
 	public AudioClip[] turkeyAudio;
 	public AudioClip[] gutterAudio;
 	public AudioClip silence;
-	public GameObject exitButton, Swipper, TouchInput;
+	public GameObject Resume, Swipper, TouchInput;
 	public bool GameOver, StartGame;
 
 	private AudioSource audioSource;
@@ -20,6 +20,7 @@ public class PinSetter : MonoBehaviour {
 	private Animator animator;
 	private PinCounter pinCounter;
     private bool EndTurn = false;
+    private GameManager Menu;
 	
 	
 	void Start () {
@@ -31,7 +32,7 @@ public class PinSetter : MonoBehaviour {
 		niceBowling = GameObject.FindObjectOfType<NiceBowling>();
         niceBowlingReset = GameObject.FindObjectOfType<NiceBowlingReset>();
         Swipper.SetActive (false);
-		exitButton.SetActive(false);
+        Menu = FindObjectOfType<GameManager>();
         }
 
     public void Update()
@@ -108,7 +109,8 @@ public class PinSetter : MonoBehaviour {
 	}
 	
 	public void GameEndButton(){
-		exitButton.SetActive(true);
+        Menu.ToggleMenu();
+        Resume.SetActive(false);
 		TouchInput.SetActive (false);
 		GameOver = true;
 

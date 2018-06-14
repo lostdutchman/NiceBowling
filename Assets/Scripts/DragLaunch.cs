@@ -22,6 +22,8 @@ public class DragLaunch : MonoBehaviour {
     private bool leftAim = false;
     public AudioClip ArrowSound;
     private AudioSource Audio;
+    public float ArrowAnimationSize;
+    public float ArrowStartSize;
 
     //Handicap Variables
     [Tooltip("1 = no handicap 1.6 = old handicap")]
@@ -62,16 +64,22 @@ public class DragLaunch : MonoBehaviour {
 
 
 
-    public void onPointerDownAdjust(string direction)
+    public void OnPointerDownAdjust(string direction)
     {
-        Audio.clip = ArrowSound;
-        Audio.Play();
         if (direction.ToLower() == "right") { rightAim = true; }
         else if (direction.ToLower() == "left") { leftAim = true; }
     }
 
-    public void OnPointerUpAdjust()
+    public void OnPointerDownEffect(GameObject Arrow)
     {
+        Audio.clip = ArrowSound;
+        Audio.Play();
+        Arrow.transform.localScale = new Vector3(ArrowAnimationSize, ArrowAnimationSize, 0);
+    }
+
+    public void OnPointerUpAdjust(GameObject Arrow)
+    {
+        Arrow.transform.localScale = new Vector3(ArrowStartSize, ArrowStartSize, 0);
         rightAim = false;
         leftAim = false;
     }
