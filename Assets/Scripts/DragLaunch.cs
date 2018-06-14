@@ -101,7 +101,7 @@ public class DragLaunch : MonoBehaviour {
         }
         else if(MaxX > MinX)
         {
-            return MaxX *-1;//Apply negitive force to push ball left
+            return MaxX * -1;//Apply negitive force to push ball left
         }
         else
         {
@@ -119,7 +119,7 @@ public class DragLaunch : MonoBehaviour {
             float Curve = CalculateCurve(launchSpeedX);
             float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
             if(launchSpeedZ > 3000) { launchSpeedZ = 2800; }
-            if (launchSpeedZ < 200) { launchSpeedZ = 220; }
+            if (launchSpeedZ < 200) { launchSpeedZ = 0; }
 
             DragPointsX.Clear();
 
