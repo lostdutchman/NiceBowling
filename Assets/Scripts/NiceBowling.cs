@@ -33,17 +33,17 @@ public class NiceBowling : MonoBehaviour {
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: Effects.Add(RampAdd(-5)); break;
-            case 2: Effects.Add(RampAdd(-5)); break;
-            case 3: Effects.Add(RampAdd(-8)); break;
-            case 4: Effects.Add(RampAdd(-8)); break;
-            case 5: Effects.Add(RampAdd(-10)); break;
-            case 6: Effects.Add(RampAdd(-10)); break;
-            case 7: Effects.Add(RampAdd(-9)); break;
-            case 8: Effects.Add(RampAdd(-8)); break;
-            case 9: Effects.Add(RampAdd(-7)); break;
-            case 10: Effects.Add(RampAdd(-6)); break;
-            case 11: Effects.Add(RampAdd(-5)); break;
+            case 1: Effects.Add(SpikeBall()); Effects.Add(AddPinsx2()); break;
+            case 2: Effects.Add(SpikeBall()); Effects.Add(MarbleRain()); break;
+            case 3: Effects.Add(SpikeBall()); Effects.Add(AddPinsx4()); break;
+            case 4: Effects.Add(SpikeBall()); Effects.Add(SardineRain()); break;
+            case 5: Effects.Add(SpikeBall()); Effects.Add(AddPinsx6()); break;
+            case 6: Effects.Add(SpikeBall()); Effects.Add(RoombaSummon()); break;
+            case 7: Effects.Add(SpikeBall()); Effects.Add(AddPinsx8()); break;
+            case 8: Effects.Add(SpikeBall()); Effects.Add(RampAdd()); break;
+            case 9: Effects.Add(SpikeBall()); Effects.Add(AddPinsx10()); break;
+            case 10: Effects.Add(SpikeBall()); Effects.Add(Billiards()); break;
+            case 11: Effects.Add(SpikeBall()); Effects.Add(AddPinsExplodeBig()); break;
 
             default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         }
@@ -77,7 +77,7 @@ public class NiceBowling : MonoBehaviour {
                     case 8: Effects.Add(SardineRain()); break;
                     case 9: Effects.Add(Obstical()); break;
                     case 10: Effects.Add(Obsticals()); break;
-                    //case 11: Effects.Add(RampAdd()); break;
+                    case 11: Effects.Add(RampAdd()); break;
                     case 12: Effects.Add(AddPins()); break;
                     case 13: Effects.Add(Pendulums()); break;
                     case 14: Effects.Add(MinigolfWindmill()); break;
@@ -274,7 +274,7 @@ public class NiceBowling : MonoBehaviour {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
-        Instantiate(BallDurian, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        Instantiate(BallDurian, Location, Quaternion.Euler(new Vector3(240f, 45f, 0)), GameObject.FindObjectOfType<Ball>().transform);
         return ("Durian!");
     }
 
@@ -360,8 +360,8 @@ public class NiceBowling : MonoBehaviour {
         return ("Obstacle!");
     }
 
-    public string RampAdd(float angle){
-		Instantiate(Ramp, new Vector3(0, -3, UnityEngine.Random.Range (300f, 1600f)), Quaternion.Euler (angle, 0, 0));
+    public string RampAdd(){
+		Instantiate(Ramp, new Vector3(0, -3, UnityEngine.Random.Range (300f, 1300f)), Quaternion.Euler (-8, 0, 0));
         return("Ramp!");
     }
 
