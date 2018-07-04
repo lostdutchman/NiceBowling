@@ -24,18 +24,22 @@ public class Pins : MonoBehaviour {
 
     //Lifts pins, is called by pinsetter
     public void Raise(){
-		if(IsStanding()){
-			rigidBody.useGravity = false;
-			transform.Translate (new Vector3(0, distanceToRaise, 0), Space.World);
+		if(IsStanding() && this.tag != "WasStuck") //Spike ball steals the pin and I dont want it to be lowered if thats the case
+        {
+            rigidBody.useGravity = false;
+		    transform.Translate (new Vector3(0, distanceToRaise, 0), Space.World);
 		}
 	}
 	
 	//Lowers pins, is called by pinsetter
 	public void Lower(){
-		transform.Translate (new Vector3(0, -distanceToRaise, 0), Space.World);
-		rigidBody.useGravity = true;
-		transform.rotation = Quaternion.identity;  //Set rotation to 0, lays pin on side
-		transform.rotation = Quaternion.Euler (-90,0,0);//Correct previous line to make sure pins are all straight after each play.
+        if(this.tag != "WasStuck") //Spike ball steals the pin and I dont want it to be lowered if thats the case
+        {
+            transform.Translate(new Vector3(0, -distanceToRaise, 0), Space.World);
+            rigidBody.useGravity = true;
+            transform.rotation = Quaternion.identity;  //Set rotation to 0, lays pin on side
+            transform.rotation = Quaternion.Euler(-90, 0, 0);//Correct previous line to make sure pins are all straight after each play.
+        }
 	}
 	
 
