@@ -10,11 +10,11 @@ public class RoombaMove : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if ((transform.position.x > 40 || transform.position.x < -40) && !ignore)
+        if ((transform.position.x > 40 || transform.position.x < -40) && !ignore && this.tag != "WasStuck")
         {
             StartCoroutine(TurnAround());
         }
-        if(rotate)
+        if(rotate || this.tag == "WasStuck")
         {
             transform.Rotate(Vector3.up, speed * Time.deltaTime);
         }

@@ -122,14 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0439f709dde1dd04cb6ff53683000275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrowthRate: 0.05
+  GrowthRate: 0.075
 --- !u!135 &135746872714135226
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199248386371550}
-  m_Material: {fileID: 13400000, guid: f7fd8c677d771429097ae1cbb8ed51a8, type: 2}
+  m_Material: {fileID: 13400000, guid: 177541a6c1b17a94ab553459060b5d1c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -96,7 +96,7 @@ public class CameraControl : MonoBehaviour {
     {
         while(rotateQueue > 0)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(transform.rotation.x + 3f, transform.rotation.y, transform.rotation.z, transform.rotation.w), .05f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(transform.rotation.x + 3f, transform.rotation.y, transform.rotation.z, transform.rotation.w), .03f * Time.deltaTime);
             rotateQueue--;
         }
     }

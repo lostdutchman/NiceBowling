@@ -33,15 +33,15 @@ public class NiceBowling : MonoBehaviour {
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: Effects.Add(SpikeBall()); Effects.Add(AddPinsx2()); break;
-            case 2: Effects.Add(SpikeBall()); Effects.Add(MarbleRain()); break;
-            case 3: Effects.Add(SpikeBall()); Effects.Add(AddPinsx4()); break;
+            case 1: Effects.Add(SpikeBall()); Effects.Add(AddPinsx10()); break;
+            case 2: Effects.Add(SpikeBall()); Effects.Add(MinigolfWindmill()); break;
+            case 3: Effects.Add(SpikeBall()); Effects.Add(CubeWall()); break;
             case 4: Effects.Add(SpikeBall()); Effects.Add(SardineRain()); break;
-            case 5: Effects.Add(SpikeBall()); Effects.Add(AddPinsx6()); break;
-            case 6: Effects.Add(SpikeBall()); Effects.Add(RoombaSummon()); break;
-            case 7: Effects.Add(SpikeBall()); Effects.Add(AddPinsx8()); break;
-            case 8: Effects.Add(SpikeBall()); Effects.Add(RampAdd()); break;
-            case 9: Effects.Add(SpikeBall()); Effects.Add(AddPinsx10()); break;
+            case 5: Effects.Add(SpikeBall()); Effects.Add(RoombaSummon()); Effects.Add(Bumpers());  break;
+            case 6: Effects.Add(SpikeBall()); Effects.Add(Pendulums()); break;
+            case 7: Effects.Add(SpikeBall()); Effects.Add(SpeedBoost()); break;
+            case 8: Effects.Add(SpikeBall()); Effects.Add(LandMine()); break;
+            case 9: Effects.Add(SpikeBall()); Effects.Add(Obsticals()); break;
             case 10: Effects.Add(SpikeBall()); Effects.Add(Billiards()); break;
             case 11: Effects.Add(SpikeBall()); Effects.Add(AddPinsExplodeBig()); break;
 
@@ -413,7 +413,7 @@ public class NiceBowling : MonoBehaviour {
         {
             Instantiate(Mine, new Vector3(UnityEngine.Random.Range(-45f, 45f), .52f, UnityEngine.Random.Range(50f, 1750f)), Quaternion.Euler(0, 0, 0));
         }
-        return ("Faster!");
+        return ("MineSweeper");
     }
 
     #region Pin Add
