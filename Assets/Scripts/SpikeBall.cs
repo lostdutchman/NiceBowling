@@ -36,7 +36,7 @@ public class SpikeBall : MonoBehaviour {
             {
                 try
                 {
-                    Growth = collision.gameObject.GetComponent<SphereCollider>().radius / 2;
+                    Growth = collision.gameObject.GetComponent<SphereCollider>().radius / 13;
                     collision.gameObject.GetComponent<SphereCollider>().enabled = false;
                 }
                 catch
@@ -44,7 +44,7 @@ public class SpikeBall : MonoBehaviour {
                     try
                     {
                         Destroy(collision.gameObject.GetComponent<FixedJoint>()); //Barrels
-                        Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 2;
+                        Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 13;
                         collision.gameObject.GetComponent<CapsuleCollider>().enabled = false;
                     }
                     catch
@@ -59,7 +59,7 @@ public class SpikeBall : MonoBehaviour {
 
                             try
                             {
-                                Growth = .02f;
+                                Growth = .025f;
                                 collision.gameObject.GetComponent<iwasiRigid>().enabled = false; // This is to stop the sardines from pushing the ball around.
                                 Destroy(collision.gameObject.transform.GetChild(0).gameObject); //This is to kill the Sardine pone structure
                             }
@@ -68,7 +68,7 @@ public class SpikeBall : MonoBehaviour {
 
                                 try
                                 {
-                                    Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 2;
+                                    Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 13;
                                     collision.gameObject.GetComponent<CapsuleCollider>().enabled = false; //in case any non-barrel capsle colliders get added
                                 }
                                 catch

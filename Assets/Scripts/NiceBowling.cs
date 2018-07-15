@@ -5,7 +5,7 @@ using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallDurian, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private Camera MainCamera;
@@ -33,8 +33,8 @@ public class NiceBowling : MonoBehaviour {
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: Effects.Add(SpikeBall()); Effects.Add(AddPinsx10()); break;
-            case 2: Effects.Add(SpikeBall()); Effects.Add(MinigolfWindmill()); break;
+            case 1: Effects.Add(SpikeBall()); Effects.Add(MarbleRain()); break;
+            case 2: Effects.Add(SpikeBall()); Effects.Add(AddPinsx10()); break;
             case 3: Effects.Add(SpikeBall()); Effects.Add(CubeWall()); break;
             case 4: Effects.Add(SpikeBall()); Effects.Add(SardineRain()); break;
             case 5: Effects.Add(SpikeBall()); Effects.Add(RoombaSummon()); Effects.Add(Bumpers());  break;
@@ -123,18 +123,17 @@ public class NiceBowling : MonoBehaviour {
 
     private string DifferentBall()
     {
-        switch (UnityEngine.Random.Range(1, 11))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 10))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return BeachBall();
             case 2: return CannonBall();
             case 3: return BouncyBall();
             case 4: return BuckyBall();
             case 5: return SpikeBall();
-            case 6: return DurianBall();
+            case 6: return TinyBall();
             case 7: return JellyBall();
             case 8: return BombBall();
             case 9: return GiantBall();
-            case 10: return TinyBall();
 
             default: print("NiceBowling.BallMass switch case default triggered somehow"); break;
         }
@@ -267,15 +266,6 @@ public class NiceBowling : MonoBehaviour {
         Destroy(childBall);
         Instantiate(BallBucky, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
         return ("Polyhedral Ball!");
-    }
-
-    public string DurianBall()
-    {
-        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        Vector3 Location = childBall.transform.position;
-        Destroy(childBall);
-        Instantiate(BallDurian, Location, Quaternion.Euler(new Vector3(240f, 45f, 0)), GameObject.FindObjectOfType<Ball>().transform);
-        return ("Durian!");
     }
 
     public string SpikeBall()
