@@ -33,17 +33,17 @@ public class NiceBowling : MonoBehaviour {
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: Effects.Add(SpikeBall()); Effects.Add(MarbleRain()); break;
-            case 2: Effects.Add(SpikeBall()); Effects.Add(AddPinsx10()); break;
-            case 3: Effects.Add(SpikeBall()); Effects.Add(CubeWall()); break;
-            case 4: Effects.Add(SpikeBall()); Effects.Add(SardineRain()); break;
-            case 5: Effects.Add(SpikeBall()); Effects.Add(RoombaSummon()); Effects.Add(Bumpers());  break;
-            case 6: Effects.Add(SpikeBall()); Effects.Add(Pendulums()); break;
-            case 7: Effects.Add(SpikeBall()); Effects.Add(SpeedBoost()); break;
-            case 8: Effects.Add(SpikeBall()); Effects.Add(LandMine()); break;
-            case 9: Effects.Add(SpikeBall()); Effects.Add(Obsticals()); break;
-            case 10: Effects.Add(SpikeBall()); Effects.Add(Billiards()); break;
-            case 11: Effects.Add(SpikeBall()); Effects.Add(AddPinsExplodeBig()); break;
+            case 1: break;
+            case 2: Effects.Add(JellyBall()); break;
+            case 3: Effects.Add(JellyBall()); Effects.Add(CubeWall()); break;
+            case 4: Effects.Add(JellyBall()); Effects.Add(SardineRain()); break;
+            case 5: Effects.Add(JellyBall()); Effects.Add(RoombaSummon()); Effects.Add(Bumpers());  break;
+            case 6: Effects.Add(JellyBall()); Effects.Add(Pendulums()); break;
+            case 7: Effects.Add(JellyBall()); Effects.Add(SpeedBoost()); break;
+            case 8: Effects.Add(JellyBall()); Effects.Add(LandMine()); break;
+            case 9: Effects.Add(JellyBall()); Effects.Add(Obsticals()); break;
+            case 10: Effects.Add(JellyBall()); Effects.Add(Billiards()); break;
+            case 11: Effects.Add(JellyBall()); Effects.Add(AddPinsExplodeBig()); break;
 
             default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         }

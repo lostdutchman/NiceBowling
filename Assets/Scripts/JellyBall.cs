@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class JellyBall : MonoBehaviour
 {
+    public void Start()
+    {
+        ThingTracker.framelock = true;
+    }
+
     public void Launch(Vector3 velocity)
     {
         foreach (Rigidbody rigidBody in this.GetComponentsInChildren<Rigidbody>())
@@ -13,6 +18,7 @@ public class JellyBall : MonoBehaviour
             rigidBody.isKinematic = false;
             rigidBody.velocity = velocity;
         }
+        ThingTracker.framelock = false;
     }
 
     public void kill()

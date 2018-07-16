@@ -17,10 +17,11 @@ public class PinCounter : MonoBehaviour {
 	}
 	
 	void Update () {
-		if(ThingTracker.ballout){
-			CheckStanding();
-		}
-	}
+        if (ThingTracker.ballout && !ThingTracker.framelock)
+        {
+            CheckStanding();
+        }
+    }
 
 	//Counts pins
 	public int CountStanding(){
