@@ -97,5 +97,6 @@ public class Ball : MonoBehaviour {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Destroy(childBall);
         Instantiate(jellyBall, ThingTracker.LastStartPos, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
+        ThingTracker.ballout = false;
     }
 }

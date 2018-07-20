@@ -9,12 +9,12 @@ public class BallCatcher : MonoBehaviour {
 		GameObject thingLeft = collider.gameObject;
         if (thingLeft.tag == "ChildBall")
         {
-            if(thingLeft.name == "JellyBall(Clone)")
+            ThingTracker.ballout = true;
+
+            if (thingLeft.name == "JellyBall(Clone)")
             {
                 FindObjectOfType<Ball>().ResetTheJellyBall();
-                ThingTracker.ballout = true;
             }
-            ThingTracker.ballout = true;
         }
         else
         {

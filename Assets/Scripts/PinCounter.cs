@@ -17,7 +17,7 @@ public class PinCounter : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (ThingTracker.ballout && !ThingTracker.framelock)
+        if (ThingTracker.ballout)
         {
             CheckStanding();
         }
@@ -62,7 +62,6 @@ public class PinCounter : MonoBehaviour {
 		lastStandingCount = -1;
 		ThingTracker.ballout = false;
         ThingTracker.firstPin = true;
-
     }
 
     public void Reset(){

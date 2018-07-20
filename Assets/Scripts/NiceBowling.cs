@@ -34,16 +34,16 @@ public class NiceBowling : MonoBehaviour {
         switch (i)
         {
             case 1: break;
-            case 2: Effects.Add(JellyBall()); break;
-            case 3: Effects.Add(JellyBall()); Effects.Add(CubeWall()); break;
-            case 4: Effects.Add(JellyBall()); Effects.Add(SardineRain()); break;
-            case 5: Effects.Add(JellyBall()); Effects.Add(RoombaSummon()); Effects.Add(Bumpers());  break;
-            case 6: Effects.Add(JellyBall()); Effects.Add(Pendulums()); break;
+            case 2: Effects.Add(AddPins()); break;
+            case 3: Effects.Add(AddPinsx5()); Effects.Add(CannonBall()); break;
+            case 4: Effects.Add(AddPinsx2()); Effects.Add(SpeedBoost()); break;
+            case 5: Effects.Add(AddPinsx1()); Effects.Add(BombBall()); break;
+            case 6: Effects.Add(AddPinsx10()); Effects.Add(SpikeBall()); break;
             case 7: Effects.Add(JellyBall()); Effects.Add(SpeedBoost()); break;
-            case 8: Effects.Add(JellyBall()); Effects.Add(LandMine()); break;
-            case 9: Effects.Add(JellyBall()); Effects.Add(Obsticals()); break;
-            case 10: Effects.Add(JellyBall()); Effects.Add(Billiards()); break;
-            case 11: Effects.Add(JellyBall()); Effects.Add(AddPinsExplodeBig()); break;
+            case 8: Effects.Add(RampAdd()); Effects.Add(LandMine()); break;
+            case 9: Effects.Add(MinigolfWindmill()); Effects.Add(RoombaSummon()); break;
+            case 10: Effects.Add(CubeWall()); Effects.Add(SpeedBoost()); break;
+            case 11: Effects.Add(Pendulums()); Effects.Add(PinMove()); break;
 
             default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         }
