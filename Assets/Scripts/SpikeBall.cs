@@ -7,7 +7,7 @@ public class SpikeBall : MonoBehaviour {
     private Rigidbody Body;
     private SphereCollider Sphere;
     [Tooltip("Amount the radius of the Shpere collider grows with eache item attatched.")]
-    public float GrowthRate = .5f; //mostly for pins
+    public float GrowthRate = .075f; //mostly for pins
     private float Growth = 0f;
 
     private void Start()

@@ -33,8 +33,8 @@ public class NiceBowling : MonoBehaviour {
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: break;
-            case 2: Effects.Add(AddPins()); break;
+            case 1: Effects.Add(AddPinsx10()); Effects.Add(SpikeBall()); break;
+            case 2: Effects.Add(AddPinsx10()); Effects.Add(SpikeBall()); Effects.Add(MarbleRain()); Effects.Add(SardineRain()); break;
             case 3: Effects.Add(AddPinsx5()); Effects.Add(CannonBall()); break;
             case 4: Effects.Add(AddPinsx2()); Effects.Add(SpeedBoost()); break;
             case 5: Effects.Add(AddPinsx1()); Effects.Add(BombBall()); break;

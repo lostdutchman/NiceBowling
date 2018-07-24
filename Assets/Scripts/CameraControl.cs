@@ -27,7 +27,7 @@ public class CameraControl : MonoBehaviour {
 
         if (childBall.name == "SpikeBall 1(Clone)")
         {
-            TempOffset = new Vector3(0, childBall.GetComponent<SphereCollider>().radius - .3f, (childBall.GetComponent<SphereCollider>().radius -.3f) * -2.2f);
+            TempOffset = new Vector3(0, childBall.GetComponent<SphereCollider>().radius - .3f, (childBall.GetComponent<SphereCollider>().radius -.3f) * -2.5f);
         }
         else
         {

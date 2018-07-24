@@ -19,13 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4559897361990246}
-  - component: {fileID: 33732399306676244}
-  - component: {fileID: 23060383404386152}
+  - component: {fileID: 23066233418005540}
+  - component: {fileID: 33323880639274192}
   - component: {fileID: 54775202426389868}
-  - component: {fileID: 222418027349842130}
-  - component: {fileID: 135746872714135226}
-  - component: {fileID: 75230076339729630}
+  - component: {fileID: 135080204160341132}
   - component: {fileID: 114607224624518108}
+  - component: {fileID: 75230076339729630}
   m_Layer: 0
   m_Name: SpikeBall 1
   m_TagString: ChildBall
@@ -41,12 +40,12 @@ Transform:
   m_GameObject: {fileID: 1199248386371550}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -12.800439, y: 12.2, z: 40.865417}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23060383404386152
+--- !u!23 &23066233418005540
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -78,7 +77,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33732399306676244
+--- !u!33 &33323880639274192
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -123,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowthRate: 0.075
---- !u!135 &135746872714135226
+--- !u!135 &135080204160341132
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -133,11 +132,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.0022682
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
---- !u!222 &222418027349842130
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}

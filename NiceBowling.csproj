@@ -84,7 +84,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Art\Sardine\Scripts\iwasiRigid.cs" />
+    <Compile Include="Assets\Art\Prefabs\Sardine\Scripts\iwasiRigid.cs" />
     <Compile Include="Assets\DefKit\Common\Scripts\ExtendedFlycam.cs" />
     <Compile Include="Assets\DefKit\Common\Scripts\PingPongMove.cs" />
     <Compile Include="Assets\DefKit\Common\Scripts\RaycastDragger.cs" />
@@ -137,7 +137,7 @@
     <Compile Include="Assets\Scripts\UIAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Art\Sardine\readme.txt" />
+    <None Include="Assets\Art\Prefabs\Sardine\readme.txt" />
     <None Include="Assets\DefKit\ReadMe.txt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\Monsterrat4\Monsterrat4.fnt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\Monsterrat_white\Monsterrat_white.fnt" />

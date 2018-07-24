@@ -13,10 +13,11 @@ public class UIAnimation : MonoBehaviour {
     {
         Anim = GetComponent<Animation>();
         NBEffect.SetActive(true);
-        yield return new WaitForSecondsRealtime(.2f); //give frame ect a chance to load.
+        yield return new WaitForSecondsRealtime(.1f); //give frame ect a chance to load.
         foreach (var Effect in Effects)
         {
             NBtext.text = Effect;
+            yield return new WaitForSecondsRealtime(.1f); //text time to change
             Anim.Play();
             yield return new WaitForSecondsRealtime(Anim.clip.length +.01f);
         }
