@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start() {
 		if (instance != null){
 			Destroy(gameObject);
 		} else {
@@ -18,11 +18,11 @@ public class MusicManager : MonoBehaviour {
 			GameObject.DontDestroyOnLoad(gameObject);
 		}
 		audioSource = GetComponent<AudioSource> ();
-		if (!PlayerPrefs.HasKey ("master_volume"))
-			PlayerPrefsManager.SetMasterVolume (.5f);
-		ChangeVolume(PlayerPrefsManager.GetMasterVolume ());
+		if (!PlayerPrefs.HasKey("master_volume"))
+			PlayerPrefsManager.SetMasterVolume(.5f);
+		ChangeVolume(PlayerPrefsManager.GetMasterVolume());
 	}
-	public void ChangeVolume (float value)
+	public void ChangeVolume(float value)
 	{
 		audioSource.volume = value;
 	}
