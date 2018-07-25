@@ -135,6 +135,7 @@
     <Compile Include="Assets\Scripts\SpikeBall.cs" />
     <Compile Include="Assets\Scripts\ThingTracker.cs" />
     <Compile Include="Assets\Scripts\UIAnimation.cs" />
+    <Compile Include="Assets\Scripts\UIExpand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\Prefabs\Sardine\readme.txt" />

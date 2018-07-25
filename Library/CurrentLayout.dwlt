@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1904
     height: 982
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_MinSize: {x: 583, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 1
-  controlID: 110
+  controlID: 107
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_MinSize: {x: 583, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 111
+  controlID: 108
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 112
+  controlID: 109
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 113
+  controlID: 110
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -342,18 +342,18 @@ MonoBehaviour:
       y: 17
       width: 964
       height: 559
-    m_Scale: {x: 0.8079829, y: 0.807983}
-    m_Translation: {x: 481.99997, y: 261.5155}
+    m_Scale: {x: 0.7378098, y: 0.7378098}
+    m_Translation: {x: 482, y: 276.68103}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -596.54724
-      y: -323.6646
-      width: 1193.0945
-      height: 691.84625
+      x: -653.2849
+      y: -375.0032
+      width: 1306.5698
+      height: 757.6479
     m_MinimalGUI: 1
   m_defaultScale: 0.72786456
   m_TargetTexture: {fileID: 0}
@@ -466,21 +466,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ae5fffff82faffffe2fbffff00000000fe5200006e540000
+    m_ExpandedIDs: 12a2fdffa8b6fdff28dcfeffe2fbffff0000000094350000a0350000da350000043600000c360000b6360000cc360000f4360000ecac0000f6ac0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: LogoN
-      m_OriginalName: LogoN
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 21620
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -580,19 +580,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Animation
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animation
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jeremy\Documents\GitLab\NiceBowling
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 11}
-    m_SelectedIDs: a82e0000
-    m_LastClickedID: 11944
-    m_ExpandedIDs: 000000004c260000d62700002a290000ca2a0000e02a0000d22b0000082c0000362d0000482d00000c2e0000162e00003c2e0000c02e000052300000a4300000d6300000fc3000001e31000026320000623200008e320000ae320000b0330000143400001e3400006236000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 10}
+    m_SelectedIDs: 70330000
+    m_LastClickedID: 13168
+    m_ExpandedIDs: 000000004c260000d62700002a290000ca2a0000e02a0000d22b0000082c0000362d0000482d00000c2e0000162e00003c2e0000c02e000052300000a6300000d8300000fe30000020310000283200006432000090320000b0320000b233000016340000203400009a38000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -620,7 +620,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c260000d62700002a290000ca2a0000e02a0000d22b0000082c0000362d0000482d00000c2e0000162e00003c2e0000c02e0000502f000052300000a4300000d6300000fc3000001e31000026320000623200008e320000ae320000b0330000143400001e34000062360000
+    m_ExpandedIDs: 000000004c260000d62700002a290000ca2a0000e02a0000d22b0000082c0000362d0000482d00000c2e0000162e00003c2e0000c02e000052300000a6300000d8300000fe30000020310000283200006432000090320000b0320000b233000016340000203400009a380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_LiveLinkFollowTransitions: 0
   m_MiniTool: 0
   m_SerializedLocked: 0
-  m_CurrentEditor: 1
+  m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &21
