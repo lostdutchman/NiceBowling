@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	private Ball ball;
 	private ScoreDisplay scoreDisplay;
     public GameObject Menu;
+    public GameObject TouchPad;
 
 	// Use this for initialization
 	void Start () {
@@ -47,12 +48,14 @@ public class GameManager : MonoBehaviour {
         if (Menu.activeSelf)
         {
             Menu.SetActive(false);
+            TouchPad.SetActive(true);
             Time.timeScale = 1;
         }
         else
         {
             Time.timeScale = 0;
             Menu.SetActive(true);
+            TouchPad.SetActive(false);
         }
     }
 			
