@@ -39,5 +39,5 @@ Material:
     m_Colors:
     - _EmissionColor: {r: 0.9862069, g: 1, b: 0, a: 1}
     - _LineColor: {r: 0.17030708, g: 0.9264706, b: 0.8013124, a: 1}
-    - _MainColor: {r: 0.100953646, g: 0.409, b: 0.9191176, a: 1}
+    - _MainColor: {r: 0.100953646, g: 0.646, b: 0.9191176, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}

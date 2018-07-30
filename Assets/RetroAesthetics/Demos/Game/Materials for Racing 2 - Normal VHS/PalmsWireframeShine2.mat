@@ -31,7 +31,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _CellSize: 12.1
-    - _EmissionGain: 0.021
+    - _EmissionGain: 0
     - _LineWidth: 0.082
     - _ParcelSize: 1
     - _Specular: 1
@@ -39,5 +39,5 @@ Material:
     m_Colors:
     - _EmissionColor: {r: 0.6606086, g: 0.92549026, b: 0.881572, a: 1}
     - _LineColor: {r: 0.9264706, g: 0.90561086, b: 0.17030708, a: 1}
-    - _MainColor: {r: 0.172, g: 0.259, b: 0.7794118, a: 1}
+    - _MainColor: {r: 0.172, g: 0.566, b: 0.7794118, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
