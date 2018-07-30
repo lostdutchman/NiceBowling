@@ -305,6 +305,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441196, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 559.2411
@@ -345,6 +349,38 @@ Prefab:
       propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c595e129ada85104db352464e6e755ba, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: df1d24af9be77d04b955343e649f0e4a, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eb111b8e80e5ac47b60c918f389a74a, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3958f3901013b4e43a1c4f70730b8198, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 175f1e28247c80a43ac8c87856b7475c, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 42cb499af0052d1429a76d7404bf4d71, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 760c3e39474489b439119740525ceb4a, type: 3}
+    - target: {fileID: 11491686, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
+      propertyPath: myMusic.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8da3844ef061e0d4caadff57ce263985, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8921a31cf33afd9488ec5068b8d2f45e, type: 2}
   m_IsPrefabParent: 0
@@ -589,48 +625,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!21 &1031827308
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 2
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0.9855058
-    - _OffsetNoiseY: 0.08755331
-    - _OffsetPosY: 0
-    - _StaticIntensity: 0.87
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0.1
-    m_Colors: []
 --- !u!1 &1182519767
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,3 +916,45 @@ MonoBehaviour:
   m_EffectColor: {r: 0.054901965, g: 0.7568628, b: 0.95294124, a: 0.5}
   m_EffectDistance: {x: 5, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!21 &2026880355
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 2
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0.24371791
+    - _OffsetNoiseY: 0.024445739
+    - _OffsetPosY: 0
+    - _StaticIntensity: 0.87
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0.1
+    m_Colors: []

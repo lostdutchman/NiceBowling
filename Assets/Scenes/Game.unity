@@ -988,12 +988,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMusic:
-  - {fileID: 8300000, guid: 17234c79e6ac13b4b97240f509b0a531, type: 3}
-  - {fileID: 8300000, guid: 7a961d3cf248c3347a26ed797b93ea60, type: 3}
-  - {fileID: 8300000, guid: 1440ea763d729cb48b470dbe7043914d, type: 3}
-  - {fileID: 8300000, guid: 252873327b9e152438cb0a58e9de6c64, type: 3}
-  - {fileID: 8300000, guid: b02e07b9a919ffe4c90dd3c68900ec0d, type: 3}
-  - {fileID: 8300000, guid: 0506373f98c512043a7bce8ac76eb25f, type: 3}
+  - {fileID: 8300000, guid: c595e129ada85104db352464e6e755ba, type: 3}
+  - {fileID: 8300000, guid: df1d24af9be77d04b955343e649f0e4a, type: 3}
+  - {fileID: 8300000, guid: 2eb111b8e80e5ac47b60c918f389a74a, type: 3}
+  - {fileID: 8300000, guid: 3958f3901013b4e43a1c4f70730b8198, type: 3}
+  - {fileID: 8300000, guid: 175f1e28247c80a43ac8c87856b7475c, type: 3}
+  - {fileID: 8300000, guid: 42cb499af0052d1429a76d7404bf4d71, type: 3}
+  - {fileID: 8300000, guid: 760c3e39474489b439119740525ceb4a, type: 3}
+  - {fileID: 8300000, guid: 8da3844ef061e0d4caadff57ce263985, type: 3}
   audioSource: {fileID: 131797201}
   MenuTimeDelay: 0
 --- !u!4 &131797199
@@ -8095,6 +8097,48 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!21 &1449531496
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 2
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0.011336923
+    - _OffsetNoiseY: -0.030514263
+    - _OffsetPosY: 0
+    - _StaticIntensity: 0.87
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0.1
+    m_Colors: []
 --- !u!4 &1462029447 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: fef58862417d1402dbd862e288e79168, type: 3}
@@ -9398,48 +9442,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 20e83bf95190548c3ba8b9d56d07bd1d, type: 3}
   m_PrefabInternal: {fileID: 602643797}
---- !u!21 &1855549843
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 2
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0.44354552
-    - _OffsetNoiseY: -1.1326367
-    - _OffsetPosY: 0
-    - _StaticIntensity: 0.87
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0.1
-    m_Colors: []
 --- !u!1001 &1872733069
 Prefab:
   m_ObjectHideFlags: 0
