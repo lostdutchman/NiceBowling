@@ -1,0 +1,608 @@
+fileFormatVersion: 2
+guid: 50ee8a9d9eb5cce4db25b6b16288b9d2
+timeCreated: 1533388089
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GESTUREresize_0
+    21300002: GESTUREresize_1
+    21300004: GESTUREresize_2
+    21300006: GESTUREresize_3
+    21300008: GESTUREresize_4
+    21300010: GESTUREresize_5
+    21300012: GESTUREresize_6
+    21300014: GESTUREresize_7
+    21300016: GESTUREresize_8
+    21300018: GESTUREresize_9
+    21300020: GESTUREresize_10
+    21300022: GESTUREresize_11
+    21300024: GESTUREresize_12
+    21300026: GESTUREresize_13
+    21300028: GESTUREresize_14
+    21300030: GESTUREresize_15
+    21300032: GESTUREresize_16
+    21300034: GESTUREresize_17
+    21300036: GESTUREresize_18
+    21300038: GESTUREresize_19
+    21300040: GESTUREresize_20
+    21300042: GESTUREresize_21
+    21300044: GESTUREresize_22
+    21300046: GESTUREresize_23
+    21300048: GESTUREresize_24
+    21300050: GESTUREresize_25
+    21300052: GESTUREresize_26
+    21300054: GESTUREresize_27
+    21300056: GESTUREresize_28
+    21300058: GESTUREresize_29
+    21300060: GESTUREresize_30
+    21300062: GESTUREresize_31
+    21300064: GESTUREresize_32
+    21300066: GESTUREresize_33
+    21300068: GESTUREresize_34
+    21300070: GESTUREresize_35
+    21300072: GESTUREresize_36
+    21300074: GESTUREresize_37
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GESTUREresize_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2056
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 2056
+        width: 213
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_2
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 2056
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 2056
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_4
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 2056
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_5
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 2056
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_6
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 2056
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_7
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 2056
+        width: 184
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1544
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_9
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1544
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_10
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1544
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_11
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1544
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_12
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1544
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_13
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1544
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_14
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1544
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_15
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 1544
+        width: 204
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_16
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1032
+        width: 205
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_17
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1032
+        width: 205
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_18
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1032
+        width: 205
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_19
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1032
+        width: 205
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_20
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1037
+        width: 205
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_21
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1032
+        width: 205
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_22
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1032
+        width: 205
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_23
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 1032
+        width: 204
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_24
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 548
+        width: 205
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_25
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 625
+        width: 205
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_26
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 826
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_27
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 829
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_28
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 829
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_29
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 826
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_30
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 828
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_31
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 825
+        width: 184
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_32
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 309
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_33
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 311
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_34
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 313
+        width: 204
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_35
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 317
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_36
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 317
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GESTUREresize_37
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 317
+        width: 205
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
