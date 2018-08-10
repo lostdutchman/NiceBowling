@@ -25,6 +25,7 @@ public class UIAnimation : MonoBehaviour {
         if (FirstFrame)
         {
             Tut.SetActive(true);
+            Tut.GetComponent<UISprite>().Trigger();
         }
         TouchInput.SetActive(true);
     }

@@ -137,6 +137,7 @@
     <Compile Include="Assets\Scripts\UIAnimation.cs" />
     <Compile Include="Assets\Scripts\UIExpand.cs" />
     <Compile Include="Assets\Scripts\UIFade.cs" />
+    <Compile Include="Assets\UISprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\Prefabs\Sardine\readme.txt" />

@@ -19,7 +19,6 @@ public class ScoreDisplay : MonoBehaviour {
         for (int i = 0; i < scoreString.Length; i++)
         {
             bowlTexts[i].text = scoreString[i].ToString();
-            print("B:" + i + "." + scoreString.Length);
             if (i == scoreString.Length - 1)
             {
                 bowlTexts[i].canvasRenderer.SetAlpha(.01f);
@@ -32,7 +31,6 @@ public class ScoreDisplay : MonoBehaviour {
 	public void FillFrames (List<int> frames){
 		for (int i = 0; i < frames.Count; i++) {
 			frameTexts[i].text = frames[i].ToString();
-            print("F:" + i + "." + frames.Count);
             if (i == frames.Count - 1)
             {
                 frameTexts[i].canvasRenderer.SetAlpha(.01f);
