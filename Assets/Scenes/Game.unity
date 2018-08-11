@@ -108,48 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &8482702
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 2
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0.47342962
-    - _OffsetNoiseY: 0.013394576
-    - _OffsetPosY: 0
-    - _StaticIntensity: 0.87
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0.1
-    m_Colors: []
 --- !u!1 &11983467
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,6 +4574,48 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 251d025f0fd8448f1bba1eede693076c, type: 3}
   m_PrefabInternal: {fileID: 83503978}
+--- !u!21 &948595541
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 0
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0
+    - _OffsetNoiseY: 0
+    - _OffsetPosY: 0
+    - _StaticIntensity: 1
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0
+    m_Colors: []
 --- !u!1001 &951822536
 Prefab:
   m_ObjectHideFlags: 0
@@ -7746,32 +7746,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300002, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300004, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300006, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300008, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300010, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300012, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300014, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300016, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300018, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300020, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300022, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300024, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300026, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300028, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300030, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300032, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300034, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300036, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300038, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300040, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300042, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300044, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300046, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300048, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
-  - {fileID: 21300050, guid: 50ee8a9d9eb5cce4db25b6b16288b9d2, type: 3}
+  - {fileID: 21300000, guid: bc844117f3045d444a3672485a85d000, type: 3}
+  - {fileID: 21300000, guid: 2408b79ea8bb6c54c84bb996d1310343, type: 3}
+  - {fileID: 21300000, guid: 204240667479c904e83450458e8e7d9c, type: 3}
+  - {fileID: 21300000, guid: f564e37687dd19a41a8b60dde12cd894, type: 3}
+  - {fileID: 21300000, guid: 23de03339800567409b9a9ba70e4ff39, type: 3}
+  - {fileID: 21300000, guid: 047b981f5036d984288e4433902896b1, type: 3}
+  - {fileID: 21300000, guid: 342823488130d2f4b894141b2672634e, type: 3}
+  - {fileID: 21300000, guid: 23d52574c8cf715498aca17c92bf664b, type: 3}
+  - {fileID: 21300000, guid: a444570c0ec602e4bb17b848a862bb88, type: 3}
+  - {fileID: 21300000, guid: 2846bace7c728de40a70ed73ef4945ba, type: 3}
+  - {fileID: 21300000, guid: 0370783a45d06744abcdb959474dadb4, type: 3}
+  - {fileID: 21300000, guid: 4f46c38913c2fd147a291950c2a09117, type: 3}
+  - {fileID: 21300000, guid: c942fdabce229f04fab46f06f5aaa6bd, type: 3}
+  - {fileID: 21300000, guid: affca56d7c64a04439db69609b5a9b5f, type: 3}
+  - {fileID: 21300000, guid: 279f0bffeb3d8624db4e070e1cbd3562, type: 3}
+  - {fileID: 21300000, guid: f46ed191466d2b44292cfaaa5f77dc63, type: 3}
+  - {fileID: 21300000, guid: 53105e907353aa14e8546e20fd856579, type: 3}
+  - {fileID: 21300000, guid: 327f783b343ebff4ba92e32e6d200614, type: 3}
+  - {fileID: 21300000, guid: 8b4541250faa0a242b8a06a5384a42e6, type: 3}
+  - {fileID: 21300000, guid: fb4a86e0efc571240be20e35075e93af, type: 3}
+  - {fileID: 21300000, guid: 47101f67633756444ad34becabe2b3ca, type: 3}
+  - {fileID: 21300000, guid: 2fb998b272abf59458e7dfbb9d127f63, type: 3}
+  - {fileID: 21300000, guid: bcc956e40a041a342ba6ebe383538d90, type: 3}
+  - {fileID: 21300000, guid: c96e7f02447c52a45b6dccd3f1f4f6de, type: 3}
+  - {fileID: 21300000, guid: 16f72de491696dc42be180316bd293ef, type: 3}
+  - {fileID: 21300000, guid: 06701c01b7e6db8458b15ba200e9f8d1, type: 3}
+  - {fileID: 21300000, guid: 31de2a96fddbcac45a97ff2d2d342133, type: 3}
+  - {fileID: 21300000, guid: fb28b3a87b0ca7d4f900393b1e8a0996, type: 3}
+  - {fileID: 21300000, guid: 1f1973b09cb0c734690dc204215be783, type: 3}
+  - {fileID: 21300000, guid: eb5e8766aae04ef479cd75f2406de340, type: 3}
+  - {fileID: 21300000, guid: 20e7e8b1df892a1409ad5aeebb866859, type: 3}
+  - {fileID: 21300000, guid: 5ec6f4e657edb044da9e832ae423e695, type: 3}
+  - {fileID: 21300000, guid: 58f74b26162c03d4395de76e03c7772e, type: 3}
+  - {fileID: 21300000, guid: a0eac9f5c9882f74a9c98396359462d6, type: 3}
+  - {fileID: 21300000, guid: ef242b8b1100e6646b491dfe1f79fb67, type: 3}
+  - {fileID: 21300000, guid: 50d546c5eefe38d4e880995a880f6e24, type: 3}
+  - {fileID: 21300000, guid: 6911160ff26c86549a310a25fcbc1493, type: 3}
+  - {fileID: 21300000, guid: cc58af2d5d74c7d4bb69112c62fa5743, type: 3}
+  - {fileID: 21300000, guid: cd74df2770dcac7469a3d6db162e1fdd, type: 3}
+  - {fileID: 21300000, guid: cd74df2770dcac7469a3d6db162e1fdd, type: 3}
+  - {fileID: 21300000, guid: cd74df2770dcac7469a3d6db162e1fdd, type: 3}
   animationSpeed: 0.03
   image: {fileID: 1395336062}
 --- !u!114 &1395336062
@@ -7793,7 +7808,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cd74df2770dcac7469a3d6db162e1fdd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
