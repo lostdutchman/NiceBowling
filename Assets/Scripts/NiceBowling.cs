@@ -187,7 +187,7 @@ public class NiceBowling : MonoBehaviour {
             Rigidbody body = pin.GetComponent<Rigidbody>();
             body.isKinematic = true;
         }
-        return ("Sleazy Pins!");
+        return ("Cheater Pins!");
     }
 
 	public string IncreasePinDrag(){
@@ -224,7 +224,7 @@ public class NiceBowling : MonoBehaviour {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
-        return("Big ol' Ball");
+        return("Giant Ball");
     }
 
 	public string TinyBall(){
@@ -247,7 +247,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallCannon, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Cannon Ball!");
+        return ("Cannonball!");
     }
 
     public string BouncyBall()
@@ -283,7 +283,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallJelly, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Wiggly Ball!");
+        return ("Jiggly Ball!");
     }
 
     public string BombBall()
@@ -310,7 +310,7 @@ public class NiceBowling : MonoBehaviour {
     public string RoombaSummon()
     {
         Instantiate(Roomba, new Vector3(0, 2.3f, UnityEngine.Random.Range(200f, 1500f)), Quaternion.Euler(0, UnityEngine.Random.Range(0f, 360f), 0));
-        return ("Keep it Clean!");
+        return ("Robot Vaccuum is Helping!");
     }
 
     public string SardineRain(){
