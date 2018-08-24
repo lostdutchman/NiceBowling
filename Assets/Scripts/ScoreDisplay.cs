@@ -38,7 +38,7 @@ public class ScoreDisplay : MonoBehaviour {
             }
             ScoreMaster.endScore = frames[i];
 		}
-	}
+    }
 
     public static string FormatBowls (List<int> Bowls){
 		PinSetter pinSetter = GameObject.FindObjectOfType<PinSetter> (); //Needed for the audio(voice acting)

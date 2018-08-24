@@ -11,7 +11,7 @@ public class PinSetter : MonoBehaviour {
 	public AudioClip[] turkeyAudio;
 	public AudioClip[] gutterAudio;
 	public AudioClip silence;
-	public GameObject Resume, Swipper, TouchInput;
+	public GameObject Resume, Swipper, TouchInput, scoreBoard;
 	public bool GameOver, StartGame;
 
 	private AudioSource audioSource;
@@ -21,6 +21,7 @@ public class PinSetter : MonoBehaviour {
 	private PinCounter pinCounter;
     private bool EndTurn = false;
     private GameManager Menu;
+    private int frame = 1;
 	
 	
 	void Start () {
@@ -88,7 +89,7 @@ public class PinSetter : MonoBehaviour {
 		switch(action){
 		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
-		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = true; break;
+		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); EndTurn = true; break;
 		case ActionMaster.Action.EndGame:	GameEndButton (); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
@@ -131,5 +132,11 @@ public class PinSetter : MonoBehaviour {
         {
             Jelly.kill();
         }
+    }
+
+    private void ScrollScore()
+    {
+        frame++;
+        scoreBoard.GetComponent<ScoreScroller>().NextFrame(frame);
     }
 }
