@@ -4,22 +4,11 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
-	public Slider volumeSlider;
-	private MusicManager musicManager;
     public bool autoload = false;
 	
 	// Use this for initialization
 	void Start () {
-		musicManager = GameObject.FindObjectOfType<MusicManager>();
         autoload = false;
-        try
-        {
-            volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
-        }
-        catch
-        {
-            //This scene does not have volume slider.
-        }
 	}
 	
 	// Update is called once per frame
@@ -27,14 +16,6 @@ public class LevelManager : MonoBehaviour {
         if (autoload)
         {
             LoadLevel("Opening");
-        }
-        try
-        {
-            musicManager.ChangeVolume(volumeSlider.value);
-        }
-        catch
-        {
-            //Still no volume slider
         }
     }
 
@@ -44,8 +25,6 @@ public class LevelManager : MonoBehaviour {
 	}	
 	
 	public void LoadNice(){
-		PlayerPrefsManager.NiceBowlingSet(1);
-		PlayerPrefsManager.SetMasterVolume(volumeSlider.value);
 		SceneManager.LoadScene("Game");
 	}
 

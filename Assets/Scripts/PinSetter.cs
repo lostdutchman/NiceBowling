@@ -48,10 +48,8 @@ public class PinSetter : MonoBehaviour {
 
     //Called by animator to rais pins
     public void RaisePins(){
-		if (PlayerPrefsManager.NiceBowlingGet () == 1) {
-			foreach (Pins pin in GameObject.FindObjectsOfType<Pins>()) {
-				pin.DefaultPins ();//Fix specific effects that prevent the lane from clearing
-			}
+		foreach (Pins pin in GameObject.FindObjectsOfType<Pins>()) {
+			pin.DefaultPins ();//Fix specific effects that prevent the lane from clearing
 		}
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			pin.Raise();
@@ -90,7 +88,7 @@ public class PinSetter : MonoBehaviour {
 		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); EndTurn = true; break;
-		case ActionMaster.Action.EndGame:	GameEndButton (); break;
+		case ActionMaster.Action.EndGame:	StartCoroutine(GameEndButton()); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
 	}
@@ -108,8 +106,9 @@ public class PinSetter : MonoBehaviour {
 		audioSource.Play();
 
 	}
-	
-	public void GameEndButton(){
+
+    private IEnumerator GameEndButton(){
+        yield return new WaitForSecondsRealtime(1.5f);
         Menu.ToggleMenu();
         Resume.SetActive(false);
 		TouchInput.SetActive (false);

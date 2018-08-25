@@ -108,7 +108,6 @@
     <Compile Include="Assets\Scripts\BilliardBall.cs" />
     <Compile Include="Assets\Scripts\BombBall.cs" />
     <Compile Include="Assets\Scripts\BounceBall.cs" />
-    <Compile Include="Assets\Scripts\ButtonCredits.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\CreditsImageFlip.cs" />
     <Compile Include="Assets\Scripts\DragLaunch.cs" />
