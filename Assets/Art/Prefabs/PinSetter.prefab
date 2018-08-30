@@ -159,7 +159,8 @@ AudioSource:
   m_GameObject: {fileID: 171776}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243217681820384936, guid: aff9d285d232937468890ed3e5bdbe0a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -283,9 +284,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   - {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
   silence: {fileID: 8300000, guid: 4b8e84d9c981d9249a9073486523a2c4, type: 3}
-  exitButton: {fileID: 0}
+  Resume: {fileID: 0}
   Swipper: {fileID: 181950}
   TouchInput: {fileID: 0}
+  scoreBoard: {fileID: 0}
   GameOver: 0
   StartGame: 0
 --- !u!1001 &100100000

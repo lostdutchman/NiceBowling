@@ -13,7 +13,7 @@ public class PanelFade : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        MenuTimeDelay = GameObject.FindObjectOfType<MusicManager>().MenuTimeDelay;
+        MenuTimeDelay = GameObject.FindObjectOfType<AudioManager>().MenuTimeDelay;
 	}
 	
 	// Update is called once per frame
