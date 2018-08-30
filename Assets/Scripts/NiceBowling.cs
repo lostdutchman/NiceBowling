@@ -12,7 +12,7 @@ public class NiceBowling : MonoBehaviour {
 	private float volume;
     public UIAnimation NBUI;
     private bool FirstFrame;
-    int i = 1; //for promotional and testing
+    //int i = 1; //for promotional and testing
 
     // Use this for initialization
     void Start () {

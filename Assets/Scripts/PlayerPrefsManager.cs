@@ -8,9 +8,8 @@ public class PlayerPrefsManager : MonoBehaviour {
     const string SFX_VOLUME = "sfx_volume";
     const string HIGH_SCORE = "high_score";
 
-
 	public static void SetMasterVolume (float volume){
-	if ((volume >= 0f) && (volume <= 1f)){
+	if ((volume >= -80f) && (volume <= 0f)){
 		PlayerPrefs.SetFloat (MASTER_VOLUME,volume);
 		}else{
 		Debug.LogError ("Master volume out of range" + volume.ToString());
@@ -23,7 +22,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 
     public static void SetMusicVolume(float volume)
     {
-        if ((volume >= 0f) && (volume <= 1f))
+        if ((volume >= -80f) && (volume <= 10f))
         {
             PlayerPrefs.SetFloat(MUSIC_VOLUME, volume);
         }
@@ -40,7 +39,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 
     public static void SetSFXVolume(float volume)
     {
-        if ((volume >= 0f) && (volume <= 1f))
+        if ((volume >= -80f) && (volume <= 10f))
         {
             PlayerPrefs.SetFloat(SFX_VOLUME, volume);
         }

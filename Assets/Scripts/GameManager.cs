@@ -8,8 +8,7 @@ public class GameManager : MonoBehaviour {
 	private PinSetter pinSetter;
 	private Ball ball;
 	private ScoreDisplay scoreDisplay;
-    public GameObject Menu;
-    public GameObject TouchPad;
+    public GameObject Menu, TouchPad, Arrows, SoundMenu;
 
 	// Use this for initialization
 	void Start () {
@@ -48,14 +47,18 @@ public class GameManager : MonoBehaviour {
         if (Menu.activeSelf)
         {
             Menu.SetActive(false);
+            SoundMenu.SetActive(false);
             TouchPad.SetActive(true);
+            Arrows.SetActive(true);
             Time.timeScale = 1;
         }
         else
         {
             Time.timeScale = 0;
             Menu.SetActive(true);
+            SoundMenu.SetActive(false);
             TouchPad.SetActive(false);
+            Arrows.SetActive(false);
         }
     }
 			

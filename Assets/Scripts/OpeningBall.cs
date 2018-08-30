@@ -18,7 +18,7 @@ public class OpeningBall : MonoBehaviour {
 		float zPos = rigidBody.transform.position.z;
 		rigidBody.transform.position = new Vector3 (Random.Range(-10, 10), yPos, zPos);
 		ThrowBall ();
-        MenuTimeDelay = GameObject.FindObjectOfType<AudioManager>().MenuTimeDelay + .5f; //.5f for the splash screen fade time
+        MenuTimeDelay = GameObject.FindObjectOfType<MusicPlayer>().MenuTimeDelay + .5f; //.5f for the splash screen fade time
         Splash = GameObject.FindObjectOfType<PanelFade>().gameObject;
     }
 
