@@ -30,11 +30,15 @@ public class ScoreDisplay : MonoBehaviour {
 //Fills in the score for each frame
 	public void FillFrames (List<int> frames){
 		for (int i = 0; i < frames.Count; i++) {
-			frameTexts[i].text = frames[i].ToString();
-            if (i == frames.Count - 1)
+            if (i == frames.Count - 1 && frameTexts[i].text == " ")
             {
+                frameTexts[i].text = frames[i].ToString();
                 frameTexts[i].canvasRenderer.SetAlpha(.01f);
                 frameTexts[i].CrossFadeAlpha(1, 1.5f, false);
+            }
+            else
+            {
+                frameTexts[i].text = frames[i].ToString();
             }
             ScoreMaster.endScore = frames[i];
 		}

@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour {
 		bowls.Add (pinFall);
 		ball.Reset ();
 		pinSetter.performAction (ActionMaster.NextAction (bowls));
-	
-		scoreDisplay.FillBowls(bowls);
-		scoreDisplay.FillFrames (ScoreMaster.ScoreCumulative(bowls));
+
+        scoreDisplay.FillBowls(bowls);
+        scoreDisplay.FillFrames(ScoreMaster.ScoreCumulative(bowls));
 	}
 
     void Update()
