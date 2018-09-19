@@ -28,7 +28,7 @@ public class BombBall : MonoBehaviour {
     {
         Vector3 HitLocation = transform.position;
         if (col.gameObject.tag == "Pin" || col.gameObject.tag == "NBTemp")
-            if(col.gameObject.name != "Ramp" && col.gameObject.name != "sardineskinWithScript" && col.gameObject.name != "Marble1" && col.gameObject.name != "Marble2" && col.gameObject.name != "Marble3" && col.gameObject.name != "Marble4" && col.gameObject.name != "Marble5")
+            if(col.gameObject.name != "Ramp(Clone)" && col.gameObject.name != "sardineskinWithScript(Clone)")
             {
                 {
                     Collider[] Colliders = Physics.OverlapSphere(HitLocation, ExplosionRadius);
@@ -44,14 +44,17 @@ public class BombBall : MonoBehaviour {
                     ExplosionEffect.transform.position = HitLocation;
                     ExplosionEffect.GetComponent<ParticleSystem>().Play();
 
-
-                    // For all balls within the sphere, apply a force.
+                    // For all objects within the sphere, apply a force.
                     foreach (var HitObject in Colliders)
                     {
                         if (!HitObject)
                             continue;
 
-                        if (HitObject.transform.tag == "Pin" || HitObject.transform.tag == "NBTemp")
+                        if(HitObject.gameObject.name == "sardineskinWithScript(Clone)")
+                        {
+                            HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce * 2, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                        }
+                        else if (HitObject.transform.tag == "Pin" || HitObject.transform.tag == "NBTemp")
                         {    // This automatically scales the force depending on distnance from hit pt!
                             HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
                         }

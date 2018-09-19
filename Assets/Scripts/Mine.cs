@@ -9,6 +9,7 @@ public class Mine : MonoBehaviour {
     private MeshRenderer[] Meshs;
     private BoxCollider Collider;
     private GameObject ExplosionEffect;
+    public GameObject Laser, LaserUmbra; 
 
     // Use this for initialization
     void Start()
@@ -34,6 +35,8 @@ public class Mine : MonoBehaviour {
 
             }
             Collider.enabled = false;
+            Laser.SetActive(false);
+            LaserUmbra.SetActive(false);
 
             //Play Explosion Effects
             ExplosionEffect.transform.position = HitLocation;
@@ -49,25 +52,18 @@ public class Mine : MonoBehaviour {
                 // This automatically scales the force depending on distnance from hit pt!
                 try
                 {
-                    HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                    if (HitObject.gameObject.name == "sardineskinWithScript(Clone)")
+                    {
+                        HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce * 2, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                    }
+                    else
+                    {
+                        HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                    }
                 }
                 catch
                 {
-                    try
-                    {
-                        Rigidbody[] RigidChildren = HitObject.GetComponentsInChildren<Rigidbody>();
-                        foreach(Rigidbody child in RigidChildren)
-                        {
-                            child.AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
-                        }
-                    }
-                    catch
-                    {
-                        if(HitObject.gameObject.name == "sardineskinWithScript")
-                        {
-                            Destroy(HitObject);
-                        }
-                    }
+                    //Do Nothing
                 }
             }
         }

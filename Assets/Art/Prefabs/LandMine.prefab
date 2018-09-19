@@ -368,6 +368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionRadius: 300
   ExplosionForce: 150
+  Laser: {fileID: 1344760074301236}
+  LaserUmbra: {fileID: 1184273868351504}
 --- !u!198 &198038633505026916
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 5490532}
   - component: {fileID: 8244616}
   - component: {fileID: 11469040}
+  - component: {fileID: 136416348971843412}
   m_Layer: 0
   m_Name: sardineskinWithScript
   m_TagString: NBTemp
@@ -1591,3 +1592,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 168864}
   m_IsPrefabParent: 1
+--- !u!136 &136416348971843412
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.001
+  m_Height: 0.001
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
