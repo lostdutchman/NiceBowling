@@ -25,6 +25,7 @@ PluginImporter:
           Exclude OSXUniversal: 0
           Exclude Win: 0
           Exclude Win64: 0
+          Exclude iOS: 1
     data:
       first:
         '': Editor
@@ -88,7 +89,7 @@ PluginImporter:
       second:
         enabled: 1
         settings:
-          CPU: x86_64
+          CPU: AnyCPU
     data:
       first:
         Standalone: OSXIntel
@@ -109,7 +110,7 @@ PluginImporter:
       second:
         enabled: 1
         settings:
-          CPU: x86_64
+          CPU: AnyCPU
     data:
       first:
         Standalone: Win
@@ -124,6 +125,14 @@ PluginImporter:
         enabled: 1
         settings:
           CPU: AnyCPU
+    data:
+      first:
+        iPhone: iOS
+      second:
+        enabled: 0
+        settings:
+          CompileFlags: 
+          FrameworkDependencies: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
