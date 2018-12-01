@@ -49,16 +49,6 @@ public class NiceBowling : MonoBehaviour {
         FirstFrame = false;
     }
 
-    private string PrintListInt(List<int> list)
-    {
-        string result = "";
-        foreach (var number in list)
-        {
-            result += number + ", ";
-        }
-        return result;
-    }
-
     public List<string> Effect(int niceRandom) {
         //Determin primary effects
         List<int> UsedNum = LastRoundNum;
@@ -330,9 +320,9 @@ public class NiceBowling : MonoBehaviour {
     }
 
     public string SardineRain(){
-		int rand = UnityEngine.Random.Range (10, 200);
+		int rand = UnityEngine.Random.Range (10, 100);
 		for(int i = 0; i < rand; i++){
-            Instantiate(Sardine, new Vector3(UnityEngine.Random.Range(55f, -55f), UnityEngine.Random.Range(50f, 200f), UnityEngine.Random.Range(150f, 2000f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
+            Instantiate(Sardine, new Vector3(UnityEngine.Random.Range(55f, -55f), UnityEngine.Random.Range(50f, 200f), UnityEngine.Random.Range(150f, 1700f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
         }
         return("Fish?");
     }
@@ -377,7 +367,7 @@ public class NiceBowling : MonoBehaviour {
 
     private string Pendulums()
     {
-        int rand = UnityEngine.Random.Range(2, 20);
+        int rand = UnityEngine.Random.Range(2, 9);
         for (int i = 0; i < rand; i++)
         {
             if(UnityEngine.Random.Range(0,2) == 0) //Coin todss to determine if right of left side pendulum
