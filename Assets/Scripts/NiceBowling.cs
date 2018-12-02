@@ -65,38 +65,41 @@ public class NiceBowling : MonoBehaviour {
                 //Make sure you dont call these effects 2 times in the same round
                 if (TempNum == 1 || TempNum == 2 || TempNum == 3) { UsedNum.Add(1); UsedNum.Add(2); UsedNum.Add(3); }
                 else if (TempNum == 4 || TempNum == 5) { UsedNum.Add(4); UsedNum.Add(5); }
-                else if (TempNum == 6 || TempNum == 7) { UsedNum.Add(6); UsedNum.Add(7); }
+                else if (TempNum == 19 || TempNum == 20) { UsedNum.Add(19); UsedNum.Add(20); }
                 else { UsedNum.Add(TempNum); }
-                //Randomly pick effects
-                switch (TempNum)
-                {
-                    case 1: Effects.Add(DifferentBall()); break;
-                    case 2: Effects.Add(DifferentBall()); break;
-                    case 3: Effects.Add(DifferentBall()); break;
-                    case 4: Effects.Add(DifferentPins()); break;
-                    case 5: Effects.Add(DifferentPins()); break;
-                    case 6: Effects.Add(PinMove()); break;
-                    case 7: Effects.Add(PinMove()); break;
-                    case 8: Effects.Add(SpeedBoost()); break;
-                    case 9: Effects.Add(Bumpers()); break;
-                    case 10: Effects.Add(Billiards()); break;
-                    case 11: Effects.Add(Obstical()); break;
-                    case 12: Effects.Add(Obsticals()); break;
-                    case 13: Effects.Add(LandMine()); break;
-                    case 14: Effects.Add(SardineRain()); break;
-                    case 15: Effects.Add(RampAdd()); break;
-                    case 16: Effects.Add(Pendulums()); break;
-                    case 17: Effects.Add(MinigolfWindmill()); break;
-                    case 18: Effects.Add(RoombaSummon()); break;
-                    case 19: Effects.Add(CubeWall()); break;
-                    case 20: Effects.Add(AddPins()); break;
-
-                    default: print("NiceBowling.Effect switch case default triggered somehow"); break;
-                }
             }
             else
             {
                 i--; //To not count that loop.
+            }
+        }
+        ThisRoundNum.Sort();
+        foreach(int effect in ThisRoundNum) 
+        {
+            switch (effect)
+            {
+                case 1: Effects.Add(DifferentBall()); break;
+                case 2: Effects.Add(DifferentBall()); break;
+                case 3: Effects.Add(DifferentBall()); break;
+                case 4: Effects.Add(DifferentPins()); break;
+                case 5: Effects.Add(DifferentPins()); break;
+                case 6: Effects.Add(AddPins()); break;
+                case 7: Effects.Add(CubeWall()); break;
+                case 8: Effects.Add(SpeedBoost()); break;
+                case 9: Effects.Add(Bumpers()); break;
+                case 10: Effects.Add(Billiards()); break;
+                case 11: Effects.Add(Obstical()); break;
+                case 12: Effects.Add(Obsticals()); break;
+                case 13: Effects.Add(LandMine()); break;
+                case 14: Effects.Add(SardineRain()); break;
+                case 15: Effects.Add(RampAdd()); break;
+                case 16: Effects.Add(Pendulums()); break;
+                case 17: Effects.Add(MinigolfWindmill()); break;
+                case 18: Effects.Add(RoombaSummon()); break;
+                case 19: Effects.Add(PinMove()); break; //has to be called last
+                case 20: Effects.Add(PinMove()); break; //has to be called last
+
+                default: print("NiceBowling.Effect switch case default triggered somehow"); break;
             }
         }
         LastRoundNum = ThisRoundNum;
