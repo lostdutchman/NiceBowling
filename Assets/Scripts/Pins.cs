@@ -97,11 +97,15 @@ public class Pins : MonoBehaviour {
                 rigidBody.isKinematic = false;
                 PinStatus = "BoardwalkPins";
             }
-            if (rigidBody.drag != 0)
+            else if (rigidBody.drag != 0)
             {
                 rigidBody.drag = 0;
                 rigidBody.angularDrag = 0.05f;
                 PinStatus = "IncreasePinDrag";
+            }
+            else if (rigidBody.useGravity == false)
+            {
+                PinStatus = "NoGravity";
             }
         }
     }
@@ -112,9 +116,13 @@ public class Pins : MonoBehaviour {
         if (PinStatus == "BoardwalkPins") {
             rigidBody.isKinematic = true;
         }
-        if (PinStatus == "IncreasePinDrag") {
+        else if (PinStatus == "IncreasePinDrag") {
             rigidBody.drag = 15f;
             rigidBody.angularDrag = 30f;
+        }
+        else if (PinStatus == "NoGravity")
+        {
+            rigidBody.useGravity = false;
         }
     }
 }

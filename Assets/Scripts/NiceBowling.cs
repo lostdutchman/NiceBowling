@@ -30,8 +30,8 @@ public class NiceBowling : MonoBehaviour {
         //List<string> Effects = new List<string>();
         //switch (i)
         //{
-        //    case 1: Effects.Add(BombBall()); Effects.Add(SardineRain()); Effects.Add(LandMine()); break;
-        //    case 2: Effects.Add(BombBall()); Effects.Add(LandMine()); Effects.Add(SardineRain()); break;
+        //    case 1: Effects.Add(AddPins()); Effects.Add(NoGravityAllPins()); break;
+        //    case 2: Effects.Add(SardineRain()); Effects.Add(AddPins()); Effects.Add(NoGravityAllPins()); break;
         //    case 3: Effects.Add(BombBall()); Effects.Add(SardineRain()); break;
         //    case 4: Effects.Add(BombBall()); Effects.Add(SardineRain()); break;
         //    case 5: Effects.Add(AddPinsx1()); Effects.Add(BombBall()); break;
@@ -47,6 +47,16 @@ public class NiceBowling : MonoBehaviour {
         //i++;
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
+    }
+
+    private string PrintListInt(List<int> list)
+    {
+        string result = "";
+        foreach (var number in list)
+        {
+            result += number + ", ";
+        }
+        return result;
     }
 
     public List<string> Effect(int niceRandom) {
@@ -73,8 +83,9 @@ public class NiceBowling : MonoBehaviour {
                 i--; //To not count that loop.
             }
         }
+        //Put the effects in order before activating them to ensure eccefts that effect eachother happen in the correct order.
         ThisRoundNum.Sort();
-        foreach(int effect in ThisRoundNum) 
+        foreach (int effect in ThisRoundNum) 
         {
             switch (effect)
             {
@@ -186,7 +197,12 @@ public class NiceBowling : MonoBehaviour {
 			Rigidbody body = pin.GetComponent<Rigidbody>();
 			body.useGravity = false;
 		}
-        return("Zero G!");
+        foreach (DumbPins pin in GameObject.FindObjectsOfType<DumbPins>())
+        {
+            Rigidbody body = pin.GetComponent<Rigidbody>();
+            body.useGravity = false;
+        }
+        return ("Zero G!");
 	}
 
     public string BoardwalkPins()
