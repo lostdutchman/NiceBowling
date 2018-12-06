@@ -22,25 +22,25 @@ public class NiceBowling : MonoBehaviour {
 
     public void NiceManager()
     {
-        ////Get NB Effects
+        //Get NB Effects
         int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         List<string> Effects = Effect(NiceRandom);
-        //For video and promotional work and testing effects
+        ////For video and promotional work and testing effects
         //List<string> Effects = new List<string>();
         //switch (i)
         //{
-        //    case 1: Effects.Add(AddPins()); Effects.Add(NoGravityAllPins()); break;
-        //    case 2: Effects.Add(SardineRain()); Effects.Add(AddPins()); Effects.Add(NoGravityAllPins()); break;
-        //    case 3: Effects.Add(BombBall()); Effects.Add(SardineRain()); break;
-        //    case 4: Effects.Add(BombBall()); Effects.Add(SardineRain()); break;
-        //    case 5: Effects.Add(AddPinsx1()); Effects.Add(BombBall()); break;
-        //    case 6: Effects.Add(AddPinsx10()); Effects.Add(SpikeBall()); break;
-        //    case 7: Effects.Add(JellyBall()); Effects.Add(SpeedBoost()); break;
-        //    case 8: Effects.Add(RampAdd()); Effects.Add(LandMine()); break;
-        //    case 9: Effects.Add(MinigolfWindmill()); Effects.Add(RoombaSummon()); break;
-        //    case 10: Effects.Add(CubeWall()); Effects.Add(SpeedBoost()); break;
-        //    case 11: Effects.Add(Pendulums()); Effects.Add(PinMove()); break;
+        //    case 1: Effects.Add(IncreasePinDrag()); break;
+        //    case 2: Effects.Add(PinMove()); break;
+        //    case 3: Effects.Add(PinMove()); break;
+        //    case 4: Effects.Add(PinMove()); break;
+        //    case 5: Effects.Add(PinMove()); break;
+        //    case 6: Effects.Add(PinMove()); break;
+        //    case 7: Effects.Add(PinMove()); break;
+        //    case 8: Effects.Add(PinMove()); break;
+        //    case 9: Effects.Add(PinMove()); break;
+        //    case 10: Effects.Add(PinMove()); break;
+        //    case 11: Effects.Add(PinMove()); break;
 
         //    default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         //}
@@ -66,7 +66,7 @@ public class NiceBowling : MonoBehaviour {
         List<string> Effects = new List<string>();
         for (int i = 0; i < niceRandom; i++)
         {
-            int TempNum = UnityEngine.Random.Range(1, 21); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+            int TempNum = UnityEngine.Random.Range(1, 20); //Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
 
             if (!UsedNum.Contains(TempNum))
             {
@@ -75,7 +75,6 @@ public class NiceBowling : MonoBehaviour {
                 //Make sure you dont call these effects 2 times in the same round
                 if (TempNum == 1 || TempNum == 2 || TempNum == 3) { UsedNum.Add(1); UsedNum.Add(2); UsedNum.Add(3); }
                 else if (TempNum == 4 || TempNum == 5) { UsedNum.Add(4); UsedNum.Add(5); }
-                else if (TempNum == 19 || TempNum == 20) { UsedNum.Add(19); UsedNum.Add(20); }
                 else { UsedNum.Add(TempNum); }
             }
             else
@@ -108,7 +107,6 @@ public class NiceBowling : MonoBehaviour {
                 case 17: Effects.Add(MinigolfWindmill()); break;
                 case 18: Effects.Add(RoombaSummon()); break;
                 case 19: Effects.Add(PinMove()); break; //has to be called last
-                case 20: Effects.Add(PinMove()); break; //has to be called last
 
                 default: print("NiceBowling.Effect switch case default triggered somehow"); break;
             }
@@ -362,7 +360,7 @@ public class NiceBowling : MonoBehaviour {
     public string CubeWall()
     {
         Instantiate(Wall, new Vector3(0, 1, UnityEngine.Random.Range(500f, 1500f)), Quaternion.identity);
-        return ("Obstacle!");
+        return ("B-B-B-Break Out!");
     }
 
     public string RampAdd(){

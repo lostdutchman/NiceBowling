@@ -61,9 +61,12 @@ public class PinSetter : MonoBehaviour {
 		foreach(Pins pin in GameObject.FindObjectsOfType<Pins>()){
 			pin.Lower();
         }
-        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        if (!EndTurn)
         {
-            pin.NicePins();//reinstate the effects on the pins
+            foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+            {
+                pin.NicePins();//reinstate the effects on the pins
+            }
         }
         Swipper.SetActive(false);
     }
