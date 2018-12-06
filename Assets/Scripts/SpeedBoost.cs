@@ -13,7 +13,11 @@ public class SpeedBoost : MonoBehaviour {
         try
         {
             Rigidbody Body = ThingEnter.GetComponent<Rigidbody>();
-            if (Body.velocity.z < 2000)
+            if (Body.velocity.z < 5)
+            {
+                Body.AddForce(new Vector3(0, 0, 500 * SpeedMultiplier), ForceMode.VelocityChange);
+            }
+            else if (Body.velocity.z < 2000)
             {
                 Body.AddForce(new Vector3(0, 0, Body.velocity.z * SpeedMultiplier), ForceMode.VelocityChange);
             }

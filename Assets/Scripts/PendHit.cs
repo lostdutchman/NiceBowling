@@ -6,11 +6,12 @@ public class PendHit : MonoBehaviour {
 
     [Tooltip("How much force is multipied on impact with ball.")]
     public float ForceToAdd = 15;
-    private AudioSource HitNoise;
+    public AudioClip BallHitNoise, HitNoise;
+    private AudioSource SoundPlayer;
 
     private void Start()
     {
-        HitNoise = GetComponent<AudioSource>();
+        SoundPlayer = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision col)
@@ -39,7 +40,8 @@ public class PendHit : MonoBehaviour {
                         //No ridged body, do nothing.
                     }
                 }
-                HitNoise.Play();
+                if (col.gameObject.tag == "ChildBall") { SoundPlayer.clip = BallHitNoise; SoundPlayer.Play(); }
+                else { SoundPlayer.clip = HitNoise; SoundPlayer.Play(); }
             }
         }
     }

@@ -756,6 +756,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ForceToAdd: 15
+  BallHitNoise: {fileID: 8300000, guid: 5b53fa4e9c0aa47c4a3b1eea9121502d, type: 3}
+  HitNoise: {fileID: 8300000, guid: 6e6c8f3cdc41bb74394dedd5745ce10e, type: 3}
 --- !u!136 &136468494329155614
 CapsuleCollider:
   m_ObjectHideFlags: 1
