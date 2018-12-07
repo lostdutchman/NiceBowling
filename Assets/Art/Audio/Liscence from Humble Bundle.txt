@@ -1,0 +1,25 @@
+Madison Pike, LLC Asset License 
+
+When you lawfully acquire our Asset Packs (listed below) as part of this Humble Bundle you are granted a non­exclusive, non-­transferable, non-sublicensable, worldwide and perpetual limited license to use the acquired Assets for your commercial or non-commercial projects developed on any game engine and to use, license and exploit such projects developed on any game engine with the embedded Assets in any way and in all media.
+
+These projects shall be defined as without limitation a User’s movie or video or game or app or product that uses Assets or character model(s) that you have incorporated into your project in a way that the Assets and/or character model(s) cannot be extracted to allow further distribution, reproduction, modification or use of the Assets outside of your projects. You shall not use the Assets in any other way than indicated above, including without limitation: 
+
+⁃ offer the Assets for sale  or license  or  any other  use  except  as  embedded in your projects; 
+
+offer the Assets in any other way in which the Assets can be extracted and implement in other projects.
+
+The above license shall apply to the following Asset Packs:
+
+Plants and Shrubs
+Trees
+Environment Props
+Prototyping Kit
+Textures, Decals, & Visual Effects
+Audio Kit
+Vehicle Pack SE
+City Pack SE
+Weapons Pack
+Vehicle Pack HQ
+City Pack HQ
+Character and Animals
+

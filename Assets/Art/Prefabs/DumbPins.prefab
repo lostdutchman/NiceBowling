@@ -1904,8 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114176601190907186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1917,8 +1916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 6411fe8c2c72dbc4d9d53e8fa3ed387d, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114185101733307192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1930,8 +1928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114203232597678026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1943,8 +1940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114205828712597652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1956,8 +1952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114332557778078640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1969,8 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114479741865811402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1982,8 +1976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114520585877749016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1995,8 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114626044830777954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2008,8 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &114659630400421342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2021,5 +2012,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fcc8db351b05f468c1df1d16196233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinHitPin: {fileID: 8300000, guid: 3bbc49d772b3ab540a6e0ba515351c8d, type: 3}
-  PinHitBall: {fileID: 8300000, guid: 80dd9f74ba28f9c42b0a1c7ddd575967, type: 3}
+  PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}

@@ -13,7 +13,7 @@ public class NiceBowling : MonoBehaviour {
     public UIAnimation NBUI;
     private bool FirstFrame;
     List<int> LastRoundNum = new List<int>();
-    //int i = 1; //for promotional and testing
+    int i = 1; //for promotional and testing
 
     // Use this for initialization
     void Start () {
@@ -22,29 +22,29 @@ public class NiceBowling : MonoBehaviour {
 
     public void NiceManager()
     {
-        //Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
-        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        List<string> Effects = Effect(NiceRandom);
-        ////For video and promotional work and testing effects
-        //List<string> Effects = new List<string>();
-        //switch (i)
-        //{
-        //    case 1: Effects.Add(IncreasePinDrag()); break;
-        //    case 2: Effects.Add(PinMove()); break;
-        //    case 3: Effects.Add(PinMove()); break;
-        //    case 4: Effects.Add(PinMove()); break;
-        //    case 5: Effects.Add(PinMove()); break;
-        //    case 6: Effects.Add(PinMove()); break;
-        //    case 7: Effects.Add(PinMove()); break;
-        //    case 8: Effects.Add(PinMove()); break;
-        //    case 9: Effects.Add(PinMove()); break;
-        //    case 10: Effects.Add(PinMove()); break;
-        //    case 11: Effects.Add(PinMove()); break;
+        ////Get NB Effects
+        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
+        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        //List<string> Effects = Effect(NiceRandom);
+        //For video and promotional work and testing effects
+        List<string> Effects = new List<string>();
+        switch (i)
+        {
+            case 1: Effects.Add(RoombaSummon()); Effects.Add(Bumpers()); break;
+            case 2: Effects.Add(RoombaSummon()); Effects.Add(Bumpers()); break;
+            case 3: Effects.Add(RoombaSummon()); Effects.Add(Bumpers()); break;
+            case 4: Effects.Add(RoombaSummon()); Effects.Add(Bumpers()); break;
+            case 5: Effects.Add(Bumpers()); break;
+            case 6: Effects.Add(PinMove()); break;
+            case 7: Effects.Add(PinMove()); break;
+            case 8: Effects.Add(PinMove()); break;
+            case 9: Effects.Add(PinMove()); break;
+            case 10: Effects.Add(PinMove()); break;
+            case 11: Effects.Add(PinMove()); break;
 
-        //    default: print("NiceBowling.Effect switch case default triggered somehow"); break;
-        //}
-        //i++;
+            default: print("NiceBowling.Effect switch case default triggered somehow"); break;
+        }
+        i++;
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
     }

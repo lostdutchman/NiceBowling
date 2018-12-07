@@ -145,6 +145,7 @@
     <Compile Include="Assets\RetroAesthetics\Shaders\Editor\RetroSkyboxEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Art\Audio\Liscence from Humble Bundle.txt" />
     <None Include="Assets\Art\Prefabs\Sardine\readme.txt" />
     <None Include="Assets\DefKit\ReadMe.txt" />
     <None Include="Assets\RetroAesthetics\Fonts\Bitmap\Monsterrat4\Monsterrat4.fnt" />

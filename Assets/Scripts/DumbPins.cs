@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DumbPins : MonoBehaviour {
 
-    public AudioClip PinHitPin;
     public AudioClip PinHitBall;
     private AudioSource audioSource;
 
@@ -15,12 +14,7 @@ public class DumbPins : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Pin")
-        {
-            audioSource.clip = PinHitPin;
-            audioSource.Play();
-        }
-        else if (col.gameObject.tag == "ChildBall")
+        if (col.gameObject.tag == "ChildBall")
         {
             audioSource.clip = PinHitBall;
             audioSource.Play();
