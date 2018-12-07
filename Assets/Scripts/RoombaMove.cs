@@ -53,9 +53,6 @@ public class RoombaMove : MonoBehaviour {
         if (col.gameObject.tag == "ChildBall")
         {
             StartCoroutine(PlaySound());
-            SoundPlayer.clip = RoombaNoise;
-            SoundPlayer.Play();
-            SoundPlayer.loop = true;
         }
     }
 
@@ -63,14 +60,19 @@ public class RoombaMove : MonoBehaviour {
     {
         int tmpNum = UnityEngine.Random.Range(0, RoombaResponse.Length);
         stop = true;
+        SoundPlayer.Stop();
         SoundPlayer.clip = RoombaHit;
-        print("Playing Hit");
+        SoundPlayer.loop = false;
         SoundPlayer.Play();
         yield return new WaitForSecondsRealtime(RoombaHit.length);
+        SoundPlayer.Stop();
         SoundPlayer.clip = RoombaResponse[tmpNum];
-        print("Playing response");
         SoundPlayer.Play();
         yield return new WaitForSecondsRealtime(RoombaResponse[tmpNum].length);
+        SoundPlayer.Stop();
         stop = false;
+        SoundPlayer.clip = RoombaNoise;
+        SoundPlayer.loop = true;
+        SoundPlayer.Play();
     }
 }

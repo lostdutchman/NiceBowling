@@ -208,7 +208,7 @@ MonoBehaviour:
   speed: 200
   forwardSpeed: 35
   RoombaHit: {fileID: 8300000, guid: 05b489ce4e309a64aac71abd5004f46a, type: 3}
-  RoombaMove: {fileID: 8300000, guid: 0fcf551190e3ee44ba3d9c4343335416, type: 3}
+  RoombaNoise: {fileID: 8300000, guid: 0fcf551190e3ee44ba3d9c4343335416, type: 3}
   RoombaResponse:
   - {fileID: 8300000, guid: 243fe8763611e534086cd64f5a52a49b, type: 3}
   - {fileID: 8300000, guid: 41e1a138df88f594789039fb242b860c, type: 3}
