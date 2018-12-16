@@ -22,11 +22,12 @@ public class PinSetter : MonoBehaviour {
     private bool EndTurn = false;
     private GameManager Menu;
     private int frame = 1;
-	
+    private LocalMultiplayer multiplayer;
 	
 	void Start () {
 		GameOver = false;
         StartGame = true;
+        multiplayer = GameObject.FindObjectOfType<LocalMultiplayer>();
 		animator = GetComponent<Animator>();
 		pinCounter = GameObject.FindObjectOfType<PinCounter>();
 		audioSource = GetComponent <AudioSource>();
@@ -91,7 +92,7 @@ public class PinSetter : MonoBehaviour {
 		switch(action){
 		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
-		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); EndTurn = true; break;
+		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); NextPlayer(); EndTurn = true; break;
 		case ActionMaster.Action.EndGame:	StartCoroutine(GameEndButton()); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
@@ -141,5 +142,13 @@ public class PinSetter : MonoBehaviour {
     {
         frame++;
         scoreBoard.GetComponent<ScoreScroller>().NextFrame(frame);
+    }
+
+    private void NextPlayer()
+    {
+        if(multiplayer.numberOfPlayers > 1)
+        {
+            multiplayer.NextPlayer();
+        }
     }
 }

@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LocalMultiplayer : MonoBehaviour {
 
     public int numberOfPlayers = 1;
-    [Tooltip("looking for the score total on UI Canvas")]
-    public GameObject P1, P2, P3, P4, P5, P6;
+    public GameObject P1Total, P2Total, P3Total, P4Total, P5Total, P6Total, currentPlayerName;
+    public RawImage[] Boards;
     int currentPlayer = 1;
 
 
@@ -14,12 +16,11 @@ public class LocalMultiplayer : MonoBehaviour {
         currentPlayer = 1;
         switch (numberOfPlayers)
         {
-            case 1: break;
-            case 2: P1.SetActive(true); P2.SetActive(true); break;
-            case 3: P1.SetActive(true); P2.SetActive(true); P3.SetActive(true); break;
-            case 4: P1.SetActive(true); P2.SetActive(true); P3.SetActive(true); P4.SetActive(true); break;
-            case 5: P1.SetActive(true); P2.SetActive(true); P3.SetActive(true); P4.SetActive(true); P5.SetActive(true); break;
-            case 6: P1.SetActive(true); P2.SetActive(true); P3.SetActive(true); P4.SetActive(true); P5.SetActive(true); P6.SetActive(true); break;
+            case 2: currentPlayerName.SetActive(true);  P1Total.SetActive(true); P2Total.SetActive(true); break;
+            case 3: P3Total.SetActive(true); goto case 2;
+            case 4: P4Total.SetActive(true); goto case 3;
+            case 5: P5Total.SetActive(true); goto case 4;
+            case 6: P6Total.SetActive(true); goto case 5;
             default: break;
         }     
     }
@@ -31,10 +32,23 @@ public class LocalMultiplayer : MonoBehaviour {
 
     public void NextPlayer()
     {
+        ChangeBoards(currentPlayer - 1);
         if (currentPlayer == numberOfPlayers)
         {
             currentPlayer = 0;
         }
         currentPlayer++;
+    }
+
+    private IEnumerator ChangeBoards(int index)
+    {
+        Boards[index].CrossFadeAlpha(0, 1, false);
+        index++;
+        if (index == numberOfPlayers)
+        {
+            index = 0;
+        }
+        yield return new WaitForSecondsRealtime(1f);
+        Boards[index].CrossFadeAlpha(1, 1, false);
     }
 }
