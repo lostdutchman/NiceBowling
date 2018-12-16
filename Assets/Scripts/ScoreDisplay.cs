@@ -5,12 +5,46 @@ using System.Collections.Generic;
 
 public class ScoreDisplay : MonoBehaviour {
 
-	public Text[]  bowlTexts, frameTexts;
-	
-	void Start () {
-		for(int i = 0; i < 21; i++) {bowlTexts[i].text = " ";}
-		for(int i = 0; i < 10; i++) {frameTexts[i].text = " ";}
-		}
+    [Tooltip("This should be the object inside the scoreboard that holds each frame")]
+    private GameManager gameManager;
+    private LocalMultiplayer multiplayer;
+
+    void Start () {
+        gameManager = GetComponent<GameManager>();
+        multiplayer = GetComponent<LocalMultiplayer>();
+
+        for (int i = 1; i <= multiplayer.numberOfPlayers; i++)
+        {
+            var player = new PlayerScores();
+            player.player = i;
+            player.bowls = new List<int>();
+            player.bowlTexts = new Text[21];
+            player.frameTexts = new Text[10];
+            gameManager.scoreCard.Add(player);
+        }
+
+        int card = 0;
+        foreach(GameObject SB in GameObject.FindGameObjectsWithTag("ScoreBoard"))
+        {
+            int bowl = 0;
+            int frame = 0;
+            foreach(Text T in SB.GetComponentsInChildren<Text>())
+            {
+                if (T.name == "Score")
+                {
+                    gameManager.scoreCard[card].frameTexts[frame] = T;
+                    gameManager.scoreCard[card].frameTexts[frame].text = " ";
+                    frame++;
+                }
+                else if(T.name == "BowlA" || T.name == "BowlB" || T.name == "BowlC")
+                {
+                    gameManager.scoreCard[card].bowlTexts[bowl] = T;
+                    gameManager.scoreCard[card].bowlTexts[bowl].text = " ";
+                    bowl++;
+                }
+            }
+        }
+	}
 		
 //Fills in the number of pins knocked over every turn
 	public void FillBowls (List<int> bowls){
@@ -18,11 +52,11 @@ public class ScoreDisplay : MonoBehaviour {
 
         for (int i = 0; i < scoreString.Length; i++)
         {
-            bowlTexts[i].text = scoreString[i].ToString();
+            gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowlTexts[i].text = scoreString[i].ToString();
             if (i == scoreString.Length - 1)
             {
-                bowlTexts[i].canvasRenderer.SetAlpha(.01f);
-                bowlTexts[i].CrossFadeAlpha(1, 1, false);
+                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowlTexts[i].canvasRenderer.SetAlpha(.01f);
+                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowlTexts[i].CrossFadeAlpha(1, 1, false);
             }
         }
 	}
@@ -30,15 +64,15 @@ public class ScoreDisplay : MonoBehaviour {
 //Fills in the score for each frame
 	public void FillFrames (List<int> frames){
 		for (int i = 0; i < frames.Count; i++) {
-            if (i == frames.Count - 1 && frameTexts[i].text == " ")
+            if (i == frames.Count - 1 && gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].text == " ")
             {
-                frameTexts[i].text = frames[i].ToString();
-                frameTexts[i].canvasRenderer.SetAlpha(.01f);
-                frameTexts[i].CrossFadeAlpha(1, 1.5f, false);
+                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].text = frames[i].ToString();
+                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].canvasRenderer.SetAlpha(.01f);
+                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].CrossFadeAlpha(1, 1.5f, false);
             }
             else
             {
-                frameTexts[i].text = frames[i].ToString();
+                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].text = frames[i].ToString();
             }
             ScoreMaster.endScore = frames[i];
 		}

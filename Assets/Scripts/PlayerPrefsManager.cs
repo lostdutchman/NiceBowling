@@ -61,5 +61,4 @@ public class PlayerPrefsManager : MonoBehaviour {
 	public static int GetHighScore(){
 		return PlayerPrefs.GetInt (HIGH_SCORE);
 	}
-	
 }

@@ -10,6 +10,7 @@ TagManager:
   - Ball
   - ChildBall
   - WasStuck
+  - ScoreBoard
   layers:
   - Default
   - TransparentFX

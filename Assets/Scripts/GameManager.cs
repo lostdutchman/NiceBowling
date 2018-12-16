@@ -1,31 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	private List <int> bowls = new List<int>();
-	private PinSetter pinSetter;
+	public List<PlayerScores> scoreCard = new List<PlayerScores>();
+    private PinSetter pinSetter;
 	private Ball ball;
 	private ScoreDisplay scoreDisplay;
+    private LocalMultiplayer multiplayer;
     public GameObject Menu, TouchPad, Arrows, SoundMenu;
 
 	// Use this for initialization
 	void Start () {
-		pinSetter = GameObject.FindObjectOfType<PinSetter> ();
-		ball = GameObject.FindObjectOfType<Ball> ();
+        multiplayer = GetComponent<LocalMultiplayer>();
+		pinSetter = GameObject.FindObjectOfType<PinSetter>();
+		ball = GameObject.FindObjectOfType<Ball>();
 		scoreDisplay = GameObject.FindObjectOfType<ScoreDisplay>();
         Time.timeScale = 1;
     }
-	
-	public void Bowl (int pinFall){
-		bowls.Add (pinFall);
-		ball.Reset ();
-		pinSetter.performAction (ActionMaster.NextAction (bowls));
 
-        scoreDisplay.FillBowls(bowls);
-        scoreDisplay.FillFrames(ScoreMaster.ScoreCumulative(bowls));
-	}
+    private string PrintListInt(List<int> list)
+    {
+        string result = "";
+        foreach (var number in list)
+        {
+            result += number + ", ";
+        }
+        return result;
+    }
+
+    public void Bowl (int pinFall){
+        print("PinFall: " + pinFall);
+		scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls.Add(pinFall);
+		ball.Reset();
+		pinSetter.performAction (ActionMaster.NextAction(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls));
+
+        scoreDisplay.FillBowls(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls);
+        scoreDisplay.FillFrames(ScoreMaster.ScoreCumulative(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls));
+        print("Current Bowles: " + PrintListInt(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls));
+        print("__________________________________________________________________________");
+    }
 
     void Update()
     {
