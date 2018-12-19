@@ -5,74 +5,48 @@ using System.Collections.Generic;
 
 public class ScoreDisplay : MonoBehaviour {
 
-    [Tooltip("This should be the object inside the scoreboard that holds each frame")]
+    public Text[] Totals;
     private GameManager gameManager;
     private LocalMultiplayer multiplayer;
 
     void Start () {
         gameManager = GetComponent<GameManager>();
         multiplayer = GetComponent<LocalMultiplayer>();
-
-        for (int i = 1; i <= multiplayer.numberOfPlayers; i++)
-        {
-            var player = new PlayerScores();
-            player.player = i;
-            player.bowls = new List<int>();
-            player.bowlTexts = new Text[21];
-            player.frameTexts = new Text[10];
-            gameManager.scoreCard.Add(player);
-        }
-
-        int card = 0;
-        foreach(GameObject SB in GameObject.FindGameObjectsWithTag("ScoreBoard"))
-        {
-            int bowl = 0;
-            int frame = 0;
-            foreach(Text T in SB.GetComponentsInChildren<Text>())
-            {
-                if (T.name == "Score")
-                {
-                    gameManager.scoreCard[card].frameTexts[frame] = T;
-                    gameManager.scoreCard[card].frameTexts[frame].text = " ";
-                    frame++;
-                }
-                else if(T.name == "BowlA" || T.name == "BowlB" || T.name == "BowlC")
-                {
-                    gameManager.scoreCard[card].bowlTexts[bowl] = T;
-                    gameManager.scoreCard[card].bowlTexts[bowl].text = " ";
-                    bowl++;
-                }
-            }
-        }
 	}
 		
 //Fills in the number of pins knocked over every turn
 	public void FillBowls (List<int> bowls){
 		string scoreString = FormatBowls (bowls);
-
+        int index = multiplayer.GetCurrentPlayer() - 1;
         for (int i = 0; i < scoreString.Length; i++)
         {
-            gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowlTexts[i].text = scoreString[i].ToString();
+            multiplayer.scoreCard[index].bowlTexts[i].text = scoreString[i].ToString();
             if (i == scoreString.Length - 1)
             {
-                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowlTexts[i].canvasRenderer.SetAlpha(.01f);
-                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowlTexts[i].CrossFadeAlpha(1, 1, false);
+                multiplayer.scoreCard[index].bowlTexts[i].canvasRenderer.SetAlpha(.01f);
+                multiplayer.scoreCard[index].bowlTexts[i].CrossFadeAlpha(1, .25f, false);
             }
         }
 	}
 
 //Fills in the score for each frame
 	public void FillFrames (List<int> frames){
+        print("Filling frames");
+        int index = multiplayer.GetCurrentPlayer() - 1;
 		for (int i = 0; i < frames.Count; i++) {
-            if (i == frames.Count - 1 && gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].text == " ")
+            if (i == frames.Count - 1 && multiplayer.scoreCard[index].frameTexts[i].text == " ")
             {
-                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].text = frames[i].ToString();
-                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].canvasRenderer.SetAlpha(.01f);
-                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].CrossFadeAlpha(1, 1.5f, false);
+                multiplayer.scoreCard[index].frameTexts[i].text = frames[i].ToString();
+                multiplayer.scoreCard[index].frameTexts[i].canvasRenderer.SetAlpha(.01f);
+                multiplayer.scoreCard[index].frameTexts[i].CrossFadeAlpha(1, .5f, false);
+                print("Setting score to: " + frames[i].ToString());
+                Totals[index].text = frames[i].ToString();
+                Totals[index].canvasRenderer.SetAlpha(.01f);
+                Totals[index].CrossFadeAlpha(1, .75f, false);
             }
             else
             {
-                gameManager.scoreCard[multiplayer.GetCurrentPlayer() - 1].frameTexts[i].text = frames[i].ToString();
+                multiplayer.scoreCard[index].frameTexts[i].text = frames[i].ToString();
             }
             ScoreMaster.endScore = frames[i];
 		}

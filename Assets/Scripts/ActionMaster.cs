@@ -1,39 +1,38 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class ActionMaster {
 	public enum Action {Tidy, Reset, EndTurn, EndGame};
 
 	private int[] bowls = new int[21];
-	private int bowl = 1;
+	private int[] playerBowl = new int[6] {1, 1, 1, 1, 1, 1 };
 
-	public static Action NextAction (List<int> pinfFalls) {
+	public static Action NextAction (List<int> pinfFalls, int index) {
 		ActionMaster am = new ActionMaster ();
 		Action currentAction = new Action ();
-
-		foreach (int pinFall in pinfFalls) {
-			currentAction = am.Bowl (pinFall);
+        MonoBehaviour.print("currentAction Pre Loop= " + currentAction.ToString());
+        foreach (int pinFall in pinfFalls) {
+			currentAction = am.Bowl (pinFall, index + 1);
+            MonoBehaviour.print("currentAction In Loop = " + currentAction.ToString());
 		}
-
-		return currentAction;
+        MonoBehaviour.print("Post Loop = " + currentAction.ToString());
+        return currentAction;
 	}
 
-	private Action Bowl (int pins) { 
+	private Action Bowl (int pins, int index) { 
 		if (pins < 0 || pins > 10) {Debug.Log ("Invalid pins passed to ActionMaster.Bowl"); pins = 0;}
+		bowls [playerBowl[index] - 1] = pins;
 
-		bowls [bowl - 1] = pins;
-
-		if (bowl == 21) {
+		if (playerBowl[index] == 21) {
 			return Action.EndGame;
 		}
 
 		// Handle last-frame special cases
-		if ( bowl >= 19 && pins == 10 ){
-			bowl++;
+		if (playerBowl[index] >= 19 && pins == 10 ){
+            playerBowl[index]++;
 			return Action.Reset;
-		} else if ( bowl == 20 ) {
-			bowl++;
+		} else if (playerBowl[index] == 20 ) {
+            playerBowl[index]++;
 			if (bowls[19-1]==10 && bowls[20-1]==0) {
 				return Action.Tidy;
 			} else if (bowls[19-1] + bowls[20-1] == 10) {
@@ -45,16 +44,16 @@ public class ActionMaster {
 			}
 		}
 
-		if (bowl % 2 != 0) { // First bowl of frame
+		if (playerBowl[index] % 2 != 0) { // First bowl of frame
 			if (pins == 10) {
-				bowl += 2;
+                playerBowl[index] += 2;
 				return Action.EndTurn;
 			} else {
-				bowl += 1;
+                playerBowl[index] += 1;
 				return Action.Tidy;
 			}
-		} else if (bowl % 2 == 0) { // Second bowl of frame
-			bowl += 1;
+		} else if (playerBowl[index] % 2 == 0) { // Second bowl of frame
+            playerBowl[index] += 1;
 			return Action.EndTurn;
 		}
 
@@ -62,7 +61,6 @@ public class ActionMaster {
 	}
 
 	private bool Bowl21Awarded () {
-		// Remember that arrays start counting at 0
 		return (bowls [19-1] + bowls [20-1] >= 10);
 	}
 }

@@ -7,22 +7,86 @@ using UnityEngine.UI;
 public class LocalMultiplayer : MonoBehaviour {
 
     public int numberOfPlayers = 1;
-    public GameObject P1Total, P2Total, P3Total, P4Total, P5Total, P6Total, currentPlayerName;
+    public List<PlayerScores> scoreCard = new List<PlayerScores>();
+    public GameObject P1Total, P2Total, P3Total, P4Total, P5Total, P6Total, currentPlayerNameBox;
     public RawImage[] Boards;
+    public Text P1Name, P2Name, P3Name, P4Name, P5Name, P6Name;
+    private Text currentPlayerName;
     int currentPlayer = 1;
 
 
 	void Start () {
+        //Initiate Score cards
+        for (int i = 1; i <= numberOfPlayers; i++)
+        {
+            var player = new PlayerScores();
+            player.player = i;
+            player.playerName = "Player " + i;
+            player.bowls = new List<int>();
+            player.bowlTexts = new Text[21];
+            player.frameTexts = new Text[10];
+            scoreCard.Add(player);
+        }
+
+        int card = 0;
+        foreach (GameObject SB in GameObject.FindGameObjectsWithTag("ScoreBoard"))
+        {
+            int bowl = 0;
+            int frame = 0;
+            foreach (Text T in SB.GetComponentsInChildren<Text>())
+            {
+                if (T.name == "Score")
+                {
+                    scoreCard[card].frameTexts[frame] = T;
+                    scoreCard[card].frameTexts[frame].text = " ";
+                    frame++;
+                }
+                else if (T.name == "BowlA" || T.name == "BowlB" || T.name == "BowlC")
+                {
+                    scoreCard[card].bowlTexts[bowl] = T;
+                    scoreCard[card].bowlTexts[bowl].text = " ";
+                    bowl++;
+                }
+            }
+        }
+
+        //Initiate gamespace
         currentPlayer = 1;
+        currentPlayerName = currentPlayerNameBox.GetComponentInChildren<Text>();
+
+        for(int i = 1; i < Boards.Length; i++)
+        {
+            Boards[i].canvasRenderer.SetAlpha(0f);
+        }
+
         switch (numberOfPlayers)
         {
-            case 2: currentPlayerName.SetActive(true);  P1Total.SetActive(true); P2Total.SetActive(true); break;
-            case 3: P3Total.SetActive(true); goto case 2;
-            case 4: P4Total.SetActive(true); goto case 3;
-            case 5: P5Total.SetActive(true); goto case 4;
-            case 6: P6Total.SetActive(true); goto case 5;
+            case 2:
+                currentPlayerNameBox.SetActive(true);
+                currentPlayerName.text = scoreCard[0].playerName + " Bowl!";
+                P1Total.SetActive(true);
+                P1Name.text = scoreCard[0].playerName + ":";
+                P2Total.SetActive(true);
+                P2Name.text = scoreCard[1].playerName + ":";
+                break;
+            case 3:
+                P3Total.SetActive(true);
+                P3Name.text = scoreCard[2].playerName + ":";
+                goto case 2;
+            case 4:
+                P4Total.SetActive(true);
+                P4Name.text = scoreCard[3].playerName + ":";
+                goto case 3;
+            case 5:
+                P5Total.SetActive(true);
+                P5Name.text = scoreCard[4].playerName + ":";
+                goto case 4;
+            case 6:
+                P6Total.SetActive(true);
+                P6Name.text = scoreCard[5].playerName + ":";
+                goto case 5;
             default: break;
-        }     
+        }
     }
 
     public int GetCurrentPlayer()
@@ -32,7 +96,7 @@ public class LocalMultiplayer : MonoBehaviour {
 
     public void NextPlayer()
     {
-        ChangeBoards(currentPlayer - 1);
+        StartCoroutine(FadePlayerChange(currentPlayer - 1));
         if (currentPlayer == numberOfPlayers)
         {
             currentPlayer = 0;
@@ -40,15 +104,20 @@ public class LocalMultiplayer : MonoBehaviour {
         currentPlayer++;
     }
 
-    private IEnumerator ChangeBoards(int index)
+    private IEnumerator FadePlayerChange(int index)
     {
-        Boards[index].CrossFadeAlpha(0, 1, false);
+        //Allow score to fill in befors starting the animations
+        yield return new WaitForSecondsRealtime(1f);
+        Boards[index].CrossFadeAlpha(0, .5f, false);
+        currentPlayerName.CrossFadeAlpha(0, .5f, false);
+        yield return new WaitForSecondsRealtime(.55f);
         index++;
         if (index == numberOfPlayers)
         {
             index = 0;
         }
-        yield return new WaitForSecondsRealtime(1f);
-        Boards[index].CrossFadeAlpha(1, 1, false);
+        currentPlayerName.text = scoreCard[index].playerName + " Bowl!";
+        currentPlayerName.CrossFadeAlpha(1, .5f, false);
+        Boards[index].CrossFadeAlpha(1, .5f, false);
     }
 }

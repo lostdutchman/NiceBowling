@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	public List<PlayerScores> scoreCard = new List<PlayerScores>();
     private PinSetter pinSetter;
 	private Ball ball;
 	private ScoreDisplay scoreDisplay;
@@ -32,14 +31,21 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Bowl (int pinFall){
-        print("PinFall: " + pinFall);
-		scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls.Add(pinFall);
+        int index = multiplayer.GetCurrentPlayer() - 1;
+		multiplayer.scoreCard[index].bowls.Add(pinFall);
 		ball.Reset();
-		pinSetter.performAction (ActionMaster.NextAction(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls));
 
-        scoreDisplay.FillBowls(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls);
-        scoreDisplay.FillFrames(ScoreMaster.ScoreCumulative(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls));
-        print("Current Bowles: " + PrintListInt(scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls));
+        ActionMaster.Action am = ActionMaster.NextAction(multiplayer.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls, index);
+        pinSetter.performAction (am);
+
+        scoreDisplay.FillBowls(multiplayer.scoreCard[index].bowls);
+        scoreDisplay.FillFrames(ScoreMaster.ScoreCumulative(multiplayer.scoreCard[index].bowls));
+
+        if (am == ActionMaster.Action.EndTurn)
+        {
+            NextPlayer();
+        }
+
         print("__________________________________________________________________________");
     }
 
@@ -77,5 +83,12 @@ public class GameManager : MonoBehaviour {
             Arrows.SetActive(false);
         }
     }
-			
+
+    private void NextPlayer()
+    {
+        if (multiplayer.numberOfPlayers > 1)
+        {
+            multiplayer.NextPlayer();
+        }
+    }
 }
