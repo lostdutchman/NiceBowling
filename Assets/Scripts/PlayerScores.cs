@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerScores{
@@ -26,4 +27,5 @@ public class PlayerScores{
     public List<int> bowls { get; set; }
     public Text[] bowlTexts { get; set; }
     public Text[] frameTexts { get; set; }
+    public GameObject ScoreBoard { get; set; }
 }

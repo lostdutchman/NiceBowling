@@ -10,6 +10,7 @@ public class LocalMultiplayer : MonoBehaviour {
     public List<PlayerScores> scoreCard = new List<PlayerScores>();
     public GameObject P1Total, P2Total, P3Total, P4Total, P5Total, P6Total, currentPlayerNameBox;
     public RawImage[] Boards;
+    public GameObject[] ScoreBoards;
     public Text P1Name, P2Name, P3Name, P4Name, P5Name, P6Name;
     private Text currentPlayerName;
     int currentPlayer = 1;
@@ -25,36 +26,33 @@ public class LocalMultiplayer : MonoBehaviour {
             player.bowls = new List<int>();
             player.bowlTexts = new Text[21];
             player.frameTexts = new Text[10];
+            player.ScoreBoard = ScoreBoards[i - 1];
             scoreCard.Add(player);
         }
-
-        int card = 0;
-        foreach (GameObject SB in GameObject.FindGameObjectsWithTag("ScoreBoard"))
+        foreach(var Player in scoreCard)
         {
             int bowl = 0;
             int frame = 0;
-            foreach (Text T in SB.GetComponentsInChildren<Text>())
+            foreach (Text T in Player.ScoreBoard.GetComponentsInChildren<Text>())
             {
                 if (T.name == "Score")
                 {
-                    scoreCard[card].frameTexts[frame] = T;
-                    scoreCard[card].frameTexts[frame].text = " ";
+                    Player.frameTexts[frame] = T;
+                    Player.frameTexts[frame].text = " ";
                     frame++;
                 }
                 else if (T.name == "BowlA" || T.name == "BowlB" || T.name == "BowlC")
                 {
-                    scoreCard[card].bowlTexts[bowl] = T;
-                    scoreCard[card].bowlTexts[bowl].text = " ";
+                    Player.bowlTexts[bowl] = T;
+                    Player.bowlTexts[bowl].text = " ";
                     bowl++;
                 }
             }
         }
-
         //Initiate gamespace
         currentPlayer = 1;
         currentPlayerName = currentPlayerNameBox.GetComponentInChildren<Text>();
-
-        for(int i = 1; i < Boards.Length; i++)
+        for (int i = 1; i < Boards.Length; i++)
         {
             Boards[i].canvasRenderer.SetAlpha(0f);
         }

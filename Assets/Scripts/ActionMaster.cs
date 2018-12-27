@@ -10,18 +10,15 @@ public class ActionMaster {
 	public static Action NextAction (List<int> pinfFalls, int index) {
 		ActionMaster am = new ActionMaster ();
 		Action currentAction = new Action ();
-        MonoBehaviour.print("currentAction Pre Loop= " + currentAction.ToString());
         foreach (int pinFall in pinfFalls) {
-			currentAction = am.Bowl (pinFall, index + 1);
-            MonoBehaviour.print("currentAction In Loop = " + currentAction.ToString());
+			currentAction = am.Bowl (pinFall, index);
 		}
-        MonoBehaviour.print("Post Loop = " + currentAction.ToString());
         return currentAction;
 	}
 
-	private Action Bowl (int pins, int index) { 
+	private Action Bowl (int pins, int index) {
 		if (pins < 0 || pins > 10) {Debug.Log ("Invalid pins passed to ActionMaster.Bowl"); pins = 0;}
-		bowls [playerBowl[index] - 1] = pins;
+		bowls [playerBowl[index]] = pins;
 
 		if (playerBowl[index] == 21) {
 			return Action.EndGame;

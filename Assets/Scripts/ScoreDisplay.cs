@@ -31,7 +31,6 @@ public class ScoreDisplay : MonoBehaviour {
 
 //Fills in the score for each frame
 	public void FillFrames (List<int> frames){
-        print("Filling frames");
         int index = multiplayer.GetCurrentPlayer() - 1;
 		for (int i = 0; i < frames.Count; i++) {
             if (i == frames.Count - 1 && multiplayer.scoreCard[index].frameTexts[i].text == " ")
@@ -39,7 +38,6 @@ public class ScoreDisplay : MonoBehaviour {
                 multiplayer.scoreCard[index].frameTexts[i].text = frames[i].ToString();
                 multiplayer.scoreCard[index].frameTexts[i].canvasRenderer.SetAlpha(.01f);
                 multiplayer.scoreCard[index].frameTexts[i].CrossFadeAlpha(1, .5f, false);
-                print("Setting score to: " + frames[i].ToString());
                 Totals[index].text = frames[i].ToString();
                 Totals[index].canvasRenderer.SetAlpha(.01f);
                 Totals[index].CrossFadeAlpha(1, .75f, false);

@@ -11,10 +11,22 @@ public class ScoreScroller : MonoBehaviour {
     public float MoveDist10;
     [Tooltip("How log it takes to make the move")]
     public float LerpTime;
+    private LocalMultiplayer multiplayer;
+
+    void Start()
+    {
+        multiplayer = FindObjectOfType<LocalMultiplayer>();
+    }
 
     public void NextFrame(int frame)
     {
         Vector3 startPos = ScoreBoard.transform.localPosition;
+        frame = frame / multiplayer.numberOfPlayers;
+        if(frame % multiplayer.numberOfPlayers != 0)
+        {
+            frame++;
+        }
+        print(frame);
 
         if (frame <= 3)
         {

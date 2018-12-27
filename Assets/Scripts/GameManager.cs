@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 		multiplayer.scoreCard[index].bowls.Add(pinFall);
 		ball.Reset();
 
-        ActionMaster.Action am = ActionMaster.NextAction(multiplayer.scoreCard[multiplayer.GetCurrentPlayer() - 1].bowls, index);
+        ActionMaster.Action am = ActionMaster.NextAction(multiplayer.scoreCard[index].bowls, index);
         pinSetter.performAction (am);
 
         scoreDisplay.FillBowls(multiplayer.scoreCard[index].bowls);
@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour {
         {
             NextPlayer();
         }
-
-        print("__________________________________________________________________________");
     }
 
     void Update()

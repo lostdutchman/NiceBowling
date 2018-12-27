@@ -21,7 +21,7 @@ public class PinSetter : MonoBehaviour {
 	private PinCounter pinCounter;
     private bool EndTurn = false;
     private GameManager Menu;
-    private int frame = 1;
+    private int frame = 0;
     private LocalMultiplayer multiplayer;
 	
 	void Start () {
@@ -87,7 +87,6 @@ public class PinSetter : MonoBehaviour {
 	}
 
 	public void performAction(ActionMaster.Action action){
-        print("PinSetter action: " + action);
 		//Pass pins that have fallen to Action Master to initiate animations
 		switch(action){
 		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
