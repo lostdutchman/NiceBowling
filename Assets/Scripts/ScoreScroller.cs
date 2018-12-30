@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreScroller : MonoBehaviour {
 
-    public GameObject ScoreBoard;
+    public GameObject[] ScoreBoards;
     [Tooltip("How far the x pos needs to move to get to next frame")]
     public float MoveDist;
     [Tooltip("How far the x pos needs to move to get to frame 10")]
@@ -18,37 +18,41 @@ public class ScoreScroller : MonoBehaviour {
         multiplayer = FindObjectOfType<LocalMultiplayer>();
     }
 
-    public void NextFrame(int frame)
+    public void NextFrame(int frame, int playerIndex)
     {
-        Vector3 startPos = ScoreBoard.transform.localPosition;
-        frame = frame / multiplayer.numberOfPlayers;
+        print("Index:" + playerIndex);
+        print("Number of times bowled:" + frame);
+        Vector3 startPos = ScoreBoards[playerIndex].transform.localPosition;
+        int adjustedFrame = frame / multiplayer.numberOfPlayers;
         if(frame % multiplayer.numberOfPlayers != 0)
         {
-            frame++;
+            adjustedFrame++;
+            print("Remainder was not 0, added 1 to frame");
         }
-        print(frame);
+        print("Current Frame:" + adjustedFrame);
 
-        if (frame <= 3)
+        if (adjustedFrame < 3)
         {
             //Do nothing
         }
-        else if (frame == 10)
+        else if (adjustedFrame == 9)
         {
-           StartCoroutine(MoveToPosition(MoveDist10, LerpTime));
+           StartCoroutine(MoveToPosition(MoveDist10, LerpTime, playerIndex));
         }
         else
         {
-            StartCoroutine(MoveToPosition(MoveDist, LerpTime));
+            StartCoroutine(MoveToPosition(MoveDist, LerpTime, playerIndex));
         }
     }
-    public IEnumerator MoveToPosition(float move, float timeToMove)
+    public IEnumerator MoveToPosition(float move, float timeToMove, int playerIndex)
     {
-        var startPos = transform.localPosition;
+        var startPos = ScoreBoards[playerIndex].transform.position;
+        print(startPos.ToString());
         var t = 0f;
         while (t < 1)
         {
             t += Time.deltaTime / timeToMove;
-            ScoreBoard.transform.localPosition = Vector3.Lerp(startPos, new Vector3(startPos.x + move, startPos.y, startPos.z), t);
+            ScoreBoards[playerIndex].transform.position = Vector3.Lerp(startPos, new Vector3(startPos.x + move, startPos.y, startPos.z), t);
             yield return null;
         }
     }

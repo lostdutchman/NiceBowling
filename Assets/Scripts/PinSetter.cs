@@ -11,7 +11,8 @@ public class PinSetter : MonoBehaviour {
 	public AudioClip[] turkeyAudio;
 	public AudioClip[] gutterAudio;
 	public AudioClip silence;
-	public GameObject Resume, Swipper, TouchInput, scoreBoard;
+	public GameObject Resume, Swipper, TouchInput;
+    public ScoreScroller scoreScroller;
 	public bool GameOver, StartGame;
 
 	private AudioSource audioSource;
@@ -140,6 +141,6 @@ public class PinSetter : MonoBehaviour {
     private void ScrollScore()
     {
         frame++;
-        scoreBoard.GetComponent<ScoreScroller>().NextFrame(frame);
+        scoreScroller.NextFrame(frame, multiplayer.GetCurrentPlayer() - 1);
     }
 }
