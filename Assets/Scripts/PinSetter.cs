@@ -22,7 +22,7 @@ public class PinSetter : MonoBehaviour {
 	private PinCounter pinCounter;
     private bool EndTurn = false;
     private GameManager Menu;
-    private int frame = 0;
+    private int bowls = 0;
     private LocalMultiplayer multiplayer;
 	
 	void Start () {
@@ -140,7 +140,7 @@ public class PinSetter : MonoBehaviour {
 
     private void ScrollScore()
     {
-        frame++;
-        scoreScroller.NextFrame(frame, multiplayer.GetCurrentPlayer() - 1);
+        bowls++;
+        scoreScroller.NextFrame(bowls, multiplayer.GetCurrentPlayer() - 1);
     }
 }

@@ -18,24 +18,21 @@ public class ScoreScroller : MonoBehaviour {
         multiplayer = FindObjectOfType<LocalMultiplayer>();
     }
 
-    public void NextFrame(int frame, int playerIndex)
+    public void NextFrame(int bowls, int playerIndex)
     {
-        print("Index:" + playerIndex);
-        print("Number of times bowled:" + frame);
         Vector3 startPos = ScoreBoards[playerIndex].transform.localPosition;
-        int adjustedFrame = frame / multiplayer.numberOfPlayers;
-        if(frame % multiplayer.numberOfPlayers != 0)
-        {
-            adjustedFrame++;
-            print("Remainder was not 0, added 1 to frame");
-        }
-        print("Current Frame:" + adjustedFrame);
+        int frames = bowls / multiplayer.numberOfPlayers;
 
-        if (adjustedFrame < 3)
+        if(bowls % multiplayer.numberOfPlayers != 0)
+        {
+            frames++;
+        }
+
+        if (frames < 3)
         {
             //Do nothing
         }
-        else if (adjustedFrame == 9)
+        else if (frames == 9)
         {
            StartCoroutine(MoveToPosition(MoveDist10, LerpTime, playerIndex));
         }
@@ -43,11 +40,11 @@ public class ScoreScroller : MonoBehaviour {
         {
             StartCoroutine(MoveToPosition(MoveDist, LerpTime, playerIndex));
         }
+        print("____________________________________________________");
     }
     public IEnumerator MoveToPosition(float move, float timeToMove, int playerIndex)
     {
         var startPos = ScoreBoards[playerIndex].transform.position;
-        print(startPos.ToString());
         var t = 0f;
         while (t < 1)
         {
