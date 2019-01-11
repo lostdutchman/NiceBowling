@@ -75,13 +75,6 @@ public class PinSetter : MonoBehaviour {
 	
 	//Called by animator to add a new set of pins
 	public void RenewPins(){
-
-        //Clears pins that didnt get pushed off the lane
-        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
-        {
-            Destroy(pin.gameObject);
-        }
-
         Instantiate(pinSet, new Vector3(0, 1, 1829), Quaternion.identity);
 		Swipper.SetActive (false);
         niceBowling.NiceManager();
@@ -90,10 +83,10 @@ public class PinSetter : MonoBehaviour {
 	public void performAction(ActionMaster.Action action){
 		//Pass pins that have fallen to Action Master to initiate animations
 		switch(action){
-		case ActionMaster.Action.Tidy:		animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
-		case ActionMaster.Action.Reset:		animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
-		case ActionMaster.Action.EndTurn:   niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); EndTurn = true; break;
-		case ActionMaster.Action.EndGame:	StartCoroutine(GameEndButton()); break;
+		case ActionMaster.Action.Tidy: animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
+		case ActionMaster.Action.Reset: StartCoroutine(KillRemainingPins()); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
+		case ActionMaster.Action.EndTurn: StartCoroutine(KillRemainingPins()); niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); EndTurn = true; break;
+		case ActionMaster.Action.EndGame: StartCoroutine(GameEndButton()); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
 	}
@@ -109,7 +102,6 @@ public class PinSetter : MonoBehaviour {
 		}
 
 		audioSource.Play();
-
 	}
 
     private IEnumerator GameEndButton(){
@@ -118,7 +110,6 @@ public class PinSetter : MonoBehaviour {
         Resume.SetActive(false);
 		TouchInput.SetActive (false);
 		GameOver = true;
-
 	}
 	
 	public void EnableTouch(){
@@ -142,5 +133,18 @@ public class PinSetter : MonoBehaviour {
     {
         bowls++;
         scoreScroller.NextFrame(bowls, multiplayer.GetCurrentPlayer() - 1);
+    }
+
+    private IEnumerator KillRemainingPins()
+    {
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            pin.MarkEndTurnPins();
+        }
+        yield return new WaitForSecondsRealtime(1.5f);
+        foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
+        {
+            pin.KillEndTurnPins();
+        }
     }
 }

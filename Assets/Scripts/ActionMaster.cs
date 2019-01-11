@@ -23,25 +23,23 @@ public class ActionMaster {
         return currentAction;
 	}
 
-	private Action Bowl (int pins, int index, bool isLastTurn) {
-        MonoBehaviour.print("Pins:" + pins + " index:" + index + " islastTurn:" + isLastTurn.ToString());
+    private Action Bowl (int pins, int index, bool isLastTurn) {
 		if (pins < 0 || pins > 10) {Debug.Log ("Invalid pins passed to ActionMaster.Bowl"); pins = 0;}
 		bowls [playerBowl[index]] = pins;
 
-		if (playerBowl[index] == 21) {
-			return Action.EndGame;
+        if (playerBowl[index] == 21) {
+            return Action.EndGame;
 		}
-        /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-         * This is the block I was working on, if player 1 gets a spare it moves to player 2 instead of just reseting. I think its the bowls array thats the problem, with multiple players its probably holding way more than 21 bowls....*/
+
 		// Handle last-frame special cases
 		if (playerBowl[index] >= 19 && pins == 10 ){
             playerBowl[index]++;
 			return Action.Reset;
 		} else if (playerBowl[index] == 20 ) {
             playerBowl[index]++;
-			if (bowls[19-1]==10 && bowls[20-1]==0) {
+			if (bowls[19]==10 && bowls[20]==0) {
 				return Action.Tidy;
-			} else if (bowls[19-1] + bowls[20-1] == 10) {
+			} else if (bowls[19] + bowls[20] == 10) {
 				return Action.Reset;
 			} else if ( Bowl21Awarded() ) {
 				return Action.Tidy;
@@ -74,6 +72,6 @@ public class ActionMaster {
 	}
 
 	private bool Bowl21Awarded () {
-		return (bowls [19-1] + bowls [20-1] >= 10);
+		return (bowls [19] + bowls [20] >= 10);
 	}
 }

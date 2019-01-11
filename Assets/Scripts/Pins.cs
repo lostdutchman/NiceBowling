@@ -67,7 +67,11 @@ public class Pins : MonoBehaviour {
         {
             return false;
         }
-        else return true;
+        else
+        {
+            PinStatus = "HasTilted";
+            return true;
+        }
     }
 
     void OnCollisionEnter(Collision col){
@@ -90,7 +94,7 @@ public class Pins : MonoBehaviour {
     //fix issues cause by nice bowling mode
     public void DefaultPins()
     {
-        if (this.tag != "WasStuck")
+        if (this.tag != "WasStuck" && PinStatus != "HasTilted")
         {
             if (rigidBody.isKinematic)
             {
@@ -123,6 +127,19 @@ public class Pins : MonoBehaviour {
         else if (PinStatus == "NoGravity")
         {
             rigidBody.useGravity = false;
+        }
+    }
+
+    public void MarkEndTurnPins()
+    {
+        PinStatus = "HasTilted";
+    }
+
+    public void KillEndTurnPins()
+    {
+        if(PinStatus == "HasTilted")
+        {
+            Destroy(this.gameObject);
         }
     }
 }

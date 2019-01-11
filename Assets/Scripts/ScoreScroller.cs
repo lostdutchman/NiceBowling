@@ -28,7 +28,7 @@ public class ScoreScroller : MonoBehaviour {
             frames++;
         }
 
-        if (frames < 3)
+        if (frames < 3 || frames > 9)
         {
             //Do nothing
         }
@@ -40,7 +40,6 @@ public class ScoreScroller : MonoBehaviour {
         {
             StartCoroutine(MoveToPosition(MoveDist, LerpTime, playerIndex));
         }
-        print("____________________________________________________");
     }
     public IEnumerator MoveToPosition(float move, float timeToMove, int playerIndex)
     {
