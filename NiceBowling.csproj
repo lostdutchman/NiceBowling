@@ -149,6 +149,7 @@
     <Compile Include="Assets\Scripts\UIAnimation.cs" />
     <Compile Include="Assets\Scripts\UIExpand.cs" />
     <Compile Include="Assets\Scripts\UIFade.cs" />
+    <Compile Include="Assets\Scripts\UIScrollRect.cs" />
     <Compile Include="Assets\Scripts\UISprite.cs" />
     <Compile Include="Assets\colorblind\ColorBlindFilter.cs" />
   </ItemGroup>
