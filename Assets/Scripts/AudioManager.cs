@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-	public void ChangeMasterVolume()
+    public void ChangeMasterVolume()
 	{
         int value = 0;
 
