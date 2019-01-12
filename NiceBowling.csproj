@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\JellyBall.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\LocalMultiplayer.cs" />
+    <Compile Include="Assets\Scripts\Menus.cs" />
     <Compile Include="Assets\Scripts\Mine.cs" />
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\NiceBowling.cs" />
