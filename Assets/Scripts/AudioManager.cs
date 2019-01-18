@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour {
 
     public Slider mainSlider, masterSlider, musicSlider, sfxSlider;
     public AudioMixer masterMixer;
-    public GameObject Menu, SoundMenu;
+    public GameObject OptionsMenu, SoundMenu;
+    public UIFade AudioMenuFade, OptionsMenuFade;
+    private float UIFadeTime;
+    public Menus MenuScript;
 
     // Use this for initialization
     void Start() {
@@ -26,6 +30,7 @@ public class AudioManager : MonoBehaviour {
         masterSlider.value = ConvertMasterVolume(PlayerPrefsManager.GetMasterVolume());
         musicSlider.value = ConvertVolume(PlayerPrefsManager.GetMusicVolume());
         sfxSlider.value = ConvertVolume(PlayerPrefsManager.GetSFXVolume());
+        UIFadeTime = AudioMenuFade.fadeTime;
     }
 
     private float ConvertMasterVolume(float volume)
@@ -62,16 +67,34 @@ public class AudioManager : MonoBehaviour {
     {
         if (SoundMenu.activeSelf)
         {
-            SoundMenu.SetActive(false);
-            Menu.SetActive(true);
-            mainSlider.value = ConvertMasterVolume(PlayerPrefsManager.GetMasterVolume());
+            StartCoroutine(FadeToOptions());
         }
         else
         {
-            SoundMenu.SetActive(true);
-            Menu.SetActive(false);
-            masterSlider.value = ConvertMasterVolume(PlayerPrefsManager.GetMasterVolume());
+            StartCoroutine(FadeToAudio());
         }
+    }
+
+    public IEnumerator FadeToAudio()
+    {
+        StartCoroutine(OptionsMenuFade.FadeOut());
+        yield return new WaitForSecondsRealtime(UIFadeTime);
+        OptionsMenu.SetActive(false);
+        SoundMenu.SetActive(true);
+        MenuScript.ResetMenuSize();
+        masterSlider.value = ConvertMasterVolume(PlayerPrefsManager.GetMasterVolume());
+        StartCoroutine(AudioMenuFade.FadeIn());
+    }
+
+    public IEnumerator FadeToOptions()
+    {
+        StartCoroutine(AudioMenuFade.FadeOut());
+        yield return new WaitForSecondsRealtime(UIFadeTime);
+        SoundMenu.SetActive(false);
+        OptionsMenu.SetActive(true);
+        MenuScript.ResetMenuSize();
+        mainSlider.value = ConvertMasterVolume(PlayerPrefsManager.GetMasterVolume());
+        StartCoroutine(OptionsMenuFade.FadeIn());
     }
 
     public void ChangeMasterVolume()

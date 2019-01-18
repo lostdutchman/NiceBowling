@@ -43,7 +43,7 @@ public class UIFade : MonoBehaviour {
     {
         while (canvas.alpha > 0.0f)
         {
-            canvas.alpha += (Time.deltaTime / fadeTime);
+            canvas.alpha -= (Time.deltaTime / fadeTime);
             yield return null;
         }
     }

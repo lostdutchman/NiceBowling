@@ -13,5 +13,10 @@ public class UIExpand : MonoBehaviour {
     {
         transform.localScale -= new Vector3(sizeDecrease, sizeDecrease, sizeDecrease);
     }
+}
 
+public class UIExpandableObjects
+{
+    public GameObject Object { get; set; }
+    public Vector3 LocalScale { get; set; }
 }

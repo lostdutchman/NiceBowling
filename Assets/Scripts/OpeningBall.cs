@@ -24,7 +24,7 @@ public class OpeningBall : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if(Time.timeSinceLevelLoad >= MenuTimeDelay){
+		if(Time.timeSinceLevelLoad >= MenuTimeDelay && Splash.activeSelf){
             StartCoroutine(menu.FadeIn());
             Splash.SetActive(false);
 		}
