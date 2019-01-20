@@ -24,7 +24,8 @@ public class LevelManager : MonoBehaviour {
 		SceneManager.LoadScene(name);
 	}	
 	
-	public void LoadNice(){
+	public void LoadNice(int players){
+        PlayerPrefsManager.SetGameMode(players);
 		SceneManager.LoadScene("Game");
 	}
 

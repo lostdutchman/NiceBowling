@@ -128,6 +128,7 @@
     <Compile Include="Assets\Scripts\LocalMultiplayer.cs" />
     <Compile Include="Assets\Scripts\Menus.cs" />
     <Compile Include="Assets\Scripts\Mine.cs" />
+    <Compile Include="Assets\Scripts\ModeSelect.cs" />
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\NiceBowling.cs" />
     <Compile Include="Assets\Scripts\NiceBowlingReset.cs" />

@@ -17,12 +17,15 @@ public class LocalMultiplayer : MonoBehaviour {
 
 
 	void Start () {
+        //Gets number of players (0 = online multiplayer)
+        numberOfPlayers = PlayerPrefsManager.GetGameMode();
+
         //Initiate Score cards
         for (int i = 1; i <= numberOfPlayers; i++)
         {
             var player = new PlayerScores();
             player.player = i;
-            player.playerName = "Player " + i;
+            player.playerName = PlayerPrefsManager.GetPlayerName(i);
             player.bowls = new List<int>();
             player.bowlTexts = new Text[21];
             player.frameTexts = new Text[10];

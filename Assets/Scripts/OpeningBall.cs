@@ -9,7 +9,7 @@ public class OpeningBall : MonoBehaviour {
 	private UIFade menu;
 	private float MenuTimeDelay;
     private GameObject Splash;
-
+    private bool SplashExists = true;
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody>();
@@ -19,15 +19,25 @@ public class OpeningBall : MonoBehaviour {
 		rigidBody.transform.position = new Vector3 (Random.Range(-10, 10), yPos, zPos);
 		ThrowBall ();
         MenuTimeDelay = GameObject.FindObjectOfType<MusicPlayer>().MenuTimeDelay + .5f; //.5f for the splash screen fade time
-        Splash = GameObject.FindObjectOfType<PanelFade>().gameObject;
+        try {
+            Splash = GameObject.FindObjectOfType<PanelFade>().gameObject;
+        }
+        catch
+        {
+            SplashExists = false; 
+        }
     }
 
     // Update is called once per frame
     void Update () {
-		if(Time.timeSinceLevelLoad >= MenuTimeDelay && Splash.activeSelf){
-            StartCoroutine(menu.FadeIn());
-            Splash.SetActive(false);
-		}
+        if (SplashExists)
+        {
+            if (Time.timeSinceLevelLoad >= MenuTimeDelay && Splash.activeSelf)
+            {
+                StartCoroutine(menu.FadeIn());
+                Splash.SetActive(false);
+            }
+        }
 	}
 	
 	public void ThrowBall ()

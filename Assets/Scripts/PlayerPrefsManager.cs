@@ -2,17 +2,79 @@
 using System.Collections;
 
 public class PlayerPrefsManager : MonoBehaviour {
-	
-	const string MASTER_VOLUME = "master_volume";
+
+    const string MASTER_VOLUME = "master_volume";
     const string MUSIC_VOLUME = "music_volume";
     const string SFX_VOLUME = "sfx_volume";
-    const string HIGH_SCORE = "high_score";
+    const string GAME_MODE = "game_mode";
 
-	public static void SetMasterVolume (float volume){
+    public static void SetGameMode(int players)
+    {
+        //0 = online, 1-6 is number of players local.
+        if (players >= 0 && players < 7)
+        {
+            PlayerPrefs.SetInt(GAME_MODE, players);
+        }
+        else
+        {
+            Debug.LogError("Number of players is out of range " + players.ToString());
+        }
+    }
+
+    public static int GetGameMode()
+    {
+        if (PlayerPrefs.HasKey(GAME_MODE))
+        {
+            return PlayerPrefs.GetInt(GAME_MODE);
+        }
+        else
+        {
+            SetGameMode(1);
+            return 1;
+        }
+    }
+
+    public static void SetPlayerName(int player, string name)
+    {
+        if (player > 0 && player < 7)
+        {
+            if (name.Length > 0)
+            {
+                PlayerPrefs.SetString("player_" + player, name.Remove(8));
+            }
+            else
+            {
+                PlayerPrefs.SetString("player_" + player, "PLAYER " + player);
+            }
+        }
+        else
+        {
+            Debug.Log("Player number invalid " + player + " " + name);
+        }
+    }
+
+    public static string GetPlayerName(int player)
+    {
+        if (player > 0 && player < 7)
+        {
+            if(!PlayerPrefs.HasKey("player_" + player))
+            {
+                SetPlayerName(player, "PLAYER " + player);
+            }
+            return PlayerPrefs.GetString("player_" + player);
+        }
+        else
+        {
+            Debug.Log("Invalid player number " + player);
+            return "Player " + player;
+        }
+    }
+
+    public static void SetMasterVolume (float volume){
 	if ((volume >= -80f) && (volume <= 0f)){
 		PlayerPrefs.SetFloat (MASTER_VOLUME,volume);
 		}else{
-		Debug.LogError ("Master volume out of range" + volume.ToString());
+		Debug.LogError ("Master volume out of range " + volume.ToString());
 		}
 	}
 	
@@ -28,7 +90,7 @@ public class PlayerPrefsManager : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("Music volume out of range" + volume.ToString());
+            Debug.LogError("Music volume out of range " + volume.ToString());
         }
     }
 
@@ -45,7 +107,7 @@ public class PlayerPrefsManager : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("SFX volume out of range" + volume.ToString());
+            Debug.LogError("SFX volume out of range " + volume.ToString());
         }
     }
 
@@ -53,12 +115,4 @@ public class PlayerPrefsManager : MonoBehaviour {
     {
         return PlayerPrefs.GetFloat(SFX_VOLUME);
     }
-
-    public static void SetHighScore(int highscore){
-		PlayerPrefs.SetInt (HIGH_SCORE, highscore);
-	}
-	
-	public static int GetHighScore(){
-		return PlayerPrefs.GetInt (HIGH_SCORE);
-	}
 }
