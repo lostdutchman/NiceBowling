@@ -110,6 +110,7 @@
     <Compile Include="Assets\RetroAesthetics\Shaders\Post-processing\RetroCameraEffect.cs" />
     <Compile Include="Assets\Scripts\ActionMaster.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\AudioManagerGame.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\BallCatcher.cs" />
     <Compile Include="Assets\Scripts\BilliardBall.cs" />

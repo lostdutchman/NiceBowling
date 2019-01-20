@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Menus : MonoBehaviour {
 
-    public GameObject Menu, OptionsMenu, SoundMenu;
+    public GameObject Menu, OptionsMenu;
     public UIFade MainMenuFade, OptionsMenuFade;
     private float UIFadeTime;
     public List<GameObject> ExpandableMenuItems;
@@ -23,8 +23,6 @@ public class Menus : MonoBehaviour {
             };
             MenuItems.Add(Temp);
         }
-        OptionsMenu.SetActive(false);
-        SoundMenu.SetActive(false);
     }
 
     public void ToggleOptionsMenu()

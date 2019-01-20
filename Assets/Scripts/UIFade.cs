@@ -14,6 +14,10 @@ public class UIFade : MonoBehaviour {
     void Start()
     {
         canvas = GetComponent<CanvasGroup>();
+        if(this.gameObject.name != "Main Menu")
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
