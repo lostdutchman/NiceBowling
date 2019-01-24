@@ -8,6 +8,7 @@ public class ModeSelect : MonoBehaviour {
     public Slider Mode;
     public Shadow Online, Local;
     public InputField[] inputFields;
+    public LevelManager levelManager;
 
     // Use this for initialization
     void Start () {
@@ -23,11 +24,6 @@ public class ModeSelect : MonoBehaviour {
             Local.enabled = true;
         }
         Mode.value = previousMode;
-        //for(int i = previousPlayers; i < inputFields.Length + 1; i++)
-        //{
-        //    Debug.Log("Initializing:" + (i - 1));
-        //    inputFields[i - 1].gameObject.SetActive(false);
-        //}
     }
 	
     public void ToggleMode(float value)
@@ -64,19 +60,69 @@ public class ModeSelect : MonoBehaviour {
 
     public void AddPlayer()
     {
-        numberOfPlayers++;
-        for (int i = 0; i < numberOfPlayers; i++)
+        if (numberOfPlayers < 6)
         {
-            inputFields[i].gameObject.SetActive(true);
+            numberOfPlayers++;
+            for (int i = 0; i < numberOfPlayers; i++)
+            {
+                inputFields[i].gameObject.SetActive(true);
+            }
         }
     }
 
     public void RemovePlayer()
     {
-        numberOfPlayers--;
-        for (int i = numberOfPlayers + 1; i < inputFields.Length + 1; i++)
+        Debug.Log("About to remove, current player value = " + numberOfPlayers);
+        if(numberOfPlayers > 1)
         {
-            inputFields[i - 1].gameObject.SetActive(false);
+            numberOfPlayers--;
+            for (int i = numberOfPlayers + 1; i < inputFields.Length + 1; i++)
+            {
+                inputFields[i - 1].gameObject.SetActive(false);
+            }
         }
+    }
+
+    public void Play()
+    {
+        if(Mode.value == 0)
+        {
+            levelManager.LoadNice(0);
+        }
+        else
+        {
+            levelManager.LoadNice(numberOfPlayers);
+        }
+    }
+
+    //This is some shit code but unity wont let me pass 2 variables at once with InputFeild so this is my only way to know which input feild the name string came from.. Well this is the easiest way and isnt that what I shoud do as a programmer...
+    public void Player1NameChange(string name)
+    {
+        PlayerPrefsManager.SetPlayerName(1, name);
+    }
+
+    public void Player2NameChange(string name)
+    {
+        PlayerPrefsManager.SetPlayerName(2, name);
+    }
+
+    public void Player3NameChange(string name)
+    {
+        PlayerPrefsManager.SetPlayerName(3, name);
+    }
+
+    public void Player4NameChange(string name)
+    {
+        PlayerPrefsManager.SetPlayerName(4, name);
+    }
+
+    public void Player5NameChange(string name)
+    {
+        PlayerPrefsManager.SetPlayerName(5, name);
+    }
+
+    public void Player6NameChange(string name)
+    {
+        PlayerPrefsManager.SetPlayerName(6, name);
     }
 }
