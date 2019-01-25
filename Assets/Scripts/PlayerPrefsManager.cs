@@ -40,9 +40,13 @@ public class PlayerPrefsManager : MonoBehaviour {
         {
             if (name.Length > 0)
             {
-                if (name.Length > 9)
+                if (name.Length > 8)
                 {
-                    PlayerPrefs.SetString("player_" + player, name.Remove(8));
+                    PlayerPrefs.SetString("player_" + player, name.Remove(7));
+                }
+                else
+                {
+                    PlayerPrefs.SetString("player_" + player, name);
                 }
             }
             else

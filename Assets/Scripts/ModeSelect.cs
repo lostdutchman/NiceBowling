@@ -8,11 +8,13 @@ public class ModeSelect : MonoBehaviour {
     public Slider Mode;
     public Shadow Online, Local;
     public InputField[] inputFields;
+    public Text[] placeholders;
     public LevelManager levelManager;
 
     // Use this for initialization
     void Start () {
         previousPlayers = PlayerPrefsManager.GetGameMode();
+        LoadPlaceholderText();
         if(previousPlayers == 0)
         {
             previousMode = 0;
@@ -24,6 +26,14 @@ public class ModeSelect : MonoBehaviour {
             Local.enabled = true;
         }
         Mode.value = previousMode;
+    }
+
+    private void LoadPlaceholderText()
+    {
+        for(int i = 0; i < 6; i++)
+        {
+            placeholders[i].text = PlayerPrefsManager.GetPlayerName(i + 1);
+        }
     }
 	
     public void ToggleMode(float value)
