@@ -14,13 +14,13 @@ public class PlayerScores{
         }
         set
         {
-            if (value.Length < 10)
+            if (value.Length < 8)
             {
                 _playerName = value;
             }
             else
             {
-                _playerName = value.Substring(0, 9);
+                _playerName = value.Substring(0, 7);
             }
         }
     }

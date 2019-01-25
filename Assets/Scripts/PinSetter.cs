@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public class PinSetter : MonoBehaviour {
 	
@@ -14,6 +15,7 @@ public class PinSetter : MonoBehaviour {
 	public GameObject Resume, Swipper, TouchInput;
     public ScoreScroller scoreScroller;
 	public bool GameOver, StartGame;
+    public HighScores highScores;
 
 	private AudioSource audioSource;
 	private NiceBowling niceBowling;
@@ -86,7 +88,7 @@ public class PinSetter : MonoBehaviour {
 		case ActionMaster.Action.Tidy: animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.Reset: StartCoroutine(KillRemainingPins()); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.EndTurn: StartCoroutine(KillRemainingPins()); niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); EndTurn = true; break;
-		case ActionMaster.Action.EndGame: StartCoroutine(GameEndButton()); break;
+		case ActionMaster.Action.EndGame: EndGame(); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
 	}
@@ -103,6 +105,26 @@ public class PinSetter : MonoBehaviour {
 
 		audioSource.Play();
 	}
+
+    private void EndGame()
+    {
+        //add single player check
+        List<HighScores> playerScores = new List<HighScores>();
+        for(int i = 1; i <= multiplayer.numberOfPlayers; i++)
+        {
+            HighScores temp = new HighScores();
+            int tempScore = 0;
+            foreach(int bowl in multiplayer.scoreCard[i].bowls)
+            {
+                tempScore += bowl;
+            }
+            temp.Score = tempScore;
+            temp.PlayerScore = multiplayer.scoreCard[i];
+            playerScores.Add(temp);
+        }
+        highScores.SetHighScore(playerScores);
+        StartCoroutine(GameEndButton());
+    }
 
     private IEnumerator GameEndButton(){
         yield return new WaitForSecondsRealtime(1.5f);

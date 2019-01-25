@@ -46,7 +46,6 @@ public class ScoreDisplay : MonoBehaviour {
             {
                 multiplayer.scoreCard[index].frameTexts[i].text = frames[i].ToString();
             }
-            ScoreMaster.endScore = frames[i];
 		}
     }
 

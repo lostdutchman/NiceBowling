@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public static class ScoreMaster {
 
-	public static int endScore;
-
 	//Returns a cumulitive list of scores
 	public static List<int> ScoreCumulative (List<int> Bowls){
 		List<int> cumulativeScores = new List<int>();
