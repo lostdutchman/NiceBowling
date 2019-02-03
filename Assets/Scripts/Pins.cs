@@ -94,22 +94,25 @@ public class Pins : MonoBehaviour {
     //fix issues cause by nice bowling mode
     public void DefaultPins()
     {
-        if (this.tag != "WasStuck" && PinStatus != "HasTilted")
+        if (this.tag != "WasStuck")
         {
             if (rigidBody.isKinematic)
             {
                 rigidBody.isKinematic = false;
-                PinStatus = "BoardwalkPins";
+                if(PinStatus != "HasTilted")
+                    PinStatus = "BoardwalkPins";
             }
             else if (rigidBody.drag != 0)
             {
                 rigidBody.drag = 0;
                 rigidBody.angularDrag = 0.05f;
-                PinStatus = "IncreasePinDrag";
+                if (PinStatus != "HasTilted")
+                    PinStatus = "IncreasePinDrag";
             }
             else if (rigidBody.useGravity == false)
             {
-                PinStatus = "NoGravity";
+                if (PinStatus != "HasTilted")
+                    PinStatus = "NoGravity";
             }
         }
     }

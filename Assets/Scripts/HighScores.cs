@@ -1,19 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class HighScores {
+[System.Serializable]
+public class HighScores{
 
     public int Score { get; set; }
-    public PlayerScores PlayerScore { get; set; }
-    private List<HighScores> highScores;
+    public List<int> bowls { get; set; }
+    public string playerName { get; set; }
 
     public bool CheckForHighScoreSinglePlayer(int score)
     {
-        GetHighScores();
+        List<HighScores> highScores = GetHighScores();
         if(highScores.Count < 10)
         {
             return true;
@@ -33,21 +33,21 @@ public class HighScores {
 
     public void ListHighScores()
     {
-        GetHighScores();
-        foreach(var HS in highScores)
+        List<HighScores> highScores = GetHighScores();
+        foreach (var HS in highScores)
         {
-            Debug.Log("HighScores: " + HS.Score + " " + HS.PlayerScore.playerName);
+            Debug.Log("HighScores: " + HS.Score + " " + HS.playerName);
         }
     }
 
     public void SetHighScore(List<HighScores> playerScores)
     {
-        GetHighScores();
+        List<HighScores> highScores = GetHighScores();
         foreach(var player in playerScores)
         {
             highScores.Add(player);
         }
-        List<HighScores> SortedHighScores = highScores.OrderBy(o=>o.Score).ToList();
+        List<HighScores> SortedHighScores = highScores.OrderByDescending(o=>o.Score).ToList();
         if(highScores.Count > 10)
         {
             highScores = SortedHighScores.GetRange(0, 9);
@@ -56,25 +56,37 @@ public class HighScores {
         {
             highScores = SortedHighScores;
         }
-        SaveHighScores();
+        SaveHighScores(highScores);
     }
 
-    private void GetHighScores()
+    private List<HighScores> GetHighScores()
     {
-        FileStream fs = new FileStream("hs.dat", FileMode.Create);
+        List<HighScores> highScores = new List<HighScores>();
+        try
+        {
+            using (Stream stream = File.Open(Application.persistentDataPath + @"/Assets/hs.dat", FileMode.Open))
+            {
+                var bformatter = new BinaryFormatter();
+                highScores = (List<HighScores>)bformatter.Deserialize(stream);
+            }
+        }
+        catch
+        {
+            Debug.Log("Failed to read " + Application.persistentDataPath + @"/Assets/hs.dat");
+        }
+        return highScores;
+    }
+
+    private void SaveHighScores(List<HighScores> highScores)
+    {
+        if (!Directory.Exists(Application.persistentDataPath + @"/Assets"))
+        {
+            System.IO.Directory.CreateDirectory(Application.persistentDataPath + @"/Assets");
+        }
+        FileStream fs = new FileStream(Application.persistentDataPath + @"/Assets/hs.dat", FileMode.Create);
         BinaryFormatter bf = new BinaryFormatter();
         bf.Serialize(fs, highScores);
         fs.Close();
-    }
-
-    private void SaveHighScores()
-    {
-        using (Stream stream = File.Open("hs.dat", FileMode.Open))
-        {
-            var bformatter = new BinaryFormatter();
-
-            highScores = (List<HighScores>)bformatter.Deserialize(stream);
-        }
     }
 }
 

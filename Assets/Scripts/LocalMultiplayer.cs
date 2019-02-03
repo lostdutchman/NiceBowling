@@ -15,8 +15,7 @@ public class LocalMultiplayer : MonoBehaviour {
     private Text currentPlayerName;
     int currentPlayer = 1;
 
-
-	void Start () {
+    void Start () {
         //Gets number of players (0 = online multiplayer)
         numberOfPlayers = PlayerPrefsManager.GetGameMode();
 

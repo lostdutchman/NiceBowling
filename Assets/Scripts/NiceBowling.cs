@@ -24,7 +24,7 @@ public class NiceBowling : MonoBehaviour {
         int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         List<string> Effects = Effect(NiceRandom);
-        ////For video and promotional work and testing effects
+        //For video and promotional work and testing effects
         //List<string> Effects = new List<string>();
         //switch (i)
         //{
@@ -205,10 +205,14 @@ public class NiceBowling : MonoBehaviour {
     {
         foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
         {
-            Rigidbody body = pin.GetComponent<Rigidbody>();
-            body.isKinematic = true;
+            if(Random.Range(1, 5) == 2)
+            {
+                Rigidbody body = pin.GetComponent<Rigidbody>();
+                body.isKinematic = true;
+                return ("Cheater Pin!");
+            }
         }
-        return ("Cheater Pins!");
+        return ("");
     }
 
 	public string IncreasePinDrag(){

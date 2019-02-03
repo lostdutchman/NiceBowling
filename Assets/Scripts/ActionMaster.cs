@@ -5,9 +5,9 @@ public class ActionMaster {
 	public enum Action {Tidy, Reset, EndTurn, EndGame};
 
 	private int[] bowls = new int[21];
-	private int[] playerBowl = new int[6] {1, 1, 1, 1, 1, 1 };
+	private int bowl = 1;
 
-	public static Action NextAction (List<int> pinfFalls, int index, int currentPlayer, int numberOfPlayers) {
+    public static Action NextAction (List<int> pinfFalls, int index, int currentPlayer, int numberOfPlayers) {
 		ActionMaster am = new ActionMaster ();
 		Action currentAction = new Action ();
 
@@ -17,6 +17,15 @@ public class ActionMaster {
             isLastTurn = true;
         }
 
+        //Debug.Log(":::::Action Master Data:::::");
+        //Debug.Log("Index: " + index + " IsLastTurn: " + isLastTurn.ToString());
+        //string debug = "";
+        //foreach (var number in pinfFalls)
+        //{
+        //    debug += number + ", ";
+        //}
+        //Debug.Log("Pins:" + debug);
+        //Debug.Log("=======================================================");
         foreach (int pinFall in pinfFalls) {
 			currentAction = am.Bowl (pinFall, index, isLastTurn);
 		}
@@ -24,22 +33,37 @@ public class ActionMaster {
 	}
 
     private Action Bowl (int pins, int index, bool isLastTurn) {
-		if (pins < 0 || pins > 10) {Debug.Log ("Invalid pins passed to ActionMaster.Bowl"); pins = 0;}
-		bowls [playerBowl[index]] = pins;
+        if (pins < 0 || pins > 10) {Debug.Log ("Invalid pins passed to ActionMaster.Bowl" + pins); pins = 0;}
 
-        if (playerBowl[index] == 21) {
-            return Action.EndGame;
-		}
+		bowls [bowl - 1] = pins;
+        //string debug = "";
+        //foreach (var number in bowls)
+        //{
+        //    debug += number + ", ";
+        //}
+        //Debug.Log("bowls:" + debug);
+        //Debug.Log("bowl:" + bowl);
+
+        if (bowl == 21) {
+            if (isLastTurn)
+            {
+                return Action.EndGame;
+            }
+            else
+            {
+                return Action.EndTurn;
+            }
+        }
 
 		// Handle last-frame special cases
-		if (playerBowl[index] >= 19 && pins == 10 ){
-            playerBowl[index]++;
+		if (bowl >= 19 && pins == 10 ){
+            bowl++;
 			return Action.Reset;
-		} else if (playerBowl[index] == 20 ) {
-            playerBowl[index]++;
-			if (bowls[19]==10 && bowls[20]==0) {
+		} else if (bowl == 20 ) {
+            bowl++;
+			if (bowls[19 - 1]==10 && bowls[20 - 1]==0) {
 				return Action.Tidy;
-			} else if (bowls[19] + bowls[20] == 10) {
+			} else if (bowls[19 - 1] + bowls[20 - 1] == 10) {
 				return Action.Reset;
 			} else if ( Bowl21Awarded() ) {
 				return Action.Tidy;
@@ -55,16 +79,16 @@ public class ActionMaster {
 			}
 		}
 
-		if (playerBowl[index] % 2 != 0) { // First bowl of frame
+		if (bowl % 2 != 0) { // First bowl of frame
 			if (pins == 10) {
-                playerBowl[index] += 2;
+                bowl += 2;
 				return Action.EndTurn;
 			} else {
-                playerBowl[index] += 1;
+                bowl += 1;
 				return Action.Tidy;
 			}
-		} else if (playerBowl[index] % 2 == 0) { // Second bowl of frame
-            playerBowl[index] += 1;
+		} else if (bowl % 2 == 0) { // Second bowl of frame
+            bowl += 1;
 			return Action.EndTurn;
 		}
 
@@ -72,6 +96,6 @@ public class ActionMaster {
 	}
 
 	private bool Bowl21Awarded () {
-		return (bowls [19] + bowls [20] >= 10);
+		return (bowls [19-1] + bowls [20-1] >= 10);
 	}
 }

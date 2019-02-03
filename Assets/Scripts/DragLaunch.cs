@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 [RequireComponent(typeof(Ball))]
 public class DragLaunch : MonoBehaviour {
@@ -24,6 +25,8 @@ public class DragLaunch : MonoBehaviour {
     private AudioSource Audio;
     public float ArrowAnimationSize;
     public float ArrowStartSize;
+    public bool AI, AITriggered;
+    public GameObject TouchInput;
 
     //Handicap Variables
     [Tooltip("1 = no handicap 1.6 = old handicap")]
@@ -34,13 +37,22 @@ public class DragLaunch : MonoBehaviour {
     void Start () {
 		ball = GetComponent<Ball>();
         Audio = ball.GetComponent<AudioSource>();
+        AITriggered = false;
 	}
 
     //Allow user to hold to continuasly adjust aim
     private void Update()
     {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
-        if (rightAim || leftAim)
+        if (AI && !AITriggered)
+        {
+            if (TouchInput.activeSelf)
+            {
+                AITriggered = true;
+                StartCoroutine(AILaunch(childBall));
+            }
+        }
+        else if (rightAim || leftAim)
         {            
             if (!ball.inPlay)
             {
@@ -62,7 +74,27 @@ public class DragLaunch : MonoBehaviour {
         }
     }
 
+    private IEnumerator AILaunch(GameObject childBall)
+    {
+        if (!ball.inPlay)
+        {
+            //yield return new WaitForSecondsRealtime(UnityEngine.Random.Range(.3f, 1.3f));
+            //This needs to be slower to make it seem like a person.
+            //float xPos = UnityEngine.Random.Range(-10, 10);
+            //float yPos = childBall.transform.position.y;
+            //float zPos = childBall.transform.position.z;
+            //childBall.transform.position = new Vector3(xPos, yPos, zPos);
+            //yield return new WaitForSecondsRealtime(1f);
 
+            float launchSpeedX = UnityEngine.Random.Range(-20, 21);
+            float launchSpeedZ = UnityEngine.Random.Range(400, 1500);
+            float Curve = UnityEngine.Random.Range(-10, 11);
+            //Debug.Log("X:" + launchSpeedX + " Z:" + launchSpeedZ + " C:" + Curve);
+            ball.Launch(new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ), Curve);
+        }
+        yield return new WaitForSecondsRealtime(1f);
+        AITriggered = false;
+    }
 
     public void OnPointerDownAdjust(string direction)
     {
@@ -126,7 +158,7 @@ public class DragLaunch : MonoBehaviour {
 			float launchSpeedX = ((endPos.x - startPos.x) + (AverageX - startPos.x) / dragDuration) / MakeAimEasier; //I devided it by 1.2 to keep it easier to bowl straight.
             float Curve = CalculateCurve(launchSpeedX);
             float launchSpeedZ = ((endPos.y - startPos.y) / dragDuration) / SlowDown;
-            if(launchSpeedZ > 3000) { launchSpeedZ = 2800; }
+            if(launchSpeedZ > 2500) { launchSpeedZ = 2000; }
             if (launchSpeedZ < 200) { launchSpeedZ = 0; }
 
             DragPointsX.Clear();
@@ -135,6 +167,7 @@ public class DragLaunch : MonoBehaviour {
             if (launchSpeedZ < minLaunchSpeed){
                 ball.TryAgain();
 			} else {
+                Debug.Log(launchSpeedZ + "  -  " + Curve);
 			ball.Launch (new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ), Curve);
 			}
 		}

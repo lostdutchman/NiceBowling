@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 
 public class PinSetter : MonoBehaviour {
-	
-	public GameObject pinSet;
+
+    public GameObject pinSet;
 	public AudioClip[] strikeAudio;
 	public AudioClip[] spareAudio;
 	public AudioClip[] turkeyAudio;
@@ -15,9 +15,9 @@ public class PinSetter : MonoBehaviour {
 	public GameObject Resume, Swipper, TouchInput;
     public ScoreScroller scoreScroller;
 	public bool GameOver, StartGame;
-    public HighScores highScores;
 
-	private AudioSource audioSource;
+    private HighScores highScores = new HighScores();
+    private AudioSource audioSource;
 	private NiceBowling niceBowling;
     private NiceBowlingReset niceBowlingReset;
 	private Animator animator;
@@ -38,6 +38,7 @@ public class PinSetter : MonoBehaviour {
         niceBowlingReset = GameObject.FindObjectOfType<NiceBowlingReset>();
         Swipper.SetActive (false);
         Menu = FindObjectOfType<GameManager>();
+        highScores.ListHighScores();
         }
 
     public void Update()
@@ -88,7 +89,7 @@ public class PinSetter : MonoBehaviour {
 		case ActionMaster.Action.Tidy: animator.SetTrigger("tidyTrigger"); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.Reset: StartCoroutine(KillRemainingPins()); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); EndTurn = false; break;
 		case ActionMaster.Action.EndTurn: StartCoroutine(KillRemainingPins()); niceBowlingReset.Reset(); animator.SetTrigger("resetTrigger"); pinCounter.Reset(); Swipper.SetActive (true); TouchInput.SetActive (false); ScrollScore(); EndTurn = true; break;
-		case ActionMaster.Action.EndGame: EndGame(); break;
+		case ActionMaster.Action.EndGame: StartCoroutine(EndGame()); break;
 		default: Debug.Log ("Pinsetter.PinsHaveSettled recived invalid input from ActionMaster"); break;
 		}
 	}
@@ -106,11 +107,13 @@ public class PinSetter : MonoBehaviour {
 		audioSource.Play();
 	}
 
-    private void EndGame()
+    private IEnumerator EndGame()
     {
         //add single player check
+        yield return new WaitForSecondsRealtime(.5f);
+        Debug.Log("End Game Triggered");
         List<HighScores> playerScores = new List<HighScores>();
-        for(int i = 1; i <= multiplayer.numberOfPlayers; i++)
+        for(int i = 0; i <= multiplayer.numberOfPlayers - 1; i++)
         {
             HighScores temp = new HighScores();
             int tempScore = 0;
@@ -118,8 +121,9 @@ public class PinSetter : MonoBehaviour {
             {
                 tempScore += bowl;
             }
+            temp.bowls = multiplayer.scoreCard[i].bowls;
             temp.Score = tempScore;
-            temp.PlayerScore = multiplayer.scoreCard[i];
+            temp.playerName = multiplayer.scoreCard[i].playerName;
             playerScores.Add(temp);
         }
         highScores.SetHighScore(playerScores);
@@ -127,7 +131,7 @@ public class PinSetter : MonoBehaviour {
     }
 
     private IEnumerator GameEndButton(){
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1f);
         Menu.ToggleMenu();
         Resume.SetActive(false);
 		TouchInput.SetActive (false);
