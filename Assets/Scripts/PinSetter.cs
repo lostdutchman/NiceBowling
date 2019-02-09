@@ -110,7 +110,6 @@ public class PinSetter : MonoBehaviour {
     {
         //add single player check
         yield return new WaitForSecondsRealtime(.5f);
-        Debug.Log("End Game Triggered");
         List<HighScores> playerScores = new List<HighScores>();
         for(int i = 0; i <= multiplayer.numberOfPlayers - 1; i++)
         {

@@ -14,10 +14,11 @@ public class PanelFade : MonoBehaviour {
     // Use this for initialization
     void Start () {
         MenuTimeDelay = GameObject.FindObjectOfType<MusicPlayer>().MenuTimeDelay;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        Time.timeScale = 1;
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (!Splashed && (Time.timeSinceLevelLoad >= MenuTimeDelay))
         {
             Fade();

@@ -16,7 +16,7 @@ public class ScoreDisplay : MonoBehaviour {
 	public void FillBowls (List<int> bowls){
 		string scoreString = FormatBowls (bowls);
         int index = multiplayer.GetCurrentPlayer() - 1;
-        for (int i = 0; i < scoreString.Length - 1; i++)
+        for (int i = 0; i < scoreString.Length; i++)
         {
             multiplayer.scoreCard[index].bowlTexts[i].text = scoreString[i].ToString();
             if (i == scoreString.Length - 1)

@@ -24,21 +24,21 @@ public class NiceBowling : MonoBehaviour {
         int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
         int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         List<string> Effects = Effect(NiceRandom);
-        //For video and promotional work and testing effects
+        ////For video and promotional work and testing effects
         //List<string> Effects = new List<string>();
         //switch (i)
         //{
-        //    case 1: Effects.Add(DifferentPins()); Effects.Add(PinMove()); break;
-        //    case 2: Effects.Add(PinMove()); Effects.Add(DifferentBall()); break;
-        //    case 3: Effects.Add(DifferentPins()); Effects.Add(PinMove()); break;
-        //    case 4: Effects.Add(PinMove()); Effects.Add(DifferentBall()); break;
-        //    case 5: Effects.Add(PinMove()); break;
-        //    case 6: Effects.Add(PinMove()); break;
-        //    case 7: Effects.Add(PinMove()); break;
-        //    case 8: Effects.Add(PinMove()); break;
-        //    case 9: Effects.Add(PinMove()); break;
-        //    case 10: Effects.Add(PinMove()); break;
-        //    case 11: Effects.Add(PinMove()); break;
+        //    case 1: Effects.Add(LandMine()); Effects.Add(SardineRain()); break;
+        //    case 2: Effects.Add(LandMine()); Effects.Add(SardineRain()); break;
+        //    case 3: Effects.Add(LandMine()); Effects.Add(AddPinsx6()); break;
+        //    case 4: Effects.Add(LandMine()); Effects.Add(AddPinsx6()); break;
+        //    case 5: Effects.Add(LandMine()); Effects.Add(Billiards()); break;
+        //    case 6: Effects.Add(LandMine()); Effects.Add(Billiards()); break;
+        //    case 7: Effects.Add(LandMine()); Effects.Add(CubeWall()); break;
+        //    case 8: Effects.Add(LandMine()); Effects.Add(CubeWall()); break;
+        //    case 9: Effects.Add(LandMine()); Effects.Add(Pendulums()); break;
+        //    case 10: Effects.Add(LandMine()); Effects.Add(Pendulums()); break;
+        //    case 11: Effects.Add(LandMine()); Effects.Add(Pendulums()); break;
 
         //    default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         //}

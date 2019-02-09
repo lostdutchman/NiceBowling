@@ -6,15 +6,18 @@ public class Pins : MonoBehaviour {
 	
 	public float standingThreshold = 7f; //how many degrees it can be tilted
 	public float distanceToRaise = 45f;
+    public float distanceThreshold = 5f;
     public AudioClip PinHitPin;
     public AudioClip PinHitBall;
     private Rigidbody rigidBody;
 	private AudioSource audioSource;
     private string PinStatus = "None";
+    private Vector3 StartPos;
 
     void Start () {
 		rigidBody = GetComponent<Rigidbody>();
 		audioSource = GetComponent<AudioSource> ();
+        StartPos = this.transform.position;
     }
 
     void Awake()
@@ -54,16 +57,28 @@ public class Pins : MonoBehaviour {
 		}
 	}
 
-    //We get the current rotation then check to see if it is past the threshold.
+    //We get the current rotation and position then check to see if it is past the threshold.
     private bool HasTilted()
     {
         //eulerAngles change that into a vector 3
         Vector3 rotationInEuler = transform.rotation.eulerAngles;
+        Vector3 currentPos = this.transform.position;
+        
+        //Check to see if position moved far enough to be out
+        if (currentPos.x - StartPos.x > distanceThreshold ||
+            currentPos.x - StartPos.x < distanceThreshold * -1||
+            currentPos.z - StartPos.z > distanceThreshold ||
+            currentPos.z - StartPos.z < distanceThreshold * -1)
+        {
+            //Debug.Log("distanceTriggered");
+            //Debug.Log("x:" + (currentPos.x - StartPos.x) + " z:" + (currentPos.z - StartPos.z));
+            PinStatus = "HasTilted";
+            return true;
+        }
         //Mathf.abs gets absolute position so we dont have to worry about pos or neg, deltaangle calculates shortest ange difference between two angles. 
         // (e.g. Mathf.DeltaAngle(355, 5) is 10, because 360 is basically the same as 0). 
-        //So if your Pins have a rotation of 0 on the z axis when you start the game, you use 0 as second parameter. 
-        //If your Pin has another rotation while standing, you should of course use that value instead of 0.
-        if ((Mathf.Abs(Mathf.DeltaAngle(270 - rotationInEuler.x, 0)) < standingThreshold && Mathf.Abs(Mathf.DeltaAngle(rotationInEuler.z, 0)) < standingThreshold))
+        //So if the Pins have a rotation of 0 on the z axis when starting the game, you use 0 as second parameter. 
+        else if ((Mathf.Abs(Mathf.DeltaAngle(270 - rotationInEuler.x, 0)) < standingThreshold && Mathf.Abs(Mathf.DeltaAngle(rotationInEuler.z, 0)) < standingThreshold))
         {
             return false;
         }
@@ -72,6 +87,7 @@ public class Pins : MonoBehaviour {
             PinStatus = "HasTilted";
             return true;
         }
+
     }
 
     void OnCollisionEnter(Collision col){

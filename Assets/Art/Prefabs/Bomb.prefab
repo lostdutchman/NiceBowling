@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba51aeebc0cc671499368609b62ed6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionRadius: 150
-  ExplosionForce: 400
+  ExplosionRadius: 500
+  ExplosionForce: 800
   RestoreTime: 1.5
 --- !u!135 &135644536143763818
 SphereCollider:

@@ -56,7 +56,14 @@ public class BombBall : MonoBehaviour {
                         }
                         else if (HitObject.transform.tag == "Pin" || HitObject.transform.tag == "NBTemp")
                         {    // This automatically scales the force depending on distnance from hit pt!
-                            HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                            try
+                            {
+                                HitObject.GetComponent<Rigidbody>().AddExplosionForce(ExplosionForce, HitLocation, ExplosionRadius * 0.8f, 0.0f, ForceMode.VelocityChange);
+                            }
+                            catch
+                            {
+                                //Cand apply force to this object.
+                            }
                         }
                     }
                     StartCoroutine(RestoreBall());

@@ -167,7 +167,6 @@ public class DragLaunch : MonoBehaviour {
             if (launchSpeedZ < minLaunchSpeed){
                 ball.TryAgain();
 			} else {
-                Debug.Log(launchSpeedZ + "  -  " + Curve);
 			ball.Launch (new Vector3(launchSpeedX, ballReleseHight, launchSpeedZ), Curve);
 			}
 		}
