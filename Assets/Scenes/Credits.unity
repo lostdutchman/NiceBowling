@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 322994992}
   - component: {fileID: 322994991}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!21 &1029324244
+--- !u!21 &1061793997
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -810,7 +810,6 @@ GameObject:
   - component: {fileID: 1586630647}
   - component: {fileID: 1586630649}
   - component: {fileID: 1586630648}
-  - component: {fileID: 1586630650}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -868,18 +867,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1586630646}
---- !u!114 &1586630650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1586630646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6549e968170304f42944ceac23ac83a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Img: {fileID: 1586630646}
 --- !u!1 &1743567024
 GameObject:
   m_ObjectHideFlags: 0

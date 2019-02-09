@@ -19,13 +19,13 @@ public class ModeSelect : MonoBehaviour {
         {
             previousMode = 0;
             numberOfPlayers = 1;
-            Single.enabled = true;
         }
         else
         {
-            Multi.enabled = true;
+            previousMode = 1;
         }
         Mode.value = previousMode;
+        ToggleMode(previousMode);
     }
 
     private void LoadPlaceholderText()
