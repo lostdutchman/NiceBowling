@@ -2,11 +2,11 @@
 using UnityEngine.UI;
 
 public class ModeSelect : MonoBehaviour {
-    private int previousMode = 1; //0 for online, 1 for local
+    private int previousMode = 0; //0 for single, 1 for multi
     private int previousPlayers = 1;
     private int numberOfPlayers = 1;
     public Slider Mode;
-    public Shadow Online, Local;
+    public Shadow Single, Multi;
     public InputField[] inputFields;
     public Text[] placeholders;
     public LevelManager levelManager;
@@ -15,15 +15,15 @@ public class ModeSelect : MonoBehaviour {
     void Start () {
         previousPlayers = PlayerPrefsManager.GetGameMode();
         LoadPlaceholderText();
-        if(previousPlayers == 0)
+        if(previousPlayers == 1)
         {
             previousMode = 0;
             numberOfPlayers = 1;
-            Online.enabled = true;
+            Single.enabled = true;
         }
         else
         {
-            Local.enabled = true;
+            Multi.enabled = true;
         }
         Mode.value = previousMode;
     }
@@ -38,21 +38,21 @@ public class ModeSelect : MonoBehaviour {
 	
     public void ToggleMode(float value)
     {
-        //Online
+        //Single
         if (value < 1)
         {
-            Online.enabled = true;
-            Local.enabled = false;
+            Single.enabled = true;
+            Multi.enabled = false;
             for (int i = 1; i < inputFields.Length; i++)
             {
                 inputFields[i].gameObject.SetActive(false);
             }
         }
-        //Local
+        //Multi
         else
         {
-            Online.enabled = false;
-            Local.enabled = true;
+            Single.enabled = false;
+            Multi.enabled = true;
             if(numberOfPlayers < 2)
             {
                 numberOfPlayers = 2;
@@ -82,7 +82,6 @@ public class ModeSelect : MonoBehaviour {
 
     public void RemovePlayer()
     {
-        Debug.Log("About to remove, current player value = " + numberOfPlayers);
         if(numberOfPlayers > 1)
         {
             numberOfPlayers--;
@@ -97,7 +96,7 @@ public class ModeSelect : MonoBehaviour {
     {
         if(Mode.value == 0)
         {
-            levelManager.LoadNice(0);
+            levelManager.LoadNice(1);
         }
         else
         {

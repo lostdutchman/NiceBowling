@@ -11,26 +11,6 @@ public class HighScores{
     public List<int> bowls { get; set; }
     public string playerName { get; set; }
 
-    public bool CheckForHighScoreSinglePlayer(int score)
-    {
-        List<HighScores> highScores = GetHighScores();
-        if(highScores.Count < 5)
-        {
-            return true;
-        }
-        else
-        {
-            foreach(var HS in highScores)
-            {
-                if(score > HS.Score)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
-
     public void SetHighScore(List<HighScores> playerScores)
     {
         List<HighScores> highScores = GetHighScores();
