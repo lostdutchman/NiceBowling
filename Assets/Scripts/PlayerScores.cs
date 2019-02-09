@@ -14,7 +14,7 @@ public class PlayerScores{
         }
         set
         {
-            if (value.Length < 8)
+            if (value.Length <= 8)
             {
                 _playerName = value;
             }

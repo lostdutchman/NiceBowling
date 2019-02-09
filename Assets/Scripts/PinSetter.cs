@@ -38,7 +38,6 @@ public class PinSetter : MonoBehaviour {
         niceBowlingReset = GameObject.FindObjectOfType<NiceBowlingReset>();
         Swipper.SetActive (false);
         Menu = FindObjectOfType<GameManager>();
-        highScores.ListHighScores();
         }
 
     public void Update()

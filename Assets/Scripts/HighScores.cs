@@ -14,7 +14,7 @@ public class HighScores{
     public bool CheckForHighScoreSinglePlayer(int score)
     {
         List<HighScores> highScores = GetHighScores();
-        if(highScores.Count < 10)
+        if(highScores.Count < 5)
         {
             return true;
         }
@@ -31,15 +31,6 @@ public class HighScores{
         }
     }
 
-    public void ListHighScores()
-    {
-        List<HighScores> highScores = GetHighScores();
-        foreach (var HS in highScores)
-        {
-            Debug.Log("HighScores: " + HS.Score + " " + HS.playerName);
-        }
-    }
-
     public void SetHighScore(List<HighScores> playerScores)
     {
         List<HighScores> highScores = GetHighScores();
@@ -48,9 +39,9 @@ public class HighScores{
             highScores.Add(player);
         }
         List<HighScores> SortedHighScores = highScores.OrderByDescending(o=>o.Score).ToList();
-        if(highScores.Count > 10)
+        if(highScores.Count > 5)
         {
-            highScores = SortedHighScores.GetRange(0, 9);
+            highScores = SortedHighScores.GetRange(0, 4);
         }
         else
         {
@@ -59,7 +50,7 @@ public class HighScores{
         SaveHighScores(highScores);
     }
 
-    private List<HighScores> GetHighScores()
+    public List<HighScores> GetHighScores()
     {
         List<HighScores> highScores = new List<HighScores>();
         try
