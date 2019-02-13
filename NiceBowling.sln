@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NiceBowling.Plugins", "NiceBowling.Plugins.csproj", "{245FA2B6-0D81-1D6F-CECD-3B5A28A68A0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NiceBowling", "NiceBowling.csproj", "{13DEBE33-F9EC-9AF8-5E2F-4862F0B6469B}"
