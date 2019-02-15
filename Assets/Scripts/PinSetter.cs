@@ -114,13 +114,8 @@ public class PinSetter : MonoBehaviour {
         for(int i = 0; i <= multiplayer.numberOfPlayers - 1; i++)
         {
             HighScores temp = new HighScores();
-            int tempScore = 0;
-            foreach(int bowl in multiplayer.scoreCard[i].bowls)
-            {
-                tempScore += bowl;
-            }
             temp.bowls = multiplayer.scoreCard[i].bowls;
-            temp.Score = tempScore;
+            temp.Score = ScoreMaster.EndScore(multiplayer.scoreCard[i].bowls);
             temp.playerName = multiplayer.scoreCard[i].playerName;
             playerScores.Add(temp);
         }

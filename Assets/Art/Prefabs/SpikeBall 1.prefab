@@ -9,22 +9,22 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1199248386371550}
+  m_RootGameObject: {fileID: 1905834500127148}
   m_IsPrefabParent: 1
---- !u!1 &1199248386371550
+--- !u!1 &1905834500127148
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4559897361990246}
-  - component: {fileID: 23066233418005540}
-  - component: {fileID: 33323880639274192}
-  - component: {fileID: 54775202426389868}
-  - component: {fileID: 135080204160341132}
-  - component: {fileID: 114607224624518108}
-  - component: {fileID: 75230076339729630}
+  - component: {fileID: 4734155817212052}
+  - component: {fileID: 23345059965749232}
+  - component: {fileID: 33789047744828132}
+  - component: {fileID: 54476158562315374}
+  - component: {fileID: 135684439956013072}
+  - component: {fileID: 114265270815171040}
+  - component: {fileID: 75228607587333214}
   m_Layer: 0
   m_Name: SpikeBall 1
   m_TagString: ChildBall
@@ -32,12 +32,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4559897361990246
+--- !u!4 &4734155817212052
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}
+  m_GameObject: {fileID: 1905834500127148}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -12.800439, y: 12.2, z: 40.865417}
   m_LocalScale: {x: 10, y: 10, z: 10}
@@ -45,12 +45,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23066233418005540
+--- !u!23 &23345059965749232
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}
+  m_GameObject: {fileID: 1905834500127148}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -77,19 +77,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33323880639274192
+--- !u!33 &33789047744828132
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}
+  m_GameObject: {fileID: 1905834500127148}
   m_Mesh: {fileID: 4300002, guid: c455996f6e6b49d418895f41b5216202, type: 3}
---- !u!54 &54775202426389868
+--- !u!54 &54476158562315374
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}
+  m_GameObject: {fileID: 1905834500127148}
   serializedVersion: 2
   m_Mass: 20
   m_Drag: 0.02
@@ -99,35 +99,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!75 &75230076339729630
+--- !u!75 &75228607587333214
 ConstantForce:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}
+  m_GameObject: {fileID: 1905834500127148}
   m_Enabled: 1
   m_Force: {x: 0, y: 0, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
---- !u!114 &114607224624518108
+--- !u!114 &114265270815171040
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}
+  m_GameObject: {fileID: 1905834500127148}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0439f709dde1dd04cb6ff53683000275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GrowthRate: 0.075
---- !u!135 &135080204160341132
+--- !u!135 &135684439956013072
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199248386371550}
+  m_GameObject: {fileID: 1905834500127148}
   m_Material: {fileID: 13400000, guid: 177541a6c1b17a94ab553459060b5d1c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1

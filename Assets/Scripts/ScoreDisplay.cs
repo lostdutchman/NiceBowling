@@ -18,11 +18,18 @@ public class ScoreDisplay : MonoBehaviour {
         int index = multiplayer.GetCurrentPlayer() - 1;
         for (int i = 0; i < scoreString.Length; i++)
         {
-            multiplayer.scoreCard[index].bowlTexts[i].text = scoreString[i].ToString();
-            if (i == scoreString.Length - 1)
+            try
             {
-                multiplayer.scoreCard[index].bowlTexts[i].canvasRenderer.SetAlpha(.01f);
-                multiplayer.scoreCard[index].bowlTexts[i].CrossFadeAlpha(1, .25f, false);
+                multiplayer.scoreCard[index].bowlTexts[i].text = scoreString[i].ToString();
+                if (i == scoreString.Length - 1)
+                {
+                    multiplayer.scoreCard[index].bowlTexts[i].canvasRenderer.SetAlpha(.01f);
+                    multiplayer.scoreCard[index].bowlTexts[i].CrossFadeAlpha(1, .25f, false);
+                }
+            }
+            catch
+            {
+                Debug.Log("ScoreDisplay.FillBowls Failed. Bowl=" + i + " PlayerIndex=" + index);
             }
         }
 	}

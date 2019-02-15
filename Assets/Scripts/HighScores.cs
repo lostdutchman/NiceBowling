@@ -21,7 +21,7 @@ public class HighScores{
         List<HighScores> SortedHighScores = highScores.OrderByDescending(o=>o.Score).ToList();
         if(highScores.Count > 5)
         {
-            highScores = SortedHighScores.GetRange(0, 4);
+            highScores = SortedHighScores.GetRange(0, 5);
         }
         else
         {

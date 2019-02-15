@@ -25,8 +25,8 @@ public class SpikeBall : MonoBehaviour {
             {
                 switch (collision.gameObject.GetComponent<MeshCollider>().name)
                 {
-                    case "Town Windmill 01(Clone)": Growth = .375f; break;
-                    case "P1roomba(Clone)": Growth = .1125f; break;
+                    case "Town Windmill 01(Clone)": Growth = .6f; break;
+                    case "P1roomba(Clone)": Growth = .15f; break;
                     case "LandMine(Clone)": Growth = 0; break;
                     default: break;
                 }
@@ -36,7 +36,7 @@ public class SpikeBall : MonoBehaviour {
             {
                 try
                 {
-                    Growth = collision.gameObject.GetComponent<SphereCollider>().radius / 13;
+                    Growth = collision.gameObject.GetComponent<SphereCollider>().radius / 12;
                     collision.gameObject.GetComponent<SphereCollider>().enabled = false;
                 }
                 catch
@@ -44,14 +44,14 @@ public class SpikeBall : MonoBehaviour {
                     try
                     {
                         Destroy(collision.gameObject.GetComponent<FixedJoint>()); //Barrels
-                        Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 13;
+                        Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 12;
                         collision.gameObject.GetComponent<CapsuleCollider>().enabled = false;
                     }
                     catch
                     {
                         try
                         {
-                            Growth = ((collision.gameObject.GetComponent<BoxCollider>().size.x + collision.gameObject.GetComponent<BoxCollider>().size.y + collision.gameObject.GetComponent<BoxCollider>().size.z) / 3) /13;
+                            Growth = ((collision.gameObject.GetComponent<BoxCollider>().size.x + collision.gameObject.GetComponent<BoxCollider>().size.y + collision.gameObject.GetComponent<BoxCollider>().size.z) / 3) /12;
                             collision.gameObject.GetComponent<BoxCollider>().enabled = false;
                         }
                         catch
@@ -59,7 +59,7 @@ public class SpikeBall : MonoBehaviour {
 
                             try
                             {
-                                Growth = .025f;
+                                Growth = .03f;
                                 collision.gameObject.GetComponent<iwasiRigid>().enabled = false; // This is to stop the sardines from pushing the ball around.
                                 Destroy(collision.gameObject.transform.GetChild(0).gameObject); //This is to kill the Sardine pone structure
                             }
@@ -68,7 +68,7 @@ public class SpikeBall : MonoBehaviour {
 
                                 try
                                 {
-                                    Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 13;
+                                    Growth = collision.gameObject.GetComponent<CapsuleCollider>().radius / 12;
                                     collision.gameObject.GetComponent<CapsuleCollider>().enabled = false; //in case any non-barrel capsle colliders get added
                                 }
                                 catch

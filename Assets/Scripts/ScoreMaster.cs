@@ -7,7 +7,7 @@ public static class ScoreMaster {
 	//Returns a cumulitive list of scores
 	public static List<int> ScoreCumulative (List<int> Bowls){
 		List<int> cumulativeScores = new List<int>();
-		int runningTotal = 0; //missing last frame
+		int runningTotal = 0; 
 
 		foreach (int frameScore in ScoreFrames (Bowls)) {
 			runningTotal += frameScore;
@@ -16,9 +16,20 @@ public static class ScoreMaster {
 		return cumulativeScores;
 	}
 
+    public static int EndScore(List<int> Bowls)
+    {
+        List<int> cumulativeScores = new List<int>();
+        int runningTotal = 0;
 
-	//Return a list of individual frame scores
-	public static List<int> ScoreFrames(List<int> Bowls){
+        foreach (int frameScore in ScoreFrames(Bowls))
+        {
+            runningTotal += frameScore;
+        }
+        return runningTotal;
+    }
+
+    //Return a list of individual frame scores
+    public static List<int> ScoreFrames(List<int> Bowls){
 		List<int> frames = new List<int>();
 
 		for(int i = 1; i < Bowls.Count; i +=2){

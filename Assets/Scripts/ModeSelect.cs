@@ -23,6 +23,7 @@ public class ModeSelect : MonoBehaviour {
         else
         {
             previousMode = 1;
+            numberOfPlayers = previousPlayers;
         }
         Mode.value = previousMode;
         ToggleMode(previousMode);
