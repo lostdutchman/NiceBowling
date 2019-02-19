@@ -120,6 +120,7 @@
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\ConfirmSFX.cs" />
     <Compile Include="Assets\Scripts\CreditsImageFlip.cs" />
+    <Compile Include="Assets\Scripts\DemoEnd.cs" />
     <Compile Include="Assets\Scripts\DragLaunch.cs" />
     <Compile Include="Assets\Scripts\DumbPins.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

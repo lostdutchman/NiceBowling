@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class NiceBowling : MonoBehaviour {
 	
-	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine;
+	public GameObject Bumper, Bumper2, dumbPinSet, Cylinder, Sardine, Ramp, BallBeach, BallCannon, BallBucky, BallSpiked, BallBounce, BallJelly, BallBomb, PinBig, PinMetal, Pendulum, Windmill, Roomba, Wall, SpeedUp, Mine, TV, Mote;
     public GameObject[] BilliardBalls, Marbles;
     public float NBDelay;
 	private Camera MainCamera;
@@ -21,30 +22,46 @@ public class NiceBowling : MonoBehaviour {
     public void NiceManager()
     {
         ////Get NB Effects
-        //int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
-        //int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
+        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
+        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
         //List<string> Effects = Effect(NiceRandom);
         //For video and promotional work and testing effects
         List<string> Effects = new List<string>();
         switch (i)
         {
-            case 1: Effects.Add(SpikeBall()); Effects.Add(Obsticals()); break;
-            case 2: Effects.Add(SpikeBall()); Effects.Add(Obsticals()); break;
-            case 3: Effects.Add(SpikeBall()); Effects.Add(Obsticals()); break;
-            case 4: Effects.Add(SpikeBall()); Effects.Add(Obsticals()); break;
-            case 5: Effects.Add(SpikeBall()); Effects.Add(MinigolfWindmill()); break;
-            case 6: Effects.Add(SpikeBall()); Effects.Add(MinigolfWindmill()); break;
-            case 7: Effects.Add(SpikeBall()); Effects.Add(MinigolfWindmill()); break;
-            case 8: Effects.Add(SpikeBall()); Effects.Add(Pendulums()); break;
-            case 9: Effects.Add(SpikeBall()); Effects.Add(Pendulums()); break;
-            case 10: Effects.Add(SpikeBall()); Effects.Add(Pendulums()); break;
-            case 11: Effects.Add(SpikeBall()); Effects.Add(Pendulums()); break;
+            case 1: Effects.Add("DEMO START!"); Effects.Add(Effect(1)[0]); break;
+            case 2: Effects.Add(AddPinsx9()); Effects.Add(Bumpers()); Effects.Add(DemoBallChoose());  break;
+            case 3: Effects.Add(SpeedBoost()); Effects.Add(CubeWall()); break;
+            case 4: Effects = Effect(3); break;
+            case 5: Effects.Add(EndDemo()); break;
 
             default: print("NiceBowling.Effect switch case default triggered somehow"); break;
         }
         i++;
         StartCoroutine(NBUI.NiceBowlingEffects(Effects, FirstFrame));
         FirstFrame = false;
+    }
+
+    private string EndDemo()
+    {
+        GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
+        Vector3 Location = childBall.transform.position;
+        Destroy(childBall);
+        Instantiate(Mote, new Vector3(Location.x, Location.y + 4, Location.z), Mote.transform.rotation, GameObject.FindObjectOfType<Ball>().transform);
+        Instantiate(TV, new Vector3(0, 1, 1800), TV.transform.rotation);
+        return ("THIS ISN'T IN THE GAME!?!");
+    }
+
+    private string DemoBallChoose()
+    {
+        if(UnityEngine.Random.Range(0, 2) == 0)
+        {
+            return CannonBall();
+        }
+        else
+        {
+            return SpikeBall();
+        }
     }
 
     private string PrintListInt(List<int> list)
@@ -205,7 +222,7 @@ public class NiceBowling : MonoBehaviour {
     {
         foreach (Pins pin in GameObject.FindObjectsOfType<Pins>())
         {
-            if(Random.Range(1, 5) == 2)
+            if(UnityEngine.Random.Range(1, 5) == 2)
             {
                 Rigidbody body = pin.GetComponent<Rigidbody>();
                 body.isKinematic = true;

@@ -2081,7 +2081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11412920
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11424658
@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11438130
@@ -2129,7 +2129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11463244
@@ -2145,7 +2145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11472418
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11474768
@@ -2177,7 +2177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11481050
@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11483756
@@ -2209,7 +2209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!114 &11487262
@@ -2225,7 +2225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 3
   distanceToRaise: 40
-  distanceThreshold: 10
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
 --- !u!1001 &100100000
