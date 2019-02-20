@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 4e05b30ea0c05a347a0648f00fa2b7de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ModeSelect.unity
     guid: c95e419907bae8e458de86df4efc391a
   - enabled: 1
@@ -23,6 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: bb69902ed2271bf4e9add48d1f1374b3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HiScore.unity
     guid: 58b3bd87806347b40a05ba6942911675

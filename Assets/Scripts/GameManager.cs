@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	private Ball ball;
 	private ScoreDisplay scoreDisplay;
     private LocalMultiplayer multiplayer;
-    public GameObject Menu, TouchPad, Arrows, SoundMenu;
+    public GameObject Menu, TouchPad, Arrows;
 
     //Lets me auto test while still reviewing code
     void Awake()
@@ -57,39 +57,12 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            try
-            {
-                ToggleMenu();
-            }
-            catch
-            {
-                //Do nothing, this it to keep from getting an error on scenes that done have a menu
-            }
-        }
-    }
-
     public void ToggleMenu()
     {
-        if (Menu.activeSelf)
-        {
-            Menu.SetActive(false);
-            SoundMenu.SetActive(false);
-            TouchPad.SetActive(true);
-            Arrows.SetActive(true);
-            Time.timeScale = 1;
-        }
-        else
-        {
-            Time.timeScale = 0;
-            Menu.SetActive(true);
-            SoundMenu.SetActive(false);
-            TouchPad.SetActive(false);
-            Arrows.SetActive(false);
-        }
+        Time.timeScale = 0;
+        Menu.SetActive(true);
+        TouchPad.SetActive(false);
+        Arrows.SetActive(false);
     }
 
     private void NextPlayer()

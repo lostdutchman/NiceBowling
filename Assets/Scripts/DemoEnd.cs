@@ -7,9 +7,11 @@ public class DemoEnd : MonoBehaviour {
     public GameObject Menu, TouchInput, screen, brokenScreen;
     public AudioClip crash;
     private AudioSource sfx;
+    private GameManager gameManager;
 
 	void Start () {
         sfx = GetComponent<AudioSource>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnCollisionExit(Collision collision)
@@ -29,7 +31,6 @@ public class DemoEnd : MonoBehaviour {
         brokenScreen.SetActive(true);
         yield return new WaitForSecondsRealtime(crash.length + .3f);
         Time.timeScale = 0;
-        TouchInput.SetActive(false);
-        Menu.SetActive(true);
+        gameManager.ToggleMenu();
     }
 }

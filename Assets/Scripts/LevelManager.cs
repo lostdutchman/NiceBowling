@@ -33,4 +33,17 @@ public class LevelManager : MonoBehaviour {
     {
         Application.Quit();
     }
+    
+    public void BuyGame()
+    {
+        #if UNITY_EDITOR
+                Debug.Log("BuyGameLink");
+        #elif UNITY_ANDROID
+                Application.OpenURL ("market://details?id=com.example.android"); 
+        #elif UNITY_IPHONE
+                Application.OpenURL("itms-apps:itunes.apple.com/app/ect..");
+        #else
+                Application.OpenURL("nicebowling.lostdutchmansoftware.com");
+        #endif
+    }
 }
