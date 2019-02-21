@@ -116,7 +116,7 @@ public class NiceBowling : MonoBehaviour {
     #region Effect Switch Case's
     private string AddPins()
     {
-        switch (UnityEngine.Random.Range(1, 14))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
+        switch (UnityEngine.Random.Range(1, 8))//Note that max is exclusive, so using Random.Range( 0, 10 ) will return values between 0 and 9. If max equals min, min will be returned
         {
             case 1: return AddPinsx1(); 
             case 2: return AddPinsx2(); 
@@ -125,12 +125,6 @@ public class NiceBowling : MonoBehaviour {
             case 5: return AddPinsx5();
             case 6: return AddPinsx6(); 
             case 7: return AddPinsx7(); 
-            case 8: return AddPinsx8(); 
-            case 9: return AddPinsx9(); 
-            case 10: return AddPinsx10();
-            case 11: return AddPinsx11();
-            case 12: return AddPinsExplode();
-            case 13: return AddPinsExplodeBig();
 
             default: print("NiceBowling.AddPins switch case default triggered somehow"); break;
         }
@@ -439,7 +433,7 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        return ("Many Pins!");
+        return ("PINS! PINS! PINS!");
     }
 
     public string AddPinsx4()
@@ -469,7 +463,7 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        return ("To Many Pins!");
+        return ("Way To Many Pins!");
     }
 
     public string AddPinsx7()
@@ -482,114 +476,9 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
 
-        return ("Way to many pins!");
-    }
-
-    public string AddPinsx8()
-    {
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-
-        return ("Way to many pins!");
-    }
-
-    public string AddPinsx9()
-    {
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
-
-        return ("PINS! PINS! PINS!");
-    }
-
-    public string AddPinsx10()
-    {
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
-        return ("PINS! PINS! PINS!");
-    }
-
-    public string AddPinsx11()
-    {
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
-        return ("Unfair number of pins!");
-    }
-
-    public string AddPinsExplode()
-    {
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
-        return ("Pin Explosion!");
-    }
-
-    public string AddPinsExplodeBig(){
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1530), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1565), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1600), Quaternion.identity);
-        Instantiate(dumbPinSet, new Vector3(0, 1, 1635), Quaternion.identity);
         return ("Game Breaking number of pins!");
     }
+
     #endregion
     #endregion
 
