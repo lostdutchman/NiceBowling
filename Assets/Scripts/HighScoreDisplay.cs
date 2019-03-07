@@ -83,9 +83,7 @@ public class HighScoreDisplay : MonoBehaviour {
         }
     }
 
-    public static string FormatBowls (List<int> Bowls){
-		PinSetter pinSetter = GameObject.FindObjectOfType<PinSetter> (); //Needed for the audio(voice acting)
-		
+    public static string FormatBowls (List<int> Bowls){		
 		string output = "";
 
 		for (int i = 0; i < Bowls.Count; i++) {
