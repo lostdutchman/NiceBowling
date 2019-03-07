@@ -21,11 +21,6 @@ public class NiceBowling : MonoBehaviour {
 
     public void NiceManager()
     {
-        ////Get NB Effects
-        int[] WeightedRandom = new int[] { 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 4 };
-        int NiceRandom = WeightedRandom[UnityEngine.Random.Range(0, WeightedRandom.Length)];
-        //List<string> Effects = Effect(NiceRandom);
-        //For video and promotional work and testing effects
         List<string> Effects = new List<string>();
         switch (i)
         {

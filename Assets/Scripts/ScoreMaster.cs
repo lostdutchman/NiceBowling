@@ -18,7 +18,6 @@ public static class ScoreMaster {
 
     public static int EndScore(List<int> Bowls)
     {
-        List<int> cumulativeScores = new List<int>();
         int runningTotal = 0;
 
         foreach (int frameScore in ScoreFrames(Bowls))
