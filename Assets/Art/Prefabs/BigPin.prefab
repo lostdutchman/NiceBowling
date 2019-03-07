@@ -311,5 +311,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standingThreshold: 5
   distanceToRaise: 40
+  distanceThreshold: 30
   PinHitPin: {fileID: 8300000, guid: b6e7bcf48cda3ab42809f2eb2169c0cf, type: 3}
   PinHitBall: {fileID: 8300000, guid: 59af4e6eea3fa92439d412128a893d96, type: 3}
