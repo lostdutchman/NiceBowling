@@ -136,7 +136,7 @@ PlayerSettings:
   protectGraphicsMemory: 1
   useHDRDisplay: 0
   applicationIdentifier:
-    Android: com.LostDutchmanSoftware.NiceBowling
+    Android: com.LostDutchmanSoftware.NiceBowlingDemo
     Standalone: unity.DefaultCompany.NiceBowling
     Tizen: 
     iOS: com.LostDutchmanSoftware.NiceBowling
