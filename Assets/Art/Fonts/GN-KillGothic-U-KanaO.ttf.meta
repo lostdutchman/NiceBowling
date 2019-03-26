@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ea5dec7a40e5fd341b00aadbe883c7d2
+timeCreated: 1553623513
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: GN-KMBFont-UB-OldstyleKana
+  fontNames:
+  - GN-KMBFont-UB-OldstyleKana
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
