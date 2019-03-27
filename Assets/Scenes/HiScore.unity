@@ -2921,7 +2921,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f2eca796be3f940209324820dfbfcc55, type: 2}
+    m_Font: {fileID: 12800000, guid: edd534eaa74b43d46af5f9ba33772bd9, type: 3}
     m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
@@ -6415,8 +6415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -474}
-  m_SizeDelta: {x: 282, y: 67}
+  m_AnchoredPosition: {x: 9, y: -519}
+  m_SizeDelta: {x: 149, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &625962654
 MonoBehaviour:
@@ -6574,7 +6574,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8f727d98d69cd49e1803ff0af7a5df8f, type: 2}
+    m_Font: {fileID: 12800000, guid: edd534eaa74b43d46af5f9ba33772bd9, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -7008,6 +7008,48 @@ RectTransform:
   m_AnchoredPosition: {x: 49.4, y: 4.3}
   m_SizeDelta: {x: 68, y: 97}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!21 &655237318
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hidden/RetroCameraEffect
+  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
+  m_ShaderKeywords: CHROMATIC_ON NOISE_ON SCANLINES_ON VIGNETTE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ChromaticAberration: 2
+    - _DisplacementAmplitude: 0.001
+    - _DisplacementFrequency: 100
+    - _DisplacementSpeed: 1
+    - _NoiseBottomHeight: 0.04
+    - _NoiseBottomIntensity: 1
+    - _OffsetNoiseX: 0.38694352
+    - _OffsetNoiseY: -0.16478877
+    - _OffsetPosY: 0
+    - _StaticIntensity: 0.87
+    - _UseChromaticAberration: 1
+    - _UseDisplacement: 1
+    - _UseStaticNoise: 1
+    - _UseVignette: 0
+    - _Vignette: 0.1
+    m_Colors: []
 --- !u!1 &689522861
 GameObject:
   m_ObjectHideFlags: 0
@@ -11578,7 +11620,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: cbe57eeca732c4739ac639ef0edf2759, type: 3}
+    m_Font: {fileID: 12800000, guid: f0447af7752e2ef4eb3f809bc60e2a22, type: 3}
     m_FontSize: 81
     m_FontStyle: 0
     m_BestFit: 0
@@ -13702,7 +13744,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f2eca796be3f940209324820dfbfcc55, type: 2}
+    m_Font: {fileID: 12800000, guid: edd534eaa74b43d46af5f9ba33772bd9, type: 3}
     m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
@@ -15301,7 +15343,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f2eca796be3f940209324820dfbfcc55, type: 2}
+    m_Font: {fileID: 12800000, guid: edd534eaa74b43d46af5f9ba33772bd9, type: 3}
     m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
@@ -15995,7 +16037,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f2eca796be3f940209324820dfbfcc55, type: 2}
+    m_Font: {fileID: 12800000, guid: edd534eaa74b43d46af5f9ba33772bd9, type: 3}
     m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
@@ -16388,7 +16430,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f2eca796be3f940209324820dfbfcc55, type: 2}
+    m_Font: {fileID: 12800000, guid: edd534eaa74b43d46af5f9ba33772bd9, type: 3}
     m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
@@ -19133,48 +19175,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1866753487}
---- !u!21 &1871815224
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Hidden/RetroCameraEffect
-  m_Shader: {fileID: 4800000, guid: 2cfdcae76c757405786f1219a383da6e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 0ecedd370a77a4a3dbbb9cc9e09081cd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ChromaticAberration: 0
-    - _DisplacementAmplitude: 0.001
-    - _DisplacementFrequency: 100
-    - _DisplacementSpeed: 1
-    - _NoiseBottomHeight: 0.04
-    - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0
-    - _OffsetNoiseY: 0
-    - _OffsetPosY: 0
-    - _StaticIntensity: 1
-    - _UseChromaticAberration: 1
-    - _UseDisplacement: 1
-    - _UseStaticNoise: 1
-    - _UseVignette: 0
-    - _Vignette: 0
-    m_Colors: []
 --- !u!1 &1892492387
 GameObject:
   m_ObjectHideFlags: 0

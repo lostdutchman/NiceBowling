@@ -30,8 +30,8 @@ public class OpeningBall : MonoBehaviour {
         }
         if (Random.Range(0, 6) == 5)
         {
-            logoE.SetActive(false);
-            logoJ.SetActive(true);
+            logoJ.SetActive(false);
+            logoE.SetActive(true);
         }
     }
 
