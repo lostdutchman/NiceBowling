@@ -7,6 +7,33 @@ public class PlayerPrefsManager : MonoBehaviour {
     const string MUSIC_VOLUME = "music_volume";
     const string SFX_VOLUME = "sfx_volume";
     const string GAME_MODE = "game_mode";
+    const string DIFFICULTY = "difficulty";
+
+    public static void SetDifficulty(float difficulty)
+    {
+        //Very Easy = 8, Easy = 6, Normal = 3.5, Hard = 2, Too Hard = 1
+        if ((difficulty > 0f) && (difficulty <= 8f))
+        {
+            PlayerPrefs.SetFloat(DIFFICULTY, difficulty);
+        }
+        else
+        {
+            Debug.LogError("DIFFICULTY out of range " + difficulty.ToString());
+        }
+    }
+
+    public static float GetDifficulty()
+    {
+        if (PlayerPrefs.HasKey(DIFFICULTY))
+        {
+            return PlayerPrefs.GetFloat(DIFFICULTY);
+        }
+        else
+        {
+            SetDifficulty(3.5f);
+            return 3.5f;
+        }
+    }
 
     public static void SetGameMode(int players)
     {

@@ -29,8 +29,7 @@ public class DragLaunch : MonoBehaviour {
     public GameObject TouchInput;
 
     //Handicap Variables
-    [Tooltip("1 = no handicap 1.6 = old handicap")]
-    public float MakeAimEasier = 1.2f;
+    public float MakeAimEasier;
     [Tooltip("1 = no handicap Higher numbers slow bowl speeds")]
     public float SlowDown = 1;
 
@@ -38,7 +37,8 @@ public class DragLaunch : MonoBehaviour {
 		ball = GetComponent<Ball>();
         Audio = ball.GetComponent<AudioSource>();
         AITriggered = false;
-	}
+        MakeAimEasier = PlayerPrefsManager.GetDifficulty();
+    }
 
     //Allow user to hold to continuasly adjust aim
     private void Update()

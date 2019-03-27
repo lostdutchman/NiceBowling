@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class OpeningBall : MonoBehaviour {
 
@@ -8,8 +9,9 @@ public class OpeningBall : MonoBehaviour {
 	public float launchSpeed;
 	private UIFade menu;
 	private float MenuTimeDelay;
-    private GameObject Splash;
+    public GameObject Splash, logoE, logoJ;
     private bool SplashExists = true;
+
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody>();
@@ -25,6 +27,11 @@ public class OpeningBall : MonoBehaviour {
         catch
         {
             SplashExists = false; 
+        }
+        if (Random.Range(0, 6) == 5)
+        {
+            logoE.SetActive(false);
+            logoJ.SetActive(true);
         }
     }
 
