@@ -42,23 +42,23 @@ public class OptionsChangeButton : MonoBehaviour {
 
         if(difficulty == 3.5)
         {
-            Diff.text = "MODE: NORMAL";
+            Diff.text = "DEFAULT SENSITIVITY";
         }
         else if (difficulty == 6)
         {
-            Diff.text = "MODE: EASY";
+            Diff.text = "LESS SENSETIVE";
         }
         else if (difficulty == 8)
         {
-            Diff.text = "MODE: VERY EASY";
+            Diff.text = "LOW SENSITIVITY";
         }
         else if (difficulty == 2)
         {
-            Diff.text = "MODE: HARD";
+            Diff.text = "MORE SENSITIVE";
         }
         else if (difficulty == 1)
         {
-            Diff.text = "MODE: TOO HARD";
+            Diff.text = "VERY SENSITIVE";
         }
         else 
         {
