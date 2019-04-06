@@ -5,30 +5,34 @@ using UnityEngine.UI;
 
 public class PanelFade : MonoBehaviour {
 
-    public Image Splash;
-    public float FadeTime = .5f;
-    Color ColorToFadeTo;
-    private float MenuTimeDelay;
-    private bool Splashed = false;
+    public float fadeTime = .5f;
+    private float menuTimeDelay;
+    private bool hasSplashed = false;
+    private CanvasGroup canvas;
 
-    // Use this for initialization
-    void Start () {
-        MenuTimeDelay = GameObject.FindObjectOfType<MusicPlayer>().MenuTimeDelay;
+    void Start()
+    {
+        canvas = GetComponent<CanvasGroup>();
+        canvas.alpha = 1;
+        menuTimeDelay = GameObject.FindObjectOfType<MusicPlayer>().MenuTimeDelay;
         Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update () {
-        if (!Splashed && (Time.timeSinceLevelLoad >= MenuTimeDelay))
+    void Update()
+    {
+        if (!hasSplashed && (Time.timeSinceLevelLoad >= menuTimeDelay))
         {
-            Fade();
-            Splashed = true;
+            StartCoroutine(FadeOut());
+            hasSplashed = true;
         }
     }
 
-    void Fade()
+    public IEnumerator FadeOut()
     {
-        ColorToFadeTo = new Color(1f, 1f, 1f, 0f);
-        Splash.CrossFadeColor(ColorToFadeTo, FadeTime, true, true);
+        while (canvas.alpha > 0.0f)
+        {
+            canvas.alpha -= (Time.deltaTime / fadeTime);
+            yield return null;
+        }
     }
 }

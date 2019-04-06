@@ -40,25 +40,25 @@ public class OptionsChangeButton : MonoBehaviour {
     {
         PlayerPrefsManager.SetDifficulty(difficulty);
 
-        if(difficulty == 3.5)
+        if (difficulty == 3.5)
         {
-            Diff.text = "MODE: NORMAL";
+            Diff.text = "デフォルト感度";
         }
         else if (difficulty == 6)
         {
-            Diff.text = "MODE: EASY";
+            Diff.text = "感度が低い";
         }
         else if (difficulty == 8)
         {
-            Diff.text = "MODE: VERY EASY";
+            Diff.text = "最低感度";
         }
         else if (difficulty == 2)
         {
-            Diff.text = "MODE: HARD";
+            Diff.text = "もっと感度";
         }
         else if (difficulty == 1)
         {
-            Diff.text = "MODE: TOO HARD";
+            Diff.text = "最も感度";
         }
         else 
         {
