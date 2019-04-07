@@ -192,7 +192,7 @@ public class NiceBowling : MonoBehaviour {
             Rigidbody body = pin.GetComponent<Rigidbody>();
             body.useGravity = false;
         }
-        return ("Zero G!");
+        return ("無重力");
 	}
 
     public string BoardwalkPins()
@@ -215,7 +215,7 @@ public class NiceBowling : MonoBehaviour {
 			body.angularDrag = 30f;
 			body.drag = 15f;
 		}
-        return("Bullet-Time!");
+        return("スローモー");
     }
 
 	public string IncreasePinSize(){
@@ -243,14 +243,14 @@ public class NiceBowling : MonoBehaviour {
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3 (size.x * 2, size.y * 2, size.z * 2);
-        return("Giant Ball");
+        return("大玉");
     }
 
 	public string TinyBall(){
         GameObject childBall = GameObject.FindGameObjectWithTag("ChildBall");
         Vector3 size = childBall.transform.localScale;
         childBall.transform.localScale = new Vector3(size.x / 4, size.y / 4f, size.z / 4f);
-        return ("Marble");
+        return ("小玉");
     }
 
 	public string BeachBall(){
@@ -258,7 +258,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallBeach, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Beach Ball");
+        return ("ビーチボール");
     }
 
 	public string CannonBall(){
@@ -266,7 +266,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallCannon, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Cannonball!");
+        return ("砲弾");
     }
 
     public string BouncyBall()
@@ -275,7 +275,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallBounce, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Bouncy Ball!");
+        return ("弾むボール");
     }
 
     public string BuckyBall()
@@ -323,7 +323,7 @@ public class NiceBowling : MonoBehaviour {
     public string MinigolfWindmill()
     {
         Instantiate(Windmill);
-        return ("Mini Golf!");
+        return ("オランダ");
     }
 
     public string RoombaSummon()
