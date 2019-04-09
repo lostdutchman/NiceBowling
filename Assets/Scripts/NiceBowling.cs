@@ -203,7 +203,7 @@ public class NiceBowling : MonoBehaviour {
             {
                 Rigidbody body = pin.GetComponent<Rigidbody>();
                 body.isKinematic = true;
-                return ("Cheater Pin!");
+                return ("Cheater!");
             }
         }
         return ("");
@@ -225,7 +225,7 @@ public class NiceBowling : MonoBehaviour {
             Destroy(pin.gameObject);
             Instantiate(PinBig, Location, Quaternion.Euler(-90, 0, 0));
         }
-        return ("Big ol' Pins!");
+        return ("Giant Pins!");
     }
 
     public string MetalPins()
@@ -236,7 +236,7 @@ public class NiceBowling : MonoBehaviour {
             Destroy(pin.gameObject);
             Instantiate(PinMetal, Location, Quaternion.Euler(-90, 0, 0));
         }
-        return ("Heavy Pins!");
+        return ("メタルピン");
     }
 
     public string GiantBall(){
@@ -284,7 +284,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallBucky, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Polyhedral Ball!");
+        return ("Carbon 60");
     }
 
     public string SpikeBall()
@@ -293,7 +293,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallSpiked, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Spike Ball!");
+        return ("塊ボウリング!");
     }
 
     public string JellyBall()
@@ -302,7 +302,7 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallJelly, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Jiggly Ball!");
+        return ("???????????");
     }
 
     public string BombBall()
@@ -311,25 +311,25 @@ public class NiceBowling : MonoBehaviour {
         Vector3 Location = childBall.transform.position;
         Destroy(childBall);
         Instantiate(BallBomb, Location, Quaternion.identity, GameObject.FindObjectOfType<Ball>().transform);
-        return ("Bomb Ball!");
+        return ("Bomb!");
     }
 
     public string Bumpers(){
 		Bumper.SetActive(true);
 		Bumper2.SetActive(true);
-        return("Kiddie Bowling!");
+        return("バンパー");
     }
 
     public string MinigolfWindmill()
     {
         Instantiate(Windmill);
-        return ("オランダ");
+        return ("オランダ!!");
     }
 
     public string RoombaSummon()
     {
         Instantiate(Roomba, new Vector3(0, 2.3f, UnityEngine.Random.Range(200f, 1500f)), Quaternion.Euler(0, UnityEngine.Random.Range(0f, 360f), 0));
-        return ("Robot Vaccuum is Helping!");
+        return ("ブランド外ロボ");
     }
 
     public string SardineRain(){
@@ -337,12 +337,12 @@ public class NiceBowling : MonoBehaviour {
 		for(int i = 0; i < rand; i++){
             Instantiate(Sardine, new Vector3(UnityEngine.Random.Range(55f, -55f), UnityEngine.Random.Range(50f, 200f), UnityEngine.Random.Range(150f, 1700f)), Quaternion.Euler(UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f), UnityEngine.Random.Range(.1f, 360f)));
         }
-        return("Fish?");
+        return("魚!?");
     }
 
     public string Obstical(){
 		Instantiate(Cylinder, new Vector3(UnityEngine.Random.Range (55f, -55f), UnityEngine.Random.Range (40f, -30f), UnityEngine.Random.Range (300f, 1600f)), Quaternion.identity);
-        return("Obstacle!");
+        return("柱");
     }
 
 	public string Obsticals(){
@@ -350,13 +350,13 @@ public class NiceBowling : MonoBehaviour {
 		float y = UnityEngine.Random.Range (30f, -10f);
 		Instantiate(Cylinder, new Vector3(30f, y, z), Quaternion.identity);
 		Instantiate(Cylinder, new Vector3(-30f, y, z), Quaternion.identity);
-        return("Obstacles!");
+        return("柱 X 2!");
     }
 
     public string CubeWall()
     {
         Instantiate(Wall, new Vector3(0, 1, UnityEngine.Random.Range(500f, 1500f)), Quaternion.identity);
-        return ("B-B-B-Break Out!");
+        return ("Break Out Mode");
     }
 
     public string RampAdd(){
@@ -392,7 +392,7 @@ public class NiceBowling : MonoBehaviour {
                 Instantiate(Pendulum, new Vector3(0f, 28f, UnityEngine.Random.Range(90f, 1600f)), Quaternion.Euler(0, 180, 90));
             }
         }
-        return ("Pendulums");
+        return ("振り子");
     }
 
     private string SpeedBoost()
@@ -402,7 +402,7 @@ public class NiceBowling : MonoBehaviour {
         {
             Instantiate(SpeedUp, new Vector3(UnityEngine.Random.Range(-30f, 30f), 1, UnityEngine.Random.Range(100f, 1000f)), Quaternion.Euler(90, 180, 0));
         }
-        return ("Faster!");
+        return ("Speed Boost!");
     }
 
     private string LandMine()
@@ -412,20 +412,20 @@ public class NiceBowling : MonoBehaviour {
         {
             Instantiate(Mine, new Vector3(UnityEngine.Random.Range(-45f, 45f), .52f, UnityEngine.Random.Range(100f, 1000f)), Quaternion.Euler(0, 0, 0));
         }
-        return ("MineSweeper");
+        return ("地雷");
     }
 
     #region Pin Add
     public string AddPinsx1(){
 		Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
-        return("Dumb Pins");
+        return("20ピン");
     }
 
     public string AddPinsx2()
     {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
-        return ("Dumb Pins");
+        return ("30ピン");
     }
 
     public string AddPinsx3()
@@ -433,7 +433,7 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1285), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
-        return ("PINS! PINS! PINS!");
+        return ("40ピン");
     }
 
     public string AddPinsx4()
@@ -442,7 +442,7 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1320), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
-        return ("Many Pins!");
+        return ("50ピン");
     }
 
     public string AddPinsx5()
@@ -452,7 +452,7 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1355), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
-        return ("To Many Pins!");
+        return ("60ピン");
     }
 
     public string AddPinsx6()
@@ -463,7 +463,7 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1390), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1425), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
-        return ("Way To Many Pins!");
+        return ("70ピン");
     }
 
     public string AddPinsx7()
@@ -476,7 +476,7 @@ public class NiceBowling : MonoBehaviour {
         Instantiate(dumbPinSet, new Vector3(0, 1, 1460), Quaternion.identity);
         Instantiate(dumbPinSet, new Vector3(0, 1, 1495), Quaternion.identity);
 
-        return ("Game Breaking number of pins!");
+        return ("80ピン");
     }
 
     #endregion
