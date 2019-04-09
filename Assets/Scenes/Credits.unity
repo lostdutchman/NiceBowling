@@ -141,8 +141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -1040}
-  m_SizeDelta: {x: 988, y: 2170}
+  m_AnchoredPosition: {x: 24, y: -1045}
+  m_SizeDelta: {x: 988, y: 2181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &34852229
 MonoBehaviour:
@@ -176,20 +176,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u76E3\u7763\r\n\nJeremy Toler \u3068 Samantha Gundaker\r\nLost Dutchman
-    Software\r\nlostdutchmansoftware.com\r\n\r\n\r\u5927\u9053\u5177\n\nRetro Aesthetic
-    Pack by dustyroom\r\nBall Pack 1.0 by YounGen Tech\r\n\r\n\u9078\u66F2\n\r\n\"Chill
+  m_Text: "Developed by: \r\nJeremy Toler and Samantha Gundaker\r\nLost Dutchman Software\r\nlostdutchmansoftware.com\r\n\r\n\r\nRetro
+    Aesthetic Pack by dustyroom\r\nBall Pack 1.0 by YounGen Tech\r\n\r\nTracklist:\r\n\r\n\"Chill
     Wave\"\r\n\"Danger Storm\"\r\n\"Spellbound\"\r\n\"Voice Over Under\"\r\n\tKevin
     MacLeod (incompetech.com)\r\n\tLicensed under Creative Commons: \r\n\tBy Attribution
     3.0\r\n\thttp://creativecommons.org/licenses/by/3.0\r\n\r\n\"glaciaere - Tundra\"\r\n\"Paternoster
     Poetry - Elevator Zen Again\"\r\n\tStevia Sphere\r\n\thttp://steviasphere.bandcamp.com/\r\n\tLicensed
     under Creative Commons 3.0\r\n\t\r\n\"~aether theories~ \"\r\n\tVidian (c) 2018
     \r\n\tFt: Gurdonark, White-throated Sparrow\r\n\tLicensed under a Creative Commons\r\n\tAttribution
-    (3.0) license.\r\n\thttp://dig.ccmixter.org/files/Vidian/57398 \r\n\r\n\r\n\u30D7\u30EC\u30A4\u30C6\u30B9\u30C8\n\r\nBrian
-    Lint\r\nYour insight brought about the sensitivity option\r\n\r\nNoah \r\nThanks
-    for the cube wall idea\r\n\r\nRoflHaus and Aaron Bearden\r\nThanks for helping
-    with the beach ball\r\n\r\nJesse\r\nThanks for reining in the fish\r\n\r\n\r\nStay
-    Radical"
+    (3.0) license.\r\n\thttp://dig.ccmixter.org/files/Vidian/57398 \r\n\r\n\r\nSpecial
+    thanks to our playtesters:\r\n\r\nBrian Lint\r\nYour insight brought about the
+    sensitivity option\r\n\r\nNoah \r\nThanks for the cube wall idea\r\n\r\nRoflHaus
+    and Aaron Bearden\r\nThanks for helping with the beach ball\r\n\r\nJesse\r\nThanks
+    for reining in the fish\r\n\r\n\r\n\n\n\n\n\n\nStay Radical"
 --- !u!222 &34852230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -513,7 +512,7 @@ Prefab:
     - {fileID: 11408266, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 653be81f50a2b7a458ca03800a6a6b98, type: 2}
   m_IsPrefabParent: 0
---- !u!21 &666585757
+--- !u!21 &960976532
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -545,8 +544,8 @@ Material:
     - _DisplacementSpeed: 1
     - _NoiseBottomHeight: 0.04
     - _NoiseBottomIntensity: 1
-    - _OffsetNoiseX: 0.57658607
-    - _OffsetNoiseY: 0.04192787
+    - _OffsetNoiseX: 0.5953868
+    - _OffsetNoiseY: -0.07658294
     - _OffsetPosY: 0
     - _StaticIntensity: 0.87
     - _UseChromaticAberration: 1
