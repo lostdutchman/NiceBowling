@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Lost Dutchman Software
-  productName: NiceBowling
+  productName: "\u30CA\u30A4\u30B9\u30DC\u30FC\u30EA\u30F3\u30B0"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
