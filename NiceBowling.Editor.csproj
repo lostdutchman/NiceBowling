@@ -140,14 +140,6 @@
       <Project>{245FA2B6-0D81-1D6F-CECD-3B5A28A68A0A}</Project>
       <Name>NiceBowling.Plugins</Name>
     </ProjectReference>
-    <ProjectReference Include="NiceBowling.csproj">
-      <Project>{13DEBE33-F9EC-9AF8-5E2F-4862F0B6469B}</Project>
-      <Name>NiceBowling</Name>
-    </ProjectReference>
-    <ProjectReference Include="NiceBowling.Editor.Plugins.csproj">
-      <Project>{27F75204-0A03-279D-BBC5-664E72297893}</Project>
-      <Name>NiceBowling.Editor.Plugins</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DefKit\Editor\DefKitWindow.cs" />
