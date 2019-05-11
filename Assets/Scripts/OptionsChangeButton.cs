@@ -14,7 +14,15 @@ public class OptionsChangeButton : MonoBehaviour {
 
     public void ToggleDifficulty()
     {
-        if (PlayerPrefsManager.GetDifficulty() == 8f)
+        if (PlayerPrefsManager.GetDifficulty() == 15f)
+        {
+            UpdateDifficulty(10f);
+        }
+        else if (PlayerPrefsManager.GetDifficulty() == 10f)
+        {
+            UpdateDifficulty(8f);
+        }
+        else if (PlayerPrefsManager.GetDifficulty() == 8f)
         {
             UpdateDifficulty(6f);
         }
@@ -24,13 +32,9 @@ public class OptionsChangeButton : MonoBehaviour {
         }
         else if (PlayerPrefsManager.GetDifficulty() == 3.5f)
         {
-            UpdateDifficulty(2f);
+            UpdateDifficulty(15f);
         }
-        else if (PlayerPrefsManager.GetDifficulty() == 2f)
-        {
-            UpdateDifficulty(1f);
-        }
-        else if (PlayerPrefsManager.GetDifficulty() == 1f)
+        else
         {
             UpdateDifficulty(8f);
         }
@@ -40,30 +44,30 @@ public class OptionsChangeButton : MonoBehaviour {
     {
         PlayerPrefsManager.SetDifficulty(difficulty);
 
-        if(difficulty == 3.5)
+        if(difficulty == 8)
         {
             Diff.text = "DEFAULT SENSITIVITY";
         }
-        else if (difficulty == 6)
-        {
-            Diff.text = "LESS SENSETIVE";
-        }
-        else if (difficulty == 8)
+        else if (difficulty == 10)
         {
             Diff.text = "LOW SENSITIVITY";
         }
-        else if (difficulty == 2)
+        else if (difficulty == 15)
         {
-            Diff.text = "MORE SENSITIVE";
+            Diff.text = "LEAST SENSITIVITY";
         }
-        else if (difficulty == 1)
+        else if (difficulty == 6)
         {
             Diff.text = "VERY SENSITIVE";
         }
+        else if (difficulty == 3.5)
+        {
+            Diff.text = "MOST SENSITIVE";
+        }
         else 
         {
-            Diff.text = "MODE: UNKNOWN";
-            Debug.Log("UpdateDifficulty got invalid value of " + difficulty);
+            Diff.text = "DEFAULT SENSITIVITY";
+            UpdateDifficulty(8f);
         }
     }
 }

@@ -12,7 +12,7 @@ public class PlayerPrefsManager : MonoBehaviour {
     public static void SetDifficulty(float difficulty)
     {
         //Very Easy = 8, Easy = 6, Normal = 3.5, Hard = 2, Too Hard = 1
-        if ((difficulty > 0f) && (difficulty <= 8f))
+        if (difficulty > 0f)
         {
             PlayerPrefs.SetFloat(DIFFICULTY, difficulty);
         }
